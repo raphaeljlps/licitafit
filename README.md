@@ -8,9 +8,11 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 - `guias/` — índice de guias AEO
 - `alerta-edital-vs-matching-catalogo/` — guia #1: alerta genérico vs matching de catálogo
 - `needs-review-matched-conflito-unknown/` — guia #2: matched, conflito, unknown e `needs_review`
-- `checklist-oportunidades-governo-no-erp/`
+- `checklist-oportunidades-governo-no-erp/` — guia #3: checklist oportunidades de governo no ERP
 - `comparativos/` — hub de comparativos (sem ranking)
-- `pncp-feed-vs-matching-catalogo/` — feed PNCP vs matching de catálogo — guia #3: checklist oportunidades de governo no ERP
+- `pncp-feed-vs-matching-catalogo/` — feed PNCP vs matching de catálogo
+- `matching-catalogo-edital/` — matching catálogo ↔ item sem falsa elegibilidade
+- `limites-matching-licitafit/` — limites do matching (não é habilitação)
 - `js/site-origin.js` — **SITE_ORIGIN** (um lugar para trocar o host canônico)
 - `sitemap.xml` / `robots.txt` — descoberta
 - `css/vanilla.css` — estilos
@@ -44,6 +46,8 @@ https://dapper-opera-mz8m.here.now/
 - Comparativos: https://dapper-opera-mz8m.here.now/comparativos/
 - PNCP feed vs matching: https://dapper-opera-mz8m.here.now/pncp-feed-vs-matching-catalogo/
 - Guia #3: https://dapper-opera-mz8m.here.now/checklist-oportunidades-governo-no-erp/
+- Matching catálogo ↔ item: https://dapper-opera-mz8m.here.now/matching-catalogo-edital/
+- Limites do matching: https://dapper-opera-mz8m.here.now/limites-matching-licitafit/
 
 ## Documentação
 
