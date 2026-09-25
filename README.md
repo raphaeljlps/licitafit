@@ -38,6 +38,9 @@ O preview `https://dapper-opera-mz8m.here.now/` **não faz auto-deploy** a parti
 
 ### GitHub Pages (recomendado enquanto DNS não está no ar)
 
+> **Nota:** GitHub Pages em plano free exige repositório **público**. Se o repo voltar a privado, Pages deixa de servir; use Netlify (`netlify.toml`) ou Cloudflare Pages como alternativa. O canônico SEO continua `www.licitafit.com.br`.
+
+
 Publicação estática a partir de `main` (root), com `.nojekyll`.
 
 - Site: **https://raphaeljlps.github.io/licitafit/**
