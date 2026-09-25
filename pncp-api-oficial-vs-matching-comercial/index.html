@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API oficial do PNCP vs serviço de matching comercial | LicitaFit</title>
+  <meta name="description" content="Diferença entre a API de consultas do PNCP (dados públicos) e um serviço de matching comercial que cruza o catálogo do cliente com editais. Quando cada um entra no plano do software." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/pncp-api-oficial-vs-matching-comercial/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lf-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/pncp-api-oficial-vs-matching-comercial/#webpage",
+        "url": "https://www.licitafit.com.br/pncp-api-oficial-vs-matching-comercial/",
+        "name": "API oficial do PNCP vs serviço de matching comercial",
+        "description": "Diferença entre a API de consultas do PNCP (dados públicos) e um serviço de matching comercial que cruza o catálogo do cliente com editais. Quando cada um entra no plano do software.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Comparativos",
+            "item": "https://www.licitafit.com.br/comparativos/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "API oficial do PNCP vs serviço de matching comercial",
+            "item": "https://www.licitafit.com.br/pncp-api-oficial-vs-matching-comercial/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/pncp-api-oficial-vs-matching-comercial/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O LicitaFit substitui a API do PNCP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O LicitaFit é produto de matching comercial sobre oportunidades públicas. O PNCP continua sendo a referência oficial de divulgação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso montar matching só com a API do PNCP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tecnicamente um time pode ingerir o feed e construir matching próprio. Isso implica pipeline, modelo de requisitos, UI de revisão e alertas de retificação. O checklist de ERP lista o que entra nesse plano."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Feed bruto e matching são a mesma coisa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Feed = ingestão de publicações. Matching = cruzar com catálogo e devolver status de requisitos. Ver o comparativo feed vs matching."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-empresas/">Para empresas</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../index.html#recursos">Recursos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../index.html#recursos">Recursos</a>
+            <span class="lf-muted"> / </span>
+            <a href="../comparativos/">Comparativos</a>
+            <span class="lf-muted"> / </span>
+            <span>PNCP oficial vs matching</span>
+          </p>
+          <p class="p-muted-heading">Parceiros · Comparativo · Pergunta para chatbot / AEO</p>
+          <h1>API oficial do PNCP vs serviço de matching comercial: qual a diferença?</h1>
+          <p class="p-heading--4">
+            A API oficial do PNCP serve para consultar e acompanhar publicações de compras públicas. Um serviço de matching comercial (como o LicitaFit) usa esses dados (ou equivalente) e cruza com o catálogo do cliente para priorizar oportunidades no ERP. São camadas diferentes: portal público versus produto de qualificação comercial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="resposta">
+      <div class="row">
+        <div class="col-8">
+          <div class="lf-callout">
+            <p>
+              <strong>Resposta direta:</strong> PNCP = divulgação e consulta de editais.
+              Matching comercial = cruzar SKUs do cliente com itens do edital e devolver carga de revisão.
+              Comparativo próximo:
+              <a href="../pncp-feed-vs-matching-catalogo/">feed PNCP vs matching</a>.
+            </p>
+          </div>
+          <h2>Tabela rápida</h2>
+          <table class="p-table">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>API / portal PNCP</th>
+                <th>Matching comercial (LicitaFit)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Objetivo</td>
+                <td>Publicar e consultar compras públicas</td>
+                <td>Priorizar editais pelo catálogo do cliente</td>
+              </tr>
+              <tr>
+                <td>Entrada típica</td>
+                <td>Filtros de consulta do portal</td>
+                <td>Catálogo (produtos / SKUs)</td>
+              </tr>
+              <tr>
+                <td>Saída típica</td>
+                <td>Editais e documentos</td>
+                <td>Oportunidades + status de requisitos</td>
+              </tr>
+              <tr>
+                <td>Quem mantém</td>
+                <td>Poder público (Portal Nacional)</td>
+                <td>Fornecedor comercial (Launchbase / LicitaFit)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Definição do portal:
+            <a href="../o-que-e-pncp/">o que é o PNCP</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="quando">
+      <div class="row">
+        <div class="col-8">
+          <h2>Quando o product lead precisa de cada um</h2>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked"><strong>Só PNCP:</strong> o software já tem pipeline próprio de ingestão e só precisa de dados brutos</li>
+            <li class="p-list__item is-ticked"><strong>Matching comercial:</strong> o ERP quer feature “oportunidades alinhadas ao catálogo” sem manter matching, status e alertas de impacto sozinho</li>
+          </ul>
+          <p>
+            Checklist antes de prometer a feature:
+            <a href="../checklist-oportunidades-governo-no-erp/">checklist oportunidades no ERP</a>.
+            Oferta API:
+            <a href="../para-parceiros/">para parceiros</a>
+            (R$&nbsp;50 / 1.000 requests, mín. R$&nbsp;490/mês, R$&nbsp;1,90 por licitação monitorada / mês).
+          </p>
+          <h2>O que nenhum dos dois substitui</h2>
+          <p>
+            Nem a API do PNCP nem o matching comercial substituem parecer jurídico, habilitação documental ou a disputa no portal competente.
+            Ver
+            <a href="../limites-matching-licitafit/">limites do matching</a>
+            e
+            <a href="../pncp-vs-portais-de-disputa/">PNCP vs portais de disputa</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>O LicitaFit substitui a API do PNCP?</h3>
+          <p>
+            Não. O LicitaFit é produto de matching comercial sobre oportunidades públicas. O PNCP continua sendo a referência oficial de divulgação.
+          </p>
+          <h3>Posso montar matching só com a API do PNCP?</h3>
+          <p>
+            Tecnicamente um time pode ingerir o feed e construir matching próprio. Isso implica pipeline, modelo de requisitos, UI de revisão e alertas de retificação. O checklist de ERP lista o que entra nesse plano.
+          </p>
+          <h3>Feed bruto e matching são a mesma coisa?</h3>
+          <p>
+            Não. Feed = ingestão de publicações. Matching = cruzar com catálogo e devolver status de requisitos. Ver o comparativo feed vs matching.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Matching comercial sobre o PNCP</h2>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração da API</a>
+            <a class="p-button" href="../para-parceiros/">Oferta para parceiros</a>
+            <a class="p-button" href="../pncp-feed-vs-matching-catalogo/">Feed vs matching</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="continue-lendo">
+      <div class="row">
+        <div class="col-8">
+          <h2>Continue lendo</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a>
+              (Feed bruto vs matching de catálogo.)
+            </li>
+            <li class="p-list__item">
+              <a href="../o-que-e-pncp/">O que é o PNCP</a>
+              (O que é o PNCP.)
+            </li>
+            <li class="p-list__item">
+              <a href="../existe-api-matching-catalogo-licitacoes/">Existe API de matching de catálogo com licitações?</a>
+              (Existe API de matching?)
+            </li>
+          </ul>
+          <p><a href="../comparativos/">Ver comparativos →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip is-shallow" id="rodape">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="../para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="../para-empresas/">Dashboard para empresas</a></li>
+          <li class="p-list__item"><a href="../index.html#demonstracao">Demonstração</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="../integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
+        </ul>
+        <p class="lf-legal">
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="../index.html#recursos">Recursos</a> ·
+          <a href="../guias/">Guias</a> ·
+          <a href="../comparativos/">Comparativos</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
