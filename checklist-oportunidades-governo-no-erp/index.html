@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checklist: oportunidades de governo no ERP | LicitaFit</title>
+  <meta name="description" content="Checklist para embutir oportunidades de governo no ERP: ingestão PNCP, catálogo do cliente, UI de revisão, alertas de mudança, isolamento e disclaimer comercial — sem parecer jurídico." />
+  <!-- SITE_ORIGIN=https://www.licitafit.com.br — DNS may not be live yet; see ../js/site-origin.js -->
+  <link rel="canonical" href="https://www.licitafit.com.br/checklist-oportunidades-governo-no-erp/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      margin-bottom: 0.35rem;
+    }
+    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
+    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/checklist-oportunidades-governo-no-erp/#webpage",
+        "url": "https://www.licitafit.com.br/checklist-oportunidades-governo-no-erp/",
+        "name": "Checklist: oportunidades de governo no ERP | LicitaFit",
+        "description": "O que planejar antes de embutir oportunidades de compras públicas no ERP: PNCP, catálogo, UI de revisão, webhooks, isolamento e disclaimer.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/checklist-oportunidades-governo-no-erp/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Preciso manter um pipeline próprio de dados do PNCP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não necessariamente. Muitos parceiros preferem consumir uma API que já faz ingestão, matching com o catálogo e alertas de mudança, enquanto o ERP continua dono da interface e do relacionamento com o distribuidor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que a UI do ERP deve mostrar à equipe comercial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oportunidades ligadas a produtos do catálogo, requisitos com status explícito (matched, conflito ou unknown), pedido de revisão humana quando fizer sentido, e alertas quando o edital muda — sem rotular produto como habilitado ou aprovado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso vender a feature como garantia de habilitação?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O tom sustentável é apoio à decisão comercial. Matching e status não constituem parecer jurídico nem garantia de habilitação em licitação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Catálogos de clientes diferentes ficam misturados?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No desenho do LicitaFit, catálogo e feedback ficam isolados por cliente. O parceiro deve planejar chaves, permissões e retenção alinhadas a esse isolamento na integração."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://www.licitafit.com.br/checklist-oportunidades-governo-no-erp/#howto",
+        "name": "Checklist antes de embutir oportunidades de governo no ERP",
+        "description": "Seis itens de planejamento para founders e product leads de ERP.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Definir a ingestão de dados públicos",
+            "text": "Decidir como entram registros relevantes (por exemplo via PNCP) e como versões e alterações serão revisitadas."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Planejar upload e atualização do catálogo",
+            "text": "O catálogo do distribuidor (ex.: notebooks e monitores) precisa entrar e ser atualizado via API ou upload."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Desenhar a UI de revisão humana",
+            "text": "Mostrar oportunidades, produtos potenciais e requisitos com status — sem overclaim de habilitação."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Alertas quando o edital muda",
+            "text": "Webhooks ou filas para avisar impacto no matching anterior."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Isolamento por cliente",
+            "text": "Catálogo e feedback separados entre clientes do parceiro."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 6,
+            "name": "Disclaimer comercial na feature",
+            "text": "Comunicar apoio à decisão comercial; não parecer jurídico nem garantia de habilitação."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#como-funciona">Como funciona</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#para-quem">Para quem</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../guias/">Guias</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#preco">Preço</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Checklist ERP</span>
+          </p>
+          <p class="p-muted-heading">Guia LicitaFit</p>
+          <h1>Checklist antes de embutir oportunidades de governo no ERP</h1>
+          <p class="p-heading--4">
+            Antes de vender “oportunidades de governo” no software, alinhe seis peças:
+            como entram os dados públicos, como o catálogo do cliente entra e fica isolado,
+            o que a UI mostra para revisão humana, como avisam mudanças no edital,
+            qual o tom comercial e quem é dono da interface com o distribuidor.
+          </p>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../index.html#como-funciona">Como funciona</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="checklist">
+      <div class="row">
+        <div class="col-8">
+          <h2>Seis itens de planejamento</h2>
+          <p class="lf-muted">
+            Para founders e product leads de ERP que atendem distribuidores de TI em compras públicas.
+            Sem volumes ou prazos inventados — só fronteiras de produto.
+          </p>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Ingestão de dados públicos (ex.: PNCP)</h3>
+              <p class="p-stepped-list__content">
+                Defina como entram registros relevantes de compras públicas, quais identificadores
+                e versões você guarda, e como oportunidades monitoradas são revisitadas quando há
+                alteração. Manter pipeline próprio é uma opção; muitos parceiros preferem consumir
+                uma API que já cobre ingestão + matching.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Upload e atualização do catálogo do cliente</h3>
+              <p class="p-stepped-list__content">
+                Sem catálogo, o software só consegue alerta genérico. Planeje API ou upload para
+                produtos que o distribuidor já vende — o foco declarado do LicitaFit é notebooks
+                e monitores — e um fluxo de atualização contínua.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">UI de revisão humana</h3>
+              <p class="p-stepped-list__content">
+                Mostre oportunidades ligadas a produtos, requisitos com status
+                (<span class="lf-status lf-status--ok">matched</span>,
+                <span class="lf-status lf-status--warn">conflito</span>,
+                <span class="lf-status">unknown</span>) e qualificação como
+                <code>needs_review</code> quando couber. Evite rótulos “aprovado” ou “habilitado”
+                só por causa do matching.
+                <a href="../needs-review-matched-conflito-unknown/">Guia do vocabulário de status</a>.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Webhooks / alertas de mudança no edital</h3>
+              <p class="p-stepped-list__content">
+                Quando o edital, o item ou o documento muda, a equipe precisa saber o impacto no
+                matching anterior — não só que “houve atualização”. Planeje endpoints de webhook,
+                filas ou polling alinhados ao que a API de parceiro expõe.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Isolamento por cliente</h3>
+              <p class="p-stepped-list__content">
+                Catálogo e feedback de matches devem permanecer isolados entre clientes do parceiro.
+                Inclua chaves de API, permissões e retenção nesse desenho desde o início.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Disclaimer comercial na feature</h3>
+              <p class="p-stepped-list__content">
+                Na UI, na proposta comercial e no onboarding: LicitaFit (e a feature no ERP) é
+                <strong>apoio à decisão comercial</strong> — não parecer jurídico nem garantia de
+                habilitação. Isso reduz risco de overclaim na venda da feature paga.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="fronteiras">
+      <div class="row u-equal-height">
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">O que o ERP continua dono</h2>
+            <p class="p-card__content">
+              Interface com o distribuidor, relacionamento comercial, permissões de usuários,
+              empacotamento da feature (incluindo preço para o end-user, se houver) e decisão de
+              quais telas entram no fluxo operacional da equipe.
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">O que uma API de matching cobre</h2>
+            <p class="p-card__content">
+              Ingestão de oportunidades públicas, cruzamento catálogo ↔ item, status de requisitos,
+              evidência no documento quando disponível, e alertas de impacto quando algo muda —
+              para o parceiro não manter sozinho o pipeline de dados públicos.
+            </p>
+            <p class="p-card__content lf-muted">
+              Contraste com alerta só por palavra-chave:
+              <a href="../alerta-edital-vs-matching-catalogo/">alerta vs matching</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>Preciso manter um pipeline próprio de dados do PNCP?</h3>
+          <p>
+            Não necessariamente. Muitos parceiros preferem consumir uma API que já faz ingestão,
+            matching com o catálogo e alertas de mudança, enquanto o ERP continua dono da interface
+            e do relacionamento com o distribuidor.
+          </p>
+          <h3>O que a UI do ERP deve mostrar à equipe comercial?</h3>
+          <p>
+            Oportunidades ligadas a produtos do catálogo, requisitos com status explícito
+            (matched, conflito ou unknown), pedido de revisão humana quando fizer sentido, e
+            alertas quando o edital muda — sem rotular produto como habilitado ou aprovado.
+          </p>
+          <h3>Posso vender a feature como garantia de habilitação?</h3>
+          <p>
+            Não. O tom sustentável é apoio à decisão comercial. Matching e status não constituem
+            parecer jurídico nem garantia de habilitação em licitação.
+          </p>
+          <h3>Catálogos de clientes diferentes ficam misturados?</h3>
+          <p>
+            No desenho do LicitaFit, catálogo e feedback ficam isolados por cliente. O parceiro
+            deve planejar chaves, permissões e retenção alinhadas a esse isolamento na integração.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Validar o checklist com o catálogo de um cliente</h2>
+          <p>
+            Agende uma demonstração com a Launchbase e veja ingestão, matching e alertas no fluxo
+            que o ERP vai embutir.
+          </p>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../guias/">Todos os guias</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip" id="rodape">
+    <div class="row">
+      <div class="col-4">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+        </p>
+        <p class="lf-footer-nav">
+          <a href="../index.html#produto">Produto</a>
+          <a href="../index.html#empresa">Launchbase</a>
+          <a href="../index.html#demonstracao">Solicitar demonstração</a>
+        </p>
+      </div>
+      <div class="col-4">
+        <p><strong>Guias</strong></p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Índice de guias</a></li>
+          <li class="p-list__item"><a href="../alerta-edital-vs-matching-catalogo/">Alerta vs matching</a></li>
+          <li class="p-list__item"><a href="../needs-review-matched-conflito-unknown/">Status needs_review</a></li>
+          <li class="p-list__item"><a href="./">Checklist oportunidades no ERP</a></li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <p class="lf-legal">
+          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.<br /><br />
+          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
