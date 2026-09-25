@@ -1,6 +1,6 @@
 # LicitaFit
 
-Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica licitações públicas com o catálogo do distribuidor de TI.
+Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licitações públicas com o catálogo do distribuidor de TI).
 
 ## Conteúdo
 
@@ -25,7 +25,7 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 | **Visibilidade interim (GitHub Pages)** | `https://raphaeljlps.github.io/licitafit/` |
 | **Preview antigo (STALE — não redeploya)** | `https://dapper-opera-mz8m.here.now` |
 
-DNS/hosting do domínio canônico ainda **TBD**. Canonical tags, JSON-LD, `sitemap.xml` e `robots.txt` usam `https://www.licitafit.com.br` — **não** troque pelo URL do Pages.
+DNS/hosting do domínio canônico ainda **TBD**. Canonical tags, JSON-LD, `sitemap.xml` e `robots.txt` usam `https://www.licitafit.com.br` (**não** troque pelo URL do Pages).
 
 ### Importante: here.now está desatualizado
 

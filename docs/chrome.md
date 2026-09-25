@@ -31,7 +31,7 @@ Home mantém value prop compartilhada + resumos finos de “para quem” e preç
 |--------|-------|
 | (marca) | Tagline LicitaFit |
 | **Produto** | Visão geral, API para parceiros, Dashboard para empresas, Demonstração |
-| **Recursos** | Guias, Comparativos, FAQ, Integração API — **não** cada artigo |
+| **Recursos** | Guias, Comparativos, FAQ, Integração API (**não** cada artigo) |
 | **Empresa** | Launchbase, disclaimer, CNPJ |
 | Faixa | © + atalhos Recursos/Guias/Comparativos |
 
