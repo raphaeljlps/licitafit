@@ -16,7 +16,7 @@ A oportunidade específica **não** é ser mais um portal de alerta de editais (
 
 **Por que agora.** A Lei 14.133 tornou a divulgação no PNCP obrigatória e centralizada; APIs oficiais de **consulta pública** (sem autenticação para leitura) e manuais de integração (versão 2.6, atualizada em 31/08/2026) permitem ingestão estruturada de contratações, itens, documentos, atas e contratos. O governo segue como fatia relevante (~20% dos investimentos em TIC no país, segundo Abradisti/IT Data), ainda que tenha sido fraco em 2025 — o que aumenta a pressão dos canais por **qualificação melhor** das oportunidades, não por mais volume bruto de alertas.
 
-**Preço público na landing (API parceiro):** R$ 50 por 1.000 requests, **mínimo R$ 490/mês**, e monitoramento a **R$ 1,90 por licitação monitorada / mês**. Cobrança alinhada a uso (sem métricas inventadas de volume). O **Dashboard B2B** permanece sob consulta. Validar contra: (a) valor percebido pelo vendor; (b) mix requests + monitoramento por partner; (c) preços opacos de plataformas de inteligência de licitação. Recomendação: manter o floor de R$ 490, observar overage de requests/monitoramento e **revenue share** opcional com early partners.
+**Preço público na landing (API parceiro):** R$ 50 por 1.000 requests, **mínimo R$ 490/mês**, e monitoramento a **R$ 1,90 por licitação monitorada / mês**. Cobrança alinhada a uso (sem métricas inventadas de volume). O **Dashboard B2B** usa assinatura de **R$ 399/mês** + **R$ 5 por licitação monitorada / mês**, sem cobrança por request; o monitoramento é superior aos R$ 1,90 da API. Validar contra: (a) valor percebido pelo vendor; (b) mix requests + monitoramento por partner; (c) preços opacos de plataformas de inteligência de licitação. Recomendação: manter o floor de R$ 490, observar overage de requests/monitoramento e **revenue share** opcional com early partners.
 
 **Go-to-market prioritário:** vendas a **fundadores/PMs/parcerias** de ERPs e softwares comerciais para distribuição/atacado de TI (não Conta Azul / e-commerce genérico). ICP exemplificado neste dossiê inclui Onclick, Soften, Softcom, SIAC, ecossistema Winthor/TOTVS (Nextera, MáximaTech, PowerGO), Sankhya, CIGAM, ATS Resulth, Lexos, JD System, entre outros.
 
@@ -448,7 +448,7 @@ LicitaFit deve **evitar** essa narrativa e, se usar LLM, limitar a extração de
 1. **Requests** — R$ 50 por 1.000 requests.
 2. **Floor** — mínimo R$ 490/mês.
 3. **Monitoramento** — R$ 1,90 por licitação monitorada / mês.
-4. **Dashboard B2B** — preço sob consulta (oferta distinta da API).
+4. **Dashboard B2B** — assinatura de R$ 399/mês + R$ 5 por licitação monitorada / mês, sem cobrança por request (oferta distinta da API).
 5. **Revenue share opcional** — % sobre add-on cobrado do distribuidor (alinha incentivos).
 6. **Pilot 60 dias** — fee reduzido ou gratuito contra case study + dados de catálogo.
 

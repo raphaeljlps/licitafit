@@ -6,7 +6,7 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 
 - `index.html` — home chooser (dois caminhos + `#recursos`)
 - `para-parceiros/` — LP API B2B2B (parceiros de software)
-- `para-empresas/` — LP Dashboard B2B (equipes de licitação; em preparação)
+- `para-empresas/` — LP Dashboard B2B (equipes de licitação; R$ 399/mês + R$ 5 por licitação monitorada/mês)
 - `guias/` — índice de guias AEO
 - `comparativos/` — hub de comparativos (sem ranking)
 - Artigos em pastas na raiz (`alerta-edital-vs-matching-catalogo/`, etc.)
