@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Matching de catálogo com item do edital</title>
+  <desc id="desc">Diagrama: produtos do catálogo cruzados com requisitos do edital</desc>
+  <rect width="960" height="360" fill="#fff"/>
+  <!-- Catalog -->
+  <rect x="40" y="56" width="280" height="248" rx="6" fill="#f7f7f7" stroke="#d9d9d9"/>
+  <text x="60" y="88" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#111">Catálogo</text>
+  <rect x="60" y="108" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <text x="76" y="135" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Notebook 16 GB</text>
+  <rect x="60" y="164" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <text x="76" y="191" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Monitor 27"</text>
+  <rect x="60" y="220" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <text x="76" y="247" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Notebook 8 GB</text>
+  <!-- Center match -->
+  <circle cx="480" cy="180" r="48" fill="#0e8420" opacity="0.12"/>
+  <circle cx="480" cy="180" r="32" fill="#0e8420"/>
+  <path d="M466 180 l8 8 16-18" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M340 130 C400 130, 400 160, 448 160" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M340 186 C400 186, 400 180, 448 180" fill="none" stroke="#666" stroke-width="1.5"/>
+  <path d="M612 160 C560 160, 560 180, 512 180" fill="none" stroke="#666" stroke-width="1.5"/>
+  <!-- Edital -->
+  <rect x="640" y="56" width="280" height="248" rx="6" fill="#f7f7f7" stroke="#d9d9d9"/>
+  <text x="660" y="88" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#111">Item do edital</text>
+  <rect x="660" y="108" width="240" height="28" rx="3" fill="#fff" stroke="#d9d9d9"/>
+  <text x="672" y="127" font-family="Ubuntu, Segoe UI, sans-serif" font-size="12" fill="#666">memória ≥ 16 GB</text>
+  <rect x="660" y="148" width="240" height="28" rx="3" fill="#fff" stroke="#d9d9d9"/>
+  <text x="672" y="167" font-family="Ubuntu, Segoe UI, sans-serif" font-size="12" fill="#666">SSD ≥ 512 GB</text>
+  <rect x="660" y="188" width="240" height="28" rx="3" fill="#fff" stroke="#d9d9d9"/>
+  <text x="672" y="207" font-family="Ubuntu, Segoe UI, sans-serif" font-size="12" fill="#666">garantia on-site</text>
+  <rect x="660" y="240" width="100" height="24" rx="12" fill="#0e8420"/>
+  <text x="682" y="256" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">matched</text>
+  <rect x="772" y="240" width="100" height="24" rx="12" fill="#b76f00"/>
+  <text x="786" y="256" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">unknown</text>
+</svg>
