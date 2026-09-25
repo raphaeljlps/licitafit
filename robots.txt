@@ -1,5 +1,5 @@
-# Canonical host TBD — Sitemap uses preview base for now.
+# SITE_ORIGIN=https://www.licitafit.com.br (DNS may not be live yet — see README)
 User-agent: *
 Allow: /
 
-Sitemap: https://dapper-opera-mz8m.here.now/sitemap.xml
+Sitemap: https://www.licitafit.com.br/sitemap.xml

@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alerta de edital vs matching de catálogo | LicitaFit</title>
   <meta name="description" content="Diferença entre alerta genérico de edital (palavra-chave, CNAE, UF) e matching de catálogo ↔ item com status de requisitos. Apoio à decisão comercial — sem habilitação jurídica." />
-  <!-- Canonical host TBD (licitafit.com.br/.com). Temporary preview base used for canonical + JSON-LD + sitemap. -->
-  <link rel="canonical" href="https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/" />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/alerta-edital-vs-matching-catalogo/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
   <style>
     .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
     .lf-compare td { vertical-align: top; }
@@ -25,6 +26,7 @@
     .lf-muted { color: #666; }
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
   </style>
   <script type="application/ld+json">
   {
@@ -32,15 +34,15 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#webpage",
-        "url": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/",
+        "@id": "https://www.licitafit.com.br/alerta-edital-vs-matching-catalogo/#webpage",
+        "url": "https://www.licitafit.com.br/alerta-edital-vs-matching-catalogo/",
         "name": "Alerta de edital vs matching de catálogo | LicitaFit",
         "description": "Diferença entre alerta genérico de edital (palavra-chave, CNAE, UF) e matching de catálogo ↔ item com status de requisitos.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
           "name": "LicitaFit",
-          "url": "https://dapper-opera-mz8m.here.now/"
+          "url": "https://www.licitafit.com.br/"
         },
         "about": {
           "@type": "Thing",
@@ -49,7 +51,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#faq",
+        "@id": "https://www.licitafit.com.br/alerta-edital-vs-matching-catalogo/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -87,7 +89,7 @@
       },
       {
         "@type": "HowTo",
-        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#howto",
+        "@id": "https://www.licitafit.com.br/alerta-edital-vs-matching-catalogo/#howto",
         "name": "Como passar do alerta genérico ao matching de catálogo",
         "description": "Passos conceituais para o parceiro de software e a equipe comercial do distribuidor.",
         "step": [
@@ -138,7 +140,7 @@
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#como-funciona">Como funciona</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#para-quem">Para quem</a></li>
-          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="./">Guias</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../guias/">Guias</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#preco">Preço</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
         </ul>
@@ -295,6 +297,10 @@
             Evite comunicar na UI do ERP que um produto está “aprovado” ou “habilitado” só porque
             houve match potencial. Use o vocabulário de status e peça revisão da equipe.
           </p>
+          <p>
+            Detalhe do vocabulário:
+            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e <code>needs_review</code></a>.
+          </p>
         </div>
       </div>
     </section>
@@ -393,26 +399,37 @@
     </section>
   </main>
 
-  <footer class="p-strip">
+  <footer class="p-strip" id="rodape">
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
         <p>
           <strong>LicitaFit</strong><br />
           Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
         </p>
-        <p>
-          <a href="../index.html">Início</a>
-          ·
-          <a href="./">Este guia</a>
-          ·
-          <a href="../index.html#demonstracao">Demonstração</a>
+        <p class="lf-footer-nav">
+          <a href="../index.html#produto">Produto</a>
+          <a href="../index.html#empresa">Launchbase</a>
+          <a href="../index.html#demonstracao">Solicitar demonstração</a>
         </p>
       </div>
-      <div class="col-6">
+      <div class="col-4">
+        <p><strong>Guias</strong></p>
+        <ul class="p-list">
+          <li class="p-list__item">
+            <a href="../guias/">Índice de guias</a>
+          </li>
+          <li class="p-list__item">
+            <a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a>
+          </li>
+          <li class="p-list__item">
+            <a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
         <p class="lf-legal">
-          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77<br />
-          Fale conosco pela área Empresa na
-          <a href="../index.html#empresa">página inicial</a>
+          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.<br /><br />
+          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77
         </p>
       </div>
     </div>
