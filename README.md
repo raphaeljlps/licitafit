@@ -8,7 +8,9 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 - `guias/` — índice de guias AEO
 - `alerta-edital-vs-matching-catalogo/` — guia #1: alerta genérico vs matching de catálogo
 - `needs-review-matched-conflito-unknown/` — guia #2: matched, conflito, unknown e `needs_review`
-- `checklist-oportunidades-governo-no-erp/` — guia #3: checklist oportunidades de governo no ERP
+- `checklist-oportunidades-governo-no-erp/`
+- `comparativos/` — hub de comparativos (sem ranking)
+- `pncp-feed-vs-matching-catalogo/` — feed PNCP vs matching de catálogo — guia #3: checklist oportunidades de governo no ERP
 - `js/site-origin.js` — **SITE_ORIGIN** (um lugar para trocar o host canônico)
 - `sitemap.xml` / `robots.txt` — descoberta
 - `css/vanilla.css` — estilos
@@ -39,6 +41,8 @@ https://dapper-opera-mz8m.here.now/
 - Guias: https://dapper-opera-mz8m.here.now/guias/
 - Guia #1: https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/
 - Guia #2: https://dapper-opera-mz8m.here.now/needs-review-matched-conflito-unknown/
+- Comparativos: https://dapper-opera-mz8m.here.now/comparativos/
+- PNCP feed vs matching: https://dapper-opera-mz8m.here.now/pncp-feed-vs-matching-catalogo/
 - Guia #3: https://dapper-opera-mz8m.here.now/checklist-oportunidades-governo-no-erp/
 
 ## Documentação
