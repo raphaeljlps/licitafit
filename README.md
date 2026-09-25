@@ -5,6 +5,8 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 ## Conteúdo
 
 - `index.html` — página principal
+- `alerta-edital-vs-matching-catalogo/` — guia AEO: alerta genérico vs matching de catálogo
+- `sitemap.xml` / `robots.txt` — descoberta (base temporária do preview; domínio canônico TBD)
 - `css/vanilla.css` — estilos
 - `images/` — imagens da landing
 
@@ -15,6 +17,8 @@ Abra `index.html` no navegador ou sirva a pasta com qualquer servidor estático.
 ## Site publicado
 
 https://dapper-opera-mz8m.here.now/
+
+Guia: https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/
 
 ## Documentação
 

@@ -1,0 +1,5 @@
+# Canonical host TBD — Sitemap uses preview base for now.
+User-agent: *
+Allow: /
+
+Sitemap: https://dapper-opera-mz8m.here.now/sitemap.xml
