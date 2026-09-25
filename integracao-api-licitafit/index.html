@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Integração API LicitaFit — visão de produto | LicitaFit</title>
+  <title>Integração API LicitaFit (visão de produto | LicitaFit)</title>
   <meta name="description" content="Endpoints e exemplo de evento já publicados na landing: catalogs, products, opportunities, feedback e webhooks. Sem inventar campos além do exemplo." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
   <link rel="canonical" href="https://www.licitafit.com.br/integracao-api-licitafit/" />
@@ -121,14 +121,13 @@
             <span>Integração API</span>
           </p>
           <p class="p-muted-heading">Parceiro · Guia LicitaFit</p>
-          <h1>Integração API LicitaFit — visão de produto</h1>
+          <h1>Integração API LicitaFit (visão de produto)</h1>
           <p class="p-heading--4">
             Na visão publicada na landing, a integração gira em torno de
             <strong>criar catálogo</strong>, <strong>enviar produtos</strong>,
             <strong>listar oportunidades</strong>, <strong>enviar feedback</strong> e
             <strong>registrar webhooks</strong>.
-            Esta página <strong>espelha</strong> esses endpoints e o exemplo de evento —
-            <strong>sem inventar campos</strong> além do que já está na home.
+            Esta página <strong>espelha</strong> esses endpoints e o exemplo de evento (<strong>sem inventar campos</strong> além do que já está na home).
           </p>
         </div>
       </div>
@@ -141,7 +140,7 @@
             <p>
               Fonte: seção “Como funciona” da
               <a href="../index.html#como-funciona">landing LicitaFit</a>.
-              Não é documentação OpenAPI completa — é mapa de produto para o PM/engenharia do parceiro.
+              Não é documentação OpenAPI completa (é mapa de produto para o PM/engenharia do parceiro).
             </p>
           </div>
           <h2>Endpoints publicados no exemplo</h2>
@@ -155,15 +154,13 @@ POST /v1/webhook-endpoints</pre>
               <h3 class="p-stepped-list__title">Catálogo do cliente</h3>
               <p class="p-stepped-list__content">
                 <code>POST /v1/catalogs</code> e
-                <code>PUT /v1/catalogs/{id}/products</code> —
-                o parceiro envia o catálogo que o distribuidor já mantém.
+                <code>PUT /v1/catalogs/{id}/products</code> (o parceiro envia o catálogo que o distribuidor já mantém).
               </p>
             </li>
             <li class="p-stepped-list__item">
               <h3 class="p-stepped-list__title">Oportunidades para a UI</h3>
               <p class="p-stepped-list__content">
-                <code>GET /v1/catalogs/{id}/opportunities</code> —
-                oportunidades relevantes, produtos que batem, requisitos a conferir.
+                <code>GET /v1/catalogs/{id}/opportunities</code> (oportunidades relevantes, produtos que batem, requisitos a conferir).
                 O que mostrar na tela:
                 <a href="../feature-oportunidades-alinhadas-catalogo/">feature UI</a>.
               </p>
@@ -187,8 +184,7 @@ POST /v1/webhook-endpoints</pre>
         <div class="col-8">
           <h2>Exemplo de evento (campos da landing)</h2>
           <p>
-            Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido —
-            e onde está a evidência no documento.
+            Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido (e onde está a evidência no documento).
           </p>
           <pre class="lf-code">{
   "event": "opportunity.matched",
@@ -245,7 +241,7 @@ POST /v1/webhook-endpoints</pre>
           <p>
             Não. É visão de produto espelhando o exemplo da landing.
             Detalhes de autenticação, schemas e limites seguem documentação de parceiro
-            quando estável — sem inventar campos aqui.
+            quando estável (sem inventar campos aqui).
           </p>
         </div>
       </div>
@@ -273,15 +269,15 @@ POST /v1/webhook-endpoints</pre>
           <ul class="p-list">
             <li class="p-list__item">
               <a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a>
-              — Checklist oportunidades no ERP.
+              (Checklist oportunidades no ERP.)
             </li>
             <li class="p-list__item">
               <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades alinhadas ao catálogo</a>
-              — Feature UI no ERP.
+              (Feature UI no ERP.)
             </li>
             <li class="p-list__item">
               <a href="../limites-matching-licitafit/">Limites do matching LicitaFit</a>
-              — Limites do matching.
+              (Limites do matching.)
             </li>
           </ul>
           <p><a href="../index.html#recursos">Ver recursos →</a></p>
@@ -295,7 +291,7 @@ POST /v1/webhook-endpoints</pre>
       <div class="col-3">
         <p>
           <strong>LicitaFit</strong><br />
-          Qualificação de licitações consciente de catálogo — API para parceiros e Dashboard para equipes de licitação.
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
         </p>
       </div>
       <div class="col-3">
@@ -322,7 +318,7 @@ POST /v1/webhook-endpoints</pre>
           <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
         </ul>
         <p class="lf-legal">
-          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
         </p>
         <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
       </div>

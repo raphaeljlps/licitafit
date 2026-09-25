@@ -18,7 +18,7 @@ PAGES = {
         "hub": "guias",
         "blurb": "Aviso por palavra-chave/CNAE/UF versus cruzamento com SKUs reais e status de requisitos.",
         "related": [
-            ("needs-review-matched-conflito-unknown", "Status matched, conflito, unknown e needs_review — carga de revisão, não liberação jurídica."),
+            ("needs-review-matched-conflito-unknown", "Status matched, conflito, unknown e needs_review (carga de revisão, não liberação jurídica)."),
             ("matching-catalogo-edital", "Como o matching catálogo ↔ item evita falsa elegibilidade."),
             ("pncp-feed-vs-matching-catalogo", "Feed bruto do PNCP não é o mesmo que produto de matching."),
         ],
@@ -27,7 +27,7 @@ PAGES = {
         "title": "Matched, conflito, unknown e needs_review",
         "short": "Status e needs_review",
         "hub": "guias",
-        "blurb": "Cada status descreve carga de revisão comercial — não parecer jurídico.",
+        "blurb": "Cada status descreve carga de revisão comercial (não parecer jurídico).",
         "related": [
             ("alerta-edital-vs-matching-catalogo", "Quando o alerta genérico não basta para priorizar."),
             ("limites-matching-licitafit", "O que o matching não afirma (habilitação e parecer)."),
@@ -60,7 +60,7 @@ PAGES = {
         "title": "Limites do matching LicitaFit",
         "short": "Limites do matching",
         "hub": "guias",
-        "blurb": "Apoio à decisão comercial — não parecer jurídico nem garantia de habilitação.",
+        "blurb": "Apoio à decisão comercial (não parecer jurídico nem garantia de habilitação).",
         "related": [
             ("matching-catalogo-edital", "Como o matching funciona no fluxo comercial."),
             ("needs-review-matched-conflito-unknown", "Status matched, conflito, unknown e needs_review."),
@@ -115,10 +115,10 @@ PAGES = {
         "title": "Feature UI: oportunidades alinhadas ao catálogo",
         "short": "Feature UI no ERP",
         "hub": "guias",
-        "blurb": "Como a feature aparece no software do parceiro — sem falsa elegibilidade.",
+        "blurb": "Como a feature aparece no software do parceiro (sem falsa elegibilidade).",
         "related": [
             ("checklist-oportunidades-governo-no-erp", "Checklist de product lead para o ERP."),
-            ("integracao-api-licitafit", "Integração API — visão de produto."),
+            ("integracao-api-licitafit", "Integração API (visão de produto)."),
             ("go-no-go-oportunidade-catalogo", "Go/no-go com o catálogo."),
         ],
     },
@@ -137,7 +137,7 @@ PAGES = {
         "title": "PNCP vs portais de disputa",
         "short": "PNCP vs portais de disputa",
         "hub": "comparativos",
-        "blurb": "Divulgação centralizada versus onde a disputa ocorre — contexto de mercado.",
+        "blurb": "Divulgação centralizada versus onde a disputa ocorre (contexto de mercado).",
         "related": [
             ("o-que-e-pncp", "O que é o PNCP."),
             ("pncp-feed-vs-matching-catalogo", "Feed PNCP vs matching."),
@@ -145,10 +145,10 @@ PAGES = {
         ],
     },
     "integracao-api-licitafit": {
-        "title": "Integração API LicitaFit — visão de produto",
+        "title": "Integração API LicitaFit (visão de produto)",
         "short": "Integração API",
         "hub": "recursos",
-        "blurb": "Endpoints e eventos já publicados na landing — sem inventar campos.",
+        "blurb": "Endpoints e eventos já publicados na landing (sem inventar campos).",
         "related": [
             ("checklist-oportunidades-governo-no-erp", "Checklist oportunidades no ERP."),
             ("feature-oportunidades-alinhadas-catalogo", "Feature UI no ERP."),
@@ -248,7 +248,7 @@ def footer_html(prefix: str) -> str:
       <div class="col-3">
         <p>
           <strong>LicitaFit</strong><br />
-          Qualificação de licitações consciente de catálogo — API para parceiros e Dashboard para equipes de licitação.
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
         </p>
       </div>
       <div class="col-3">
@@ -275,7 +275,7 @@ def footer_html(prefix: str) -> str:
           <li class="p-list__item"><a href="{h('#empresa')}">Launchbase Tecnologia</a></li>
         </ul>
         <p class="lf-legal">
-          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
         </p>
         <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
       </div>
@@ -298,7 +298,7 @@ def recursos_section() -> str:
       <div class="row">
         <div class="col-8">
           <h2>Recursos</h2>
-          <p class="p-heading--4">Aprenda e compare — sem rankings inventados</p>
+          <p class="p-heading--4">Aprenda e compare (sem rankings inventados)</p>
           <p>
             Guias e comparativos para product leads de ERP e equipes comerciais de distribuidores de TI.
             Conteúdo educacional; o LicitaFit permanece apoio à decisão comercial.
@@ -331,7 +331,7 @@ def recursos_section() -> str:
             <p class="p-muted-heading">Parceiro</p>
             <h3 class="p-card__title"><a href="integracao-api-licitafit/">Integração API</a></h3>
             <p class="p-card__content">
-              Visão de produto dos endpoints e eventos já descritos na landing — sem inventar campos.
+              Visão de produto dos endpoints e eventos já descritos na landing (sem inventar campos).
             </p>
             <p class="p-card__content"><a href="integracao-api-licitafit/">Ver integração →</a></p>
           </div>
@@ -383,7 +383,7 @@ def related_block(slug: str, prefix: str = "../") -> str:
         items.append(
             f"""            <li class="p-list__item">
               <a href="{prefix}{rel_slug}/">{rel['title']}</a>
-              — {note}
+              ({note})
             </li>"""
         )
     if meta["hub"] == "guias":
