@@ -9,6 +9,66 @@
   <link rel="canonical" href="https://www.licitafit.com.br/" />
   <link rel="stylesheet" href="css/vanilla.css" />
   <script src="js/site-origin.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/#webpage",
+        "url": "https://www.licitafit.com.br/",
+        "name": "LicitaFit — Qualifique licitações com o catálogo do seu cliente",
+        "description": "API para ERP e software comercial que relaciona o catálogo do distribuidor de TI a oportunidades públicas.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que o LicitaFit faz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É uma API para ERP e software comercial: o parceiro envia o catálogo do distribuidor de TI e recebe oportunidades públicas relevantes, produtos que batem potencialmente, requisitos a conferir e alertas quando o edital muda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O matching substitui parecer jurídico ou garantia de habilitação?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O LicitaFit é apoio à decisão comercial. Resultados usam status como matched, conflito ou unknown e qualificações como needs_review — não constituem parecer jurídico nem garantia de habilitação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Para quem é o produto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para founders e product leads de ERP que atendem distribuidores de TI em compras públicas. O usuário final típico é a equipe comercial que decide quais editais merecem atenção."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais categorias o foco atual cobre?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O foco declarado na landing é notebooks e monitores — categorias com especificação técnica modelável para matching e revisão humana."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
     .lf-compare td { vertical-align: top; }
@@ -66,6 +126,7 @@
           <li class="p-navigation__item"><a class="p-navigation__link" href="#como-funciona">Como funciona</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#para-quem">Para quem</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="guias/">Guias</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="comparativos/">Comparativos</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#preco">Preço</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#empresa">Empresa</a></li>
         </ul>
@@ -392,6 +453,41 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
+    
+    <section class="p-strip--light" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>O que o LicitaFit faz?</h3>
+          <p>
+            É uma API para ERP e software comercial: o parceiro envia o catálogo do distribuidor de TI
+            e recebe oportunidades públicas relevantes, produtos que batem potencialmente, requisitos
+            a conferir e alertas quando o edital muda.
+          </p>
+          <h3>O matching substitui parecer jurídico ou garantia de habilitação?</h3>
+          <p>
+            Não. O LicitaFit é <strong>apoio à decisão comercial</strong>. Resultados usam status como
+            matched, conflito ou unknown e qualificações como <code>needs_review</code> — não constituem
+            parecer jurídico nem garantia de habilitação.
+          </p>
+          <h3>Para quem é o produto?</h3>
+          <p>
+            Para founders e product leads de ERP que atendem distribuidores de TI em compras públicas.
+            O usuário final típico é a equipe comercial que decide quais editais merecem atenção.
+          </p>
+          <h3>Quais categorias o foco atual cobre?</h3>
+          <p>
+            O foco declarado é <strong>notebooks e monitores</strong> — categorias com especificação
+            técnica modelável para matching e revisão humana.
+          </p>
+          <p>
+            Veja também os <a href="guias/">guias</a> e os <a href="comparativos/">comparativos</a>
+            (alerta vs matching; feed PNCP vs matching).
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="p-strip--light" id="empresa">
       <div class="row">
         <div class="col-8">
@@ -427,6 +523,7 @@ POST /v1/webhook-endpoints</pre>
         <ul class="p-list">
           <li class="p-list__item"><a href="guias/">Índice de guias</a></li>
           <li class="p-list__item"><a href="comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="#faq">FAQ</a></li>
           <li class="p-list__item"><a href="alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>
           <li class="p-list__item"><a href="needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></li>
           <li class="p-list__item"><a href="checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a></li>
