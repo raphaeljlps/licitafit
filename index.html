@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LicitaFit — Qualifique licitações com o catálogo do seu cliente</title>
-  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para ERP e software comercial que relaciona o catálogo do distribuidor de TI a oportunidades públicas, com requisitos a conferir e alertas de mudança." />
+  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para ERP e software comercial / AFV que relaciona o catálogo do distribuidor de TI a oportunidades públicas, com requisitos a conferir e alertas de mudança." />
   <!-- SITE_ORIGIN: see js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
   <link rel="canonical" href="https://www.licitafit.com.br/" />
   <link rel="stylesheet" href="css/vanilla.css" />
@@ -52,7 +52,7 @@
             "name": "Para quem é o produto?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Para founders e product leads de ERP que atendem distribuidores de TI em compras públicas. O usuário final típico é a equipe comercial que decide quais editais merecem atenção."
+              "text": "Para founders e product leads de ERP de distribuição/atacado, software comercial e AFV, sistemas verticais de informática/eletrônicos e produtos de compras públicas já no stack — que atendem distribuidores de TI em compras públicas. O usuário final típico é a equipe comercial ou de vendas ao governo que decide quais editais merecem atenção."
             }
           },
           {
@@ -267,7 +267,7 @@
       <div class="row">
         <div class="col-6">
           <h2>Como funciona</h2>
-          <p>Três peças. Uma integração. O ERP continua dono da interface e do relacionamento com o cliente.</p>
+          <p>Três peças. Uma integração. O software do parceiro continua dono da interface e do relacionamento com o cliente.</p>
           <ol class="p-stepped-list">
             <li class="p-stepped-list__item">
               <h3 class="p-stepped-list__title">Ingestão de compras públicas</h3>
@@ -330,35 +330,55 @@ POST /v1/webhook-endpoints</pre>
 
     <section class="p-strip--light" id="para-quem">
       <div class="row">
-        <div class="col-7">
+        <div class="col-8">
           <h2>Para quem é o LicitaFit</h2>
           <p>
-            Vendemos para fundadores e product leads de ERP e software comercial que atendem
-            distribuidores de TI com atuação em compras públicas.
-            O usuário final é quem decide quais editais merecem atenção.
+            Vendemos para <strong>fundadores e product leads</strong> de software parceiro —
+            ERP, comercial/AFV e verticais de distribuição de TI — cujos clientes atuam em compras públicas.
+            O <strong>usuário final</strong> é a equipe comercial ou de vendas ao governo do distribuidor,
+            que decide quais editais merecem atenção.
           </p>
-          <div class="row u-equal-height">
-            <div class="col-6">
-              <div class="p-card--highlighted">
-                <h3 class="p-card__title">Para o ERP</h3>
-                <p class="p-card__content">
-                  Uma feature paga — “Oportunidades de governo alinhadas ao catálogo” —
-                  sem manter pipeline de dados públicos nem produto próprio de análise de documentos.
-                </p>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="p-card--highlighted">
-                <h3 class="p-card__title">Para a Launchbase</h3>
-                <p class="p-card__content">
-                  Um produto de API reutilizável, com contrato de parceiro — em vez de um sistema sob medida por distribuidor.
-                </p>
-              </div>
-            </div>
+        </div>
+        <div class="col-4 lf-media u-vertically-center">
+          <img src="images/meeting.jpg" width="1600" height="1067" alt="Reunião comercial entre equipes de software" />
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1.5rem">
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">ERP de distribuição / atacado</h3>
+            <p class="p-card__content">
+              Feature “oportunidades de governo alinhadas ao catálogo” no ERP que o
+              distribuidor já usa — sem o parceiro manter pipeline próprio de dados do PNCP.
+            </p>
           </div>
         </div>
-        <div class="col-5 lf-media u-vertically-center">
-          <img src="images/meeting.jpg" width="1600" height="1067" alt="Reunião comercial entre equipes de software" />
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Software comercial / AFV</h3>
+            <p class="p-card__content">
+              Vendedores já trabalham catálogo e orçamentos no app de força de vendas;
+              somamos triagem de oportunidades públicas ligada aos SKUs do cliente.
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Sistemas verticais de informática / eletrônicos</h3>
+            <p class="p-card__content">
+              Softwares feitos para distribuidores com serial, RMA e estoque que vendem
+              hardware B2G — com foco inicial em notebooks e monitores.
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Produtos de compras públicas já no stack</h3>
+            <p class="p-card__content">
+              Complemento opcional: matching consciente de catálogo e alertas de mudança —
+              sem substituir portais de disputa ou módulos de gestão de licitação já existentes.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -380,7 +400,7 @@ POST /v1/webhook-endpoints</pre>
             </thead>
             <tbody>
               <tr>
-                <td>Feature embutida no ERP</td>
+                <td>Feature embutida no software do parceiro</td>
                 <td>Integração simples, com o catálogo que o cliente já mantém</td>
               </tr>
               <tr>
@@ -574,8 +594,11 @@ POST /v1/webhook-endpoints</pre>
           </p>
           <h3>Para quem é o produto?</h3>
           <p>
-            Para founders e product leads de ERP que atendem distribuidores de TI em compras públicas.
-            O usuário final típico é a equipe comercial que decide quais editais merecem atenção.
+            Para founders e product leads de <strong>ERP de distribuição/atacado</strong>,
+            <strong>software comercial e AFV</strong>, <strong>sistemas verticais de informática/eletrônicos</strong>
+            e <strong>produtos de compras públicas já no stack</strong> — que atendem distribuidores de TI
+            em compras públicas. O usuário final típico é a equipe comercial ou de vendas ao governo
+            que decide quais editais merecem atenção.
           </p>
           <h3>Quais categorias o foco atual cobre?</h3>
           <p>
