@@ -150,20 +150,65 @@ PAGES = {
         "hub": "recursos",
         "blurb": "Endpoints e eventos já publicados na landing (sem inventar campos).",
         "related": [
-            ("checklist-oportunidades-governo-no-erp", "Checklist oportunidades no ERP."),
+            ("como-embutir-matching-catalogo-no-erp", "Como embutir matching no ERP."),
+            ("cobranca-api-requests-e-monitoramento", "Cobrança: requests e monitoramento."),
             ("feature-oportunidades-alinhadas-catalogo", "Feature UI no ERP."),
-            ("limites-matching-licitafit", "Limites do matching."),
+        ],
+    },
+
+    "como-embutir-matching-catalogo-no-erp": {
+        "title": "Como embutir matching de catálogo no ERP",
+        "short": "Embutir matching no ERP",
+        "hub": "guias",
+        "blurb": "Fluxo de produto para embutir matching de catálogo no ERP ou AFV via API.",
+        "related": [
+            ("checklist-oportunidades-governo-no-erp", "Checklist antes de prometer a feature."),
+            ("feature-oportunidades-alinhadas-catalogo", "O que mostrar na UI do parceiro."),
+            ("cobranca-api-requests-e-monitoramento", "Como empacotar requests e monitoramento."),
+        ],
+    },
+    "cobranca-api-requests-e-monitoramento": {
+        "title": "Cobrança API: requests e monitoramento",
+        "short": "Cobrança API",
+        "hub": "guias",
+        "blurb": "Requests (mín. mensal) e monitoramento por licitação no plano API parceiro.",
+        "related": [
+            ("como-embutir-matching-catalogo-no-erp", "Como embutir matching no ERP."),
+            ("integracao-api-licitafit", "Endpoints e eventos da API."),
+            ("feature-oportunidades-alinhadas-catalogo", "Feature UI no software parceiro."),
+        ],
+    },
+    "como-usar-dashboard-matching-licitacoes": {
+        "title": "Como usar o Dashboard de matching de licitações",
+        "short": "Usar o Dashboard",
+        "hub": "guias",
+        "blurb": "Rotina da equipe: lista, matches na tela, priorização e alertas.",
+        "related": [
+            ("upload-catalogo-e-monitorar-editais", "Upload de catálogo e monitorar editais."),
+            ("go-no-go-oportunidade-catalogo", "Go/no-go comercial com o catálogo."),
+            ("matching-catalogo-edital", "Matching catálogo ↔ item."),
+        ],
+    },
+    "upload-catalogo-e-monitorar-editais": {
+        "title": "Upload de catálogo e monitorar editais",
+        "short": "Upload e monitoramento",
+        "hub": "guias",
+        "blurb": "Manter a lista de produtos e acompanhar mudanças no edital no Dashboard.",
+        "related": [
+            ("como-usar-dashboard-matching-licitacoes", "Rotina completa no Dashboard."),
+            ("checklist-requisitos-notebooks-monitores", "Checklist tipica notebooks/monitores."),
+            ("retificacao-edital-impacto-matching", "Quando o edital muda, reavalie o matching."),
         ],
     },
 }
 
 FEATURED = [
-    "alerta-edital-vs-matching-catalogo",
-    "needs-review-matched-conflito-unknown",
+    "como-embutir-matching-catalogo-no-erp",
+    "como-usar-dashboard-matching-licitacoes",
+    "cobranca-api-requests-e-monitoramento",
+    "upload-catalogo-e-monitorar-editais",
     "checklist-oportunidades-governo-no-erp",
     "matching-catalogo-edital",
-    "limites-matching-licitafit",
-    "o-que-e-pncp",
 ]
 
 HEADER_RE = re.compile(r"  <header id=\"navigation\"[\s\S]*?</header>", re.M)

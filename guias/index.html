@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guias LicitaFit (matching de catálogo e compras públicas)</title>
-  <meta name="description" content="Guias LicitaFit para product leads de ERP e equipes comerciais de distribuidores de TI: alerta vs matching, status de requisitos e integração com oportunidades de governo." />
-  <!-- SITE_ORIGIN=https://www.licitafit.com.br — DNS may not be live yet; see ../js/site-origin.js -->
+  <meta name="description" content="Guias LicitaFit para parceiros de software e equipes de licitação: embutir matching no ERP, cobrança API, Dashboard, upload de catálogo, status de requisitos e PNCP." />
+  <!-- SITE_ORIGIN=https://www.licitafit.com.br - DNS may not be live yet; see ../js/site-origin.js -->
   <link rel="canonical" href="https://www.licitafit.com.br/guias/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
@@ -23,7 +23,7 @@
     "@id": "https://www.licitafit.com.br/guias/#webpage",
     "url": "https://www.licitafit.com.br/guias/",
     "name": "Guias LicitaFit",
-    "description": "Índice de guias sobre matching de catálogo, alertas de edital e oportunidades de governo no ERP.",
+    "description": "Índice de guias sobre matching de catálogo, API para parceiros e Dashboard para equipes de licitação.",
     "inLanguage": "pt-BR",
     "isPartOf": {
       "@type": "WebSite",
@@ -74,200 +74,197 @@
             <span>Guias</span>
           </p>
           <p class="p-muted-heading">Recursos LicitaFit</p>
-          <h1>Guias para embutir oportunidades de governo no software</h1>
+          <h1>Guias de matching de catálogo e compras públicas</h1>
           <p class="p-heading--4">
-            Textos curtos para product leads de ERP e equipes comerciais de distribuidores de TI (sem parecer jurídico e sem garantia de habilitação).
+            Textos curtos para parceiros de software e equipes de licitação (sem parecer jurídico e sem garantia de habilitação).
+          </p>
+          <p>
+            <a href="#parceiros">Para parceiros de software</a> ·
+            <a href="#empresas">Para equipes de licitação</a> ·
+            <a href="#todos">Todos os guias</a>
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip">
-      <div class="row u-equal-height">
+    <section class="p-strip" id="parceiros">
+      <div class="row">
+        <div class="col-8">
+          <h2>Para parceiros de software</h2>
+          <p>
+            Embutir matching no ERP / AFV via API.
+            Oferta:
+            <a href="../para-parceiros/">para parceiros</a>.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../alerta-edital-vs-matching-catalogo/">Alerta genérico de edital vs matching de catálogo</a>
-            </h2>
+            <p class="p-muted-heading">Como fazer</p>
+            <h3 class="p-card__title">
+              <a href="../como-embutir-matching-catalogo-no-erp/">Como embutir matching de catálogo no ERP</a>
+            </h3>
             <p class="p-card__content">
-              Diferença entre aviso por palavra-chave, CNAE ou UF e o cruzamento de itens do edital
-              com produtos reais do catálogo (com status de requisitos e revisão humana).
+              Fluxo de produto: catálogo, oportunidades, feedback, webhooks e UI sem falsa elegibilidade.
             </p>
-            <p class="p-card__content">
-              <a href="../alerta-edital-vs-matching-catalogo/">Ler o guia →</a>
-            </p>
+            <p class="p-card__content"><a href="../como-embutir-matching-catalogo-no-erp/">Ler o guia →</a></p>
           </div>
         </div>
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a>
-            </h2>
+            <p class="p-muted-heading">Preço / packaging</p>
+            <h3 class="p-card__title">
+              <a href="../cobranca-api-requests-e-monitoramento/">Cobrança API: requests e monitoramento</a>
+            </h3>
             <p class="p-card__content">
-              Cada status descreve carga de revisão comercial, não liberação jurídica (o que a equipe faz em unknown e a ideia de <code>evidence_page</code>).
+              R$&nbsp;50/1.000 requests (mín. R$&nbsp;490/mês) e R$&nbsp;1,90 por licitação monitorada / mês.
             </p>
-            <p class="p-card__content">
-              <a href="../needs-review-matched-conflito-unknown/">Ler o guia →</a>
-            </p>
+            <p class="p-card__content"><a href="../cobranca-api-requests-e-monitoramento/">Ler o guia →</a></p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
-        <div class="col-6">
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a>
-            </h2>
-            <p class="p-card__content">
-              Seis blocos antes de vender a feature: PNCP, catálogo, UI de revisão, alertas de mudança,
-              isolamento por cliente e disclaimer comercial.
-            </p>
-            <p class="p-card__content">
-              <a href="../checklist-oportunidades-governo-no-erp/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../checklist-oportunidades-governo-no-erp/">Checklist no ERP</a></h3>
+            <p class="p-card__content">Antes de prometer “licitações no software”.</p>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../matching-catalogo-edital/">Matching catálogo ↔ item sem falsa elegibilidade</a>
-            </h2>
-            <p class="p-card__content">
-              O que o matching faz e não faz: cruzar catálogo com itens do edital, status de requisitos
-              e foco em notebooks e monitores (sem afirmar habilitação).
-            </p>
-            <p class="p-card__content">
-              <a href="../matching-catalogo-edital/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI no ERP</a></h3>
+            <p class="p-card__content">O que mostrar na tela do parceiro.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../integracao-api-licitafit/">Integração API</a></h3>
+            <p class="p-card__content">Endpoints e eventos já publicados.</p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
+    </section>
+
+    <section class="p-strip--light" id="empresas">
+      <div class="row">
+        <div class="col-8">
+          <h2>Para equipes de licitação</h2>
+          <p>
+            Usar o matching direto no Dashboard.
+            Oferta:
+            <a href="../para-empresas/">para empresas</a>.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Compliance</p>
-            <h2 class="p-card__title">
-              <a href="../limites-matching-licitafit/">Limites do matching</a>
-            </h2>
+            <p class="p-muted-heading">Como fazer</p>
+            <h3 class="p-card__title">
+              <a href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard de matching</a>
+            </h3>
             <p class="p-card__content">
-              Não é parecer jurídico nem garantia de habilitação. Go/no-go comercial ≠ análise jurídica (tom explícito para UI e vendas do parceiro).
+              Rotina: lista de produtos, matches na tela, priorização e alertas.
             </p>
-            <p class="p-card__content">
-              <a href="../limites-matching-licitafit/">Ler o guia →</a>
-            </p>
+            <p class="p-card__content"><a href="../como-usar-dashboard-matching-licitacoes/">Ler o guia →</a></p>
           </div>
         </div>
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../retificacao-edital-impacto-matching/">Retificação de edital e impacto no matching</a>
-            </h2>
+            <p class="p-muted-heading">Operação</p>
+            <h3 class="p-card__title">
+              <a href="../upload-catalogo-e-monitorar-editais/">Upload de catálogo e monitorar editais</a>
+            </h3>
             <p class="p-card__content">
-              Quando o edital muda, reavalie o matching anterior. Alertas de impacto apoiam a revisão
-              comercial (sem congelar habilitação).
+              Manter o catálogo e acompanhar mudanças no edital (R$&nbsp;399/mês + R$&nbsp;5/licitação monitorada).
             </p>
-            <p class="p-card__content">
-              <a href="../retificacao-edital-impacto-matching/">Ler o guia →</a>
-            </p>
+            <p class="p-card__content"><a href="../upload-catalogo-e-monitorar-editais/">Ler o guia →</a></p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
-        <div class="col-6">
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Definição</p>
-            <h2 class="p-card__title">
-              <a href="../o-que-e-pncp/">O que é o PNCP</a>
-            </h2>
-            <p class="p-card__content">
-              Portal oficial de divulgação centralizada (Lei 14.133/2021, art. 174) (fonte pública para ERP, não matching de catálogo).
-            </p>
-            <p class="p-card__content">
-              <a href="../o-que-e-pncp/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../go-no-go-oportunidade-catalogo/">Go/no-go com o catálogo</a></h3>
+            <p class="p-card__content">Matriz comercial de priorização.</p>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Decisão comercial</p>
-            <h2 class="p-card__title">
-              <a href="../go-no-go-oportunidade-catalogo/">Go/no-go com o catálogo</a>
-            </h2>
-            <p class="p-card__content">
-              Matriz para priorizar ou arquivar oportunidades com status de requisitos.
-              Fora: margem, habilitação documental e caixa.
-            </p>
-            <p class="p-card__content">
-              <a href="../go-no-go-oportunidade-catalogo/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../checklist-requisitos-notebooks-monitores/">Checklist notebooks/monitores</a></h3>
+            <p class="p-card__content">Conferência tipica da vertical.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../matching-catalogo-edital/">Matching catálogo ↔ item</a></h3>
+            <p class="p-card__content">Cruzamento sem falsa elegibilidade.</p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
+    </section>
+
+    <section class="p-strip" id="todos">
+      <div class="row">
+        <div class="col-8">
+          <h2>Todos os guias</h2>
+          <p class="lf-muted">Índice completo (parceiros, equipes e base compartilhada).</p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Vertical TI</p>
-            <h2 class="p-card__title">
-              <a href="../checklist-requisitos-notebooks-monitores/">Checklist notebooks e monitores</a>
-            </h2>
-            <p class="p-card__content">
-              Lista tipica de conferência comercial contra o catálogo; unknown vira revisão (sem cobertura jurídica).
-            </p>
-            <p class="p-card__content">
-              <a href="../checklist-requisitos-notebooks-monitores/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../alerta-edital-vs-matching-catalogo/">Alerta genérico vs matching de catálogo</a></h3>
+            <p class="p-card__content">Palavra-chave/CNAE/UF versus cruzamento com SKUs reais.</p>
           </div>
         </div>
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Produto / UI</p>
-            <h2 class="p-card__title">
-              <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades no ERP</a>
-            </h2>
-            <p class="p-card__content">
-              O que mostrar: oportunidades, SKUs, status de requisitos, alertas e disclaimer.
-              Preço público é por software partner (não invente preço ao end-user).
-            </p>
-            <p class="p-card__content">
-              <a href="../feature-oportunidades-alinhadas-catalogo/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></h3>
+            <p class="p-card__content">Carga de revisão comercial (não liberação jurídica).</p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
+      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Comparativo educacional</p>
-            <h2 class="p-card__title">
-              <a href="../pncp-vs-portais-de-disputa/">PNCP vs portais de disputa</a>
-            </h2>
-            <p class="p-card__content">
-              Divulgação centralizada versus onde a disputa ocorre (Compras.gov.br e outros).
-              Contexto de mercado (não diferencial exclusivo do LicitaFit).
-            </p>
-            <p class="p-card__content">
-              <a href="../pncp-vs-portais-de-disputa/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../limites-matching-licitafit/">Limites do matching</a></h3>
+            <p class="p-card__content">Não é parecer jurídico nem garantia de habilitação.</p>
           </div>
         </div>
         <div class="col-6">
           <div class="p-card">
-            <p class="p-muted-heading">Parceiro</p>
-            <h2 class="p-card__title">
-              <a href="../integracao-api-licitafit/">Integração API (visão de produto)</a>
-            </h2>
-            <p class="p-card__content">
-              Endpoints e exemplo de evento já publicados na landing (catalogs, opportunities,
-              feedback, webhooks) (sem inventar campos).
-            </p>
-            <p class="p-card__content">
-              <a href="../integracao-api-licitafit/">Ler o guia →</a>
-            </p>
+            <h3 class="p-card__title"><a href="../retificacao-edital-impacto-matching/">Retificação e impacto no matching</a></h3>
+            <p class="p-card__content">Quando o edital muda, reavalie matches e alertas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-6">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../o-que-e-pncp/">O que é o PNCP</a></h3>
+            <p class="p-card__content">Portal oficial de divulgação centralizada (Lei 14.133/2021, art. 174).</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../pncp-vs-portais-de-disputa/">PNCP vs portais de disputa</a></h3>
+            <p class="p-card__content">Divulgação centralizada versus onde a disputa ocorre.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-6">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching</a></h3>
+            <p class="p-card__content">Ingestão bruta não substitui matching com catálogo.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../comparativos/">Hub Comparativos</a></h3>
+            <p class="p-card__content">Contrastes honestos (sem rankings inventados).</p>
           </div>
         </div>
       </div>
@@ -276,10 +273,11 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Ver o LicitaFit com o catálogo de um cliente</h2>
+          <h2>Escolher o caminho</h2>
           <p>
-            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../index.html#produto">Conhecer o produto</a>
+            <a class="p-button--positive" href="../para-parceiros/">API para parceiros</a>
+            <a class="p-button" href="../para-empresas/">Dashboard para empresas</a>
+            <a class="p-button" href="../index.html#demonstracao">Solicitar demonstração</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.

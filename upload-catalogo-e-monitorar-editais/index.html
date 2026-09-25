@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Integração API LicitaFit (visão de produto | LicitaFit)</title>
-  <meta name="description" content="Endpoints e exemplo de evento já publicados na landing: catalogs, products, opportunities, feedback e webhooks. Sem inventar campos além do exemplo." />
+  <title>Upload de catálogo e monitorar editais | LicitaFit</title>
+  <meta name="description" content="Como manter a lista de produtos no LicitaFit Dashboard e monitorar editais: upload, atualização do catálogo, matches e alertas de mudança. Apoio comercial (não parecer jurídico)." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
-  <link rel="canonical" href="https://www.licitafit.com.br/integracao-api-licitafit/" />
+  <link rel="canonical" href="https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -21,12 +21,13 @@
       margin: 1.5rem 0;
     }
     .lf-code {
-      background: #111;
-      color: #f7f7f7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
       padding: 1rem 1.25rem;
       overflow-x: auto;
-      font-size: 0.875rem;
-      line-height: 1.5;
+      margin: 0;
     }
   </style>
   <script type="application/ld+json">
@@ -35,10 +36,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.licitafit.com.br/integracao-api-licitafit/#webpage",
-        "url": "https://www.licitafit.com.br/integracao-api-licitafit/",
-        "name": "Integração API LicitaFit — visão de produto",
-        "description": "Visão de produto dos endpoints e do exemplo de evento publicados na landing LicitaFit.",
+        "@id": "https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/#webpage",
+        "url": "https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/",
+        "name": "Upload de catálogo e monitorar editais",
+        "description": "Como manter a lista de produtos no LicitaFit Dashboard e monitorar editais: upload, atualização do catálogo, matches e alertas de mudança. Apoio comercial (não parecer jurídico).",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -47,31 +48,54 @@
         }
       },
       {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guias",
+            "item": "https://www.licitafit.com.br/guias/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Upload de catálogo e monitorar editais",
+            "item": "https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
-        "@id": "https://www.licitafit.com.br/integracao-api-licitafit/#faq",
+        "@id": "https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Quais endpoints a landing descreve?",
+            "name": "Por que o upload da lista importa?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "POST /v1/catalogs; PUT /v1/catalogs/{id}/products; GET /v1/catalogs/{id}/opportunities; POST /v1/opportunities/{id}/feedback; POST /v1/webhook-endpoints."
+              "text": "O matching usa os SKUs que a equipe envia (não uma base genérica). Lista desatualizada gera priorização errada."
             }
           },
           {
             "@type": "Question",
-            "name": "Quais campos aparecem no exemplo de evento?",
+            "name": "O que o monitoramento de editais faz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "event (opportunity.matched), product_id, item_number, qualification (needs_review), requirements com name e status (matched / unknown no exemplo), e evidence_page."
+              "text": "Sinaliza quando o edital ou o item muda e pede reavaliação do matching anterior. Não congela habilitação jurídica."
             }
           },
           {
             "@type": "Question",
-            "name": "Esta página é a documentação completa da API?",
+            "name": "Qual o preço do monitoramento no Dashboard?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. É visão de produto espelhando o exemplo já publicado na landing. Detalhes de autenticação, schemas e limites seguem documentação de parceiro quando estável — sem inventar campos aqui."
+              "text": "No plano Dashboard: assinatura R$ 399/mês + R$ 5 por licitação monitorada / mês, sem cobrança por request."
             }
           }
         ]
@@ -118,60 +142,51 @@
             <span class="lf-muted"> / </span>
             <a href="../index.html#recursos">Recursos</a>
             <span class="lf-muted"> / </span>
-            <span>Integração API</span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Upload e monitoramento</span>
           </p>
-          <p class="p-muted-heading">Parceiro · Guia LicitaFit</p>
-          <h1>Integração API LicitaFit (visão de produto)</h1>
+          <p class="p-muted-heading">Equipes de licitação · Guia LicitaFit</p>
+          <h1>Upload de catálogo e monitorar editais</h1>
           <p class="p-heading--4">
-            Na visão publicada na landing, a integração gira em torno de
-            <strong>criar catálogo</strong>, <strong>enviar produtos</strong>,
-            <strong>listar oportunidades</strong>, <strong>enviar feedback</strong> e
-            <strong>registrar webhooks</strong>.
-            Esta página <strong>espelha</strong> esses endpoints e o exemplo de evento (<strong>sem inventar campos</strong> além do que já está na home).
+            Para equipes de licitação: mantenha o catálogo que vocês já vendem no Dashboard, veja matches contra oportunidades públicas e monitore mudanças no edital para reavaliar a fila comercial.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip">
+    <section class="p-strip" id="upload">
       <div class="row">
         <div class="col-8">
           <div class="lf-callout">
             <p>
-              Fonte: seção “Como funciona” da
-              <a href="../index.html#como-funciona">landing LicitaFit</a>.
-              Não é documentação OpenAPI completa (é mapa de produto para o PM/engenharia do parceiro).
+              Fluxo do
+              <a href="../para-empresas/">LicitaFit Dashboard</a>.
+              Rotina completa:
+              <a href="../como-usar-dashboard-matching-licitacoes/">como usar o Dashboard</a>.
             </p>
           </div>
-          <h2>Endpoints publicados no exemplo</h2>
-          <pre class="lf-code">POST /v1/catalogs
-PUT  /v1/catalogs/{id}/products
-GET  /v1/catalogs/{id}/opportunities
-POST /v1/opportunities/{id}/feedback
-POST /v1/webhook-endpoints</pre>
+          <h2>Upload e manutenção do catálogo</h2>
           <ol class="p-stepped-list">
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Catálogo do cliente</h3>
+              <h3 class="p-stepped-list__title">Envie a lista que a equipe já vende</h3>
               <p class="p-stepped-list__content">
-                <code>POST /v1/catalogs</code> e
-                <code>PUT /v1/catalogs/{id}/products</code> (o parceiro envia o catálogo que o distribuidor já mantém).
+                O matching cruza itens do edital com esses produtos (foco atual: notebooks e monitores).
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Oportunidades para a UI</h3>
+              <h3 class="p-stepped-list__title">Atualize quando o mix muda</h3>
               <p class="p-stepped-list__content">
-                <code>GET /v1/catalogs/{id}/opportunities</code> (oportunidades relevantes, produtos que batem, requisitos a conferir).
-                O que mostrar na tela:
-                <a href="../feature-oportunidades-alinhadas-catalogo/">feature UI</a>.
+                SKUs novos, descontinuados ou com especificação alterada pedem revisão no dashboard
+                (sem esperar ciclo de ERP).
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Feedback e webhooks</h3>
+              <h3 class="p-stepped-list__title">Conferir requisitos tipicos</h3>
               <p class="p-stepped-list__content">
-                <code>POST /v1/opportunities/{id}/feedback</code> para correção de matches;
-                <code>POST /v1/webhook-endpoints</code> para receber eventos
-                (ex.: matching e alertas de mudança). Catálogo e feedback isolados por cliente,
-                conforme a home.
+                Use o
+                <a href="../checklist-requisitos-notebooks-monitores/">checklist de notebooks e monitores</a>
+                como lista de conferência comercial (unknown vira revisão).
               </p>
             </li>
           </ol>
@@ -179,82 +194,78 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
-    <section class="p-strip--light">
+    <section class="p-strip--light" id="matches">
       <div class="row">
         <div class="col-8">
-          <h2>Exemplo de evento (campos da landing)</h2>
+          <h2>Depois do upload: matches</h2>
           <p>
-            Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido (e onde está a evidência no documento).
+            Com o catálogo carregado, o Dashboard mostra oportunidades alinhadas e requisitos a
+            conferir. Status descrevem carga de revisão (não liberação jurídica).
           </p>
-          <pre class="lf-code">{
-  "event": "opportunity.matched",
-  "product_id": "laptop_16gb_512gb",
-  "item_number": 7,
-  "qualification": "needs_review",
-  "requirements": [
-    { "name": "memory", "status": "matched" },
-    { "name": "on_site_warranty", "status": "unknown" }
-  ],
-  "evidence_page": 12
-}</pre>
-          <p>
-            Vocabulário de status:
-            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
-            Checklist de escopo:
-            <a href="../checklist-oportunidades-governo-no-erp/">oportunidades de governo no ERP</a>.
-          </p>
-          <h2>O que esta página não inventa</h2>
           <ul class="p-list">
-            <li class="p-list__item">Schemas completos, autenticação ou rate limits numéricos</li>
-            <li class="p-list__item">Campos além do exemplo publicado na home</li>
-            <li class="p-list__item">Garantia de habilitação a partir do evento matched</li>
+            <li class="p-list__item is-ticked">matched / conflito / unknown por requisito</li>
+            <li class="p-list__item is-ticked"><code>needs_review</code> quando a oportunidade merece atenção humana</li>
+            <li class="p-list__item is-ticked">Priorização comercial com
+              <a href="../go-no-go-oportunidade-catalogo/">go/no-go</a></li>
           </ul>
-          <p class="lf-legal">
-            Documentação de parceiro mais detalhada virá quando estiver estável.
-            Até lá, trate esta página e a landing como a fonte pública de referência.
+          <p>
+            Como o cruzamento funciona:
+            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light" id="faq" style="padding-top:0">
+    <section class="p-strip" id="monitorar">
+      <div class="row">
+        <div class="col-8">
+          <h2>Monitorar editais</h2>
+          <p>
+            Licitações sob acompanhamento geram alerta quando o edital ou o item muda.
+            A equipe reavalia o matching anterior (sem tratar o resultado antigo como “habilitado”).
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Preço no Dashboard: R$&nbsp;5 por licitação monitorada / mês (além da assinatura de R$&nbsp;399/mês)</li>
+            <li class="p-list__item is-ticked">Sem cobrança por request neste plano</li>
+            <li class="p-list__item is-ticked">Contexto:
+              <a href="../retificacao-edital-impacto-matching/">retificação e impacto no matching</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="faq">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>Quais endpoints a landing descreve?</h3>
+          <h3>Por que o upload da lista importa?</h3>
           <p>
-            <code>POST /v1/catalogs</code>,
-            <code>PUT /v1/catalogs/{id}/products</code>,
-            <code>GET /v1/catalogs/{id}/opportunities</code>,
-            <code>POST /v1/opportunities/{id}/feedback</code>,
-            <code>POST /v1/webhook-endpoints</code>.
+            O matching usa os SKUs que a equipe envia (não uma base genérica). Lista desatualizada
+            gera priorização errada.
           </p>
-          <h3>Quais campos aparecem no exemplo de evento?</h3>
+          <h3>O que o monitoramento de editais faz?</h3>
           <p>
-            <code>event</code> (<code>opportunity.matched</code>),
-            <code>product_id</code>, <code>item_number</code>,
-            <code>qualification</code> (<code>needs_review</code>),
-            <code>requirements</code> com <code>name</code> e <code>status</code>,
-            e <code>evidence_page</code>.
+            Sinaliza quando o edital ou o item muda e pede reavaliação do matching anterior.
+            Não congela habilitação jurídica.
           </p>
-          <h3>Esta página é a documentação completa da API?</h3>
+          <h3>Qual o preço do monitoramento no Dashboard?</h3>
           <p>
-            Não. É visão de produto espelhando o exemplo da landing.
-            Detalhes de autenticação, schemas e limites seguem documentação de parceiro
-            quando estável (sem inventar campos aqui).
+            No plano Dashboard: assinatura R$&nbsp;399/mês + R$&nbsp;5 por licitação monitorada / mês,
+            sem cobrança por request.
           </p>
         </div>
       </div>
     </section>
+
 
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Planejar a integração com o catálogo real</h2>
+          <h2>Manter o catálogo e monitorar editais</h2>
           <p>
-            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../feature-oportunidades-alinhadas-catalogo/">O que mostrar na UI</a>
-            <a class="p-button" href="../checklist-oportunidades-governo-no-erp/">Checklist ERP</a>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração do Dashboard</a>
+            <a class="p-button" href="../para-empresas/">Oferta para empresas</a>
+            <a class="p-button" href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
@@ -268,19 +279,19 @@ POST /v1/webhook-endpoints</pre>
           <h2>Continue lendo</h2>
           <ul class="p-list">
             <li class="p-list__item">
-              <a href="../como-embutir-matching-catalogo-no-erp/">Como embutir matching de catálogo no ERP</a>
-              (Como embutir matching no ERP.)
+              <a href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard de matching de licitações</a>
+              (Rotina completa no Dashboard.)
             </li>
             <li class="p-list__item">
-              <a href="../cobranca-api-requests-e-monitoramento/">Cobrança API: requests e monitoramento</a>
-              (Cobrança: requests e monitoramento.)
+              <a href="../checklist-requisitos-notebooks-monitores/">Checklist de requisitos: notebooks e monitores</a>
+              (Checklist tipica notebooks/monitores.)
             </li>
             <li class="p-list__item">
-              <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades alinhadas ao catálogo</a>
-              (Feature UI no ERP.)
+              <a href="../retificacao-edital-impacto-matching/">Retificação de edital e impacto no matching</a>
+              (Quando o edital muda, reavalie o matching.)
             </li>
           </ul>
-          <p><a href="../index.html#recursos">Ver recursos →</a></p>
+          <p><a href="../guias/">Ver todos os guias →</a></p>
         </div>
       </div>
     </section>

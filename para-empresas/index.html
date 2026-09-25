@@ -54,6 +54,36 @@
             "item": "https://www.licitafit.com.br/para-empresas/"
           }
         ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/para-empresas/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Preciso de um ERP parceiro para usar o Dashboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O Dashboard é plano próprio para equipes que operam licitação direto: upload da lista, matches na tela e alertas, sem depender de um ERP ou AFV parceiro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto custa o LicitaFit Dashboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Assinatura de R$ 399/mês + R$ 5 por licitação monitorada / mês, sem cobrança por request."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O Dashboard libera habilitação jurídica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O LicitaFit é apoio à decisão comercial. Status e needs_review orientam revisão humana; não constituem parecer jurídico nem garantia de habilitação."
+            }
+          }
+        ]
       }
     ]
   }
@@ -113,18 +143,57 @@
       </div>
     </section>
 
-    <section class="p-strip--light" id="produto">
+    <section class="p-strip--light" id="rotina">
       <div class="row">
         <div class="col-8">
-          <h2>O que o Dashboard entrega</h2>
+          <h2>Rotina da equipe de licitação</h2>
           <p>
-            Uso direto do matching LicitaFit pela equipe que opera a
-            licitação no dia a dia. Foco atual em notebooks e monitores.
+            No dia a dia, a equipe precisa saber quais editais merecem atenção com base no
+            que já vende (não só alertas genéricos por palavra-chave ou UF).
+          </p>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Manter a lista de produtos</h3>
+              <p class="p-stepped-list__content">
+                Upload e atualização do mix (foco atual: notebooks e monitores).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Ver matches na tela</h3>
+              <p class="p-stepped-list__content">
+                Oportunidades alinhadas ao catálogo, com requisitos matched, em conflito ou unknown.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Priorizar com revisão humana</h3>
+              <p class="p-stepped-list__content">
+                Use status e <code>needs_review</code> para montar a fila comercial
+                (<a href="../go-no-go-oportunidade-catalogo/">go/no-go com o catálogo</a>).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Reagir a mudanças no edital</h3>
+              <p class="p-stepped-list__content">
+                Monitoramento sinaliza impacto no matching anterior quando o edital ou o item muda.
+              </p>
+            </li>
+          </ol>
+          <p>
+            Fluxo completo:
+            <a href="../como-usar-dashboard-matching-licitacoes/">como usar o Dashboard de matching</a>.
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="p-strip" id="upload">
+      <div class="row">
+        <div class="col-8">
+          <h2>Upload da lista e catálogo</h2>
+        </div>
+      </div>
       <div class="row u-equal-height" style="margin-top:1rem">
-        <div class="col-4">
+        <div class="col-6">
           <div class="p-card">
             <h3 class="p-card__title">Upload da lista de produtos</h3>
             <p class="p-card__content">
@@ -132,7 +201,7 @@
             </p>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <div class="p-card">
             <h3 class="p-card__title">Manipular o catálogo</h3>
             <p class="p-card__content">
@@ -140,50 +209,68 @@
             </p>
           </div>
         </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title">Ver matches na tela</h3>
-            <p class="p-card__content">
-              Oportunidades alinhadas ao catálogo, com requisitos matched, em conflito ou unknown (para priorizar o que merece revisão humana).
-            </p>
-          </div>
-        </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1rem">
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title">Alertas de mudança</h3>
-            <p class="p-card__content">
-              Quando o edital ou o item muda, o dashboard sinaliza o impacto no matching anterior.
-            </p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title">Sem ERP parceiro</h3>
-            <p class="p-card__content">
-              Plano próprio para quem opera licitação direto (diferente da API embutida em software parceiro).
-            </p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title">Apoio à decisão comercial</h3>
-            <p class="p-card__content">
-              Status explícitos e <code>needs_review</code> orientam revisão (não liberação jurídica).
-            </p>
-          </div>
+      <div class="row" style="margin-top:1rem">
+        <div class="col-8">
+          <p>
+            Guia prático:
+            <a href="../upload-catalogo-e-monitorar-editais/">upload de catálogo e monitorar editais</a>.
+            Vertical tipica:
+            <a href="../checklist-requisitos-notebooks-monitores/">checklist notebooks e monitores</a>.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip" id="para-quem">
+    <section class="p-strip--light" id="matches">
+      <div class="row">
+        <div class="col-8">
+          <h2>Matches na tela</h2>
+          <p>
+            Oportunidades alinhadas ao catálogo, com requisitos a conferir, para priorizar o que
+            merece revisão humana.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked"><strong>matched</strong>: requisito alinhado ao que o catálogo descreve</li>
+            <li class="p-list__item is-ticked"><strong>conflito</strong>: divergência aparente (revisar antes de avançar)</li>
+            <li class="p-list__item is-ticked"><strong>unknown</strong>: requisito ilegível ou sem evidência suficiente</li>
+            <li class="p-list__item is-ticked"><code>needs_review</code>: carga de revisão comercial (não liberação jurídica)</li>
+          </ul>
+          <p>
+            Vocabulário:
+            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
+            Como o cruzamento funciona:
+            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="monitoramento">
+      <div class="row">
+        <div class="col-8">
+          <h2>Monitoramento de editais</h2>
+          <p>
+            Quando o edital ou o item muda, o dashboard sinaliza o impacto no matching anterior
+            para a equipe reavaliar (sem congelar “habilitação”).
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Alertas de mudança ligados às licitações que você monitora</li>
+            <li class="p-list__item is-ticked">Revisão comercial do matching após retificação</li>
+            <li class="p-list__item is-ticked">Cobrança por licitação monitorada / mês (ver preço abaixo)</li>
+          </ul>
+          <p>
+            Contexto:
+            <a href="../retificacao-edital-impacto-matching/">retificação de edital e impacto no matching</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="para-quem">
       <div class="row">
         <div class="col-8">
           <h2>Para quem é o Dashboard</h2>
-          <p>
-            Quem opera a licitação no dia a dia (não só vendedores de software):
-          </p>
           <ul class="p-list">
             <li class="p-list__item is-ticked"><strong>Distribuidores</strong> de TI com catálogo de notebooks e monitores</li>
             <li class="p-list__item is-ticked"><strong>Equipes de vendas ao governo</strong> que triam editais com base no que já vendem</li>
@@ -197,7 +284,7 @@
       </div>
     </section>
 
-    <section class="p-strip--light" id="preco">
+    <section class="p-strip" id="preco">
       <div class="row">
         <div class="col-8">
           <h2>Preço</h2>
@@ -221,7 +308,90 @@
       </div>
     </section>
 
-    <section class="p-strip" id="compliance">
+    <section class="p-strip--light" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>Preciso de um ERP parceiro para usar o Dashboard?</h3>
+          <p>
+            Não. O Dashboard é plano próprio para equipes que operam licitação direto: upload da
+            lista, matches na tela e alertas, sem depender de um ERP ou AFV parceiro.
+          </p>
+          <h3>Quanto custa o LicitaFit Dashboard?</h3>
+          <p>
+            Assinatura de R$&nbsp;399/mês + R$&nbsp;5 por licitação monitorada / mês, sem cobrança por request.
+          </p>
+          <h3>O Dashboard libera habilitação jurídica?</h3>
+          <p>
+            Não. O LicitaFit é apoio à decisão comercial. Status e <code>needs_review</code>
+            orientam revisão humana; não constituem parecer jurídico nem garantia de habilitação.
+          </p>
+          <h3>Alerta genérico de edital já basta?</h3>
+          <p>
+            Aviso por palavra-chave ou UF não prioriza com o catálogo real. Ver
+            <a href="../alerta-edital-vs-matching-catalogo/">alerta vs matching de catálogo</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="recursos-empresa">
+      <div class="row">
+        <div class="col-8">
+          <h2>Guias para equipes de licitação</h2>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard</a></h3>
+            <p class="p-card__content">Rotina: lista, matches, priorização e alertas.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../upload-catalogo-e-monitorar-editais/">Upload e monitoramento</a></h3>
+            <p class="p-card__content">Manter o catálogo e acompanhar mudanças no edital.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../go-no-go-oportunidade-catalogo/">Go/no-go com o catálogo</a></h3>
+            <p class="p-card__content">Matriz comercial para priorizar ou arquivar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../matching-catalogo-edital/">Matching catálogo ↔ item</a></h3>
+            <p class="p-card__content">Como o cruzamento evita falsa elegibilidade.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../checklist-requisitos-notebooks-monitores/">Checklist notebooks/monitores</a></h3>
+            <p class="p-card__content">Conferência tipica na vertical de foco.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../limites-matching-licitafit/">Limites do matching</a></h3>
+            <p class="p-card__content">Apoio comercial (não parecer jurídico).</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1.5rem">
+        <div class="col-12">
+          <p>
+            <a href="../guias/#empresas">Guias para equipes de licitação</a> ·
+            <a href="../guias/">Todos os guias</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="compliance">
       <div class="row">
         <div class="col-8">
           <h2>Compliance e limites</h2>
@@ -232,16 +402,6 @@
               <strong>não constituem parecer jurídico nem garantia de habilitação</strong>.
             </p>
           </div>
-          <p>
-            Leia os
-            <a href="../limites-matching-licitafit/">limites do matching</a>
-            e o guia de
-            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
-            Também útil:
-            <a href="../needs-review-matched-conflito-unknown/">status e needs_review</a>
-            e
-            <a href="../go-no-go-oportunidade-catalogo/">go/no-go com o catálogo</a>.
-          </p>
         </div>
       </div>
     </section>
@@ -256,6 +416,7 @@
           </p>
           <p>
             <a class="p-button--positive" href="../index.html#empresa">Agendar demonstração</a>
+            <a class="p-button" href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
