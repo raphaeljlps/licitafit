@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alerta de edital vs matching de catálogo | LicitaFit</title>
+  <meta name="description" content="Diferença entre alerta genérico de edital (palavra-chave, CNAE, UF) e matching de catálogo ↔ item com status de requisitos. Apoio à decisão comercial — sem habilitação jurídica." />
+  <!-- Canonical host TBD (licitafit.com.br/.com). Temporary preview base used for canonical + JSON-LD + sitemap. -->
+  <link rel="canonical" href="https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-compare td { vertical-align: top; }
+    .lf-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      margin-bottom: 0.35rem;
+    }
+    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
+    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#webpage",
+        "url": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/",
+        "name": "Alerta de edital vs matching de catálogo | LicitaFit",
+        "description": "Diferença entre alerta genérico de edital (palavra-chave, CNAE, UF) e matching de catálogo ↔ item com status de requisitos.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://dapper-opera-mz8m.here.now/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Matching de catálogo em licitações públicas"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que é um alerta genérico de edital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É um aviso baseado em filtros amplos — por exemplo palavra-chave, CNAE ou UF — que indica que pode existir uma oportunidade pública. Em geral não cruza o aviso com os produtos do catálogo do distribuidor nem devolve status de requisitos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O matching de catálogo substitui o alerta por palavra-chave?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não necessariamente. Alertas amplos ainda ajudam no monitoramento inicial. O matching entra quando a equipe precisa priorizar editais com base em SKUs reais e requisitos a conferir, tipicamente embutido no ERP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O matching afirma que o produto está habilitado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O LicitaFit é apoio à decisão comercial. Resultados usam status como matched, conflito ou unknown, e qualificações como needs_review. Não constituem parecer jurídico nem garantia de habilitação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quando o alerta genérico basta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quando o objetivo é só saber que algo foi publicado em um tema ou região, ou quando ainda não há catálogo do cliente disponível no software. Para decidir quais editais merecem atenção com produtos reais, o matching de catálogo é o passo seguinte."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://dapper-opera-mz8m.here.now/alerta-edital-vs-matching-catalogo/#howto",
+        "name": "Como passar do alerta genérico ao matching de catálogo",
+        "description": "Passos conceituais para o parceiro de software e a equipe comercial do distribuidor.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Manter o catálogo do cliente no ERP",
+            "text": "O parceiro envia ou atualiza o catálogo do distribuidor (por exemplo notebooks e monitores) via API ou upload."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Receber oportunidades ligadas a produtos",
+            "text": "Em vez de só uma lista de avisos, a equipe vê oportunidades com itens que batem potencialmente com produtos do catálogo."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Revisar requisitos com status explícito",
+            "text": "Conferir matched, conflito ou unknown — e a evidência no documento — antes de decidir seguir com a oportunidade."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Reavaliar quando o edital muda",
+            "text": "Se o edital, o item ou o documento for atualizado, o impacto no matching anterior precisa ser revisado pela equipe."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#como-funciona">Como funciona</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#para-quem">Para quem</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="./">Guias</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#preco">Preço</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <span>Guias</span>
+            <span class="lf-muted"> / </span>
+            <span>Alerta vs matching</span>
+          </p>
+          <p class="p-muted-heading">Guia LicitaFit</p>
+          <h1>Alerta genérico de edital vs matching de catálogo</h1>
+          <p class="p-heading--4">
+            Alertas por palavra-chave, CNAE ou UF avisam que <em>pode</em> haver uma oportunidade.
+            Matching de catálogo liga <strong>itens do edital a produtos reais</strong>, com status
+            explícito de requisitos (matched, conflito ou unknown) e revisão humana —
+            sem afirmar habilitação jurídica.
+          </p>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../index.html#produto">Conhecer o produto</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="comparacao">
+      <div class="row">
+        <div class="col-12">
+          <h2>Do aviso genérico ao matching com o catálogo</h2>
+          <p class="lf-muted">
+            O mesmo tipo de contraste que a equipe vê na demonstração do LicitaFit:
+            ruído amplo versus oportunidades ligadas a SKUs e requisitos a conferir.
+          </p>
+          <table class="p-table lf-compare" aria-label="Alerta genérico versus matching de catálogo">
+            <thead>
+              <tr>
+                <th style="width:45%">Aviso genérico (palavra-chave / CNAE / UF)</th>
+                <th>Com matching de catálogo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="lf-status">Aviso</span><br />
+                  “Um órgão público está comprando computadores.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--ok">No catálogo</span><br />
+                  “Itens 4 e 7 batem potencialmente com estes três produtos do catálogo.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Documento</span><br />
+                  “Aqui está o edital.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--warn">Requisitos</span><br />
+                  “Memória e armazenamento batem; garantia on-site ainda não verificada.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Lista</span><br />
+                  “Há 80 novas oportunidades.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--ok">Prioridade</span><br />
+                  “Estas seis merecem revisão — com motivos e documentos de apoio.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Mudança</span><br />
+                  “Este edital foi atualizado.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--warn">Impacto</span><br />
+                  “A exigência de entrega mudou. Reavalie o matching anterior.”
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="quando-basta">
+      <div class="row u-equal-height">
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">Quando o alerta genérico basta</h2>
+            <p class="p-card__content">
+              Filtros por palavra-chave, CNAE ou UF são úteis para
+              <strong>monitoramento amplo</strong> e triagem inicial: saber que algo foi publicado
+              em um tema ou região. Também fazem sentido quando o software ainda não mantém o
+              catálogo do cliente disponível para cruzamento.
+            </p>
+            <p class="p-card__content lf-muted">
+              O PNCP e portais públicos concentram publicações; um alerta genérico não substitui,
+              por si só, a decisão de quais editais merecem atenção com os produtos que o
+              distribuidor já vende.
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">Quando o matching de catálogo entra</h2>
+            <p class="p-card__content">
+              O matching ajuda quando o ERP precisa mostrar
+              <strong>oportunidades alinhadas ao catálogo</strong>: itens do edital cruzados com
+              produtos reais, requisitos com status explícito e um conjunto curto para a equipe
+              comercial revisar — por exemplo em notebooks e monitores.
+            </p>
+            <p class="p-card__content lf-muted">
+              É o passo entre “há um aviso” e “estes SKUs merecem conferência”, com evidência no
+              documento quando disponível.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="limites">
+      <div class="row">
+        <div class="col-8">
+          <h2>O que o matching não afirma</h2>
+          <p>
+            O LicitaFit é <strong>apoio à decisão comercial</strong>. O resultado típico deixa
+            explícito o que bateu, o que conflita e o que ainda é desconhecido — por exemplo com
+            qualificação <code>needs_review</code> e requisitos em matched, conflito ou unknown.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Não constitui parecer jurídico</li>
+            <li class="p-list__item is-ticked">Não é garantia de habilitação em licitação</li>
+            <li class="p-list__item is-ticked">Informação faltando ou ilegível permanece em aberto para revisão humana</li>
+            <li class="p-list__item is-ticked">Mudanças no edital pedem reavaliação do matching anterior</li>
+          </ul>
+          <p class="lf-legal">
+            Evite comunicar na UI do ERP que um produto está “aprovado” ou “habilitado” só porque
+            houve match potencial. Use o vocabulário de status e peça revisão da equipe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="como-passar">
+      <div class="row">
+        <div class="col-8">
+          <h2>Como passar do alerta ao matching (visão de produto)</h2>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Manter o catálogo do cliente no ERP</h3>
+              <p class="p-stepped-list__content">
+                O parceiro envia ou atualiza o catálogo do distribuidor via API ou upload —
+                começando pelas categorias com especificação modelável, como notebooks e monitores.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Receber oportunidades ligadas a produtos</h3>
+              <p class="p-stepped-list__content">
+                Em vez de só uma lista de avisos, a equipe vê oportunidades com itens que batem
+                potencialmente com produtos do catálogo e motivos claros para revisar.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Conferir requisitos com status explícito</h3>
+              <p class="p-stepped-list__content">
+                Matched, conflito ou unknown — e referência ao documento quando houver evidência.
+                O que não puder ser lido ou confirmado fica em aberto.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Reavaliar quando o edital muda</h3>
+              <p class="p-stepped-list__content">
+                Se o edital, o item ou o documento for atualizado, o impacto no matching anterior
+                precisa ser revisado antes de seguir.
+              </p>
+            </li>
+          </ol>
+          <p>
+            Detalhes de ingestão PNCP, matching e API de parceiro estão na
+            <a href="../index.html#como-funciona">seção Como funciona</a> da página inicial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>O que é um alerta genérico de edital?</h3>
+          <p>
+            É um aviso baseado em filtros amplos — por exemplo palavra-chave, CNAE ou UF — que
+            indica que pode existir uma oportunidade pública. Em geral não cruza o aviso com os
+            produtos do catálogo do distribuidor nem devolve status de requisitos.
+          </p>
+          <h3>O matching de catálogo substitui o alerta por palavra-chave?</h3>
+          <p>
+            Não necessariamente. Alertas amplos ainda ajudam no monitoramento inicial. O matching
+            entra quando a equipe precisa priorizar editais com base em SKUs reais e requisitos a
+            conferir, tipicamente embutido no ERP.
+          </p>
+          <h3>O matching afirma que o produto está habilitado?</h3>
+          <p>
+            Não. O LicitaFit é apoio à decisão comercial. Resultados usam status como matched,
+            conflito ou unknown, e qualificações como <code>needs_review</code>. Não constituem
+            parecer jurídico nem garantia de habilitação.
+          </p>
+          <h3>Quando o alerta genérico basta?</h3>
+          <p>
+            Quando o objetivo é só saber que algo foi publicado em um tema ou região, ou quando
+            ainda não há catálogo do cliente disponível no software. Para decidir quais editais
+            merecem atenção com produtos reais, o matching de catálogo é o passo seguinte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Ver o matching com o catálogo de um cliente</h2>
+          <p>
+            Agende uma demonstração com a Launchbase e veja o LicitaFit no fluxo do ERP —
+            oportunidades, requisitos a conferir e alertas quando o edital muda.
+          </p>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../index.html#como-funciona">Como funciona</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+        </p>
+        <p>
+          <a href="../index.html">Início</a>
+          ·
+          <a href="./">Este guia</a>
+          ·
+          <a href="../index.html#demonstracao">Demonstração</a>
+        </p>
+      </div>
+      <div class="col-6">
+        <p class="lf-legal">
+          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77<br />
+          Fale conosco pela área Empresa na
+          <a href="../index.html#empresa">página inicial</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
