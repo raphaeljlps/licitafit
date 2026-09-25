@@ -84,9 +84,9 @@ PAGES = {
         "hub": "guias",
         "blurb": "Portal Nacional de Contratações Públicas: divulgação centralizada de compras.",
         "related": [
+            ("fontes-oficiais-pncp", "Fontes oficiais e autenticidade."),
             ("pncp-feed-vs-matching-catalogo", "Feed PNCP vs matching de catálogo."),
-            ("pncp-vs-portais-de-disputa", "PNCP vs portais onde a disputa ocorre."),
-            ("alerta-edital-vs-matching-catalogo", "Alerta genérico vs matching."),
+            ("lei-14133-contexto-operadores", "Lei 14.133 para operadores."),
         ],
     },
     "go-no-go-oportunidade-catalogo": {
@@ -255,6 +255,64 @@ PAGES = {
             ("como-saber-se-produto-atende-edital", "Produto atende o edital?"),
         ],
     },
+
+
+    "fontes-oficiais-pncp": {
+        "title": "Fontes oficiais e autenticidade (PNCP)",
+        "short": "Fontes oficiais PNCP",
+        "hub": "guias",
+        "blurb": "Dados públicos usados pelo LicitaFit e links oficiais (não é parecer jurídico).",
+        "related": [
+            ("uso-responsavel-matching", "O que o matching faz e não faz."),
+            ("o-que-e-pncp", "Definição oficial do PNCP."),
+            ("lei-14133-contexto-operadores", "Contexto da Lei 14.133 para operadores."),
+        ],
+    },
+    "como-funcionam-licitacoes-publicas": {
+        "title": "Como funcionam as licitações públicas",
+        "short": "Como funcionam licitações",
+        "hub": "guias",
+        "blurb": "Ciclo básico, papel do PNCP e onde entra o matching comercial.",
+        "related": [
+            ("fontes-oficiais-pncp", "Fontes oficiais e autenticidade."),
+            ("lei-14133-contexto-operadores", "Lei 14.133: transparência e digital."),
+            ("uso-responsavel-matching", "Uso responsável do matching."),
+        ],
+    },
+    "lei-14133-contexto-operadores": {
+        "title": "Lei 14.133/2021 para operadores",
+        "short": "Lei 14.133 para operadores",
+        "hub": "guias",
+        "blurb": "Resumo educacional: transparência e divulgação digital (com link Planalto).",
+        "related": [
+            ("fontes-oficiais-pncp", "Links oficiais verificados."),
+            ("como-funcionam-licitacoes-publicas", "Ciclo básico de licitações."),
+            ("integracao-pncp-sistemas-licitacao", "PNCP vs matching no ERP."),
+        ],
+    },
+    "integracao-pncp-sistemas-licitacao": {
+        "title": "Integração PNCP e sistemas de licitação",
+        "short": "Integração PNCP e sistemas",
+        "hub": "guias",
+        "blurb": "API/dados públicos do PNCP versus matching no ERP ou Dashboard.",
+        "related": [
+            ("pncp-api-oficial-vs-matching-comercial", "Contraste PNCP oficial vs matching."),
+            ("integracao-api-licitafit", "API LicitaFit (visão de produto)."),
+            ("fontes-oficiais-pncp", "Fontes oficiais."),
+        ],
+    },
+    "uso-responsavel-matching": {
+        "title": "Uso responsável do matching",
+        "short": "Uso responsável",
+        "hub": "guias",
+        "blurb": "Matching comercial versus julgamento e habilitação; responsabilidade do operador.",
+        "related": [
+            ("limites-matching-licitafit", "Limites do matching."),
+            ("fontes-oficiais-pncp", "Fontes oficiais PNCP."),
+            ("needs-review-matched-conflito-unknown", "Status e needs_review."),
+        ],
+    },
+
 
 }
 
