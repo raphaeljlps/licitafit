@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LicitaFit — Qualifique licitações com o catálogo do seu cliente</title>
-  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para ERP e software comercial / AFV que relaciona o catálogo do distribuidor de TI a oportunidades públicas, com requisitos a conferir e alertas de mudança." />
+  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para parceiros de software (ERP/AFV) e LicitaFit Dashboard (em preparação) para equipes que operam licitação — matching de catálogo a oportunidades públicas, com requisitos a conferir e alertas." />
   <!-- SITE_ORIGIN: see js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
   <link rel="canonical" href="https://www.licitafit.com.br/" />
   <link rel="stylesheet" href="css/vanilla.css" />
@@ -19,7 +19,7 @@
         "@id": "https://www.licitafit.com.br/#webpage",
         "url": "https://www.licitafit.com.br/",
         "name": "LicitaFit — Qualifique licitações com o catálogo do seu cliente",
-        "description": "API para ERP e software comercial que relaciona o catálogo do distribuidor de TI a oportunidades públicas.",
+        "description": "API para parceiros de software e LicitaFit Dashboard (em preparação) para equipes que operam licitação — matching de catálogo a oportunidades públicas.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -36,7 +36,7 @@
             "name": "O que o LicitaFit faz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "É uma API para ERP e software comercial: o parceiro envia o catálogo do distribuidor de TI e recebe oportunidades públicas relevantes, produtos que batem potencialmente, requisitos a conferir e alertas quando o edital muda."
+              "text": "Duas ofertas: (1) API para parceiros de software (ERP, comercial/AFV) embutirem matching de catálogo no produto deles; (2) LicitaFit Dashboard (em preparação) para equipes que operam licitação — upload de catálogo, revisão de matches e alertas, sem depender de um ERP parceiro. Em ambos os casos: oportunidades relevantes, requisitos a conferir e alertas quando o edital muda."
             }
           },
           {
@@ -52,7 +52,15 @@
             "name": "Para quem é o produto?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Para founders e product leads de ERP de distribuição/atacado, software comercial e AFV, sistemas verticais de informática/eletrônicos e produtos de compras públicas já no stack — que atendem distribuidores de TI em compras públicas. O usuário final típico é a equipe comercial ou de vendas ao governo que decide quais editais merecem atenção."
+              "text": "Duas frentes. Parceiros de software (B2B2B): founders e product leads de ERP, comercial/AFV e verticais de TI. Equipes que trabalham com licitação (B2B): distribuidores, vendas ao governo e empresas que respondem editais e querem o dashboard direto. Em ambos os casos o foco atual é notebooks e monitores."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre a API parceiro e o LicitaFit Dashboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A API é o plano para parceiros de software (R$ 1.500/mês) que embutem o matching no ERP ou AFV do cliente. O LicitaFit Dashboard é um plano próprio, em preparação, para equipes que operam licitação usarem upload de catálogo e resultados diretamente — preço diferente da API, sob consulta."
             }
           },
           {
@@ -145,11 +153,13 @@
           <p class="p-muted-heading">Um produto Launchbase Tecnologia</p>
           <h1>Qualifique licitações com o catálogo do seu cliente</h1>
           <p class="p-heading--4">
-            API para ERP e software comercial. Envie o catálogo do distribuidor de TI e receba
-            oportunidades relevantes, produtos que batem, requisitos a conferir e alertas quando o edital muda.
+            Matching de catálogo a oportunidades públicas: <strong>API para parceiros de software</strong>
+            (já disponível para integração) e <strong>LicitaFit Dashboard</strong> em preparação
+            para equipes que operam licitação. Requisitos a conferir e alertas quando o edital muda.
           </p>
           <p>
             <a class="p-button--positive" href="#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="#para-quem">Para quem é</a>
             <a class="p-button" href="#produto">Conhecer o produto</a>
           </p>
           <ul class="p-inline-list--middot u-no-margin--bottom">
@@ -333,17 +343,28 @@ POST /v1/webhook-endpoints</pre>
         <div class="col-8">
           <h2>Para quem é o LicitaFit</h2>
           <p>
-            Vendemos para <strong>fundadores e product leads</strong> de software parceiro —
-            ERP, comercial/AFV e verticais de distribuição de TI — cujos clientes atuam em compras públicas.
-            O <strong>usuário final</strong> é a equipe comercial ou de vendas ao governo do distribuidor,
-            que decide quais editais merecem atenção.
+            Duas frentes comerciais claras: <strong>parceiros de software</strong> (B2B2B), que
+            embutem a API no produto deles, e <strong>equipes que trabalham com licitação</strong>
+            (B2B), que terão o LicitaFit Dashboard para operar o matching diretamente.
           </p>
         </div>
         <div class="col-4 lf-media u-vertically-center">
           <img src="images/meeting.jpg" width="1600" height="1067" alt="Reunião comercial entre equipes de software" />
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
+
+      <div class="row" style="margin-top:1.5rem">
+        <div class="col-12">
+          <h3>Parceiros de software (B2B2B)</h3>
+          <p>
+            Para <strong>fundadores e product leads</strong> de ERP, comercial/AFV e verticais de
+            distribuição de TI cujos clientes atuam em compras públicas. A API fica embutida no
+            software do parceiro; o <strong>usuário final</strong> continua sendo a equipe comercial
+            ou de vendas ao governo do distribuidor.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height">
         <div class="col-3">
           <div class="p-card--highlighted">
             <h3 class="p-card__title">ERP de distribuição / atacado</h3>
@@ -379,6 +400,55 @@ POST /v1/webhook-endpoints</pre>
               sem substituir portais de disputa ou módulos de gestão de licitação já existentes.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:2.5rem">
+        <div class="col-12">
+          <h3>Equipes que trabalham com licitação (B2B)</h3>
+          <p>
+            Para <strong>distribuidores</strong>, <strong>equipes de vendas ao governo</strong> e
+            <strong>empresas que respondem editais</strong> — quem opera a licitação no dia a dia,
+            não só vendedores de software. Teremos o <strong>LicitaFit Dashboard</strong>
+            (oferta em preparação): uso direto, sem depender de um ERP parceiro.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height">
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Upload e gestão de catálogo</h3>
+            <p class="p-card__content">
+              Envie a lista de produtos, revise e atualize o catálogo no dashboard —
+              o matching usa os SKUs que a equipe já vende.
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Resultados de matching na tela</h3>
+            <p class="p-card__content">
+              Veja oportunidades alinhadas ao catálogo, com requisitos matched, em conflito
+              ou unknown — para a equipe priorizar o que merece revisão.
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Alertas de mudança</h3>
+            <p class="p-card__content">
+              Quando o edital ou o item muda, o dashboard sinaliza o impacto no matching
+              anterior — apoio à decisão comercial, não parecer jurídico.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1.5rem">
+        <div class="col-12">
+          <p>
+            <a class="p-button--positive" href="#demonstracao">Falar sobre API ou Dashboard</a>
+            <a class="p-button" href="#preco">Ver planos</a>
+          </p>
         </div>
       </div>
     </section>
@@ -541,15 +611,47 @@ POST /v1/webhook-endpoints</pre>
 
 <section class="p-strip" id="preco">
       <div class="row">
+        <div class="col-12">
+          <h2>Planos</h2>
+          <p class="p-heading--5 lf-muted">
+            Duas ofertas com pricing próprio: API para parceiros de software e LicitaFit Dashboard
+            para equipes que operam licitação.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-6">
-          <h2>Planos para parceiros de software</h2>
-          <p class="p-heading--2">R$&nbsp;1.500 <span class="p-heading--4" style="font-weight:400">/mês</span></p>
-          <p>Por parceiro de software, com cota definida de catálogos de fornecedores ativos.</p>
-          <ul class="p-list">
-            <li class="p-list__item is-ticked">Manter o catálogo matched contra oportunidades que mudam</li>
-            <li class="p-list__item is-ticked">Cobrança alinhada ao valor contínuo do serviço, não ao número de requests</li>
-            <li class="p-list__item is-ticked">Documentos processados com reuso entre matches; catálogo e feedback isolados por cliente</li>
-          </ul>
+          <div class="p-card--highlighted">
+            <p class="p-muted-heading">API · Parceiros de software (B2B2B)</p>
+            <h3 class="p-card__title">Plano API parceiro</h3>
+            <p class="p-heading--2">R$&nbsp;1.500 <span class="p-heading--4" style="font-weight:400">/mês</span></p>
+            <p>Por parceiro de software, com cota definida de catálogos de fornecedores ativos.</p>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Matching embutido no ERP / AFV do parceiro</li>
+              <li class="p-list__item is-ticked">Manter o catálogo matched contra oportunidades que mudam</li>
+              <li class="p-list__item is-ticked">Cobrança alinhada ao valor contínuo do serviço, não ao número de requests</li>
+              <li class="p-list__item is-ticked">Documentos com reuso entre matches; catálogo e feedback isolados por cliente</li>
+            </ul>
+            <p><a class="p-button--positive" href="#demonstracao">Solicitar demo da API</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card--highlighted">
+            <p class="p-muted-heading">Dashboard · Equipes de licitação (B2B)</p>
+            <h3 class="p-card__title">LicitaFit Dashboard</h3>
+            <p class="p-heading--2">Preço sob consulta</p>
+            <p>
+              Plano próprio, <strong>diferente da API para parceiros</strong>. Oferta em preparação
+              para distribuidores e equipes que respondem editais usarem o matching diretamente.
+            </p>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Upload e manipulação da lista de produtos no dashboard</li>
+              <li class="p-list__item is-ticked">Resultados de matching e requisitos a conferir na tela</li>
+              <li class="p-list__item is-ticked">Alertas quando o edital ou o item muda</li>
+              <li class="p-list__item is-ticked">Sem depender de um ERP ou AFV parceiro</li>
+            </ul>
+            <p><a class="p-button" href="#demonstracao">Falar com vendas sobre o Dashboard</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -559,8 +661,9 @@ POST /v1/webhook-endpoints</pre>
         <div class="col-8">
           <h2>Fale com a equipe comercial</h2>
           <p>
-            Agende uma demonstração com a Launchbase e veja o LicitaFit com o catálogo de um cliente real —
-            incluindo integração no ERP e critérios de acompanhamento.
+            Agende uma conversa com a Launchbase — seja para integrar a <strong>API no software parceiro</strong>
+            ou para acompanhar o <strong>LicitaFit Dashboard</strong> (em preparação) para a equipe que opera
+            licitação. Em ambos os casos, trabalhamos com o catálogo real e critérios de acompanhamento.
           </p>
           <p>
             <a class="p-button--positive" href="#empresa">Agendar demonstração</a>
@@ -579,9 +682,11 @@ POST /v1/webhook-endpoints</pre>
           <h2>Perguntas frequentes</h2>
           <h3>O que o LicitaFit faz?</h3>
           <p>
-            É uma API para ERP e software comercial: o parceiro envia o catálogo do distribuidor de TI
-            e recebe oportunidades públicas relevantes, produtos que batem potencialmente, requisitos
-            a conferir e alertas quando o edital muda.
+            Duas ofertas: (1) <strong>API para parceiros de software</strong> (ERP, comercial/AFV)
+            embutirem matching de catálogo no produto deles; (2) <strong>LicitaFit Dashboard</strong>
+            (em preparação) para equipes que operam licitação — upload de catálogo, revisão de matches
+            e alertas, sem depender de um ERP parceiro. Em ambos os casos: oportunidades relevantes,
+            requisitos a conferir e alertas quando o edital muda.
           </p>
           <h3>O matching substitui parecer jurídico ou garantia de habilitação?</h3>
           <p>
@@ -594,11 +699,20 @@ POST /v1/webhook-endpoints</pre>
           </p>
           <h3>Para quem é o produto?</h3>
           <p>
-            Para founders e product leads de <strong>ERP de distribuição/atacado</strong>,
-            <strong>software comercial e AFV</strong>, <strong>sistemas verticais de informática/eletrônicos</strong>
-            e <strong>produtos de compras públicas já no stack</strong> — que atendem distribuidores de TI
-            em compras públicas. O usuário final típico é a equipe comercial ou de vendas ao governo
-            que decide quais editais merecem atenção.
+            <strong>Parceiros de software (B2B2B):</strong> founders e product leads de
+            ERP de distribuição/atacado, software comercial e AFV, sistemas verticais de
+            informática/eletrônicos e produtos de compras públicas já no stack.
+            <strong>Equipes que trabalham com licitação (B2B):</strong> distribuidores,
+            vendas ao governo e empresas que respondem editais e querem o dashboard direto.
+          </p>
+          <h3>Qual a diferença entre a API parceiro e o LicitaFit Dashboard?</h3>
+          <p>
+            A <strong>API</strong> é o plano para parceiros de software
+            (<strong>R$&nbsp;1.500/mês</strong>) que embutem o matching no ERP ou AFV do cliente.
+            O <strong>LicitaFit Dashboard</strong> é um plano próprio, em preparação, para equipes
+            que operam licitação usarem upload de catálogo e resultados diretamente —
+            <strong>preço diferente da API, sob consulta</strong>.
+            <a href="#preco">Ver planos</a> · <a href="#demonstracao">Falar com vendas</a>.
           </p>
           <h3>Quais categorias o foco atual cobre?</h3>
           <p>
@@ -638,7 +752,7 @@ POST /v1/webhook-endpoints</pre>
       <div class="col-3">
         <p>
           <strong>LicitaFit</strong><br />
-          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+          Qualificação de licitações consciente de catálogo — API para parceiros e Dashboard para equipes de licitação.
         </p>
       </div>
       <div class="col-3">
