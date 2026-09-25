@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matching catálogo ↔ item sem falsa elegibilidade | LicitaFit</title>
+  <meta name="description" content="Como o matching LicitaFit cruza catálogo do distribuidor com itens do edital: status matched, conflito e unknown para revisão comercial — sem afirmar habilitação." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/matching-catalogo-edital/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      margin-bottom: 0.35rem;
+    }
+    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
+    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
+    .lf-status--conflict { border-color: #c7162b; color: #c7162b; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-do-dont td { vertical-align: top; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/matching-catalogo-edital/#webpage",
+        "url": "https://www.licitafit.com.br/matching-catalogo-edital/",
+        "name": "Matching catálogo ↔ item sem falsa elegibilidade | LicitaFit",
+        "description": "Como o matching cruza catálogo com itens do edital para revisão comercial — sem falsa elegibilidade nem garantia de habilitação.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Matching de catálogo em licitações públicas"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://www.licitafit.com.br/matching-catalogo-edital/#howto",
+        "name": "Como usar o matching de catálogo no fluxo comercial",
+        "description": "Passos para priorizar editais com matching de catálogo sem afirmar habilitação.",
+        "inLanguage": "pt-BR",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Manter o catálogo atualizado",
+            "text": "O parceiro envia ou atualiza o catálogo do distribuidor (foco atual: notebooks e monitores) via API."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Receber oportunidades alinhadas",
+            "text": "O LicitaFit devolve oportunidades públicas com produtos que batem potencialmente e requisitos a conferir."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Revisar status e evidência",
+            "text": "A equipe comercial lê matched, conflito e unknown; usa evidence_page quando houver; não trata needs_review como aprovação."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Decidir e reavaliar",
+            "text": "Go/no-go comercial fica com a equipe. Se o edital ou o documento mudar, reavalie o matching anterior."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/matching-catalogo-edital/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O matching afirma que o produto está habilitado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O matching organiza revisão comercial com status e needs_review. Não constitui parecer jurídico nem garantia de habilitação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais categorias o matching cobre hoje?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O foco declarado na landing é notebooks e monitores — categorias com especificação técnica modelável para matching e revisão humana."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que acontece quando um requisito fica unknown?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unknown indica informação faltando ou ilegível. A equipe abre o documento, usa evidence_page se houver, e decide com revisão humana — sem chute de elegibilidade."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Matching de catálogo substitui alerta por palavra-chave?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não necessariamente. Alertas amplos ajudam no monitoramento inicial. O matching entra quando a equipe precisa priorizar com base em SKUs reais e requisitos a conferir."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#como-funciona">Como funciona</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#para-quem">Para quem</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../guias/">Guias</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../comparativos/">Comparativos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#preco">Preço</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Matching catálogo ↔ item</span>
+          </p>
+          <p class="p-muted-heading">Guia LicitaFit</p>
+          <h1>Matching catálogo ↔ item — sem falsa elegibilidade</h1>
+          <p class="p-heading--4">
+            O matching cruza <strong>itens do edital</strong> com <strong>produtos do catálogo</strong> que o
+            distribuidor já mantém e devolve requisitos com status
+            (<span class="lf-status lf-status--ok">matched</span>,
+            <span class="lf-status lf-status--conflict">conflito</span>,
+            <span class="lf-status lf-status--warn">unknown</span>)
+            e, quando couber, <code>needs_review</code>. Serve para
+            <strong>priorizar revisão comercial</strong>. Não é parecer jurídico nem garantia de
+            habilitação — e a UI do ERP não deve rotular o resultado como “habilitado” ou “aprovado”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="faz">
+      <div class="row u-equal-height">
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">O que o matching faz</h2>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Recebe o catálogo do distribuidor via o parceiro de software</li>
+              <li class="p-list__item is-ticked">Cruza itens de oportunidades públicas com SKUs reais</li>
+              <li class="p-list__item is-ticked">Devolve produtos potenciais e requisitos a conferir</li>
+              <li class="p-list__item is-ticked">Marca carga de revisão com status e <code>needs_review</code></li>
+              <li class="p-list__item is-ticked">Apoia alertas quando edital ou documento muda (reavaliar)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card">
+            <h2 class="p-card__title">O que o matching não faz</h2>
+            <ul class="p-list">
+              <li class="p-list__item">Não emite parecer jurídico</li>
+              <li class="p-list__item">Não garante habilitação documental ou técnica</li>
+              <li class="p-list__item">Não preenche <span class="lf-status lf-status--warn">unknown</span> com chute de elegibilidade</li>
+              <li class="p-list__item">Não decide margem, caixa ou capacidade de entrega</li>
+              <li class="p-list__item">Não substitui leitura do edital / anexos pela equipe</li>
+            </ul>
+            <p class="p-card__content">
+              Detalhe em
+              <a href="../limites-matching-licitafit/">limites do matching</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="como">
+      <div class="row">
+        <div class="col-8">
+          <h2>Como usar no fluxo comercial (quatro passos)</h2>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Manter o catálogo atualizado</h3>
+              <p class="p-stepped-list__content">
+                O parceiro envia ou atualiza o catálogo do cliente. O foco atual declarado é
+                <strong>notebooks e monitores</strong> — categorias com especificação técnica
+                modelável para matching e revisão humana.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Receber oportunidades alinhadas</h3>
+              <p class="p-stepped-list__content">
+                Em vez de só um aviso por palavra-chave, a equipe vê oportunidades com produtos
+                que <em>batem potencialmente</em> e a lista de requisitos a conferir.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Revisar status e evidência</h3>
+              <p class="p-stepped-list__content">
+                <span class="lf-status lf-status--ok">matched</span> = aderência aparente;
+                <span class="lf-status lf-status--conflict">conflito</span> = divergência a avaliar;
+                <span class="lf-status lf-status--warn">unknown</span> = informação faltando ou ilegível.
+                <code>needs_review</code> marca potencial match ainda não conferido.
+                Veja o
+                <a href="../needs-review-matched-conflito-unknown/">vocabulário de status</a>.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Decidir comercialmente — e reavaliar se mudar</h3>
+              <p class="p-stepped-list__content">
+                Go/no-go (participar, priorizar, arquivar) é da equipe. Se o edital, o item ou o
+                documento mudar, o matching anterior precisa ser reavaliado — não “congelar”
+                uma decisão com base em versão antiga.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="ui">
+      <div class="row">
+        <div class="col-8">
+          <h2>Na UI do ERP: o que comunicar</h2>
+          <table class="p-table lf-do-dont">
+            <thead>
+              <tr>
+                <th>Preferir</th>
+                <th>Evitar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>“Potencial match — requisitos a conferir”</td>
+                <td>“Produto habilitado” / “aprovado”</td>
+              </tr>
+              <tr>
+                <td>Mostrar matched / conflito / unknown de forma explícita</td>
+                <td>Esconder unknown ou tratá-lo como ok automático</td>
+              </tr>
+              <tr>
+                <td>“Ver evidência no documento” (<code>evidence_page</code>)</td>
+                <td>“Conformidade jurídica confirmada”</td>
+              </tr>
+              <tr>
+                <td>“Reavaliar após mudança no edital”</td>
+                <td>“Match definitivo” após retificação</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="lf-legal">
+            Go/no-go comercial ≠ análise jurídica. Mais em
+            <a href="../limites-matching-licitafit/">limites do matching</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="contraste">
+      <div class="row">
+        <div class="col-8">
+          <h2>Relacionados</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../alerta-edital-vs-matching-catalogo/">Alerta genérico vs matching de catálogo</a>
+              — quando o aviso amplo não basta para priorizar.
+            </li>
+            <li class="p-list__item">
+              <a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a>
+              — ingestão bruta ≠ produto de qualificação.
+            </li>
+            <li class="p-list__item">
+              <a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a>
+              — carga de revisão, não liberação jurídica.
+            </li>
+            <li class="p-list__item">
+              <a href="../limites-matching-licitafit/">Limites do matching</a>
+              — não é parecer jurídico nem garantia de habilitação.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>O matching afirma que o produto está habilitado?</h3>
+          <p>
+            Não. O matching organiza revisão comercial com status e <code>needs_review</code>.
+            Não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+          <h3>Quais categorias o matching cobre hoje?</h3>
+          <p>
+            O foco declarado é <strong>notebooks e monitores</strong> — categorias com especificação
+            técnica modelável para matching e revisão humana.
+          </p>
+          <h3>O que acontece quando um requisito fica unknown?</h3>
+          <p>
+            Unknown indica informação faltando ou ilegível. A equipe abre o documento, usa
+            <code>evidence_page</code> se houver, e decide com revisão humana — sem chute de elegibilidade.
+          </p>
+          <h3>Matching de catálogo substitui alerta por palavra-chave?</h3>
+          <p>
+            Não necessariamente. Alertas amplos ajudam no monitoramento inicial. O matching entra
+            quando a equipe precisa priorizar com base em SKUs reais e requisitos a conferir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Ver matching com o catálogo de um cliente</h2>
+          <p>
+            Agende uma demonstração e veja oportunidades, requisitos e status sem overclaim de
+            habilitação na UI do ERP.
+          </p>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../limites-matching-licitafit/">Ler limites do matching</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip" id="rodape">
+    <div class="row">
+      <div class="col-4">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+        </p>
+        <p class="lf-footer-nav">
+          <a href="../index.html#produto">Produto</a>
+          <a href="../index.html#empresa">Launchbase</a>
+          <a href="../index.html#demonstracao">Solicitar demonstração</a>
+        </p>
+      </div>
+      <div class="col-4">
+        <p><strong>Guias</strong></p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Índice de guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>
+          <li class="p-list__item"><a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></li>
+          <li class="p-list__item"><a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a></li>
+          <li class="p-list__item"><a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a></li>
+          <li class="p-list__item"><a href="../matching-catalogo-edital/">Matching catálogo ↔ item</a></li>
+          <li class="p-list__item"><a href="../limites-matching-licitafit/">Limites do matching</a></li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <p class="lf-legal">
+          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.<br /><br />
+          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
