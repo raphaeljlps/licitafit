@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O que é o PNCP (para software e distribuidor de TI | LicitaFit)</title>
-  <meta name="description" content="PNCP é o portal oficial de divulgação centralizada das contratações públicas (Lei 14.133/2021). Fonte de dados para ERP (não é matching de catálogo nem habilitação)." />
+  <title>Uso responsável do matching LicitaFit | LicitaFit</title>
+  <meta name="description" content="O que o LicitaFit faz e não faz: matching comercial versus julgamento e habilitação. Responsabilidade do operador e dados de fontes públicas." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
-  <link rel="canonical" href="https://www.licitafit.com.br/o-que-e-pncp/" />
+  <link rel="canonical" href="https://www.licitafit.com.br/uso-responsavel-matching/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -27,10 +27,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.licitafit.com.br/o-que-e-pncp/#webpage",
-        "url": "https://www.licitafit.com.br/o-que-e-pncp/",
-        "name": "O que é o PNCP — para software e distribuidor de TI",
-        "description": "Definição oficial do PNCP e o que isso significa para ERP e distribuidores de TI.",
+        "@id": "https://www.licitafit.com.br/uso-responsavel-matching/#webpage",
+        "url": "https://www.licitafit.com.br/uso-responsavel-matching/",
+        "name": "Uso responsável do matching LicitaFit",
+        "description": "O que o LicitaFit faz e não faz: matching comercial versus julgamento e habilitação. Responsabilidade do operador e dados de fontes públicas.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -40,30 +40,30 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.licitafit.com.br/o-que-e-pncp/#faq",
+        "@id": "https://www.licitafit.com.br/uso-responsavel-matching/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "O que é o PNCP?",
+            "name": "Posso dizer na UI do ERP que o produto está “habilitado”?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "O Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos pela Lei nº 14.133/2021 (art. 174)."
+              "text": "Não. Use linguagem de revisão comercial (matched, conflito, unknown, needs_review). Habilitação é ato/análise no processo licitatório."
             }
           },
           {
             "@type": "Question",
-            "name": "Consulta ao PNCP exige login?",
+            "name": "Quem responde se o matching errar um requisito?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A consulta pública aos dados de contratações publicados no PNCP é descrita como pública e universal na documentação oficial — distinta do credenciamento necessário para sistemas que alimentam o portal."
+              "text": "A equipe do licitante continua responsável pela proposta. O LicitaFit reduz ruído e aponta revisão; não assume o risco jurídico da participação."
             }
           },
           {
             "@type": "Question",
-            "name": "O PNCP decide quais produtos do meu catálogo merecem atenção?",
+            "name": "De onde vêm os dados dos editais?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O PNCP publica e centraliza atos de contratações. Cruzar itens com o catálogo do distribuidor, devolver status de requisitos e pedir revisão humana é papel de um produto de matching no ERP — não do portal em si."
+              "text": "De fontes públicas oficiais (PNCP e dados abertos descritos pelo governo). Veja a página de fontes oficiais."
             }
           }
         ]
@@ -112,16 +112,12 @@
             <span class="lf-muted"> / </span>
             <a href="../guias/">Guias</a>
             <span class="lf-muted"> / </span>
-            <span>O que é o PNCP</span>
+            <span>Uso responsável</span>
           </p>
-          <p class="p-muted-heading">Definição · Guia LicitaFit</p>
-          <h1>O que é o PNCP (para software comercial e distribuidor de TI)</h1>
+          <p class="p-muted-heading">Compliance · Guia LicitaFit</p>
+          <h1>Uso responsável: matching comercial, não julgamento nem habilitação</h1>
           <p class="p-heading--4">
-            O <strong>PNCP</strong> (Portal Nacional de Contratações Públicas) é o
-            <strong>sítio eletrônico oficial</strong> destinado à
-            <strong>divulgação centralizada e obrigatória</strong> dos atos exigidos pela
-            Lei nº 14.133/2021 (art. 174). Para ERP e distribuidores de TI, ele é a
-            <strong>fonte pública</strong> de editais e documentos (<strong>não</strong> decide quais SKUs do seu catálogo merecem atenção).
+            Quadro curto do que o produto <strong>faz</strong>, do que <strong>não faz</strong>, e o que permanece com a equipe que opera API ou Dashboard.
           </p>
         </div>
       </div>
@@ -132,82 +128,58 @@
         <div class="col-8">
           <div class="lf-callout">
             <p>
-              Framing oficial:
-              <a href="https://www.gov.br/pncp/pt-br" rel="noopener noreferrer" target="_blank">gov.br/pncp</a>
-              ·
-              <a href="https://www.gov.br/pncp/pt-br/pncp" rel="noopener noreferrer" target="_blank">Sobre o PNCP</a>.
-              Adequação das informações publicadas é responsabilidade dos órgãos e entidades contratantes,
-              conforme a página oficial.
+              O LicitaFit é <strong>apoio à decisão comercial</strong>.
+              Resultados matched / conflito / unknown e <code>needs_review</code>
+              <strong>não constituem parecer jurídico nem garantia de habilitação</strong>.
             </p>
           </div>
-          <h2>O que o portal centraliza</h2>
-          <p>
-            Na prática, o PNCP reúne divulgação de atos de contratações públicas (por exemplo
-            editais e anexos, avisos de contratação direta, contratos e aditivos, atas de registro
-            de preços e planos de contratações anuais, entre outros descritos na documentação oficial).
-            A lista completa e as regras vigentes estão no portal e no manual de integração,
-            não nesta página comercial.
-          </p>
-          <h2>Consulta pública vs alimentação (órgãos / sistemas)</h2>
-          <ul class="p-list">
-            <li class="p-list__item is-ticked">
-              <strong>Consultar</strong> publicações: acesso público aos dados já divulgados
-              (conforme FAQ oficial (distinto de credenciamento de sistemas)).
-            </li>
-            <li class="p-list__item is-ticked">
-              <strong>Alimentar</strong> o PNCP: integração via API a partir dos sistemas dos órgãos
-              e plataformas de contratações (não é o fluxo do comercial do distribuidor no ERP).
-            </li>
+
+          <h2>O que o LicitaFit faz</h2>
+          <ul>
+            <li>Usa dados públicos de contratações (PNCP / canais oficiais de dados abertos).</li>
+            <li>Cruza itens publicados com o catálogo fornecido pelo cliente.</li>
+            <li>Devolve status de requisitos e sinais de revisão humana.</li>
+            <li>Ajuda a priorizar quais oportunidades merecem atenção da equipe.</li>
           </ul>
-          <p class="lf-legal">
-            Manual técnico de integração (quando for o caso):
-            <a href="https://pncp.gov.br/manual/pt-br/latest/" rel="noopener noreferrer" target="_blank">pncp.gov.br/manual</a>.
+
+          <h2>O que o LicitaFit não faz</h2>
+          <ul>
+            <li>Não julga propostas nem conduz o certame.</li>
+            <li>Não emite, valida ou garante habilitação jurídica ou documental.</li>
+            <li>Não substitui leitura do edital, TR e anexos.</li>
+            <li>Não é órgão de controle (TCU, CGU) nem portal oficial do governo.</li>
+            <li>Não inventa selos, certificações ou métricas de mercado.</li>
+          </ul>
+
+          <h2>Responsabilidade do operador</h2>
+          <ul>
+            <li>Manter o catálogo atualizado e honesto (especificações reais).</li>
+            <li>Tratar <code>needs_review</code> e conflitos como fila de trabalho, não como “aprovado”.</li>
+            <li>Conferir no PNCP / documentos oficiais antes de participar.</li>
+            <li>Buscar assessoria jurídica quando a decisão exigir.</li>
+          </ul>
+
+          <h2>Dados e fontes</h2>
+          <p>
+            Transparência de origem:
+            <a href="../fontes-oficiais-pncp/">fontes oficiais e autenticidade</a>.
+            Limites de produto:
+            <a href="../limites-matching-licitafit/">limites do matching</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light">
-      <div class="row">
-        <div class="col-8">
-          <h2>O que o PNCP não é para o ICP</h2>
-          <ul class="p-list">
-            <li class="p-list__item">Não conhece o catálogo de notebooks e monitores do distribuidor</li>
-            <li class="p-list__item">Não devolve status matched / conflito / unknown nem <code>needs_review</code></li>
-            <li class="p-list__item">Não substitui a plataforma onde o pregão é disputado</li>
-            <li class="p-list__item">Não é parecer jurídico nem garantia de habilitação</li>
-          </ul>
-          <p>
-            Feed/API pública versus produto de matching no ERP:
-            <a href="../pncp-feed-vs-matching-catalogo/">comparativo feed PNCP vs matching de catálogo</a>.
-            Como o cruzamento com o catálogo funciona:
-            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light" id="faq" style="padding-top:0">
+    <section class="p-strip--light" id="faq">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>O que é o PNCP?</h3>
-          <p>
-            O Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado
-            à divulgação centralizada e obrigatória dos atos exigidos pela Lei nº 14.133/2021 (art. 174).
-          </p>
-          <h3>Consulta ao PNCP exige login?</h3>
-          <p>
-            A consulta pública aos dados de contratações publicados no PNCP é descrita como pública
-            e universal na documentação oficial (distinta do credenciamento necessário para sistemas
-            que alimentam o portal).
-          </p>
-          <h3>O PNCP decide quais produtos do meu catálogo merecem atenção?</h3>
-          <p>
-            Não. O PNCP publica e centraliza atos de contratações. Cruzar itens com o catálogo,
-            devolver status de requisitos e pedir revisão humana é papel de um produto de matching
-            no ERP (não do portal em si).
-          </p>
+          <h3>Posso dizer na UI do ERP que o produto está “habilitado”?</h3>
+          <p>Não. Use linguagem de revisão comercial (matched, conflito, unknown, needs_review). Habilitação é ato/análise no processo licitatório.</p>
+          <h3>Quem responde se o matching errar um requisito?</h3>
+          <p>A equipe do licitante continua responsável pela proposta. O LicitaFit reduz ruído e aponta revisão; não assume o risco jurídico da participação.</p>
+          <h3>De onde vêm os dados dos editais?</h3>
+          <p>De fontes públicas oficiais (PNCP e dados abertos descritos pelo governo). Veja a página de fontes oficiais.</p>
         </div>
       </div>
     </section>
@@ -215,18 +187,14 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Do dado público à oportunidade no ERP</h2>
-          <p>
-            Veja como o LicitaFit usa dados públicos e o catálogo do cliente para priorizar revisão
-            comercial (sem overclaim de habilitação).
-          </p>
+          <h2>Operar com linguagem correta</h2>
           <p>
             <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching</a>
+            <a class="p-button" href="../fontes-oficiais-pncp/">Fontes oficiais</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
-            O PNCP permanece a fonte oficial de divulgação.
+            Fontes oficiais de divulgação permanecem com o governo (PNCP e órgãos contratantes).
           </p>
         </div>
       </div>
@@ -237,16 +205,16 @@
           <h2>Continue lendo</h2>
           <ul class="p-list">
             <li class="p-list__item">
+              <a href="../limites-matching-licitafit/">Limites do matching LicitaFit</a>
+              (Limites do matching.)
+            </li>
+            <li class="p-list__item">
               <a href="../fontes-oficiais-pncp/">Fontes oficiais e autenticidade (PNCP)</a>
-              (Fontes oficiais e autenticidade.)
+              (Fontes oficiais PNCP.)
             </li>
             <li class="p-list__item">
-              <a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a>
-              (Feed PNCP vs matching de catálogo.)
-            </li>
-            <li class="p-list__item">
-              <a href="../lei-14133-contexto-operadores/">Lei 14.133/2021 para operadores</a>
-              (Lei 14.133 para operadores.)
+              <a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a>
+              (Status e needs_review.)
             </li>
           </ul>
           <p><a href="../guias/">Ver todos os guias →</a></p>

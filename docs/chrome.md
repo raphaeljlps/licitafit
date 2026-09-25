@@ -62,3 +62,11 @@ Edite metadados/`FEATURED`/`RELATED` em `scripts/sync-chrome.py` e rode de novo.
 1. `#parceiros` — Para parceiros de software (embutir matching, cobrança API, checklist ERP, feature UI, integração)
 2. `#empresas` — Para equipes de licitação (usar Dashboard, upload/monitorar, go/no-go, checklist vertical, matching)
 3. `#todos` — índice completo compartilhado
+
+
+## Fontes / confiança (2026-09-25)
+
+- Páginas: `/fontes-oficiais-pncp/`, `/como-funcionam-licitacoes-publicas/`, `/lei-14133-contexto-operadores/`, `/integracao-pncp-sistemas-licitacao/`, `/uso-responsavel-matching/`
+- Hub Guias: seção `#confianca`
+- LPs `/para-parceiros/` e `/para-empresas/`: faixa `#fontes-confianca` (links oficiais + fontes page)
+- Ops interno: `docs/governo-solicitacoes.md` (espelho em workspace `/workspace/licitafit/docs/GOVERNO-SOLICITACOES.md`)
