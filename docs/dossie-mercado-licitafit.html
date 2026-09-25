@@ -29,7 +29,7 @@
 <p>O LicitaFit atua na interseção de três mercados: (i) <strong>compras públicas</strong> centralizadas no Portal Nacional de Contratações Públicas (PNCP) sob a Lei nº 14.133/2021; (ii) <strong>distribuição de TIC</strong> no Brasil, que movimentou <strong>R$ 30,7 bilhões em 2025</strong> (+7% a/a), com hardware respondendo por <strong>44,5%</strong> do faturamento dos associados Abradisti; e (iii) <strong>software de gestão e força de vendas</strong> usado por atacadistas/distribuidores (ERP, AFV, WMS comerciais).</p>
 <p>A oportunidade específica <strong>não</strong> é ser mais um portal de alerta de editais (espaço já ocupado por ConLicitação, Licitei, Sollicita e similares), nem um chatbot genérico de “IA lê o edital”. É ser a <strong>camada de decisão-suporte catalog-aware</strong> — matching entre SKUs/especificações do catálogo do distribuidor e itens de contratações públicas — entregue via <strong>API/webhooks embutíveis</strong> no ERP ou software comercial do parceiro, com status explícito <code>needs_review</code> (não elegibilidade jurídica).</p>
 <p><strong>Por que agora.</strong> A Lei 14.133 tornou a divulgação no PNCP obrigatória e centralizada; APIs oficiais de <strong>consulta pública</strong> (sem autenticação para leitura) e manuais de integração (versão 2.6, atualizada em 31/08/2026) permitem ingestão estruturada de contratações, itens, documentos, atas e contratos. O governo segue como fatia relevante (~20% dos investimentos em TIC no país, segundo Abradisti/IT Data), ainda que tenha sido fraco em 2025 — o que aumenta a pressão dos canais por <strong>qualificação melhor</strong> das oportunidades, não por mais volume bruto de alertas.</p>
-<p><strong>Hipótese de preço na landing (R$ 1.500/mês por software partner)</strong> é plausível como <strong>ponto de entrada SaaS B2B</strong> para um módulo embutido, mas deve ser validada contra: (a) valor percebido pelo vendor (ARPU de seus clientes distribuidores que vendem ao governo); (b) packaging por volume de matching/tenant; (c) preços opacos mas tipicamente altos de plataformas de inteligência de licitação (assinaturas semestrais/anuais B2B). Recomendação: manter o floor, testar faixas e <strong>revenue share / usage</strong> com early partners.</p>
+<p><strong>Preço público na landing (API parceiro):</strong> R$ 50 por 1.000 requests, <strong>mínimo R$ 490/mês</strong>, e monitoramento a <strong>R$ 1,90 por licitação monitorada / mês</strong>. Cobrança alinhada a uso (sem métricas inventadas de volume). O <strong>Dashboard B2B</strong> permanece sob consulta. Validar contra: (a) valor percebido pelo vendor; (b) mix requests + monitoramento por partner; (c) preços opacos de plataformas de inteligência de licitação. Recomendação: manter o floor de R$ 490, observar overage de requests/monitoramento e <strong>revenue share</strong> opcional com early partners.</p>
 <p><strong>Go-to-market prioritário:</strong> vendas a <strong>fundadores/PMs/parcerias</strong> de ERPs e softwares comerciais para distribuição/atacado de TI (não Conta Azul / e-commerce genérico). ICP exemplificado neste dossiê inclui Onclick, Soften, Softcom, SIAC, ecossistema Winthor/TOTVS (Nextera, MáximaTech, PowerGO), Sankhya, CIGAM, ATS Resulth, Lexos, JD System, entre outros.</p>
 <p><strong>Riscos-chave:</strong> cobertura incompleta municipal/estadual apesar do PNCP; qualidade variável de descrições de itens; responsabilidade jurídica se o produto for interpretado como “aprovação legal”; LGPD sobre catálogos de parceiros; schema drift das APIs.</p>
 <p><strong>Próximo passo de 30–60 dias:</strong> 3–5 design partners com catálogo real (notebooks/monitores), pipeline PNCP→match→<code>needs_review</code>, e 10 conversas discovery com buyers do ICP.</p>
@@ -104,9 +104,9 @@
 <thead><tr><th>Camada</th><th>Definição operacional</th><th>Ordem de grandeza</th><th>Premissas / status do dado</th></tr></thead><tbody>
 <tr><td><strong>TAM (mercado amplo)</strong></td><td>Valor econômico de software/serviços de inteligência e gestão de vendas ao governo no Brasil + spend em ferramentas de alerta/licitação por empresas fornecedoras</td><td><strong>Não quantificado com rigor neste dossiê</strong></td><td>Sem estatística oficial consolidada de “gasto das empresas com software de licitação”. Proxy: compras públicas totais (claims ~R$ 1 tri) são <strong>GSV público</strong>, não receita de software.</td></tr>
 <tr><td><strong>SAM (mercado servível)</strong></td><td>Vendors de ERP/AFV/comercial que atendem <strong>distribuidores/atacadistas de TIC</strong> no Brasil + seus clientes finais com operação B2G de hardware</td><td><strong>Estimativa qualitativa: dezenas de vendors relevantes; milhares de distribuidores/revendas no ecossistema Abradisti</strong></td><td>51 distribuidores grandes + 1.176+ revendas no censo; número de ERPs especializados = lista ICP (§8), não censo completo.</td></tr>
-<tr><td><strong>SOM (mercado obtível 3 anos)</strong></td><td>Assinaturas LicitaFit de <strong>software partners</strong> (hipótese landing R$ 1.500/mês) × N partners ativos</td><td><strong>Exemplo ilustrativo (não forecast):</strong> 20 partners × R$ 1.500 = R$ 30 mil MRR; 50 partners = R$ 75 mil MRR</td><td>Depende de win rate, packaging e se há fee por tenant/distribuidor.</td></tr>
+<tr><td><strong>SOM (mercado obtível 3 anos)</strong></td><td>Receita LicitaFit de <strong>software partners</strong> (floor R$ 490/mês + usage de requests e monitoramento) × N partners ativos</td><td><strong>Exemplo ilustrativo (não forecast):</strong> 20 partners no floor = R$ 9,8 mil MRR base; usage e monitoramento empurram ARPU acima do mínimo</td><td>Depende de win rate, mix de requests/monitoramento e se há fee por tenant/distribuidor.</td></tr>
 </tbody></table>
-<p><strong>Proxy útil para pricing do partner:</strong> se um ERP embute LicitaFit e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com custo LicitaFit de R$ 1.500/mês a partir de ~3–8 clientes ativos — tese de partner-led growth.</p>
+<p><strong>Proxy útil para pricing do partner:</strong> se um ERP embute LicitaFit e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com o floor LicitaFit de R$ 490/mês a partir de ~1–3 clientes ativos (usage adicional de requests/monitoramento escala com o uso) — tese de partner-led growth.</p>
 <p><strong>Volume de matching (produto):</strong> indisponível neste dossiê o volume oficial filtrado “apenas notebooks/monitores no PNCP 2025”. Deve ser medido no experimento de 30 dias via API de consulta + filtro de itens (§12).</p>
 <hr>
 <h2>4. Fontes de dados públicos — ONDE obter</h2>
@@ -383,18 +383,19 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 </tbody></table>
 <hr>
 <h2>11. Implicações para produto e preço</h2>
-<h3>11.1 Hipótese R$ 1.500/mês por software partner</h3>
+<h3>11.1 Preço público API: usage + floor + monitoramento</h3>
 <table>
 <thead><tr><th>Argumento a favor</th><th>Argumento contrário / nuance</th></tr></thead><tbody>
-<tr><td>Preço acessível para SaaS B2B de módulo</td><td>ConLicitação etc. cobram do <strong>fornecedor final</strong> valores provavelmente maiores (opacos; ciclos 6–24 meses) — referência diferente</td></tr>
-<tr><td>Facilita land em ERP early-stage</td><td>Pode subvalorizar se o partner redistribuir a dezenas de tenants</td></tr>
-<tr><td>Alinhado a “API embed”</td><td>Sem metering, um partner grande consome ingestão/match desproporcional</td></tr>
+<tr><td>Floor R$ 490/mês acessível para SaaS B2B de módulo</td><td>ConLicitação etc. cobram do <strong>fornecedor final</strong> valores provavelmente maiores (opacos; ciclos 6–24 meses) — referência diferente</td></tr>
+<tr><td>Facilita land em ERP early-stage</td><td>Partners com muitos tenants podem gerar overage alto de requests/monitoramento</td></tr>
+<tr><td>Alinhado a uso real (requests + licitações monitoradas)</td><td>Precisa de metering claro e previsibilidade de fatura para o buyer</td></tr>
 </tbody></table>
-<p><strong>Recomendação de packaging (a testar):</strong></p>
+<p><strong>Packaging publicado na landing (API parceiro):</strong></p>
 <ol>
-<li><strong>Partner Base</strong> — R$ 1.500/mês: até N tenants ou M matches/mês; sandbox; 1 vertical (notebooks/monitores).</li>
-<li><strong>Partner Growth</strong> — R$ 3.000–5.000/mês (estimativa de faixa a validar): mais tenants, webhooks, SSO, SLA.</li>
-<li><strong>Usage overage</strong> — por oportunidade matched ou por SKU ativo.</li>
+<li><strong>Requests</strong> — R$ 50 por 1.000 requests.</li>
+<li><strong>Floor</strong> — mínimo R$ 490/mês.</li>
+<li><strong>Monitoramento</strong> — R$ 1,90 por licitação monitorada / mês.</li>
+<li><strong>Dashboard B2B</strong> — preço sob consulta (oferta distinta da API).</li>
 <li><strong>Revenue share opcional</strong> — % sobre add-on cobrado do distribuidor (alinha incentivos).</li>
 <li><strong>Pilot 60 dias</strong> — fee reduzido ou gratuito contra case study + dados de catálogo.</li>
 </ol>
@@ -416,7 +417,7 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 <tr><td>1–2</td><td>Amostrar 200 itens “informática”; rótulo manual match vs. catálogo piloto (1 distribuidor ou catálogo público fabricante)</td><td>Precision@K baseline</td></tr>
 <tr><td>2–3</td><td>10 calls discovery (PMs ERP §8 Alta) — script: dor B2G, módulo atual, willingness to pay, requisitos API</td><td>≥3 interessados em pilot</td></tr>
 <tr><td>3–4</td><td>Design partner tech: sync catálogo notebooks/monitores; embed em staging</td><td>Primeiro <code>needs_review</code> real no workflow do partner</td></tr>
-<tr><td>4–6</td><td>Pricing test: Base R$1.5k vs. usage hybrid</td><td>Sinal qualitativo + 1 LOI/pilot pago</td></tr>
+<tr><td>4–6</td><td>Pricing test: floor R$490 + usage (requests/monitoramento) vs. flat legado</td><td>Sinal qualitativo + 1 LOI/pilot pago</td></tr>
 <tr><td>Contínuo</td><td>Monitorar OpenAPI PNCP / manual 2.x; medir falhas TLS/5xx</td><td>SLOs definidos</td></tr>
 <tr><td>Contínuo</td><td>Mapear 10 distribuidores Abradisti e ERPs que usam (pesquisa primária)</td><td>Expandir §8 com dados reais</td></tr>
 </tbody></table>
