@@ -200,15 +200,71 @@ PAGES = {
             ("retificacao-edital-impacto-matching", "Quando o edital muda, reavalie o matching."),
         ],
     },
+    "existe-api-matching-catalogo-licitacoes": {
+        "title": "Existe API de matching de catálogo com licitações?",
+        "short": "Existe API de matching?",
+        "hub": "guias",
+        "blurb": "Resposta direta: API LicitaFit cruza catálogo do cliente com editais PNCP (foco notebooks/monitores).",
+        "related": [
+            ("como-embutir-matching-catalogo-no-erp", "Como embutir matching no ERP."),
+            ("cobranca-api-requests-e-monitoramento", "Preço: requests e monitoramento."),
+            ("pncp-api-oficial-vs-matching-comercial", "PNCP oficial vs matching comercial."),
+        ],
+    },
+    "avisar-cliente-quando-edital-casa-estoque": {
+        "title": "Avisar o cliente quando o edital casa com o estoque",
+        "short": "Avisar quando edital casa",
+        "hub": "guias",
+        "blurb": "Oportunidades na UI, needs_review e webhooks quando o edital muda (sem falsa elegibilidade).",
+        "related": [
+            ("feature-oportunidades-alinhadas-catalogo", "O que mostrar na feature UI."),
+            ("retificacao-edital-impacto-matching", "Quando o edital muda, reavalie."),
+            ("alerta-edital-vs-matching-catalogo", "Alerta genérico vs matching."),
+        ],
+    },
+    "pncp-api-oficial-vs-matching-comercial": {
+        "title": "API oficial do PNCP vs matching comercial",
+        "short": "PNCP oficial vs matching",
+        "hub": "comparativos",
+        "blurb": "Consulta pública de editais versus produto que cruza catálogo do cliente.",
+        "related": [
+            ("pncp-feed-vs-matching-catalogo", "Feed bruto vs matching de catálogo."),
+            ("o-que-e-pncp", "O que é o PNCP."),
+            ("existe-api-matching-catalogo-licitacoes", "Existe API de matching?"),
+        ],
+    },
+    "como-saber-se-produto-atende-edital": {
+        "title": "Como saber se o produto atende o edital",
+        "short": "Produto atende o edital?",
+        "hub": "guias",
+        "blurb": "Triagem no Dashboard: matching, status de requisitos e revisão humana (sem parecer jurídico).",
+        "related": [
+            ("como-usar-dashboard-matching-licitacoes", "Rotina no Dashboard."),
+            ("checklist-requisitos-notebooks-monitores", "Checklist notebooks/monitores."),
+            ("go-no-go-oportunidade-catalogo", "Go/no-go comercial."),
+        ],
+    },
+    "cruzar-lista-produtos-com-editais": {
+        "title": "Cruzar lista de produtos com editais abertos",
+        "short": "Cruzar lista com editais",
+        "hub": "guias",
+        "blurb": "Ferramenta Dashboard: upload do catálogo, matching na tela e monitoramento.",
+        "related": [
+            ("upload-catalogo-e-monitorar-editais", "Upload e monitorar editais."),
+            ("matching-catalogo-edital", "Como o matching funciona."),
+            ("como-saber-se-produto-atende-edital", "Produto atende o edital?"),
+        ],
+    },
+
 }
 
 FEATURED = [
+    "existe-api-matching-catalogo-licitacoes",
+    "como-saber-se-produto-atende-edital",
+    "avisar-cliente-quando-edital-casa-estoque",
+    "cruzar-lista-produtos-com-editais",
     "como-embutir-matching-catalogo-no-erp",
     "como-usar-dashboard-matching-licitacoes",
-    "cobranca-api-requests-e-monitoramento",
-    "upload-catalogo-e-monitorar-editais",
-    "checklist-oportunidades-governo-no-erp",
-    "matching-catalogo-edital",
 ]
 
 HEADER_RE = re.compile(r"  <header id=\"navigation\"[\s\S]*?</header>", re.M)

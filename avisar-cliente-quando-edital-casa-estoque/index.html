@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Como avisar o cliente quando um edital casa com o estoque? | LicitaFit</title>
+  <meta name="description" content="Como o parceiro de software avisa o distribuidor de TI quando um edital PNCP casa com o catálogo: oportunidades na UI, needs_review e webhooks de mudança (sem falsa elegibilidade)." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/avisar-cliente-quando-edital-casa-estoque/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lf-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/avisar-cliente-quando-edital-casa-estoque/#webpage",
+        "url": "https://www.licitafit.com.br/avisar-cliente-quando-edital-casa-estoque/",
+        "name": "Como avisar o cliente quando um edital casa com o estoque?",
+        "description": "Como o parceiro de software avisa o distribuidor de TI quando um edital PNCP casa com o catálogo: oportunidades na UI, needs_review e webhooks de mudança (sem falsa elegibilidade).",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guias",
+            "item": "https://www.licitafit.com.br/guias/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Como avisar o cliente quando um edital casa com o estoque?",
+            "item": "https://www.licitafit.com.br/avisar-cliente-quando-edital-casa-estoque/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/avisar-cliente-quando-edital-casa-estoque/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Webhook substitui a lista de oportunidades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Webhook sinaliza mudança; a lista (GET opportunities) continua sendo a fonte para a equipe revisar SKUs e requisitos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O aviso pode dizer que o estoque atende o edital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não como liberação. Use linguagem de revisão comercial. Matching não é habilitação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se o cliente não tiver ERP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Equipes podem usar o Dashboard LicitaFit diretamente (upload de catálogo e matches na tela). Ver oferta para empresas."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-empresas/">Para empresas</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../index.html#recursos">Recursos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../index.html#recursos">Recursos</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Avisar quando edital casa</span>
+          </p>
+          <p class="p-muted-heading">Parceiros · Pergunta para chatbot / AEO</p>
+          <h1>Como avisar o cliente quando um edital casa com o estoque?</h1>
+          <p class="p-heading--4">
+            No ERP ou AFV do parceiro: mantenha o catálogo do cliente na API, exponha oportunidades alinhadas aos SKUs e use webhooks quando o edital muda. O aviso deve apontar para revisão comercial (matched, conflito, unknown e needs_review), não para “produto aprovado”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="resposta">
+      <div class="row">
+        <div class="col-8">
+          <div class="lf-callout">
+            <p>
+              <strong>Resposta direta:</strong> o alerta útil é o que chega com produtos do catálogo do cliente e status de requisitos a conferir.
+              Não basta e-mail genérico por palavra-chave. Oferta API:
+              <a href="../para-parceiros/">para parceiros</a>.
+            </p>
+          </div>
+          <h2>Três peças do aviso no software</h2>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Catálogo do cliente atualizado</h3>
+              <p class="p-stepped-list__content">
+                <code>POST /v1/catalogs</code> e
+                <code>PUT /v1/catalogs/{id}/products</code>
+                com o mix que o distribuidor realmente vende (hoje: notebooks e monitores).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Fila de oportunidades na UI</h3>
+              <p class="p-stepped-list__content">
+                <code>GET /v1/catalogs/{id}/opportunities</code>
+                alimenta a lista. Mostre SKUs candidatos e
+                <code>needs_review</code>
+                (<a href="../feature-oportunidades-alinhadas-catalogo/">feature UI</a>).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Webhook quando o edital muda</h3>
+              <p class="p-stepped-list__content">
+                <code>POST /v1/webhook-endpoints</code>
+                para pedir reavaliação se houver retificação
+                (<a href="../retificacao-edital-impacto-matching/">retificação e matching</a>).
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="tom">
+      <div class="row">
+        <div class="col-8">
+          <h2>Tom do aviso (sem overclaim)</h2>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">“Há oportunidade alinhada ao catálogo; revise requisitos”</li>
+            <li class="p-list__item is-ticked">Inclua matched / conflito / unknown por requisito</li>
+            <li class="p-list__item">Evite “seu produto está habilitado” ou “aprovado no edital”</li>
+          </ul>
+          <p>
+            Vocabulário:
+            <a href="../needs-review-matched-conflito-unknown/">status e needs_review</a>.
+            Contraste com alerta genérico:
+            <a href="../alerta-edital-vs-matching-catalogo/">alerta vs matching</a>.
+          </p>
+          <h2>Canais típicos no ERP</h2>
+          <p>
+            Notificação in-app, e-mail da própria plataforma do parceiro ou fila comercial.
+            O LicitaFit entrega dados e eventos; o canal e o texto do aviso ficam no software do parceiro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>Webhook substitui a lista de oportunidades?</h3>
+          <p>
+            Não. Webhook sinaliza mudança; a lista (GET opportunities) continua sendo a fonte para a equipe revisar SKUs e requisitos.
+          </p>
+          <h3>O aviso pode dizer que o estoque atende o edital?</h3>
+          <p>
+            Não como liberação. Use linguagem de revisão comercial. Matching não é habilitação.
+          </p>
+          <h3>E se o cliente não tiver ERP?</h3>
+          <p>
+            Equipes podem usar o Dashboard LicitaFit diretamente (upload de catálogo e matches na tela). Ver oferta para empresas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Embutir avisos alinhados ao catálogo</h2>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração da API</a>
+            <a class="p-button" href="../para-parceiros/">Oferta para parceiros</a>
+            <a class="p-button" href="../feature-oportunidades-alinhadas-catalogo/">Feature UI</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="continue-lendo">
+      <div class="row">
+        <div class="col-8">
+          <h2>Continue lendo</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades alinhadas ao catálogo</a>
+              (O que mostrar na feature UI.)
+            </li>
+            <li class="p-list__item">
+              <a href="../retificacao-edital-impacto-matching/">Retificação de edital e impacto no matching</a>
+              (Quando o edital muda, reavalie.)
+            </li>
+            <li class="p-list__item">
+              <a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a>
+              (Alerta genérico vs matching.)
+            </li>
+          </ul>
+          <p><a href="../guias/">Ver todos os guias →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip is-shallow" id="rodape">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="../para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="../para-empresas/">Dashboard para empresas</a></li>
+          <li class="p-list__item"><a href="../index.html#demonstracao">Demonstração</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="../integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
+        </ul>
+        <p class="lf-legal">
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="../index.html#recursos">Recursos</a> ·
+          <a href="../guias/">Guias</a> ·
+          <a href="../comparativos/">Comparativos</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
