@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guias LicitaFit — matching de catálogo e compras públicas</title>
-  <meta name="description" content="Guias LicitaFit para product leads de ERP e equipes comerciais de distribuidores de TI: alerta vs matching, status de requisitos e integração com oportunidades de governo." />
+  <title>Comparativos LicitaFit — alerta, feed PNCP e matching</title>
+  <meta name="description" content="Comparativos honestos (sem ranking): alerta genérico vs matching de catálogo; feed bruto PNCP vs produto de matching; construir pipeline vs comprar. Apoio à decisão comercial." />
   <!-- SITE_ORIGIN=https://www.licitafit.com.br — DNS may not be live yet; see ../js/site-origin.js -->
-  <link rel="canonical" href="https://www.licitafit.com.br/guias/" />
+  <link rel="canonical" href="https://www.licitafit.com.br/comparativos/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -20,10 +20,10 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://www.licitafit.com.br/guias/#webpage",
-    "url": "https://www.licitafit.com.br/guias/",
-    "name": "Guias LicitaFit",
-    "description": "Índice de guias sobre matching de catálogo, alertas de edital e oportunidades de governo no ERP.",
+    "@id": "https://www.licitafit.com.br/comparativos/#webpage",
+    "url": "https://www.licitafit.com.br/comparativos/",
+    "name": "Comparativos LicitaFit",
+    "description": "Contrastes honestos entre alerta genérico, feed PNCP e matching de catálogo — sem rankings.",
     "inLanguage": "pt-BR",
     "isPartOf": {
       "@type": "WebSite",
@@ -50,7 +50,8 @@
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#como-funciona">Como funciona</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#para-quem">Para quem</a></li>
-          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="./">Guias</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../guias/">Guias</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="./">Comparativos</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#preco">Preço</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
         </ul>
@@ -70,13 +71,13 @@
           <p class="lf-breadcrumb">
             <a href="../index.html">Início</a>
             <span class="lf-muted"> / </span>
-            <span>Guias</span>
+            <span>Comparativos</span>
           </p>
           <p class="p-muted-heading">Recursos LicitaFit</p>
-          <h1>Guias para embutir oportunidades de governo no software</h1>
+          <h1>Comparativos — sem ranking, com contraste claro</h1>
           <p class="p-heading--4">
-            Textos curtos para product leads de ERP e equipes comerciais de distribuidores de TI —
-            sem parecer jurídico e sem garantia de habilitação.
+            Páginas curtas para product leads de ERP: o que cada abordagem resolve e o que deixa
+            em aberto. Não há “vencedor absoluto” — há encaixe diferente no fluxo do distribuidor.
           </p>
         </div>
       </div>
@@ -84,52 +85,51 @@
 
     <section class="p-strip">
       <div class="row u-equal-height">
-        <div class="col-6">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
+            <p class="p-muted-heading">Contraste</p>
             <h2 class="p-card__title">
-              <a href="../alerta-edital-vs-matching-catalogo/">Alerta genérico de edital vs matching de catálogo</a>
+              <a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a>
             </h2>
             <p class="p-card__content">
-              Diferença entre aviso por palavra-chave, CNAE ou UF e o cruzamento de itens do edital
-              com produtos reais do catálogo — com status de requisitos e revisão humana.
+              Aviso por palavra-chave, CNAE ou UF versus itens do edital cruzados com SKUs reais
+              e status de requisitos (matched, conflito, unknown).
             </p>
-            <p class="p-card__content">
-              <a href="../alerta-edital-vs-matching-catalogo/">Ler o guia →</a>
-            </p>
+            <p class="p-card__content"><a href="../alerta-edital-vs-matching-catalogo/">Ler →</a></p>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
+            <p class="p-muted-heading">Contraste</p>
             <h2 class="p-card__title">
-              <a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a>
+              <a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a>
             </h2>
             <p class="p-card__content">
-              Cada status descreve carga de revisão comercial, não liberação jurídica —
-              o que a equipe faz em unknown e a ideia de <code>evidence_page</code>.
+              Dados públicos brutos (consulta/API) versus produto que cruza o catálogo do cliente,
+              devolve evidência e pede revisão humana no ERP.
             </p>
+            <p class="p-card__content"><a href="../pncp-feed-vs-matching-catalogo/">Ler →</a></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <p class="p-muted-heading">Contraste</p>
+            <h2 class="p-card__title">Construir pipeline vs comprar matching</h2>
             <p class="p-card__content">
-              <a href="../needs-review-matched-conflito-unknown/">Ler o guia →</a>
+              Manter ingestão PNCP, parsing e alertas por conta própria versus embutir matching
+              como API — o ERP continua dono da UI. Detalhe no
+              <a href="../checklist-oportunidades-governo-no-erp/">checklist de oportunidades no ERP</a>.
             </p>
+            <p class="p-card__content"><a href="../checklist-oportunidades-governo-no-erp/">Ver checklist →</a></p>
           </div>
         </div>
       </div>
-      <div class="row u-equal-height" style="margin-top:1.5rem">
-        <div class="col-6">
-          <div class="p-card">
-            <p class="p-muted-heading">Guia</p>
-            <h2 class="p-card__title">
-              <a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a>
-            </h2>
-            <p class="p-card__content">
-              Seis blocos antes de vender a feature: PNCP, catálogo, UI de revisão, alertas de mudança,
-              isolamento por cliente e disclaimer comercial.
-            </p>
-            <p class="p-card__content">
-              <a href="../checklist-oportunidades-governo-no-erp/">Ler o guia →</a>
-            </p>
-          </div>
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-muted" style="margin-top:1.5rem">
+            Estes textos não classificam concorrentes nem inventam métricas. O objetivo é linguagem
+            útil na demo do parceiro e na feature do ERP — sempre como apoio à decisão comercial.
+          </p>
         </div>
       </div>
     </section>
@@ -137,10 +137,10 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Ver o LicitaFit com o catálogo de um cliente</h2>
+          <h2>Ver o matching com o catálogo de um cliente</h2>
           <p>
             <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../index.html#produto">Conhecer o produto</a>
+            <a class="p-button" href="../guias/">Guias</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
@@ -164,14 +164,12 @@
         </p>
       </div>
       <div class="col-4">
-        <p><strong>Guias</strong></p>
+        <p><strong>Recursos</strong></p>
         <ul class="p-list">
-          <li class="p-list__item"><a href="../guias/">Índice de guias</a></li>
-          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
-          <li class="p-list__item"><a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>
-          <li class="p-list__item"><a href="../needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></li>
-          <li class="p-list__item"><a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a></li>
-          <li class="p-list__item"><a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a></li>
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="./">Comparativos</a></li>
+          <li class="p-list__item"><a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="col-4">
