@@ -13,6 +13,7 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 - `pncp-feed-vs-matching-catalogo/` — feed PNCP vs matching de catálogo
 - `matching-catalogo-edital/` — matching catálogo ↔ item sem falsa elegibilidade
 - `limites-matching-licitafit/` — limites do matching (não é habilitação)
+- `retificacao-edital-impacto-matching/` — retificação de edital e impacto no matching
 - `js/site-origin.js` — **SITE_ORIGIN** (um lugar para trocar o host canônico)
 - `sitemap.xml` / `robots.txt` — descoberta
 - `css/vanilla.css` — estilos
@@ -48,6 +49,7 @@ https://dapper-opera-mz8m.here.now/
 - Guia #3: https://dapper-opera-mz8m.here.now/checklist-oportunidades-governo-no-erp/
 - Matching catálogo ↔ item: https://dapper-opera-mz8m.here.now/matching-catalogo-edital/
 - Limites do matching: https://dapper-opera-mz8m.here.now/limites-matching-licitafit/
+- Retificação e matching: https://dapper-opera-mz8m.here.now/retificacao-edital-impacto-matching/
 
 ## Documentação
 
