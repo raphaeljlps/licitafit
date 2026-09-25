@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Como embutir matching de catálogo no ERP | LicitaFit</title>
+  <meta name="description" content="Passo a passo para product leads embutirem matching de catálogo a oportunidades públicas no ERP ou AFV via API LicitaFit (sem falsa elegibilidade)." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lf-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/#webpage",
+        "url": "https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/",
+        "name": "Como embutir matching de catálogo no ERP",
+        "description": "Passo a passo para product leads embutirem matching de catálogo a oportunidades públicas no ERP ou AFV via API LicitaFit (sem falsa elegibilidade).",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guias",
+            "item": "https://www.licitafit.com.br/guias/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Como embutir matching de catálogo no ERP",
+            "item": "https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Por onde começar a embutir matching no ERP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Comece pelo checklist de product lead (PNCP, catálogo, UI de revisão, alertas, isolamento e disclaimer). Depois mapeie catalogs, products, opportunities, feedback e webhooks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A UI do ERP pode rotular o match como habilitado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Use matched, conflito, unknown e needs_review como carga de revisão comercial. Não rotule como habilitado ou aprovado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais endpoints entram no plano de integração?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "POST /v1/catalogs; PUT /v1/catalogs/{id}/products; GET /v1/catalogs/{id}/opportunities; POST /v1/opportunities/{id}/feedback; POST /v1/webhook-endpoints."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-empresas/">Para empresas</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../index.html#recursos">Recursos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../index.html#recursos">Recursos</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Embutir matching no ERP</span>
+          </p>
+          <p class="p-muted-heading">Parceiros · Guia LicitaFit</p>
+          <h1>Como embutir matching de catálogo no ERP</h1>
+          <p class="p-heading--4">
+            Para product leads de ERP, comercial/AFV e verticais de TI: planeje a feature “oportunidades alinhadas ao catálogo” com catálogo do cliente, matching, UI de revisão e alertas. A API entrega dados e eventos; o software do parceiro continua dono da interface.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="objetivo">
+      <div class="row">
+        <div class="col-8">
+          <div class="lf-callout">
+            <p>
+              Objetivo: feature paga no software do parceiro que prioriza oportunidades com o
+              <strong>catálogo real do cliente</strong> (não alerta genérico por palavra-chave).
+              Oferta API:
+              <a href="../para-parceiros/">para parceiros</a>.
+            </p>
+          </div>
+          <h2>Cinco blocos da integração</h2>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Decidir o escopo da feature</h3>
+              <p class="p-stepped-list__content">
+                Use o
+                <a href="../checklist-oportunidades-governo-no-erp/">checklist de oportunidades no ERP</a>
+                (PNCP, catálogo, UI de revisão, alertas de mudança, isolamento por cliente e disclaimer comercial).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Criar catálogo e enviar produtos</h3>
+              <p class="p-stepped-list__content">
+                <code>POST /v1/catalogs</code> e
+                <code>PUT /v1/catalogs/{id}/products</code>.
+                Foque no mix que o cliente já vende (hoje: notebooks e monitores).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Expor oportunidades na UI</h3>
+              <p class="p-stepped-list__content">
+                <code>GET /v1/catalogs/{id}/opportunities</code>
+                alimenta a lista. Mostre SKUs, status de requisitos e
+                <code>needs_review</code>
+                (<a href="../feature-oportunidades-alinhadas-catalogo/">o que mostrar na feature UI</a>).
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Coletar feedback de match</h3>
+              <p class="p-stepped-list__content">
+                <code>POST /v1/opportunities/{id}/feedback</code>
+                para a equipe comercial corrigir matches no fluxo do ERP.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Registrar webhooks de alerta</h3>
+              <p class="p-stepped-list__content">
+                <code>POST /v1/webhook-endpoints</code>
+                para sinalizar mudança no edital ou no item e pedir reavaliação do matching anterior.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="ui">
+      <div class="row">
+        <div class="col-8">
+          <h2>Na UI: carga de revisão, não habilitação</h2>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Mostre matched, conflito e unknown por requisito</li>
+            <li class="p-list__item is-ticked">Use <code>needs_review</code> como fila comercial</li>
+            <li class="p-list__item is-ticked">Evite rótulos “habilitado”, “aprovado” ou “apto”</li>
+            <li class="p-list__item is-ticked">Inclua disclaimer de apoio à decisão comercial</li>
+          </ul>
+          <p>
+            Vocabulário:
+            <a href="../needs-review-matched-conflito-unknown/">status e needs_review</a>.
+            Limites:
+            <a href="../limites-matching-licitafit/">limites do matching</a>.
+          </p>
+          <h3 class="p-muted-heading">Endpoints (visão de produto)</h3>
+          <pre class="lf-code">POST /v1/catalogs
+PUT  /v1/catalogs/{id}/products
+GET  /v1/catalogs/{id}/opportunities
+POST /v1/opportunities/{id}/feedback
+POST /v1/webhook-endpoints</pre>
+          <p>
+            Detalhe:
+            <a href="../integracao-api-licitafit/">integração API LicitaFit</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>Por onde começar a embutir matching no ERP?</h3>
+          <p>
+            Comece pelo checklist de product lead. Depois mapeie catalogs, products, opportunities,
+            feedback e webhooks.
+          </p>
+          <h3>A UI do ERP pode rotular o match como habilitado?</h3>
+          <p>
+            Não. Use matched, conflito, unknown e <code>needs_review</code> como carga de revisão
+            comercial (não rotule como habilitado ou aprovado).
+          </p>
+          <h3>Quais endpoints entram no plano de integração?</h3>
+          <p>
+            Os cinco endpoints já publicados na landing (catalogs, products, opportunities,
+            feedback e webhook-endpoints). Sem inventar campos além do exemplo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Embutir matching com o catálogo do cliente</h2>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração da API</a>
+            <a class="p-button" href="../para-parceiros/">Oferta para parceiros</a>
+            <a class="p-button" href="../integracao-api-licitafit/">Integração API</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="p-strip--light" id="continue-lendo">
+      <div class="row">
+        <div class="col-8">
+          <h2>Continue lendo</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a>
+              (Checklist antes de prometer a feature.)
+            </li>
+            <li class="p-list__item">
+              <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades alinhadas ao catálogo</a>
+              (O que mostrar na UI do parceiro.)
+            </li>
+            <li class="p-list__item">
+              <a href="../cobranca-api-requests-e-monitoramento/">Cobrança API: requests e monitoramento</a>
+              (Como empacotar requests e monitoramento.)
+            </li>
+          </ul>
+          <p><a href="../guias/">Ver todos os guias →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip is-shallow" id="rodape">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="../para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="../para-empresas/">Dashboard para empresas</a></li>
+          <li class="p-list__item"><a href="../index.html#demonstracao">Demonstração</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="../integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
+        </ul>
+        <p class="lf-legal">
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="../index.html#recursos">Recursos</a> ·
+          <a href="../guias/">Guias</a> ·
+          <a href="../comparativos/">Comparativos</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

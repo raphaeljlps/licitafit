@@ -14,8 +14,8 @@ Produto · **Para parceiros** · **Para empresas** · **Recursos** · Empresa ·
 
 Após o hero, dois caminhos claros:
 
-1. `/para-parceiros/` — API B2B2B (ICP, endpoints, preço por uso)
-2. `/para-empresas/` — Dashboard B2B (assinatura R$ 399/mês + R$ 5 por licitação monitorada/mês; sem cobrança por request)
+1. `/para-parceiros/` - API para parceiros (ICP, endpoints, preço por uso)
+2. `/para-empresas/` - Dashboard para equipes (assinatura R$ 399/mês + R$ 5 por licitação monitorada/mês; sem cobrança por request)
 
 Home mantém value prop compartilhada + resumos finos de “para quem” e preço com link para as LPs. Detalhe profundo fica fora da home.
 
@@ -55,3 +55,10 @@ python3 scripts/sync-chrome.py
 ```
 
 Edite metadados/`FEATURED`/`RELATED` em `scripts/sync-chrome.py` e rode de novo.
+
+
+## Hub Guias (duas seções ICP)
+
+1. `#parceiros` — Para parceiros de software (embutir matching, cobrança API, checklist ERP, feature UI, integração)
+2. `#empresas` — Para equipes de licitação (usar Dashboard, upload/monitorar, go/no-go, checklist vertical, matching)
+3. `#todos` — índice completo compartilhado

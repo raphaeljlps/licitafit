@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  SITE_ORIGIN=https://www.licitafit.com.br — single swap string; see js/site-origin.js and README.
+  SITE_ORIGIN=https://www.licitafit.com.br - single swap string; see js/site-origin.js and README.
   DNS/hosting TBD. Preview: https://dapper-opera-mz8m.here.now
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -95,5 +95,26 @@
     <loc>https://www.licitafit.com.br/integracao-api-licitafit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.licitafit.com.br/como-embutir-matching-catalogo-no-erp/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/como-usar-dashboard-matching-licitacoes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/upload-catalogo-e-monitorar-editais/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobrança API: requests e monitoramento | LicitaFit</title>
+  <meta name="description" content="Como funciona a cobrança da API LicitaFit para parceiros: R$ 50 por 1.000 requests (mínimo R$ 490/mês) e R$ 1,90 por licitação monitorada / mês." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <link rel="canonical" href="https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <script src="../js/site-origin.js" defer></script>
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lf-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/#webpage",
+        "url": "https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/",
+        "name": "Cobrança API: requests e monitoramento",
+        "description": "Como funciona a cobrança da API LicitaFit para parceiros: R$ 50 por 1.000 requests (mínimo R$ 490/mês) e R$ 1,90 por licitação monitorada / mês.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "LicitaFit",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guias",
+            "item": "https://www.licitafit.com.br/guias/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cobrança API: requests e monitoramento",
+            "item": "https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/cobranca-api-requests-e-monitoramento/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quanto custa a API LicitaFit para parceiros?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "R$ 50 por 1.000 requests, com mínimo de R$ 490/mês, e R$ 1,90 por licitação monitorada / mês."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que é cobrança por licitação monitorada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É a linha de preço para manter oportunidades sob acompanhamento de mudanças no edital ou no item, com reavaliação do matching quando há alteração."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Esta página define o preço ao usuário final do ERP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O preço público aqui é o da API para o software parceiro. O valor cobrado do end-user pelo parceiro é decisão comercial do parceiro."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-empresas/">Para empresas</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../index.html#recursos">Recursos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../index.html#recursos">Recursos</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Cobrança API</span>
+          </p>
+          <p class="p-muted-heading">Parceiros · Guia LicitaFit</p>
+          <h1>Cobrança API: requests e monitoramento</h1>
+          <p class="p-heading--4">
+            Para founders e product leads que vão empacotar a feature no software parceiro: a API cobra por uso de requests (com mínimo mensal) e por licitação monitorada. Esta página explica o modelo publicado (sem inventar faixas de volume).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="modelo">
+      <div class="row">
+        <div class="col-8">
+          <div class="lf-callout">
+            <p>
+              Fonte de preço: oferta
+              <a href="../para-parceiros/#preco">para parceiros (API)</a>.
+              Não inventamos métricas de volume nem faixas intermediárias.
+            </p>
+          </div>
+          <h2>Duas linhas de cobrança</h2>
+          <div class="p-card--highlighted" style="margin-top:1rem">
+            <p class="p-muted-heading">API · Parceiros de software</p>
+            <p class="p-heading--2">R$&nbsp;50 <span class="p-heading--4" style="font-weight:400">por 1.000 requests</span></p>
+            <p><strong>Mínimo R$&nbsp;490/mês</strong></p>
+            <p>Monitoramento: <strong>R$&nbsp;1,90</strong> por licitação monitorada / mês</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="requests">
+      <div class="row">
+        <div class="col-8">
+          <h2>Requests (uso da API)</h2>
+          <p>
+            A linha de requests cobre o uso da API no software do parceiro (criar/atualizar
+            catálogo, listar oportunidades, enviar feedback, operar webhooks, conforme o fluxo
+            publicado). O mínimo mensal de R$&nbsp;490 aplica-se ao plano API parceiro.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Preço unitário: R$&nbsp;50 / 1.000 requests</li>
+            <li class="p-list__item is-ticked">Piso mensal: R$&nbsp;490</li>
+            <li class="p-list__item is-ticked">Empacote a feature no ERP sem inventar “pacotes de volume” não publicados</li>
+          </ul>
+          <p>
+            Endpoints de referência:
+            <a href="../integracao-api-licitafit/">integração API</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="monitoramento">
+      <div class="row">
+        <div class="col-8">
+          <h2>Monitoramento por licitação</h2>
+          <p>
+            R$&nbsp;1,90 por licitação monitorada / mês cobre o acompanhamento de mudanças
+            (edital ou item) e o sinal para reavaliar o matching anterior.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Útil quando a oportunidade permanece na fila comercial</li>
+            <li class="p-list__item is-ticked">Conecta com alertas via webhook no ERP do parceiro</li>
+            <li class="p-list__item is-ticked">Não congela habilitação: mudança pede revisão humana</li>
+          </ul>
+          <p>
+            Contexto de produto:
+            <a href="../retificacao-edital-impacto-matching/">retificação e impacto no matching</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="empacotar">
+      <div class="row">
+        <div class="col-8">
+          <h2>Como empacotar na feature do parceiro</h2>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Separe mentalmente: uso da API (requests) vs. oportunidades sob acompanhamento (monitoramento)</li>
+            <li class="p-list__item is-ticked">O preço público desta página é o da <strong>API para o software parceiro</strong></li>
+            <li class="p-list__item is-ticked">O valor cobrado do end-user pelo parceiro é decisão comercial do parceiro (não inventamos preço de end-user aqui)</li>
+            <li class="p-list__item is-ticked">Na UI, mantenha disclaimer de apoio comercial (não parecer jurídico)</li>
+          </ul>
+          <p>
+            Equipes que usam matching direto (sem ERP parceiro) têm oferta própria no
+            <a href="../para-empresas/">LicitaFit Dashboard</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>Quanto custa a API LicitaFit para parceiros?</h3>
+          <p>
+            R$&nbsp;50 por 1.000 requests, com mínimo de R$&nbsp;490/mês, e R$&nbsp;1,90 por
+            licitação monitorada / mês.
+          </p>
+          <h3>O que é cobrança por licitação monitorada?</h3>
+          <p>
+            Linha de preço para manter oportunidades sob acompanhamento de mudanças no edital
+            ou no item, com reavaliação do matching quando há alteração.
+          </p>
+          <h3>Esta página define o preço ao usuário final do ERP?</h3>
+          <p>
+            Não. O preço público aqui é o da API para o software parceiro. O valor cobrado do
+            end-user pelo parceiro é decisão comercial do parceiro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Empacotar a API no software parceiro</h2>
+          <p>
+            <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração da API</a>
+            <a class="p-button" href="../para-parceiros/#preco">Ver preço na LP de parceiros</a>
+            <a class="p-button" href="../como-embutir-matching-catalogo-no-erp/">Como embutir no ERP</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="p-strip--light" id="continue-lendo">
+      <div class="row">
+        <div class="col-8">
+          <h2>Continue lendo</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../como-embutir-matching-catalogo-no-erp/">Como embutir matching de catálogo no ERP</a>
+              (Como embutir matching no ERP.)
+            </li>
+            <li class="p-list__item">
+              <a href="../integracao-api-licitafit/">Integração API LicitaFit (visão de produto)</a>
+              (Endpoints e eventos da API.)
+            </li>
+            <li class="p-list__item">
+              <a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades alinhadas ao catálogo</a>
+              (Feature UI no software parceiro.)
+            </li>
+          </ul>
+          <p><a href="../guias/">Ver todos os guias →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip is-shallow" id="rodape">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="../para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="../para-empresas/">Dashboard para empresas</a></li>
+          <li class="p-list__item"><a href="../index.html#demonstracao">Demonstração</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="../integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
+        </ul>
+        <p class="lf-legal">
+          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="../index.html#recursos">Recursos</a> ·
+          <a href="../guias/">Guias</a> ·
+          <a href="../comparativos/">Comparativos</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

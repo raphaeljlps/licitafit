@@ -15,6 +15,11 @@
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-breadcrumb { margin-bottom: 1rem; }
     .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
     .lf-code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 0.875rem;
@@ -56,6 +61,36 @@
             "position": 2,
             "name": "Para parceiros (API)",
             "item": "https://www.licitafit.com.br/para-parceiros/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/para-parceiros/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A API substitui a UI do meu ERP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Vocês continuam donos da interface e do relacionamento com o cliente. A API entrega matching, oportunidades e eventos; a feature aparece no software do parceiro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto custa a API para parceiros?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "R$ 50 por 1.000 requests, com mínimo de R$ 490/mês, e R$ 1,90 por licitação monitorada / mês."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O matching garante habilitação?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O LicitaFit é apoio à decisão comercial. Status matched, conflito, unknown e needs_review orientam revisão humana; não constituem parecer jurídico nem garantia de habilitação."
+            }
           }
         ]
       }
@@ -117,82 +152,117 @@
       </div>
     </section>
 
-    <section class="p-strip--light" id="para-quem">
+    <section class="p-strip--light" id="problema">
       <div class="row">
-        <div class="col-12">
-          <h2>Para quem é a API</h2>
+        <div class="col-8">
+          <h2>O problema do vendor de software</h2>
           <p>
-            O usuário final continua sendo a equipe comercial ou de vendas ao governo do
-            distribuidor (a feature fica embutida no software do parceiro).
+            Clientes distribuidores de TI pedem “licitações no ERP”. Montar isso por conta própria
+            significa ingestão contínua do PNCP, matching com o catálogo de cada cliente,
+            alertas quando o edital muda, e UI que não confunde matching com habilitação.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Manter pipeline de dados públicos não é o core do ERP</li>
+            <li class="p-list__item is-ticked">Alerta por palavra-chave ou CNAE não prioriza com o catálogo real</li>
+            <li class="p-list__item is-ticked">A feature precisa de status claros (matched, conflito, unknown, <code>needs_review</code>)</li>
+            <li class="p-list__item is-ticked">Isolamento por cliente e feedback de match entram no desenho desde o início</li>
+          </ul>
+          <p>
+            Antes de prometer a feature, use o
+            <a href="../checklist-oportunidades-governo-no-erp/">checklist de oportunidades no ERP</a>.
           </p>
         </div>
       </div>
-      <div class="row u-equal-height">
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">ERP de distribuição / atacado</h3>
+    </section>
+
+    <section class="p-strip" id="entrega">
+      <div class="row">
+        <div class="col-8">
+          <h2>O que a API entrega</h2>
+          <p>
+            Matching consciente de catálogo e eventos para a UI do parceiro (sem transferir a
+            propriedade da experiência do cliente).
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Ingestão e versões</h3>
             <p class="p-card__content">
-              Feature “oportunidades de governo alinhadas ao catálogo” no ERP que o
-              distribuidor já usa (sem o parceiro manter pipeline próprio de dados do PNCP).
+              Coleta registros relevantes no PNCP, guarda identificadores e versões, e revisita
+              oportunidades monitoradas quando há alteração.
             </p>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Software comercial / AFV</h3>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Matching catálogo ↔ item</h3>
             <p class="p-card__content">
-              Vendedores já trabalham catálogo e orçamentos no app de força de vendas;
-              somamos triagem de oportunidades públicas ligada aos SKUs do cliente.
+              Compara produtos do cliente com itens do edital, inspeciona documentos selecionados
+              e devolve explicações. Requisitos ilegíveis ficam em aberto (unknown).
             </p>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Verticais de informática / eletrônicos</h3>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">API de parceiro</h3>
             <p class="p-card__content">
-              Softwares feitos para distribuidores com serial, RMA e estoque que vendem
-              hardware B2G (com foco inicial em notebooks e monitores).
+              Chaves, upload de catálogo, listagem de oportunidades, feedback de match e
+              webhooks (sem o parceiro manter pipeline próprio de dados públicos).
             </p>
           </div>
         </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Compras públicas no stack</h3>
-            <p class="p-card__content">
-              Complemento opcional: matching consciente de catálogo e alertas de mudança (sem substituir portais de disputa ou módulos de gestão já existentes).
+      </div>
+      <div class="row" style="margin-top:1.5rem">
+        <div class="col-8">
+          <div class="lf-callout">
+            <p>
+              Apoio à decisão comercial (não parecer jurídico nem garantia de habilitação).
+              Detalhe em
+              <a href="../limites-matching-licitafit/">limites do matching</a>.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="p-strip" id="como-funciona">
+    <section class="p-strip--light" id="como-embute">
       <div class="row">
         <div class="col-6">
-          <h2>Como a API funciona</h2>
-          <p>Três peças. Uma integração. O software do parceiro continua dono da UI.</p>
+          <h2>Como embute no ERP / AFV</h2>
           <ol class="p-stepped-list">
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Ingestão de compras públicas</h3>
+              <h3 class="p-stepped-list__title">Criar catálogo e enviar produtos</h3>
               <p class="p-stepped-list__content">
-                Coleta registros relevantes no PNCP, guarda identificadores e versões, e
-                revisita oportunidades monitoradas quando há alteração.
+                <code>POST /v1/catalogs</code> e
+                <code>PUT /v1/catalogs/{id}/products</code>
+                com o mix do cliente (foco atual: notebooks e monitores).
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Matching catálogo ↔ item</h3>
+              <h3 class="p-stepped-list__title">Listar oportunidades na UI</h3>
               <p class="p-stepped-list__content">
-                Compara produtos do cliente com itens do edital, inspeciona documentos
-                selecionados e devolve explicações. Requisitos ilegíveis ficam em aberto.
+                <code>GET /v1/catalogs/{id}/opportunities</code>
+                alimenta a feature “oportunidades alinhadas ao catálogo”
+                (<a href="../feature-oportunidades-alinhadas-catalogo/">o que mostrar na tela</a>).
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">API de parceiro</h3>
+              <h3 class="p-stepped-list__title">Feedback e webhooks</h3>
               <p class="p-stepped-list__content">
-                Chaves de API, upload de catálogo, uso, logs de webhook e correção de matches (sem o parceiro manter pipeline próprio de dados públicos).
+                <code>POST /v1/opportunities/{id}/feedback</code> e
+                <code>POST /v1/webhook-endpoints</code>
+                para correção de matches e alertas de mudança.
               </p>
             </li>
           </ol>
+          <p>
+            Passo a passo:
+            <a href="../como-embutir-matching-catalogo-no-erp/">como embutir matching de catálogo no ERP</a>.
+            Visão de endpoints:
+            <a href="../integracao-api-licitafit/">integração API</a>.
+          </p>
         </div>
         <div class="col-6">
           <h3 class="p-muted-heading">Endpoints</h3>
@@ -214,11 +284,54 @@ POST /v1/webhook-endpoints</pre>
   ],
   "evidence_page": 12
 }</pre>
-          <p class="u-sv1"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="para-quem">
+      <div class="row">
+        <div class="col-12">
+          <h2>Para quem é a API</h2>
           <p>
-            Visão de produto completa:
-            <a href="../integracao-api-licitafit/">Integração API LicitaFit</a>.
+            O usuário final continua sendo a equipe comercial ou de vendas ao governo do
+            distribuidor (a feature fica embutida no software do parceiro).
           </p>
+        </div>
+      </div>
+      <div class="row u-equal-height">
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">ERP de distribuição / atacado</h3>
+            <p class="p-card__content">
+              Feature “oportunidades de governo alinhadas ao catálogo” no ERP que o
+              distribuidor já usa.
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Software comercial / AFV</h3>
+            <p class="p-card__content">
+              Triagem de oportunidades públicas ligada aos SKUs do cliente, no app de força de vendas.
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Verticais de informática</h3>
+            <p class="p-card__content">
+              Softwares para distribuidores de hardware que vendem a governo
+              (foco inicial em notebooks e monitores).
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="p-card--highlighted">
+            <h3 class="p-card__title">Compras públicas no stack</h3>
+            <p class="p-card__content">
+              Complemento opcional de matching e alertas (sem substituir portais de disputa).
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -244,6 +357,10 @@ POST /v1/webhook-endpoints</pre>
               <li class="p-list__item is-ticked">Documentos com reuso entre matches; catálogo e feedback isolados por cliente</li>
             </ul>
             <p>
+              Como empacotar requests e monitoramento:
+              <a href="../cobranca-api-requests-e-monitoramento/">cobrança API (requests e monitoramento)</a>.
+            </p>
+            <p>
               Equipes de licitação que querem uso direto (sem ERP parceiro): veja o
               <a href="../para-empresas/">LicitaFit Dashboard</a>.
             </p>
@@ -253,24 +370,67 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
-    <section class="p-strip" id="recursos-parceiro">
+    <section class="p-strip" id="faq">
       <div class="row">
         <div class="col-8">
-          <h2>Recursos para parceiros</h2>
-          <p>Guias e comparativos úteis para product leads que vão embutir a feature.</p>
+          <h2>Perguntas frequentes</h2>
+          <h3>A API substitui a UI do meu ERP?</h3>
+          <p>
+            Não. Vocês continuam donos da interface e do relacionamento. A API entrega matching,
+            oportunidades e eventos; a feature aparece no software do parceiro.
+          </p>
+          <h3>Quanto custa a API para parceiros?</h3>
+          <p>
+            R$&nbsp;50 por 1.000 requests, com mínimo de R$&nbsp;490/mês, e R$&nbsp;1,90 por
+            licitação monitorada / mês.
+          </p>
+          <h3>O matching garante habilitação?</h3>
+          <p>
+            Não. O LicitaFit é apoio à decisão comercial. Status matched, conflito, unknown e
+            <code>needs_review</code> orientam revisão humana; não constituem parecer jurídico
+            nem garantia de habilitação.
+          </p>
+          <h3>Feed do PNCP já resolve?</h3>
+          <p>
+            Ingestão bruta do PNCP não substitui matching com o catálogo do cliente. Ver
+            <a href="../pncp-feed-vs-matching-catalogo/">feed PNCP vs matching</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="recursos-parceiro">
+      <div class="row">
+        <div class="col-8">
+          <h2>Guias para parceiros de software</h2>
+          <p>Textos curtos para product leads que vão embutir a feature.</p>
         </div>
       </div>
       <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-4">
           <div class="p-card">
-            <h3 class="p-card__title"><a href="../checklist-oportunidades-governo-no-erp/">Checklist: oportunidades no ERP</a></h3>
-            <p class="p-card__content">O que o product lead precisa no fluxo antes de prometer “licitações no software”.</p>
+            <h3 class="p-card__title"><a href="../como-embutir-matching-catalogo-no-erp/">Como embutir matching no ERP</a></h3>
+            <p class="p-card__content">Fluxo de produto: catálogo, oportunidades, feedback e UI.</p>
           </div>
         </div>
         <div class="col-4">
           <div class="p-card">
+            <h3 class="p-card__title"><a href="../cobranca-api-requests-e-monitoramento/">Cobrança API</a></h3>
+            <p class="p-card__content">Requests, mínimo mensal e monitoramento por licitação.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title"><a href="../checklist-oportunidades-governo-no-erp/">Checklist no ERP</a></h3>
+            <p class="p-card__content">O que o product lead precisa antes de prometer a feature.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
             <h3 class="p-card__title"><a href="../feature-oportunidades-alinhadas-catalogo/">Feature UI no ERP</a></h3>
-            <p class="p-card__content">Como a feature aparece no software do parceiro (sem falsa elegibilidade).</p>
+            <p class="p-card__content">Como a feature aparece (sem falsa elegibilidade).</p>
           </div>
         </div>
         <div class="col-4">
@@ -279,30 +439,17 @@ POST /v1/webhook-endpoints</pre>
             <p class="p-card__content">Endpoints e eventos já publicados (sem inventar campos).</p>
           </div>
         </div>
-      </div>
-      <div class="row u-equal-height" style="margin-top:1rem">
         <div class="col-4">
           <div class="p-card">
             <h3 class="p-card__title"><a href="../alerta-edital-vs-matching-catalogo/">Alerta vs matching</a></h3>
             <p class="p-card__content">Por que aviso genérico não basta para priorizar com o catálogo.</p>
           </div>
         </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title"><a href="../limites-matching-licitafit/">Limites do matching</a></h3>
-            <p class="p-card__content">Apoio comercial (não parecer jurídico nem garantia de habilitação).</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title"><a href="../pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching</a></h3>
-            <p class="p-card__content">Ingestão bruta do PNCP não substitui produto de matching com catálogo.</p>
-          </div>
-        </div>
       </div>
       <div class="row" style="margin-top:1.5rem">
         <div class="col-12">
           <p>
+            <a href="../guias/#parceiros">Guias para parceiros</a> ·
             <a href="../guias/">Todos os guias</a> ·
             <a href="../comparativos/">Comparativos</a>
           </p>
@@ -320,6 +467,7 @@ POST /v1/webhook-endpoints</pre>
           </p>
           <p>
             <a class="p-button--positive" href="../index.html#empresa">Agendar demonstração</a>
+            <a class="p-button" href="../como-embutir-matching-catalogo-no-erp/">Como embutir no ERP</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
