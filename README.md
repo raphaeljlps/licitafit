@@ -4,7 +4,9 @@ Landing page do LicitaFit — API da Launchbase Tecnologia Ltda que qualifica li
 
 ## Conteúdo
 
-- `index.html` — página principal (inclui seção mid-page `#recursos`)
+- `index.html` — home chooser (dois caminhos + `#recursos`)
+- `para-parceiros/` — LP API B2B2B (parceiros de software)
+- `para-empresas/` — LP Dashboard B2B (equipes de licitação; em preparação)
 - `guias/` — índice de guias AEO
 - `comparativos/` — hub de comparativos (sem ranking)
 - Artigos em pastas na raiz (`alerta-edital-vs-matching-catalogo/`, etc.)
@@ -44,6 +46,8 @@ O preview `https://dapper-opera-mz8m.here.now/` **não faz auto-deploy** a parti
 Publicação estática a partir de `main` (root), com `.nojekyll`.
 
 - Site: **https://raphaeljlps.github.io/licitafit/**
+- Para parceiros: https://raphaeljlps.github.io/licitafit/para-parceiros/
+- Para empresas: https://raphaeljlps.github.io/licitafit/para-empresas/
 - Guias: https://raphaeljlps.github.io/licitafit/guias/
 - Comparativos: https://raphaeljlps.github.io/licitafit/comparativos/
 
@@ -69,9 +73,9 @@ python3 -m http.server 8080
 
 Ver [docs/chrome.md](docs/chrome.md). Resumo:
 
-- Top nav enxuto com entrada única **Recursos**
-- Home `#recursos` com hubs + guias em destaque
-- Footer em colunas Produto / Recursos / Empresa (não lista todos os artigos)
+- Top nav: Produto · Para parceiros · Para empresas · Recursos · Empresa
+- Home chooser com dois caminhos; `#recursos` com hubs + guias em destaque
+- Footer Produto aponta para ambas as LPs (não lista todos os artigos)
 - Artigos com breadcrumb e **Continue lendo**
 
 ## Documentação
