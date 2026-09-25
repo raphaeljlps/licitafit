@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LicitaFit — Qualifique licitações com o catálogo do seu cliente</title>
-  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para parceiros de software (ERP/AFV) e LicitaFit Dashboard (em preparação) para equipes que operam licitação — matching de catálogo a oportunidades públicas, com requisitos a conferir e alertas." />
+  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: escolha seu caminho — API para parceiros de software (ERP/AFV) ou LicitaFit Dashboard (em preparação) para equipes que operam licitação. Matching de catálogo a oportunidades públicas." />
   <!-- SITE_ORIGIN: see js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
   <link rel="canonical" href="https://www.licitafit.com.br/" />
   <link rel="stylesheet" href="css/vanilla.css" />
@@ -19,7 +19,7 @@
         "@id": "https://www.licitafit.com.br/#webpage",
         "url": "https://www.licitafit.com.br/",
         "name": "LicitaFit — Qualifique licitações com o catálogo do seu cliente",
-        "description": "API para parceiros de software e LicitaFit Dashboard (em preparação) para equipes que operam licitação — matching de catálogo a oportunidades públicas.",
+        "description": "Escolha: API para parceiros de software ou LicitaFit Dashboard (em preparação) para equipes que operam licitação — matching de catálogo a oportunidades públicas.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -36,7 +36,7 @@
             "name": "O que o LicitaFit faz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Duas ofertas: (1) API para parceiros de software (ERP, comercial/AFV) embutirem matching de catálogo no produto deles; (2) LicitaFit Dashboard (em preparação) para equipes que operam licitação — upload de catálogo, revisão de matches e alertas, sem depender de um ERP parceiro. Em ambos os casos: oportunidades relevantes, requisitos a conferir e alertas quando o edital muda."
+              "text": "Duas ofertas em caminhos separados: (1) API para parceiros de software (ERP, comercial/AFV) embutirem matching de catálogo no produto deles — detalhes em /para-parceiros/; (2) LicitaFit Dashboard (em preparação) para equipes que operam licitação — detalhes em /para-empresas/. Em ambos: oportunidades relevantes, requisitos a conferir e alertas quando o edital muda."
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "Para quem é o produto?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Duas frentes. Parceiros de software (B2B2B): founders e product leads de ERP, comercial/AFV e verticais de TI. Equipes que trabalham com licitação (B2B): distribuidores, vendas ao governo e empresas que respondem editais e querem o dashboard direto. Em ambos os casos o foco atual é notebooks e monitores."
+              "text": "Parceiros de software (B2B2B): founders e product leads de ERP, comercial/AFV e verticais de TI — veja /para-parceiros/. Equipes que trabalham com licitação (B2B): distribuidores, vendas ao governo e empresas que respondem editais — veja /para-empresas/. Foco atual: notebooks e monitores."
             }
           },
           {
@@ -60,7 +60,7 @@
             "name": "Qual a diferença entre a API parceiro e o LicitaFit Dashboard?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A API para parceiros de software cobra por uso: R$ 50 por 1.000 requests (mínimo R$ 490/mês) e R$ 1,90 por licitação monitorada / mês — para quem embute o matching no ERP ou AFV do cliente. O LicitaFit Dashboard é um plano próprio, em preparação, para equipes que operam licitação usarem upload de catálogo e resultados diretamente — preço diferente da API, sob consulta."
+              "text": "A API para parceiros cobra por uso: R$ 50 por 1.000 requests (mínimo R$ 490/mês) e R$ 1,90 por licitação monitorada / mês — veja /para-parceiros/. O LicitaFit Dashboard é plano próprio, em preparação, preço sob consulta — veja /para-empresas/."
             }
           },
           {
@@ -79,27 +79,6 @@
 
   <style>
     .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
-    .lf-compare td { vertical-align: top; }
-    .lf-code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.875rem;
-      background: #f7f7f7;
-      border: 1px solid #d9d9d9;
-      padding: 1rem 1.25rem;
-      overflow-x: auto;
-      margin: 0;
-    }
-    .lf-status {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid #d9d9d9;
-      border-radius: 2px;
-      margin-bottom: 0.35rem;
-    }
-    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
-    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
     .lf-muted { color: #666; }
     .lf-media img {
       width: 100%;
@@ -114,6 +93,7 @@
     }
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-path-card { height: 100%; }
   </style>
 </head>
 <body>
@@ -131,10 +111,9 @@
       <nav class="p-navigation__nav" aria-label="Principal">
         <ul class="p-navigation__items">
           <li class="p-navigation__item"><a class="p-navigation__link" href="#produto">Produto</a></li>
-          <li class="p-navigation__item"><a class="p-navigation__link" href="#como-funciona">Como funciona</a></li>
-          <li class="p-navigation__item"><a class="p-navigation__link" href="#para-quem">Para quem</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="para-empresas/">Para empresas</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#recursos">Recursos</a></li>
-          <li class="p-navigation__item"><a class="p-navigation__link" href="#preco">Preço</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#empresa">Empresa</a></li>
         </ul>
         <ul class="p-navigation__items">
@@ -153,14 +132,12 @@
           <p class="p-muted-heading">Um produto Launchbase Tecnologia</p>
           <h1>Qualifique licitações com o catálogo do seu cliente</h1>
           <p class="p-heading--4">
-            Matching de catálogo a oportunidades públicas: <strong>API para parceiros de software</strong>
-            (já disponível para integração) e <strong>LicitaFit Dashboard</strong> em preparação
-            para equipes que operam licitação. Requisitos a conferir e alertas quando o edital muda.
+            Matching de catálogo a oportunidades públicas: requisitos a conferir e alertas
+            quando o edital muda. Escolha o caminho que combina com o seu papel.
           </p>
           <p>
-            <a class="p-button--positive" href="#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="#para-quem">Para quem é</a>
-            <a class="p-button" href="#produto">Conhecer o produto</a>
+            <a class="p-button--positive" href="para-parceiros/">Sou parceiro de software (API)</a>
+            <a class="p-button" href="para-empresas/">Trabalho com licitações (Dashboard)</a>
           </p>
           <ul class="p-inline-list--middot u-no-margin--bottom">
             <li class="p-inline-list__item">Integração com o PNCP</li>
@@ -182,14 +159,48 @@
     <section class="p-strip--light" id="produto">
       <div class="row">
         <div class="col-12">
-          <h2>Qualificação ligada ao catálogo do cliente</h2>
+          <h2>Dois caminhos, o mesmo matching</h2>
           <p class="p-heading--5 lf-muted">
-            O LicitaFit ajuda o ERP a mostrar quais oportunidades públicas fazem sentido
-            para os produtos que o distribuidor já vende — com contexto para a equipe revisar.
+            O LicitaFit cruza o catálogo com oportunidades públicas e devolve status explícitos
+            (matched, conflito, unknown) para a equipe revisar — sem falsa elegibilidade.
           </p>
         </div>
       </div>
-      <div class="row u-equal-height">
+      <div class="row u-equal-height" id="caminhos" style="margin-top:1rem">
+        <div class="col-6">
+          <div class="p-card--highlighted lf-path-card">
+            <p class="p-muted-heading">B2B2B · Parceiros de software</p>
+            <h3 class="p-card__title">API para embutir no seu produto</h3>
+            <p class="p-card__content">
+              Para founders e product leads de ERP, comercial/AFV e verticais de TI.
+              Embuta matching, upload de catálogo e alertas no software que o cliente já usa.
+            </p>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Endpoints de catálogo, oportunidades e webhooks</li>
+              <li class="p-list__item is-ticked">Preço por uso: R$&nbsp;50/1.000 req · mín. R$&nbsp;490/mês</li>
+              <li class="p-list__item is-ticked">R$&nbsp;1,90 por licitação monitorada / mês</li>
+            </ul>
+            <p><a class="p-button--positive" href="para-parceiros/">Ver oferta para parceiros →</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-card--highlighted lf-path-card">
+            <p class="p-muted-heading">B2B · Equipes de licitação</p>
+            <h3 class="p-card__title">LicitaFit Dashboard (em preparação)</h3>
+            <p class="p-card__content">
+              Para distribuidores, vendas ao governo e empresas que respondem editais.
+              Use o matching direto: upload de lista, catálogo e matches na tela — sem ERP parceiro.
+            </p>
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Upload e manipulação da lista de produtos</li>
+              <li class="p-list__item is-ticked">Resultados de matching e alertas de mudança</li>
+              <li class="p-list__item is-ticked">Preço sob consulta (plano próprio, diferente da API)</li>
+            </ul>
+            <p><a class="p-button" href="para-empresas/">Ver oferta para empresas →</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:2rem">
         <div class="col-4">
           <div class="p-card">
             <h3 class="p-card__title">Oportunidades que merecem olhar</h3>
@@ -205,306 +216,66 @@
         <div class="col-4">
           <div class="p-card">
             <h3 class="p-card__title">Monitoramento de mudanças</h3>
-            <p class="p-card__content">Quando o edital, o item ou o documento muda, o parceiro recebe alerta com o impacto no matching anterior.</p>
+            <p class="p-card__content">Quando o edital, o item ou o documento muda, há alerta com o impacto no matching anterior.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="p-strip">
-      <div class="row u-equal-height">
-        <div class="col-6">
-          <h2>O que a equipe recebe na prática</h2>
-          <p class="lf-muted">Do aviso genérico ao matching com o catálogo que o cliente já mantém.</p>
-          <table class="p-table lf-compare" aria-label="Exemplos de saída">
-            <thead>
-              <tr>
-                <th style="width:45%">Aviso genérico</th>
-                <th>Com matching de catálogo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <span class="lf-status">Aviso</span><br />
-                  “Um órgão público está comprando computadores.”
-                </td>
-                <td>
-                  <span class="lf-status lf-status--ok">No catálogo</span><br />
-                  “Itens 4 e 7 batem potencialmente com estes três produtos do catálogo.”
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="lf-status">Documento</span><br />
-                  “Aqui está o edital.”
-                </td>
-                <td>
-                  <span class="lf-status lf-status--warn">Requisitos</span><br />
-                  “Memória e armazenamento batem; garantia on-site ainda não verificada.”
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="lf-status">Lista</span><br />
-                  “Há 80 novas oportunidades.”
-                </td>
-                <td>
-                  <span class="lf-status lf-status--ok">Prioridade</span><br />
-                  “Estas seis merecem revisão — com motivos e documentos de apoio.”
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="lf-status">Mudança</span><br />
-                  “Este edital foi atualizado.”
-                </td>
-                <td>
-                  <span class="lf-status lf-status--warn">Impacto</span><br />
-                  “A exigência de entrega mudou. Reavalie o matching anterior.”
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-6 lf-media u-vertically-center">
-          <img src="images/dashboard.jpg" width="1600" height="1140" alt="Painel de dados e indicadores em um computador" />
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light" id="como-funciona">
-      <div class="row">
-        <div class="col-6">
-          <h2>Como funciona</h2>
-          <p>Três peças. Uma integração. O software do parceiro continua dono da interface e do relacionamento com o cliente.</p>
-          <ol class="p-stepped-list">
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Ingestão de compras públicas</h3>
-              <p class="p-stepped-list__content">Coleta registros relevantes no PNCP, guarda identificadores e versões, e revisita oportunidades monitoradas quando há alteração.</p>
-            </li>
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Matching catálogo ↔ item</h3>
-              <p class="p-stepped-list__content">Compara produtos do cliente com itens do edital, inspeciona documentos selecionados e devolve explicações. Requisitos ilegíveis ficam em aberto.</p>
-            </li>
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">API de parceiro</h3>
-              <p class="p-stepped-list__content">Chaves de API, upload de catálogo, uso, logs de webhook e correção de matches — sem o parceiro manter pipeline próprio de dados públicos.</p>
-            </li>
-          </ol>
-        </div>
-        <div class="col-6">
-          <h3 class="p-muted-heading">Endpoints</h3>
-          <pre class="lf-code">POST /v1/catalogs
-PUT  /v1/catalogs/{id}/products
-GET  /v1/catalogs/{id}/opportunities
-POST /v1/opportunities/{id}/feedback
-POST /v1/webhook-endpoints</pre>
-          <p class="u-sv1"></p>
-          <blockquote class="p-pull-quote">
-            <p class="p-pull-quote__quote">
-              Envie o catálogo do seu cliente. Devolvemos oportunidades relevantes, os produtos que batem, requisitos a conferir e alertas quando algo muda.
-            </p>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip u-no-padding--bottom">
-      <div class="row">
-        <div class="col-12 lf-media">
-          <img class="lf-media--cover" src="images/warehouse.jpg" width="1600" height="1067" alt="Operação logística e estoque de equipamentos" />
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip">
+    <section class="p-strip" id="para-quem">
       <div class="row">
         <div class="col-8">
-          <h2>Exemplo de evento</h2>
-          <p>Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido — e onde está a evidência no documento.</p>
-          <pre class="lf-code">{
-  "event": "opportunity.matched",
-  "product_id": "laptop_16gb_512gb",
-  "item_number": 7,
-  "qualification": "needs_review",
-  "requirements": [
-    { "name": "memory", "status": "matched" },
-    { "name": "on_site_warranty", "status": "unknown" }
-  ],
-  "evidence_page": 12
-}</pre>
+          <h2>Para quem — resumo</h2>
+          <p>
+            Detalhes de ICP, fluxo e preço ficam em cada landing. Aqui, só o essencial para
+            escolher o caminho certo.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-6">
+          <h3>Parceiros de software</h3>
+          <p>
+            ERP de distribuição/atacado, software comercial/AFV, verticais de informática e
+            produtos de compras públicas que querem complementar o stack com matching consciente
+            de catálogo.
+          </p>
+          <p><a href="para-parceiros/">ICP, API e preço para parceiros →</a></p>
+        </div>
+        <div class="col-6">
+          <h3>Equipes que operam licitação</h3>
+          <p>
+            Distribuidores, vendas ao governo e empresas que respondem editais e querem operar
+            o matching diretamente no LicitaFit Dashboard — sem depender de um ERP parceiro.
+          </p>
+          <p><a href="para-empresas/">Dashboard, fluxo e preço sob consulta →</a></p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light" id="para-quem">
+    <section class="p-strip--light" id="preco">
       <div class="row">
         <div class="col-8">
-          <h2>Para quem é o LicitaFit</h2>
-          <p>
-            Duas frentes comerciais claras: <strong>parceiros de software</strong> (B2B2B), que
-            embutem a API no produto deles, e <strong>equipes que trabalham com licitação</strong>
-            (B2B), que terão o LicitaFit Dashboard para operar o matching diretamente.
-          </p>
-        </div>
-        <div class="col-4 lf-media u-vertically-center">
-          <img src="images/meeting.jpg" width="1600" height="1067" alt="Reunião comercial entre equipes de software" />
+          <h2>Preço — resumo</h2>
+          <p class="lf-muted">Duas ofertas com pricing próprio. Detalhes em cada caminho.</p>
         </div>
       </div>
-
-      <div class="row" style="margin-top:1.5rem">
-        <div class="col-12">
-          <h3>Parceiros de software (B2B2B)</h3>
-          <p>
-            Para <strong>fundadores e product leads</strong> de ERP, comercial/AFV e verticais de
-            distribuição de TI cujos clientes atuam em compras públicas. A API fica embutida no
-            software do parceiro; o <strong>usuário final</strong> continua sendo a equipe comercial
-            ou de vendas ao governo do distribuidor.
-          </p>
-        </div>
-      </div>
-      <div class="row u-equal-height">
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">ERP de distribuição / atacado</h3>
-            <p class="p-card__content">
-              Feature “oportunidades de governo alinhadas ao catálogo” no ERP que o
-              distribuidor já usa — sem o parceiro manter pipeline próprio de dados do PNCP.
-            </p>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Software comercial / AFV</h3>
-            <p class="p-card__content">
-              Vendedores já trabalham catálogo e orçamentos no app de força de vendas;
-              somamos triagem de oportunidades públicas ligada aos SKUs do cliente.
-            </p>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Sistemas verticais de informática / eletrônicos</h3>
-            <p class="p-card__content">
-              Softwares feitos para distribuidores com serial, RMA e estoque que vendem
-              hardware B2G — com foco inicial em notebooks e monitores.
-            </p>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="p-card--highlighted">
-            <h3 class="p-card__title">Produtos de compras públicas já no stack</h3>
-            <p class="p-card__content">
-              Complemento opcional: matching consciente de catálogo e alertas de mudança —
-              sem substituir portais de disputa ou módulos de gestão de licitação já existentes.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row" style="margin-top:2.5rem">
-        <div class="col-12">
-          <h3>Equipes que trabalham com licitação (B2B)</h3>
-          <p>
-            Para <strong>distribuidores</strong>, <strong>equipes de vendas ao governo</strong> e
-            <strong>empresas que respondem editais</strong> — quem opera a licitação no dia a dia,
-            não só vendedores de software. Teremos o <strong>LicitaFit Dashboard</strong>
-            (oferta em preparação): uso direto, sem depender de um ERP parceiro.
-          </p>
-        </div>
-      </div>
-      <div class="row u-equal-height">
-        <div class="col-4">
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-6">
           <div class="p-card">
-            <h3 class="p-card__title">Upload e gestão de catálogo</h3>
-            <p class="p-card__content">
-              Envie a lista de produtos, revise e atualize o catálogo no dashboard —
-              o matching usa os SKUs que a equipe já vende.
-            </p>
+            <p class="p-muted-heading">API · Parceiros</p>
+            <p><strong>R$&nbsp;50</strong> / 1.000 requests · mínimo <strong>R$&nbsp;490/mês</strong></p>
+            <p>Monitoramento: <strong>R$&nbsp;1,90</strong> / licitação / mês</p>
+            <p><a href="para-parceiros/#preco">Ver plano API →</a></p>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <div class="p-card">
-            <h3 class="p-card__title">Resultados de matching na tela</h3>
-            <p class="p-card__content">
-              Veja oportunidades alinhadas ao catálogo, com requisitos matched, em conflito
-              ou unknown — para a equipe priorizar o que merece revisão.
-            </p>
+            <p class="p-muted-heading">Dashboard · Empresas</p>
+            <p><strong>Preço sob consulta</strong></p>
+            <p>Plano próprio, em preparação — diferente da API para parceiros.</p>
+            <p><a href="para-empresas/#preco">Ver plano Dashboard →</a></p>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="p-card">
-            <h3 class="p-card__title">Alertas de mudança</h3>
-            <p class="p-card__content">
-              Quando o edital ou o item muda, o dashboard sinaliza o impacto no matching
-              anterior — apoio à decisão comercial, não parecer jurídico.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin-top:1.5rem">
-        <div class="col-12">
-          <p>
-            <a class="p-button--positive" href="#demonstracao">Falar sobre API ou Dashboard</a>
-            <a class="p-button" href="#preco">Ver planos</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip" id="diferenca">
-      <div class="row">
-        <div class="col-12">
-          <h2>O que a demonstração comercial mostra</h2>
-          <p>
-            O valor está em encaixar a qualificação no software que o distribuidor já usa,
-            com resultados que a equipe comercial consegue auditar.
-          </p>
-          <table class="p-table" aria-label="O que a demonstração mostra">
-            <thead>
-              <tr>
-                <th>Para o parceiro de software</th>
-                <th>O que mostramos</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Feature embutida no software do parceiro</td>
-                <td>Integração simples, com o catálogo que o cliente já mantém</td>
-              </tr>
-              <tr>
-                <td>Sugestões úteis para revisão</td>
-                <td>Oportunidades ligadas a SKUs reais, com motivos claros</td>
-              </tr>
-              <tr>
-                <td>Transparência nos requisitos</td>
-                <td>Status matched, conflito ou unknown — e referência ao documento</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light">
-      <div class="row">
-        <div class="col-12">
-          <h2>Cobertura de produto</h2>
-        </div>
-      </div>
-      <div class="row u-equal-height">
-        <div class="col-4">
-          <h3>Categorias</h3>
-          <p>Notebooks e monitores, com especificações modeláveis e critérios claros de acurácia.</p>
-        </div>
-        <div class="col-4">
-          <h3>Tom do resultado</h3>
-          <p><code>needs_review</code>: potencial match; requisitos ainda a conferir. Sem afirmação de habilitação jurídica.</p>
-        </div>
-        <div class="col-4">
-          <h3>Integrações</h3>
-          <p>PNCP para itens, documentos e histórico. Catálogo enviado pelo parceiro via API ou upload.</p>
         </div>
       </div>
     </section>
@@ -609,62 +380,16 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
-<section class="p-strip" id="preco">
-      <div class="row">
-        <div class="col-12">
-          <h2>Planos</h2>
-          <p class="p-heading--5 lf-muted">
-            Duas ofertas com pricing próprio: API para parceiros de software e LicitaFit Dashboard
-            para equipes que operam licitação.
-          </p>
-        </div>
-      </div>
-      <div class="row u-equal-height" style="margin-top:1rem">
-        <div class="col-6">
-          <div class="p-card--highlighted">
-            <p class="p-muted-heading">API · Parceiros de software (B2B2B)</p>
-            <h3 class="p-card__title">Plano API parceiro</h3>
-            <p class="p-heading--2">R$&nbsp;50 <span class="p-heading--4" style="font-weight:400">por 1.000 requests</span></p>
-            <p><strong>Mínimo R$&nbsp;490/mês</strong></p>
-            <p>Monitoramento: <strong>R$&nbsp;1,90</strong> por licitação monitorada / mês</p>
-            <p>Cobrança alinhada a uso — sem métricas inventadas de volume.</p>
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">Matching embutido no ERP / AFV do parceiro</li>
-              <li class="p-list__item is-ticked">Manter o catálogo matched contra oportunidades que mudam</li>
-              <li class="p-list__item is-ticked">Documentos com reuso entre matches; catálogo e feedback isolados por cliente</li>
-            </ul>
-            <p><a class="p-button--positive" href="#demonstracao">Solicitar demo da API</a></p>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-card--highlighted">
-            <p class="p-muted-heading">Dashboard · Equipes de licitação (B2B)</p>
-            <h3 class="p-card__title">LicitaFit Dashboard</h3>
-            <p class="p-heading--2">Preço sob consulta</p>
-            <p>
-              Plano próprio, <strong>diferente da API para parceiros</strong>. Oferta em preparação
-              para distribuidores e equipes que respondem editais usarem o matching diretamente.
-            </p>
-            <ul class="p-list">
-              <li class="p-list__item is-ticked">Upload e manipulação da lista de produtos no dashboard</li>
-              <li class="p-list__item is-ticked">Resultados de matching e requisitos a conferir na tela</li>
-              <li class="p-list__item is-ticked">Alertas quando o edital ou o item muda</li>
-              <li class="p-list__item is-ticked">Sem depender de um ERP ou AFV parceiro</li>
-            </ul>
-            <p><a class="p-button" href="#demonstracao">Falar com vendas sobre o Dashboard</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--dark" id="demonstracao">
+<section class="p-strip--dark" id="demonstracao">
       <div class="row">
         <div class="col-8">
           <h2>Fale com a equipe comercial</h2>
           <p>
-            Agende uma conversa com a Launchbase — seja para integrar a <strong>API no software parceiro</strong>
-            ou para acompanhar o <strong>LicitaFit Dashboard</strong> (em preparação) para a equipe que opera
-            licitação. Em ambos os casos, trabalhamos com o catálogo real e critérios de acompanhamento.
+            Agende uma conversa com a Launchbase — para integrar a
+            <a href="para-parceiros/" style="color:inherit;text-decoration:underline">API no software parceiro</a>
+            ou acompanhar o
+            <a href="para-empresas/" style="color:inherit;text-decoration:underline">LicitaFit Dashboard</a>
+            (em preparação). Em ambos os casos, trabalhamos com o catálogo real.
           </p>
           <p>
             <a class="p-button--positive" href="#empresa">Agendar demonstração</a>
@@ -676,58 +401,46 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
-    
     <section class="p-strip--light" id="faq">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
           <h3>O que o LicitaFit faz?</h3>
           <p>
-            Duas ofertas: (1) <strong>API para parceiros de software</strong> (ERP, comercial/AFV)
-            embutirem matching de catálogo no produto deles; (2) <strong>LicitaFit Dashboard</strong>
-            (em preparação) para equipes que operam licitação — upload de catálogo, revisão de matches
-            e alertas, sem depender de um ERP parceiro. Em ambos os casos: oportunidades relevantes,
-            requisitos a conferir e alertas quando o edital muda.
+            Duas ofertas em caminhos separados: (1)
+            <strong>API para parceiros de software</strong> — veja
+            <a href="para-parceiros/">Para parceiros</a>; (2)
+            <strong>LicitaFit Dashboard</strong> (em preparação) — veja
+            <a href="para-empresas/">Para empresas</a>.
+            Em ambos: oportunidades relevantes, requisitos a conferir e alertas quando o edital muda.
           </p>
           <h3>O matching substitui parecer jurídico ou garantia de habilitação?</h3>
           <p>
             Não. O LicitaFit é <strong>apoio à decisão comercial</strong>. Resultados usam status como
             matched, conflito ou unknown e qualificações como <code>needs_review</code> — não constituem
             parecer jurídico nem garantia de habilitação.
-            Leia os <a href="limites-matching-licitafit/">limites do matching</a>
-            e o guia de
-            <a href="matching-catalogo-edital/">matching catálogo ↔ item</a>.
+            Leia os <a href="limites-matching-licitafit/">limites do matching</a>.
           </p>
           <h3>Para quem é o produto?</h3>
           <p>
-            <strong>Parceiros de software (B2B2B):</strong> founders e product leads de
-            ERP de distribuição/atacado, software comercial e AFV, sistemas verticais de
-            informática/eletrônicos e produtos de compras públicas já no stack.
-            <strong>Equipes que trabalham com licitação (B2B):</strong> distribuidores,
-            vendas ao governo e empresas que respondem editais e querem o dashboard direto.
+            <strong>Parceiros de software (B2B2B):</strong>
+            <a href="para-parceiros/">ICP e oferta API</a>.
+            <strong>Equipes que trabalham com licitação (B2B):</strong>
+            <a href="para-empresas/">Dashboard em preparação</a>.
+            Foco atual: notebooks e monitores.
           </p>
           <h3>Qual a diferença entre a API parceiro e o LicitaFit Dashboard?</h3>
           <p>
-            A <strong>API</strong> para parceiros de software cobra por uso:
-            <strong>R$&nbsp;50 por 1.000 requests</strong> (mínimo <strong>R$&nbsp;490/mês</strong>)
-            e <strong>R$&nbsp;1,90</strong> por licitação monitorada / mês — para quem embute o matching
-            no ERP ou AFV do cliente.
-            O <strong>LicitaFit Dashboard</strong> é um plano próprio, em preparação, para equipes
-            que operam licitação usarem upload de catálogo e resultados diretamente —
-            <strong>preço diferente da API, sob consulta</strong>.
-            <a href="#preco">Ver planos</a> · <a href="#demonstracao">Falar com vendas</a>.
+            A <strong>API</strong> cobra por uso (R$&nbsp;50 / 1.000 requests, mín. R$&nbsp;490/mês;
+            R$&nbsp;1,90 / licitação monitorada) —
+            <a href="para-parceiros/#preco">detalhes</a>.
+            O <strong>Dashboard</strong> é plano próprio, preço sob consulta —
+            <a href="para-empresas/#preco">detalhes</a>.
           </p>
           <h3>Quais categorias o foco atual cobre?</h3>
           <p>
-            O foco declarado é <strong>notebooks e monitores</strong> — categorias com especificação
-            técnica modelável para matching e revisão humana.
-          </p>
-          <p>
-            Veja também os <a href="guias/">guias</a> (incluindo
-            <a href="matching-catalogo-edital/">matching catálogo ↔ item</a> e
-            <a href="limites-matching-licitafit/">limites do matching</a>)
-            e os <a href="comparativos/">comparativos</a>
-            (alerta vs matching; feed PNCP vs matching).
+            <strong>Notebooks e monitores</strong> — categorias com especificação técnica modelável
+            para matching e revisão humana.
           </p>
         </div>
       </div>
@@ -761,9 +474,9 @@ POST /v1/webhook-endpoints</pre>
       <div class="col-3">
         <p class="p-muted-heading">Produto</p>
         <ul class="p-list">
-          <li class="p-list__item"><a href="#produto">Produto</a></li>
-          <li class="p-list__item"><a href="#como-funciona">Como funciona</a></li>
-          <li class="p-list__item"><a href="#preco">Preço</a></li>
+          <li class="p-list__item"><a href="#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="para-empresas/">Dashboard para empresas</a></li>
           <li class="p-list__item"><a href="#demonstracao">Demonstração</a></li>
         </ul>
       </div>

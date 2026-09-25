@@ -194,14 +194,13 @@ def nav_html(prefix: str, selected: str | None = None) -> str:
 
     items = [
         ("produto", "Produto", href("#produto")),
-        ("como", "Como funciona", href("#como-funciona")),
-        ("quem", "Para quem", href("#para-quem")),
+        ("parceiros", "Para parceiros", href("para-parceiros/")),
+        ("empresas", "Para empresas", href("para-empresas/")),
         (
             "recursos",
             "Recursos",
             href("#recursos") if not prefix else f"{prefix}index.html#recursos",
         ),
-        ("preco", "Preço", href("#preco")),
         ("empresa", "Empresa", href("#empresa")),
     ]
     lis = []
@@ -249,15 +248,15 @@ def footer_html(prefix: str) -> str:
       <div class="col-3">
         <p>
           <strong>LicitaFit</strong><br />
-          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+          Qualificação de licitações consciente de catálogo — API para parceiros e Dashboard para equipes de licitação.
         </p>
       </div>
       <div class="col-3">
         <p class="p-muted-heading">Produto</p>
         <ul class="p-list">
-          <li class="p-list__item"><a href="{h('#produto')}">Produto</a></li>
-          <li class="p-list__item"><a href="{h('#como-funciona')}">Como funciona</a></li>
-          <li class="p-list__item"><a href="{h('#preco')}">Preço</a></li>
+          <li class="p-list__item"><a href="{h('#produto')}">Visão geral</a></li>
+          <li class="p-list__item"><a href="{h('para-parceiros/')}">API para parceiros</a></li>
+          <li class="p-list__item"><a href="{h('para-empresas/')}">Dashboard para empresas</a></li>
           <li class="p-list__item"><a href="{h('#demonstracao')}">Demonstração</a></li>
         </ul>
       </div>
@@ -407,9 +406,26 @@ def related_block(slug: str, prefix: str = "../") -> str:
 """
 
 
+PRODUCT_LPS = {
+    "para-parceiros": "Para parceiros (API)",
+    "para-empresas": "Para empresas (Dashboard)",
+}
+
+
 def breadcrumb_html(
-    slug: str | None = None, hub_page: str | None = None, prefix: str = "../"
+    slug: str | None = None,
+    hub_page: str | None = None,
+    prefix: str = "../",
+    product_lp: str | None = None,
 ) -> str:
+    if product_lp:
+        label = PRODUCT_LPS[product_lp]
+        return (
+            "          <p class=\"lf-breadcrumb\">\n            "
+            f'<a href="{prefix}index.html">Início</a>\n            '
+            '<span class="lf-muted"> / </span>\n            '
+            f"<span>{label}</span>\n          </p>"
+        )
     parts = [
         f'<a href="{prefix}index.html">Início</a>',
         '<span class="lf-muted"> / </span>',
@@ -487,6 +503,24 @@ def main() -> None:
         html = re.sub(r"[ \t]*</main>", block + "  </main>", html, count=1)
         path.write_text(html)
         print(f"Updated {slug}/index.html")
+
+    for lp, selected in (
+        ("para-parceiros", "parceiros"),
+        ("para-empresas", "empresas"),
+    ):
+        path = ROOT / lp / "index.html"
+        if not path.exists():
+            print(f"MISSING {lp}")
+            continue
+        html = path.read_text()
+        html = HEADER_RE.sub(nav_html("../", selected=selected), html)
+        html = FOOTER_RE.sub(footer_html("../"), html)
+        if BREADCRUMB_RE.search(html):
+            html = BREADCRUMB_RE.sub(
+                breadcrumb_html(product_lp=lp), html, count=1
+            )
+        path.write_text(html)
+        print(f"Updated {lp}/index.html")
 
     print("DONE")
 
