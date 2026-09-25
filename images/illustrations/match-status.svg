@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Status de matching na tela</title>
+  <desc id="desc">Lista abstrata de oportunidades com status matched, conflito e needs_review</desc>
+  <rect width="960" height="360" fill="#fff"/>
+  <rect x="48" y="40" width="864" height="280" rx="8" fill="#f7f7f7" stroke="#d9d9d9"/>
+  <text x="72" y="78" font-family="Ubuntu, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#111">Oportunidades alinhadas ao catálogo</text>
+  <!-- row 1 -->
+  <rect x="72" y="100" width="816" height="56" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <rect x="88" y="116" width="220" height="12" rx="2" fill="#e5e5e5"/>
+  <rect x="88" y="136" width="140" height="8" rx="2" fill="#ececec"/>
+  <rect x="720" y="116" width="88" height="24" rx="12" fill="#0e8420"/>
+  <text x="738" y="132" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">matched</text>
+  <!-- row 2 -->
+  <rect x="72" y="168" width="816" height="56" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <rect x="88" y="184" width="200" height="12" rx="2" fill="#e5e5e5"/>
+  <rect x="88" y="204" width="160" height="8" rx="2" fill="#ececec"/>
+  <rect x="700" y="184" width="108" height="24" rx="12" fill="#c7162b"/>
+  <text x="720" y="200" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">conflito</text>
+  <!-- row 3 -->
+  <rect x="72" y="236" width="816" height="56" rx="4" fill="#fff" stroke="#d9d9d9"/>
+  <rect x="88" y="252" width="240" height="12" rx="2" fill="#e5e5e5"/>
+  <rect x="88" y="272" width="120" height="8" rx="2" fill="#ececec"/>
+  <rect x="680" y="252" width="128" height="24" rx="12" fill="#b76f00"/>
+  <text x="696" y="268" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">needs_review</text>
+</svg>
