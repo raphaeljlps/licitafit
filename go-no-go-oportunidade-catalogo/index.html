@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Retificação de edital e impacto no matching | LicitaFit</title>
-  <meta name="description" content="Quando o edital é retificado ou atualizado, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico nem garantia de habilitação." />
-  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
-  <link rel="canonical" href="https://www.licitafit.com.br/retificacao-edital-impacto-matching/" />
+  <title>Go/no-go comercial com o catálogo | LicitaFit</title>
+  <meta name="description" content="Qualificar oportunidade com o catálogo: matriz go/no-go comercial com matched, conflito, unknown e needs_review. Fora: margem, habilitação documental e caixa." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). -->
+  <link rel="canonical" href="https://www.licitafit.com.br/go-no-go-oportunidade-catalogo/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -15,6 +15,12 @@
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-breadcrumb { margin-bottom: 1rem; }
     .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #c7162b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    .lf-matrix td { vertical-align: top; }
     .lf-status {
       display: inline-block;
       font-size: 0.75rem;
@@ -23,6 +29,8 @@
       border: 1px solid #d9d9d9;
       border-radius: 2px;
     }
+    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
+    .lf-status--conflict { border-color: #c7162b; color: #c7162b; }
     .lf-status--warn { border-color: #b76f00; color: #8c5400; }
   </style>
   <script type="application/ld+json">
@@ -31,10 +39,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#webpage",
-        "url": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/",
-        "name": "Retificação de edital e impacto no matching | LicitaFit",
-        "description": "Quando o edital muda, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico.",
+        "@id": "https://www.licitafit.com.br/go-no-go-oportunidade-catalogo/#webpage",
+        "url": "https://www.licitafit.com.br/go-no-go-oportunidade-catalogo/",
+        "name": "Go/no-go comercial com o catálogo",
+        "description": "Matriz comercial para priorizar ou arquivar oportunidades com base no catálogo e status de requisitos.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -44,30 +52,30 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#faq",
+        "@id": "https://www.licitafit.com.br/go-no-go-oportunidade-catalogo/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "O matching anterior continua válido depois de uma retificação?",
+            "name": "O que é go/no-go comercial com o catálogo?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação."
+              "text": "É priorizar ou arquivar uma oportunidade com base na aderência aparente do catálogo e na carga de revisão (matched, conflito, unknown, needs_review). Não é decisão de margem, caixa nem habilitação documental."
             }
           },
           {
             "@type": "Question",
-            "name": "O que é um alerta de impacto no matching?",
+            "name": "Go/no-go comercial é o mesmo que análise jurídica?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "É um aviso de que algo relevante mudou (edital, item ou documento) e que a equipe deve reavaliar o matching anterior — por exemplo requisitos que estavam matched, em conflito ou unknown."
+              "text": "Não. Go/no-go comercial organiza a fila de atenção. Parecer jurídico, habilitação documental e interpretação normativa ficam fora do escopo do matching."
             }
           },
           {
             "@type": "Question",
-            "name": "Alerta de retificação substitui parecer jurídico?",
+            "name": "O que o matching não decide no go/no-go?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia de habilitação."
+              "text": "Não decide margem, caixa ou capacidade de entrega; não garante habilitação documental; não preenche unknown com elegibilidade inventada."
             }
           }
         ]
@@ -116,15 +124,19 @@
             <span class="lf-muted"> / </span>
             <a href="../guias/">Guias</a>
             <span class="lf-muted"> / </span>
-            <span>Retificação e matching</span>
+            <span>Go/no-go com o catálogo</span>
           </p>
-          <p class="p-muted-heading">Guia LicitaFit</p>
-          <h1>Retificação de edital e impacto no matching anterior</h1>
+          <p class="p-muted-heading">Decisão comercial · Guia LicitaFit</p>
+          <h1>Qualificar oportunidade com o catálogo (go/no-go comercial)</h1>
           <p class="p-heading--4">
-            Se o edital, o item ou o documento muda, o <strong>matching anterior pode deixar de valer</strong>
-            para a revisão comercial. O LicitaFit apoia <strong>alertas de impacto</strong> para a equipe
-            reavaliar requisitos (matched / conflito / unknown) — não “congela” habilitação nem substitui
-            leitura da versão vigente.
+            Use o <strong>catálogo + status de requisitos</strong>
+            (<span class="lf-status lf-status--ok">matched</span>,
+            <span class="lf-status lf-status--conflict">conflito</span>,
+            <span class="lf-status lf-status--warn">unknown</span>,
+            <code>needs_review</code>)
+            para <strong>priorizar ou arquivar</strong> oportunidades — isso é
+            <strong>go/no-go comercial</strong>.
+            Não cobre margem, caixa nem habilitação documental; não é análise jurídica.
           </p>
         </div>
       </div>
@@ -133,20 +145,53 @@
     <section class="p-strip">
       <div class="row">
         <div class="col-8">
-          <h2>Por que a mudança importa quando há catálogo</h2>
+          <div class="lf-callout">
+            <p>
+              Go/no-go comercial ≠ habilitação. Detalhe de compliance em
+              <a href="../limites-matching-licitafit/">limites do matching</a>.
+              Como o cruzamento funciona:
+              <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
+            </p>
+          </div>
+          <h2>Matriz de apoio à decisão comercial</h2>
           <p>
-            O matching cruza o catálogo do distribuidor com o que o edital pede
-            <em>naquele momento</em>. Uma retificação ou republicação pode alterar memória, garantia,
-            prazo de entrega, quantidade ou outro requisito — e o que parecia
-            <span class="lf-status">matched</span> pode passar a exigir nova conferência
-            (incluindo <span class="lf-status lf-status--warn">unknown</span> se o trecho ficou ilegível).
+            Sem scores percentuais inventados: a ideia é organizar a fila com o que o matching
+            já expõe. A leitura humana do edital e anexos continua obrigatória antes de proposta.
           </p>
-          <p>
-            Fluxo base:
-            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
-            Vocabulário:
-            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
-          </p>
+          <table class="p-table lf-matrix" aria-label="Matriz go/no-go comercial">
+            <thead>
+              <tr>
+                <th>Sinal do matching</th>
+                <th>Leitura comercial tipica</th>
+                <th>Próximo passo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="lf-status lf-status--ok">matched</span> em requisitos-chave</td>
+                <td>Aderência aparente ao catálogo — candidato a <strong>go</strong> na fila de revisão</td>
+                <td>Conferir TR/anexos; validar SKU e disponibilidade</td>
+              </tr>
+              <tr>
+                <td><span class="lf-status lf-status--conflict">conflito</span> em requisito material</td>
+                <td>Risco de esforço alto ou <strong>no-go</strong> precoce se o SKU não cobre</td>
+                <td>Confirmar se há outro SKU; se não, arquivar ou escalar</td>
+              </tr>
+              <tr>
+                <td><span class="lf-status lf-status--warn">unknown</span> / <code>needs_review</code></td>
+                <td>Informação faltando — não inventar elegibilidade</td>
+                <td>Abrir evidência; completar catálogo ou ler anexo</td>
+              </tr>
+              <tr>
+                <td>Edital retificado após matching</td>
+                <td>Matching anterior pode estar desatualizado</td>
+                <td>
+                  Reavaliar — ver
+                  <a href="../retificacao-edital-impacto-matching/">retificação e impacto</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -154,75 +199,44 @@
     <section class="p-strip--light">
       <div class="row">
         <div class="col-8">
-          <h2>O que a equipe comercial deve fazer</h2>
-          <ol class="p-stepped-list">
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Tratar o alerta como disparo de revisão</h3>
-              <p class="p-stepped-list__content">
-                Não interpretar “houve match antes” como “ainda está ok”. Abrir a versão vigente do
-                edital / anexos.
-              </p>
-            </li>
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Reconferir requisitos e evidência</h3>
-              <p class="p-stepped-list__content">
-                Revisar matched / conflito / unknown e <code>evidence_page</code> quando houver.
-                Voltar a marcar o que ainda precisa de <code>needs_review</code>.
-              </p>
-            </li>
-            <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Atualizar o go/no-go comercial</h3>
-              <p class="p-stepped-list__content">
-                Priorizar, seguir ou arquivar com base na nova leitura. Margem, habilitação documental
-                e parecer jurídico continuam fora do escopo do matching —
-                <a href="../limites-matching-licitafit/">limites do matching</a>.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip">
-      <div class="row">
-        <div class="col-8">
-          <h2>O que o produto comunica (tom da landing)</h2>
-          <p>
-            Na landing, o LicitaFit descreve alertas quando o edital, o item ou o documento muda —
-            no espírito de: <em>“A exigência mudou. Reavalie o matching anterior.”</em>
-            Isso é apoio operacional à fila comercial do ERP, não certificação de conformidade.
-          </p>
+          <h2>O que fica fora desta matriz</h2>
           <ul class="p-list">
-            <li class="p-list__item is-ticked">Preferir “reavaliar matching” a “ainda habilitado”</li>
-            <li class="p-list__item is-ticked">Não omitir requisitos que voltaram a unknown</li>
-            <li class="p-list__item is-ticked">Manter disclaimer na feature de alertas</li>
+            <li class="p-list__item"><strong>Margem</strong> e precificação da proposta</li>
+            <li class="p-list__item"><strong>Habilitação documental</strong> (regularidade, atestados, etc.)</li>
+            <li class="p-list__item"><strong>Caixa</strong> / capital de giro e capacidade de entrega</li>
+            <li class="p-list__item">Parecer jurídico ou interpretação normativa do edital</li>
           </ul>
           <p class="lf-legal">
-            Esta página não interpreta Lei 14.133 nem prazos legais de republicação.
-            Para regras oficiais, consulte fontes governamentais e assessoria jurídica própria.
+            Esses eixos ficam com a equipe comercial, financeira e, quando couber, jurídica —
+            fora do escopo do matching LicitaFit.
+          </p>
+          <p>
+            Vocabulário de status:
+            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light" id="faq">
+    <section class="p-strip" id="faq">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>O matching anterior continua válido depois de uma retificação?</h3>
+          <h3>O que é go/no-go comercial com o catálogo?</h3>
           <p>
-            Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa
-            reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação.
+            É priorizar ou arquivar uma oportunidade com base na aderência aparente do catálogo
+            e na carga de revisão (matched, conflito, unknown, <code>needs_review</code>).
+            Não é decisão de margem, caixa nem habilitação documental.
           </p>
-          <h3>O que é um alerta de impacto no matching?</h3>
+          <h3>Go/no-go comercial é o mesmo que análise jurídica?</h3>
           <p>
-            É um aviso de que algo relevante mudou e que a equipe deve reavaliar o matching anterior —
-            por exemplo requisitos que estavam matched, em conflito ou unknown.
+            Não. Go/no-go comercial organiza a fila de atenção. Parecer jurídico, habilitação
+            documental e interpretação normativa ficam fora do escopo do matching.
           </p>
-          <h3>Alerta de retificação substitui parecer jurídico?</h3>
+          <h3>O que o matching não decide no go/no-go?</h3>
           <p>
-            Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia
-            de habilitação.
+            Não decide margem, caixa ou capacidade de entrega; não garante habilitação documental;
+            não preenche unknown com elegibilidade inventada.
           </p>
         </div>
       </div>
@@ -231,10 +245,11 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Ver alertas de impacto no fluxo do ERP</h2>
+          <h2>Priorizar a fila com o catálogo no ERP</h2>
           <p>
             <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
             <a class="p-button" href="../matching-catalogo-edital/">Como funciona o matching</a>
+            <a class="p-button" href="../limites-matching-licitafit/">Limites do matching</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
