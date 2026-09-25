@@ -125,8 +125,7 @@
           <li class="p-navigation__item"><a class="p-navigation__link" href="#produto">Produto</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#como-funciona">Como funciona</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#para-quem">Para quem</a></li>
-          <li class="p-navigation__item"><a class="p-navigation__link" href="guias/">Guias</a></li>
-          <li class="p-navigation__item"><a class="p-navigation__link" href="comparativos/">Comparativos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#recursos">Recursos</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#preco">Preço</a></li>
           <li class="p-navigation__item"><a class="p-navigation__link" href="#empresa">Empresa</a></li>
         </ul>
@@ -420,7 +419,107 @@ POST /v1/webhook-endpoints</pre>
       </div>
     </section>
 
-    <section class="p-strip" id="preco">
+    <section class="p-strip" id="recursos">
+      <div class="row">
+        <div class="col-8">
+          <h2>Recursos</h2>
+          <p class="p-heading--4">Aprenda e compare — sem rankings inventados</p>
+          <p>
+            Guias e comparativos para product leads de ERP e equipes comerciais de distribuidores de TI.
+            Conteúdo educacional; o LicitaFit permanece apoio à decisão comercial.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
+            <p class="p-muted-heading">Hub</p>
+            <h3 class="p-card__title"><a href="guias/">Guias</a></h3>
+            <p class="p-card__content">
+              Matching, status de requisitos, checklist de ERP, PNCP e limites do produto.
+            </p>
+            <p class="p-card__content"><a href="guias/">Ver guias →</a></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <p class="p-muted-heading">Hub</p>
+            <h3 class="p-card__title"><a href="comparativos/">Comparativos</a></h3>
+            <p class="p-card__content">
+              Contrastes honestos: alerta vs matching, feed PNCP vs produto, PNCP vs portais de disputa.
+            </p>
+            <p class="p-card__content"><a href="comparativos/">Ver comparativos →</a></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <p class="p-muted-heading">Parceiro</p>
+            <h3 class="p-card__title"><a href="integracao-api-licitafit/">Integração API</a></h3>
+            <p class="p-card__content">
+              Visão de produto dos endpoints e eventos já descritos na landing — sem inventar campos.
+            </p>
+            <p class="p-card__content"><a href="integracao-api-licitafit/">Ver integração →</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:2rem">
+        <div class="col-12">
+          <h3>Guias em destaque</h3>
+        </div>
+      </div>
+      <div class="row u-equal-height">
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></h4>
+            <p class="p-card__content">Aviso por palavra-chave/CNAE/UF versus cruzamento com SKUs reais e status de requisitos.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></h4>
+            <p class="p-card__content">Cada status descreve carga de revisão comercial — não parecer jurídico.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a></h4>
+            <p class="p-card__content">O que o product lead precisa no fluxo do ERP antes de prometer “licitações no software”.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row u-equal-height" style="margin-top:1rem">
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="matching-catalogo-edital/">Matching catálogo ↔ item de edital</a></h4>
+            <p class="p-card__content">Cruzar produtos do catálogo com itens do edital sem falsa elegibilidade.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="limites-matching-licitafit/">Limites do matching LicitaFit</a></h4>
+            <p class="p-card__content">Apoio à decisão comercial — não parecer jurídico nem garantia de habilitação.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h4 class="p-heading--5"><a href="o-que-e-pncp/">O que é o PNCP</a></h4>
+            <p class="p-card__content">Portal Nacional de Contratações Públicas: divulgação centralizada de compras.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1.5rem">
+        <div class="col-12">
+          <p>
+            <a class="p-button" href="guias/">Ver todos os guias</a>
+            <a href="comparativos/">Comparativos</a>
+            ·
+            <a href="#faq">FAQ</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+<section class="p-strip" id="preco">
       <div class="row">
         <div class="col-6">
           <h2>Planos para parceiros de software</h2>
@@ -511,44 +610,50 @@ POST /v1/webhook-endpoints</pre>
     </section>
   </main>
 
-  <footer class="p-strip" id="rodape">
+  <footer class="p-strip is-shallow" id="rodape">
     <div class="row">
-      <div class="col-4">
+      <div class="col-3">
         <p>
           <strong>LicitaFit</strong><br />
           Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
         </p>
-        <p class="lf-footer-nav">
-          <a href="#produto">Produto</a>
-          <a href="#empresa">Launchbase</a>
-          <a href="#demonstracao">Solicitar demonstração</a>
-        </p>
       </div>
-      <div class="col-4">
-        <p><strong>Guias</strong></p>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
         <ul class="p-list">
-          <li class="p-list__item"><a href="guias/">Índice de guias</a></li>
-          <li class="p-list__item"><a href="comparativos/">Comparativos</a></li>
-          <li class="p-list__item"><a href="#faq">FAQ</a></li>
-          <li class="p-list__item"><a href="alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>
-          <li class="p-list__item"><a href="needs-review-matched-conflito-unknown/">Matched, conflito, unknown e needs_review</a></li>
-          <li class="p-list__item"><a href="checklist-oportunidades-governo-no-erp/">Checklist: oportunidades de governo no ERP</a></li>
-          <li class="p-list__item"><a href="pncp-feed-vs-matching-catalogo/">Feed PNCP vs matching de catálogo</a></li>
-          <li class="p-list__item"><a href="matching-catalogo-edital/">Matching catálogo ↔ item</a></li>
-          <li class="p-list__item"><a href="limites-matching-licitafit/">Limites do matching</a></li>
-          <li class="p-list__item"><a href="retificacao-edital-impacto-matching/">Retificação e impacto no matching</a></li>
-          <li class="p-list__item"><a href="o-que-e-pncp/">O que é o PNCP</a></li>
-          <li class="p-list__item"><a href="go-no-go-oportunidade-catalogo/">Go/no-go com o catálogo</a></li>
-          <li class="p-list__item"><a href="checklist-requisitos-notebooks-monitores/">Checklist notebooks e monitores</a></li>
-          <li class="p-list__item"><a href="feature-oportunidades-alinhadas-catalogo/">Feature UI: oportunidades no ERP</a></li>
-          <li class="p-list__item"><a href="pncp-vs-portais-de-disputa/">PNCP vs portais de disputa</a></li>
-          <li class="p-list__item"><a href="integracao-api-licitafit/">Integração API (visão de produto)</a></li>
+          <li class="p-list__item"><a href="#produto">Produto</a></li>
+          <li class="p-list__item"><a href="#como-funciona">Como funciona</a></li>
+          <li class="p-list__item"><a href="#preco">Preço</a></li>
+          <li class="p-list__item"><a href="#demonstracao">Demonstração</a></li>
         </ul>
       </div>
-      <div class="col-4">
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="guias/">Guias</a></li>
+          <li class="p-list__item"><a href="comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="#empresa">Launchbase Tecnologia</a></li>
+        </ul>
         <p class="lf-legal">
-          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.<br /><br />
-          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77
+          Apoio à decisão comercial — não é parecer jurídico nem garantia de habilitação.
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="#recursos">Recursos</a> ·
+          <a href="guias/">Guias</a> ·
+          <a href="comparativos/">Comparativos</a>
         </p>
       </div>
     </div>

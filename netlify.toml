@@ -1,0 +1,9 @@
+# Interim static publish (optional). Canonical SEO stays https://www.licitafit.com.br
+[build]
+  publish = "."
+  command = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
