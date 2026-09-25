@@ -70,4 +70,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+
+  <url>
+    <loc>https://www.licitafit.com.br/feature-oportunidades-alinhadas-catalogo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/pncp-vs-portais-de-disputa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/integracao-api-licitafit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
 </urlset>
