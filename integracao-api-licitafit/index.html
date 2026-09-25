@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Retificação de edital e impacto no matching | LicitaFit</title>
-  <meta name="description" content="Quando o edital é retificado ou atualizado, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico nem garantia de habilitação." />
+  <title>Integração API LicitaFit — visão de produto | LicitaFit</title>
+  <meta name="description" content="Endpoints e exemplo de evento já publicados na landing: catalogs, products, opportunities, feedback e webhooks. Sem inventar campos além do exemplo." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
-  <link rel="canonical" href="https://www.licitafit.com.br/retificacao-edital-impacto-matching/" />
+  <link rel="canonical" href="https://www.licitafit.com.br/integracao-api-licitafit/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -15,15 +15,19 @@
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-breadcrumb { margin-bottom: 1rem; }
     .lf-footer-nav a { margin-right: 0.75rem; }
-    .lf-status {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid #d9d9d9;
-      border-radius: 2px;
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
     }
-    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
+    .lf-code {
+      background: #111;
+      color: #f7f7f7;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -31,10 +35,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#webpage",
-        "url": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/",
-        "name": "Retificação de edital e impacto no matching | LicitaFit",
-        "description": "Quando o edital muda, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico.",
+        "@id": "https://www.licitafit.com.br/integracao-api-licitafit/#webpage",
+        "url": "https://www.licitafit.com.br/integracao-api-licitafit/",
+        "name": "Integração API LicitaFit — visão de produto",
+        "description": "Visão de produto dos endpoints e do exemplo de evento publicados na landing LicitaFit.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -44,30 +48,30 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#faq",
+        "@id": "https://www.licitafit.com.br/integracao-api-licitafit/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "O matching anterior continua válido depois de uma retificação?",
+            "name": "Quais endpoints a landing descreve?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação."
+              "text": "POST /v1/catalogs; PUT /v1/catalogs/{id}/products; GET /v1/catalogs/{id}/opportunities; POST /v1/opportunities/{id}/feedback; POST /v1/webhook-endpoints."
             }
           },
           {
             "@type": "Question",
-            "name": "O que é um alerta de impacto no matching?",
+            "name": "Quais campos aparecem no exemplo de evento?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "É um aviso de que algo relevante mudou (edital, item ou documento) e que a equipe deve reavaliar o matching anterior — por exemplo requisitos que estavam matched, em conflito ou unknown."
+              "text": "event (opportunity.matched), product_id, item_number, qualification (needs_review), requirements com name e status (matched / unknown no exemplo), e evidence_page."
             }
           },
           {
             "@type": "Question",
-            "name": "Alerta de retificação substitui parecer jurídico?",
+            "name": "Esta página é a documentação completa da API?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia de habilitação."
+              "text": "Não. É visão de produto espelhando o exemplo já publicado na landing. Detalhes de autenticação, schemas e limites seguem documentação de parceiro quando estável — sem inventar campos aqui."
             }
           }
         ]
@@ -116,15 +120,17 @@
             <span class="lf-muted"> / </span>
             <a href="../guias/">Guias</a>
             <span class="lf-muted"> / </span>
-            <span>Retificação e matching</span>
+            <span>Integração API</span>
           </p>
-          <p class="p-muted-heading">Guia LicitaFit</p>
-          <h1>Retificação de edital e impacto no matching anterior</h1>
+          <p class="p-muted-heading">Parceiro · Guia LicitaFit</p>
+          <h1>Integração API LicitaFit — visão de produto</h1>
           <p class="p-heading--4">
-            Se o edital, o item ou o documento muda, o <strong>matching anterior pode deixar de valer</strong>
-            para a revisão comercial. O LicitaFit apoia <strong>alertas de impacto</strong> para a equipe
-            reavaliar requisitos (matched / conflito / unknown) — não “congela” habilitação nem substitui
-            leitura da versão vigente.
+            Na visão publicada na landing, a integração gira em torno de
+            <strong>criar catálogo</strong>, <strong>enviar produtos</strong>,
+            <strong>listar oportunidades</strong>, <strong>enviar feedback</strong> e
+            <strong>registrar webhooks</strong>.
+            Esta página <strong>espelha</strong> esses endpoints e o exemplo de evento —
+            <strong>sem inventar campos</strong> além do que já está na home.
           </p>
         </div>
       </div>
@@ -133,49 +139,44 @@
     <section class="p-strip">
       <div class="row">
         <div class="col-8">
-          <h2>Por que a mudança importa quando há catálogo</h2>
-          <p>
-            O matching cruza o catálogo do distribuidor com o que o edital pede
-            <em>naquele momento</em>. Uma retificação ou republicação pode alterar memória, garantia,
-            prazo de entrega, quantidade ou outro requisito — e o que parecia
-            <span class="lf-status">matched</span> pode passar a exigir nova conferência
-            (incluindo <span class="lf-status lf-status--warn">unknown</span> se o trecho ficou ilegível).
-          </p>
-          <p>
-            Fluxo base:
-            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
-            Vocabulário:
-            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light">
-      <div class="row">
-        <div class="col-8">
-          <h2>O que a equipe comercial deve fazer</h2>
+          <div class="lf-callout">
+            <p>
+              Fonte: seção “Como funciona” da
+              <a href="../index.html#como-funciona">landing LicitaFit</a>.
+              Não é documentação OpenAPI completa — é mapa de produto para o PM/engenharia do parceiro.
+            </p>
+          </div>
+          <h2>Endpoints publicados no exemplo</h2>
+          <pre class="lf-code">POST /v1/catalogs
+PUT  /v1/catalogs/{id}/products
+GET  /v1/catalogs/{id}/opportunities
+POST /v1/opportunities/{id}/feedback
+POST /v1/webhook-endpoints</pre>
           <ol class="p-stepped-list">
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Tratar o alerta como disparo de revisão</h3>
+              <h3 class="p-stepped-list__title">Catálogo do cliente</h3>
               <p class="p-stepped-list__content">
-                Não interpretar “houve match antes” como “ainda está ok”. Abrir a versão vigente do
-                edital / anexos.
+                <code>POST /v1/catalogs</code> e
+                <code>PUT /v1/catalogs/{id}/products</code> —
+                o parceiro envia o catálogo que o distribuidor já mantém.
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Reconferir requisitos e evidência</h3>
+              <h3 class="p-stepped-list__title">Oportunidades para a UI</h3>
               <p class="p-stepped-list__content">
-                Revisar matched / conflito / unknown e <code>evidence_page</code> quando houver.
-                Voltar a marcar o que ainda precisa de <code>needs_review</code>.
+                <code>GET /v1/catalogs/{id}/opportunities</code> —
+                oportunidades relevantes, produtos que batem, requisitos a conferir.
+                O que mostrar na tela:
+                <a href="../feature-oportunidades-alinhadas-catalogo/">feature UI</a>.
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Atualizar o go/no-go comercial</h3>
+              <h3 class="p-stepped-list__title">Feedback e webhooks</h3>
               <p class="p-stepped-list__content">
-                Priorizar, seguir ou arquivar com base na nova leitura. Margem, habilitação documental
-                e parecer jurídico continuam fora do escopo do matching —
-                <a href="../limites-matching-licitafit/">limites do matching</a>.
+                <code>POST /v1/opportunities/{id}/feedback</code> para correção de matches;
+                <code>POST /v1/webhook-endpoints</code> para receber eventos
+                (ex.: matching e alertas de mudança). Catálogo e feedback isolados por cliente,
+                conforme a home.
               </p>
             </li>
           </ol>
@@ -183,46 +184,70 @@
       </div>
     </section>
 
-    <section class="p-strip">
+    <section class="p-strip--light">
       <div class="row">
         <div class="col-8">
-          <h2>O que o produto comunica (tom da landing)</h2>
+          <h2>Exemplo de evento (campos da landing)</h2>
           <p>
-            Na landing, o LicitaFit descreve alertas quando o edital, o item ou o documento muda —
-            no espírito de: <em>“A exigência mudou. Reavalie o matching anterior.”</em>
-            Isso é apoio operacional à fila comercial do ERP, não certificação de conformidade.
+            Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido —
+            e onde está a evidência no documento.
           </p>
+          <pre class="lf-code">{
+  "event": "opportunity.matched",
+  "product_id": "laptop_16gb_512gb",
+  "item_number": 7,
+  "qualification": "needs_review",
+  "requirements": [
+    { "name": "memory", "status": "matched" },
+    { "name": "on_site_warranty", "status": "unknown" }
+  ],
+  "evidence_page": 12
+}</pre>
+          <p>
+            Vocabulário de status:
+            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
+            Checklist de escopo:
+            <a href="../checklist-oportunidades-governo-no-erp/">oportunidades de governo no ERP</a>.
+          </p>
+          <h2>O que esta página não inventa</h2>
           <ul class="p-list">
-            <li class="p-list__item is-ticked">Preferir “reavaliar matching” a “ainda habilitado”</li>
-            <li class="p-list__item is-ticked">Não omitir requisitos que voltaram a unknown</li>
-            <li class="p-list__item is-ticked">Manter disclaimer na feature de alertas</li>
+            <li class="p-list__item">Schemas completos, autenticação ou rate limits numéricos</li>
+            <li class="p-list__item">Campos além do exemplo publicado na home</li>
+            <li class="p-list__item">Garantia de habilitação a partir do evento matched</li>
           </ul>
           <p class="lf-legal">
-            Esta página não interpreta Lei 14.133 nem prazos legais de republicação.
-            Para regras oficiais, consulte fontes governamentais e assessoria jurídica própria.
+            Documentação de parceiro mais detalhada virá quando estiver estável.
+            Até lá, trate esta página e a landing como a fonte pública de referência.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light" id="faq">
+    <section class="p-strip--light" id="faq" style="padding-top:0">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>O matching anterior continua válido depois de uma retificação?</h3>
+          <h3>Quais endpoints a landing descreve?</h3>
           <p>
-            Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa
-            reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação.
+            <code>POST /v1/catalogs</code>,
+            <code>PUT /v1/catalogs/{id}/products</code>,
+            <code>GET /v1/catalogs/{id}/opportunities</code>,
+            <code>POST /v1/opportunities/{id}/feedback</code>,
+            <code>POST /v1/webhook-endpoints</code>.
           </p>
-          <h3>O que é um alerta de impacto no matching?</h3>
+          <h3>Quais campos aparecem no exemplo de evento?</h3>
           <p>
-            É um aviso de que algo relevante mudou e que a equipe deve reavaliar o matching anterior —
-            por exemplo requisitos que estavam matched, em conflito ou unknown.
+            <code>event</code> (<code>opportunity.matched</code>),
+            <code>product_id</code>, <code>item_number</code>,
+            <code>qualification</code> (<code>needs_review</code>),
+            <code>requirements</code> com <code>name</code> e <code>status</code>,
+            e <code>evidence_page</code>.
           </p>
-          <h3>Alerta de retificação substitui parecer jurídico?</h3>
+          <h3>Esta página é a documentação completa da API?</h3>
           <p>
-            Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia
-            de habilitação.
+            Não. É visão de produto espelhando o exemplo da landing.
+            Detalhes de autenticação, schemas e limites seguem documentação de parceiro
+            quando estável — sem inventar campos aqui.
           </p>
         </div>
       </div>
@@ -231,10 +256,11 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Ver alertas de impacto no fluxo do ERP</h2>
+          <h2>Planejar a integração com o catálogo real</h2>
           <p>
             <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../matching-catalogo-edital/">Como funciona o matching</a>
+            <a class="p-button" href="../feature-oportunidades-alinhadas-catalogo/">O que mostrar na UI</a>
+            <a class="p-button" href="../checklist-oportunidades-governo-no-erp/">Checklist ERP</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
@@ -259,7 +285,7 @@
       </div>
       <div class="col-4">
         <p><strong>Guias</strong></p>
-        <ul class="p-list">
+        <ul class="p-list" id="lf-footer-guias">
           <li class="p-list__item"><a href="../guias/">Índice de guias</a></li>
           <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
           <li class="p-list__item"><a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>

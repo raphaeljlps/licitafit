@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Retificação de edital e impacto no matching | LicitaFit</title>
-  <meta name="description" content="Quando o edital é retificado ou atualizado, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico nem garantia de habilitação." />
+  <title>Feature UI: oportunidades alinhadas ao catálogo no ERP | LicitaFit</title>
+  <meta name="description" content="O que mostrar na UI do ERP: oportunidades priorizadas, SKUs do catálogo, status de requisitos, alertas de mudança e disclaimer comercial. Preço público é por software partner." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
-  <link rel="canonical" href="https://www.licitafit.com.br/retificacao-edital-impacto-matching/" />
+  <link rel="canonical" href="https://www.licitafit.com.br/feature-oportunidades-alinhadas-catalogo/" />
   <link rel="stylesheet" href="../css/vanilla.css" />
   <script src="../js/site-origin.js" defer></script>
   <style>
@@ -15,15 +15,11 @@
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-breadcrumb { margin-bottom: 1rem; }
     .lf-footer-nav a { margin-right: 0.75rem; }
-    .lf-status {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid #d9d9d9;
-      border-radius: 2px;
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
     }
-    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
   </style>
   <script type="application/ld+json">
   {
@@ -31,10 +27,10 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#webpage",
-        "url": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/",
-        "name": "Retificação de edital e impacto no matching | LicitaFit",
-        "description": "Quando o edital muda, reavalie o matching anterior. Alertas de impacto apoiam revisão comercial — sem parecer jurídico.",
+        "@id": "https://www.licitafit.com.br/feature-oportunidades-alinhadas-catalogo/#webpage",
+        "url": "https://www.licitafit.com.br/feature-oportunidades-alinhadas-catalogo/",
+        "name": "Feature UI: oportunidades alinhadas ao catálogo no ERP",
+        "description": "O que o ERP deve mostrar na feature de oportunidades de governo alinhadas ao catálogo.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
@@ -44,30 +40,30 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.licitafit.com.br/retificacao-edital-impacto-matching/#faq",
+        "@id": "https://www.licitafit.com.br/feature-oportunidades-alinhadas-catalogo/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "O matching anterior continua válido depois de uma retificação?",
+            "name": "O que a UI da feature deve mostrar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação."
+              "text": "Oportunidades priorizadas ligadas a SKUs reais do catálogo, status de requisitos (matched, conflito ou unknown), revisão humana (needs_review), alertas quando o edital muda e um disclaimer de apoio à decisão comercial — sem afirmar habilitação."
             }
           },
           {
             "@type": "Question",
-            "name": "O que é um alerta de impacto no matching?",
+            "name": "Posso mostrar o produto como habilitado na UI?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "É um aviso de que algo relevante mudou (edital, item ou documento) e que a equipe deve reavaliar o matching anterior — por exemplo requisitos que estavam matched, em conflito ou unknown."
+              "text": "Não. Status e qualificações descrevem carga de revisão comercial. O LicitaFit não constitui parecer jurídico nem garantia de habilitação."
             }
           },
           {
             "@type": "Question",
-            "name": "Alerta de retificação substitui parecer jurídico?",
+            "name": "Qual preço comunicar na feature para o end-user?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia de habilitação."
+              "text": "O preço público do LicitaFit (R$ 1.500/mês) é por software partner, com cota de catálogos ativos. Não invente preço sugerido ao distribuidor end-user — isso é decisão comercial do parceiro ERP."
             }
           }
         ]
@@ -116,15 +112,17 @@
             <span class="lf-muted"> / </span>
             <a href="../guias/">Guias</a>
             <span class="lf-muted"> / </span>
-            <span>Retificação e matching</span>
+            <span>Feature UI no ERP</span>
           </p>
-          <p class="p-muted-heading">Guia LicitaFit</p>
-          <h1>Retificação de edital e impacto no matching anterior</h1>
+          <p class="p-muted-heading">Produto · Guia LicitaFit</p>
+          <h1>Feature “oportunidades alinhadas ao catálogo” — o que mostrar na UI</h1>
           <p class="p-heading--4">
-            Se o edital, o item ou o documento muda, o <strong>matching anterior pode deixar de valer</strong>
-            para a revisão comercial. O LicitaFit apoia <strong>alertas de impacto</strong> para a equipe
-            reavaliar requisitos (matched / conflito / unknown) — não “congela” habilitação nem substitui
-            leitura da versão vigente.
+            Mostre <strong>oportunidades priorizadas</strong> ligadas a <strong>SKUs reais</strong>,
+            <strong>status de requisitos</strong> (matched / conflito / unknown) com
+            <strong>revisão humana</strong> (<code>needs_review</code>),
+            <strong>alertas quando o edital muda</strong> e um
+            <strong>disclaimer</strong> de apoio à decisão comercial — sem afirmar habilitação.
+            O preço público do LicitaFit é <strong>por software partner</strong>; não invente preço ao end-user.
           </p>
         </div>
       </div>
@@ -133,49 +131,54 @@
     <section class="p-strip">
       <div class="row">
         <div class="col-8">
-          <h2>Por que a mudança importa quando há catálogo</h2>
-          <p>
-            O matching cruza o catálogo do distribuidor com o que o edital pede
-            <em>naquele momento</em>. Uma retificação ou republicação pode alterar memória, garantia,
-            prazo de entrega, quantidade ou outro requisito — e o que parecia
-            <span class="lf-status">matched</span> pode passar a exigir nova conferência
-            (incluindo <span class="lf-status lf-status--warn">unknown</span> se o trecho ficou ilegível).
-          </p>
-          <p>
-            Fluxo base:
-            <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
-            Vocabulário:
-            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light">
-      <div class="row">
-        <div class="col-8">
-          <h2>O que a equipe comercial deve fazer</h2>
+          <div class="lf-callout">
+            <p>
+              A landing descreve a feature paga do parceiro como
+              “Oportunidades de governo alinhadas ao catálogo”.
+              O ERP continua dono da interface e do relacionamento com o cliente.
+            </p>
+          </div>
+          <h2>Blocos que a UI precisa cobrir</h2>
           <ol class="p-stepped-list">
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Tratar o alerta como disparo de revisão</h3>
+              <h3 class="p-stepped-list__title">Lista de oportunidades priorizadas</h3>
               <p class="p-stepped-list__content">
-                Não interpretar “houve match antes” como “ainda está ok”. Abrir a versão vigente do
-                edital / anexos.
+                Um conjunto curto, com motivos ligados a produtos reais do catálogo —
+                não uma lista genérica de “N novas licitações”.
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Reconferir requisitos e evidência</h3>
+              <h3 class="p-stepped-list__title">SKUs / produtos que batem potencialmente</h3>
               <p class="p-stepped-list__content">
-                Revisar matched / conflito / unknown e <code>evidence_page</code> quando houver.
-                Voltar a marcar o que ainda precisa de <code>needs_review</code>.
+                Relacione itens do edital a identificadores do catálogo do cliente
+                (ex.: produto que o distribuidor já vende). Motivos auditáveis para a equipe comercial.
               </p>
             </li>
             <li class="p-stepped-list__item">
-              <h3 class="p-stepped-list__title">Atualizar o go/no-go comercial</h3>
+              <h3 class="p-stepped-list__title">Status de requisitos + revisão</h3>
               <p class="p-stepped-list__content">
-                Priorizar, seguir ou arquivar com base na nova leitura. Margem, habilitação documental
-                e parecer jurídico continuam fora do escopo do matching —
-                <a href="../limites-matching-licitafit/">limites do matching</a>.
+                Matched, conflito ou unknown por requisito; qualificação como
+                <code>needs_review</code> quando ainda há conferência.
+                Referência à evidência no documento quando disponível
+                (ideia de <code>evidence_page</code> no exemplo da landing).
+                Detalhe do vocabulário:
+                <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Alertas de impacto</h3>
+              <p class="p-stepped-list__content">
+                Quando o edital, o item ou o documento muda, sinalize impacto no matching anterior
+                e peça reavaliação — sem congelar “aprovado”.
+                Ver
+                <a href="../retificacao-edital-impacto-matching/">retificação e impacto no matching</a>.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Disclaimer sempre visível</h3>
+              <p class="p-stepped-list__content">
+                Apoio à decisão comercial — não parecer jurídico nem garantia de habilitação.
+                Ver <a href="../limites-matching-licitafit/">limites do matching</a>.
               </p>
             </li>
           </ol>
@@ -183,46 +186,53 @@
       </div>
     </section>
 
-    <section class="p-strip">
+    <section class="p-strip--light">
       <div class="row">
         <div class="col-8">
-          <h2>O que o produto comunica (tom da landing)</h2>
-          <p>
-            Na landing, o LicitaFit descreve alertas quando o edital, o item ou o documento muda —
-            no espírito de: <em>“A exigência mudou. Reavalie o matching anterior.”</em>
-            Isso é apoio operacional à fila comercial do ERP, não certificação de conformidade.
-          </p>
+          <h2>O que não rotular como “aprovado”</h2>
           <ul class="p-list">
-            <li class="p-list__item is-ticked">Preferir “reavaliar matching” a “ainda habilitado”</li>
-            <li class="p-list__item is-ticked">Não omitir requisitos que voltaram a unknown</li>
-            <li class="p-list__item is-ticked">Manter disclaimer na feature de alertas</li>
+            <li class="p-list__item">Não use “habilitado”, “apto” ou “aprovado juridicamente” só porque houve match</li>
+            <li class="p-list__item">Unknown e conflito aumentam carga de revisão — não esconda</li>
+            <li class="p-list__item">Go/no-go comercial (priorizar / arquivar) ≠ análise jurídica —
+              <a href="../go-no-go-oportunidade-catalogo/">matriz go/no-go</a></li>
           </ul>
-          <p class="lf-legal">
-            Esta página não interpreta Lei 14.133 nem prazos legais de republicação.
-            Para regras oficiais, consulte fontes governamentais e assessoria jurídica própria.
+          <h2>Nota de preço (parceiro vs end-user)</h2>
+          <p>
+            O preço público do LicitaFit é <strong>R$&nbsp;1.500/mês por software partner</strong>,
+            com cota definida de catálogos de fornecedores ativos (ver
+            <a href="../index.html#preco">planos na home</a>).
+            Como o ERP cobra a feature do distribuidor é decisão do parceiro —
+            <strong>não inventamos preço ao end-user</strong> nesta página.
+          </p>
+          <p>
+            Checklist de escopo antes de vender a feature:
+            <a href="../checklist-oportunidades-governo-no-erp/">oportunidades de governo no ERP</a>.
+            Visão de endpoints:
+            <a href="../integracao-api-licitafit/">integração API (visão de produto)</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="p-strip--light" id="faq">
+    <section class="p-strip--light" id="faq" style="padding-top:0">
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>O matching anterior continua válido depois de uma retificação?</h3>
+          <h3>O que a UI da feature deve mostrar?</h3>
           <p>
-            Não automaticamente. Se o edital, o item ou o documento muda, a revisão comercial precisa
-            reavaliar requisitos e evidências com a versão vigente. O matching não congela habilitação.
+            Oportunidades priorizadas ligadas a SKUs reais, status de requisitos
+            (matched, conflito ou unknown), revisão humana (<code>needs_review</code>),
+            alertas quando o edital muda e disclaimer comercial — sem afirmar habilitação.
           </p>
-          <h3>O que é um alerta de impacto no matching?</h3>
+          <h3>Posso mostrar o produto como habilitado na UI?</h3>
           <p>
-            É um aviso de que algo relevante mudou e que a equipe deve reavaliar o matching anterior —
-            por exemplo requisitos que estavam matched, em conflito ou unknown.
+            Não. Status e qualificações descrevem carga de revisão comercial.
+            O LicitaFit não constitui parecer jurídico nem garantia de habilitação.
           </p>
-          <h3>Alerta de retificação substitui parecer jurídico?</h3>
+          <h3>Qual preço comunicar na feature para o end-user?</h3>
           <p>
-            Não. O LicitaFit é apoio à decisão comercial. Não constitui parecer jurídico nem garantia
-            de habilitação.
+            O preço público do LicitaFit (R$&nbsp;1.500/mês) é por software partner.
+            Não invente preço sugerido ao distribuidor — isso é decisão comercial do parceiro ERP.
           </p>
         </div>
       </div>
@@ -231,10 +241,13 @@
     <section class="p-strip--dark" id="cta">
       <div class="row">
         <div class="col-8">
-          <h2>Ver alertas de impacto no fluxo do ERP</h2>
+          <h2>Empacotar a feature com o catálogo de um cliente</h2>
+          <p>
+            Veja na demonstração como oportunidades, SKUs e requisitos aparecem para revisão comercial.
+          </p>
           <p>
             <a class="p-button--positive" href="../index.html#demonstracao">Solicitar demonstração</a>
-            <a class="p-button" href="../matching-catalogo-edital/">Como funciona o matching</a>
+            <a class="p-button" href="../needs-review-matched-conflito-unknown/">Vocabulário de status</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
@@ -259,7 +272,7 @@
       </div>
       <div class="col-4">
         <p><strong>Guias</strong></p>
-        <ul class="p-list">
+        <ul class="p-list" id="lf-footer-guias">
           <li class="p-list__item"><a href="../guias/">Índice de guias</a></li>
           <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
           <li class="p-list__item"><a href="../alerta-edital-vs-matching-catalogo/">Alerta de edital vs matching de catálogo</a></li>
