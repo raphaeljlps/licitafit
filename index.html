@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LicitaFit — Qualifique licitações com o catálogo do seu cliente</title>
+  <meta name="description" content="LicitaFit, da Launchbase Tecnologia: API para ERP e software comercial que relaciona o catálogo do distribuidor de TI a oportunidades públicas, com requisitos a conferir e alertas de mudança." />
+  <link rel="stylesheet" href="css/vanilla.css" />
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-compare td { vertical-align: top; }
+    .lf-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.875rem;
+      background: #f7f7f7;
+      border: 1px solid #d9d9d9;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .lf-status {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      margin-bottom: 0.35rem;
+    }
+    .lf-status--ok { border-color: #0e8420; color: #0e8420; }
+    .lf-status--warn { border-color: #b76f00; color: #8c5400; }
+    .lf-muted { color: #666; }
+    .lf-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+    }
+    .lf-media--cover {
+      max-height: 420px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+  </style>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="#topo">
+            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#como-funciona">Como funciona</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#para-quem">Para quem</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#preco">Preço</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="p-muted-heading">Um produto Launchbase Tecnologia</p>
+          <h1>Qualifique licitações com o catálogo do seu cliente</h1>
+          <p class="p-heading--4">
+            API para ERP e software comercial. Envie o catálogo do distribuidor de TI e receba
+            oportunidades relevantes, produtos que batem, requisitos a conferir e alertas quando o edital muda.
+          </p>
+          <p>
+            <a class="p-button--positive" href="#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="#produto">Conhecer o produto</a>
+          </p>
+          <ul class="p-inline-list--middot u-no-margin--bottom">
+            <li class="p-inline-list__item">Integração com o PNCP</li>
+            <li class="p-inline-list__item">Notebooks e monitores</li>
+            <li class="p-inline-list__item">Apoio à decisão comercial</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip u-no-padding--top u-no-padding--bottom">
+      <div class="row">
+        <div class="col-12 lf-media">
+          <img class="lf-media--cover" src="images/team.jpg" width="1600" height="1067" alt="Equipe de tecnologia em reunião de trabalho" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="produto">
+      <div class="row">
+        <div class="col-12">
+          <h2>Qualificação ligada ao catálogo do cliente</h2>
+          <p class="p-heading--5 lf-muted">
+            O LicitaFit ajuda o ERP a mostrar quais oportunidades públicas fazem sentido
+            para os produtos que o distribuidor já vende — com contexto para a equipe revisar.
+          </p>
+        </div>
+      </div>
+      <div class="row u-equal-height">
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Oportunidades que merecem olhar</h3>
+            <p class="p-card__content">Filtra ruído e devolve um conjunto curto, com motivos ligados a produtos reais do catálogo.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Requisitos com status explícito</h3>
+            <p class="p-card__content">Matched, conflito ou unknown. Informação faltando vira revisão — nunca chute de elegibilidade.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-card">
+            <h3 class="p-card__title">Monitoramento de mudanças</h3>
+            <p class="p-card__content">Quando o edital, o item ou o documento muda, o parceiro recebe alerta com o impacto no matching anterior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip">
+      <div class="row u-equal-height">
+        <div class="col-6">
+          <h2>O que a equipe recebe na prática</h2>
+          <p class="lf-muted">Do aviso genérico ao matching com o catálogo que o cliente já mantém.</p>
+          <table class="p-table lf-compare" aria-label="Exemplos de saída">
+            <thead>
+              <tr>
+                <th style="width:45%">Aviso genérico</th>
+                <th>Com matching de catálogo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="lf-status">Aviso</span><br />
+                  “Um órgão público está comprando computadores.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--ok">No catálogo</span><br />
+                  “Itens 4 e 7 batem potencialmente com estes três produtos do catálogo.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Documento</span><br />
+                  “Aqui está o edital.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--warn">Requisitos</span><br />
+                  “Memória e armazenamento batem; garantia on-site ainda não verificada.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Lista</span><br />
+                  “Há 80 novas oportunidades.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--ok">Prioridade</span><br />
+                  “Estas seis merecem revisão — com motivos e documentos de apoio.”
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="lf-status">Mudança</span><br />
+                  “Este edital foi atualizado.”
+                </td>
+                <td>
+                  <span class="lf-status lf-status--warn">Impacto</span><br />
+                  “A exigência de entrega mudou. Reavalie o matching anterior.”
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-6 lf-media u-vertically-center">
+          <img src="images/dashboard.jpg" width="1600" height="1140" alt="Painel de dados e indicadores em um computador" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="como-funciona">
+      <div class="row">
+        <div class="col-6">
+          <h2>Como funciona</h2>
+          <p>Três peças. Uma integração. O ERP continua dono da interface e do relacionamento com o cliente.</p>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Ingestão de compras públicas</h3>
+              <p class="p-stepped-list__content">Coleta registros relevantes no PNCP, guarda identificadores e versões, e revisita oportunidades monitoradas quando há alteração.</p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Matching catálogo ↔ item</h3>
+              <p class="p-stepped-list__content">Compara produtos do cliente com itens do edital, inspeciona documentos selecionados e devolve explicações. Requisitos ilegíveis ficam em aberto.</p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">API de parceiro</h3>
+              <p class="p-stepped-list__content">Chaves de API, upload de catálogo, uso, logs de webhook e correção de matches — sem o parceiro manter pipeline próprio de dados públicos.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="col-6">
+          <h3 class="p-muted-heading">Endpoints</h3>
+          <pre class="lf-code">POST /v1/catalogs
+PUT  /v1/catalogs/{id}/products
+GET  /v1/catalogs/{id}/opportunities
+POST /v1/opportunities/{id}/feedback
+POST /v1/webhook-endpoints</pre>
+          <p class="u-sv1"></p>
+          <blockquote class="p-pull-quote">
+            <p class="p-pull-quote__quote">
+              Envie o catálogo do seu cliente. Devolvemos oportunidades relevantes, os produtos que batem, requisitos a conferir e alertas quando algo muda.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip u-no-padding--bottom">
+      <div class="row">
+        <div class="col-12 lf-media">
+          <img class="lf-media--cover" src="images/warehouse.jpg" width="1600" height="1067" alt="Operação logística e estoque de equipamentos" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip">
+      <div class="row">
+        <div class="col-8">
+          <h2>Exemplo de evento</h2>
+          <p>Cada resultado deixa explícito o que bateu, o que conflita, o que ainda é desconhecido — e onde está a evidência no documento.</p>
+          <pre class="lf-code">{
+  "event": "opportunity.matched",
+  "product_id": "laptop_16gb_512gb",
+  "item_number": 7,
+  "qualification": "needs_review",
+  "requirements": [
+    { "name": "memory", "status": "matched" },
+    { "name": "on_site_warranty", "status": "unknown" }
+  ],
+  "evidence_page": 12
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="para-quem">
+      <div class="row">
+        <div class="col-7">
+          <h2>Para quem é o LicitaFit</h2>
+          <p>
+            Vendemos para fundadores e product leads de ERP e software comercial que atendem
+            distribuidores de TI com atuação em compras públicas.
+            O usuário final é quem decide quais editais merecem atenção.
+          </p>
+          <div class="row u-equal-height">
+            <div class="col-6">
+              <div class="p-card--highlighted">
+                <h3 class="p-card__title">Para o ERP</h3>
+                <p class="p-card__content">
+                  Uma feature paga — “Oportunidades de governo alinhadas ao catálogo” —
+                  sem manter pipeline de dados públicos nem produto próprio de análise de documentos.
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-card--highlighted">
+                <h3 class="p-card__title">Para a Launchbase</h3>
+                <p class="p-card__content">
+                  Um produto de API reutilizável, com contrato de parceiro — em vez de um sistema sob medida por distribuidor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 lf-media u-vertically-center">
+          <img src="images/meeting.jpg" width="1600" height="1067" alt="Reunião comercial entre equipes de software" />
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="diferenca">
+      <div class="row">
+        <div class="col-12">
+          <h2>O que a demonstração comercial mostra</h2>
+          <p>
+            O valor está em encaixar a qualificação no software que o distribuidor já usa,
+            com resultados que a equipe comercial consegue auditar.
+          </p>
+          <table class="p-table" aria-label="O que a demonstração mostra">
+            <thead>
+              <tr>
+                <th>Para o parceiro de software</th>
+                <th>O que mostramos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Feature embutida no ERP</td>
+                <td>Integração simples, com o catálogo que o cliente já mantém</td>
+              </tr>
+              <tr>
+                <td>Sugestões úteis para revisão</td>
+                <td>Oportunidades ligadas a SKUs reais, com motivos claros</td>
+              </tr>
+              <tr>
+                <td>Transparência nos requisitos</td>
+                <td>Status matched, conflito ou unknown — e referência ao documento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light">
+      <div class="row">
+        <div class="col-12">
+          <h2>Cobertura de produto</h2>
+        </div>
+      </div>
+      <div class="row u-equal-height">
+        <div class="col-4">
+          <h3>Categorias</h3>
+          <p>Notebooks e monitores, com especificações modeláveis e critérios claros de acurácia.</p>
+        </div>
+        <div class="col-4">
+          <h3>Tom do resultado</h3>
+          <p><code>needs_review</code>: potencial match; requisitos ainda a conferir. Sem afirmação de habilitação jurídica.</p>
+        </div>
+        <div class="col-4">
+          <h3>Integrações</h3>
+          <p>PNCP para itens, documentos e histórico. Catálogo enviado pelo parceiro via API ou upload.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="preco">
+      <div class="row">
+        <div class="col-6">
+          <h2>Planos para parceiros de software</h2>
+          <p class="p-heading--2">R$&nbsp;1.500 <span class="p-heading--4" style="font-weight:400">/mês</span></p>
+          <p>Por parceiro de software, com cota definida de catálogos de fornecedores ativos.</p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Manter o catálogo matched contra oportunidades que mudam</li>
+            <li class="p-list__item is-ticked">Cobrança alinhada ao valor contínuo do serviço, não ao número de requests</li>
+            <li class="p-list__item is-ticked">Documentos processados com reuso entre matches; catálogo e feedback isolados por cliente</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="demonstracao">
+      <div class="row">
+        <div class="col-8">
+          <h2>Fale com a equipe comercial</h2>
+          <p>
+            Agende uma demonstração com a Launchbase e veja o LicitaFit com o catálogo de um cliente real —
+            incluindo integração no ERP e critérios de acompanhamento.
+          </p>
+          <p>
+            <a class="p-button--positive" href="#empresa">Agendar demonstração</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="empresa">
+      <div class="row">
+        <div class="col-8">
+          <h2>Sobre a Launchbase</h2>
+          <p>
+            O LicitaFit é desenvolvido e comercializado pela
+            <strong>Launchbase Tecnologia Ltda</strong>, empresa brasileira de software.
+          </p>
+          <p class="lf-legal">
+            Launchbase Tecnologia Ltda<br />
+            CNPJ 35.078.004/0001-77
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip">
+    <div class="row">
+      <div class="col-6">
+        <p>
+          <strong>LicitaFit</strong><br />
+          Qualificação de licitações consciente de catálogo, para software de distribuidores de TI.
+        </p>
+      </div>
+      <div class="col-6">
+        <p class="lf-legal">
+          Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77<br />
+          Fale conosco pela área Empresa nesta página
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
