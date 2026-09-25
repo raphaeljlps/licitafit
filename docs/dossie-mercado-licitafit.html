@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Dossiê de Mercado — LicitaFit</title>
+<style>
+  @page { margin: 2cm; }
+  body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.45; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 2rem; }
+  h1,h2,h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0b3d5c; }
+  h1 { font-size: 1.8rem; border-bottom: 2px solid #0b3d5c; padding-bottom: .3rem; }
+  h2 { font-size: 1.35rem; margin-top: 2rem; }
+  h3 { font-size: 1.1rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #ccc; padding: 0.4rem 0.55rem; vertical-align: top; }
+  th { background: #e8f1f8; text-align: left; }
+  code, pre { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem; }
+  pre { background: #f5f5f5; padding: 0.75rem; overflow-x: auto; }
+  blockquote { border-left: 4px solid #0b3d5c; margin-left: 0; padding-left: 1rem; color: #333; }
+  a { color: #0b5cab; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  @media print { body { padding: 0; } a { text-decoration: none; color: inherit; } }
+</style>
+</head>
+<body>
+<h1>Dossiê de Mercado — LicitaFit</h1>
+<p><strong>Produto:</strong> LicitaFit (Launchbase Tecnologia Ltda — CNPJ 35.078.004/0001-77) <strong>Escopo:</strong> Mercado B2B brasileiro — matching de catálogo de distribuidores de TI a licitações/PNCP, vendido como API embutível a vendors de ERP/software comercial. <strong>Data de elaboração:</strong> 25/09/2026 (America/Sao_Paulo) <strong>Idioma:</strong> Português brasileiro <strong>Classificação:</strong> Pesquisa estratégica — evidências e proxies; números inventados são proibidos.</p>
+<hr>
+<h2>1. Resumo executivo</h2>
+<p>O LicitaFit atua na interseção de três mercados: (i) <strong>compras públicas</strong> centralizadas no Portal Nacional de Contratações Públicas (PNCP) sob a Lei nº 14.133/2021; (ii) <strong>distribuição de TIC</strong> no Brasil, que movimentou <strong>R$ 30,7 bilhões em 2025</strong> (+7% a/a), com hardware respondendo por <strong>44,5%</strong> do faturamento dos associados Abradisti; e (iii) <strong>software de gestão e força de vendas</strong> usado por atacadistas/distribuidores (ERP, AFV, WMS comerciais).</p>
+<p>A oportunidade específica <strong>não</strong> é ser mais um portal de alerta de editais (espaço já ocupado por ConLicitação, Licitei, Sollicita e similares), nem um chatbot genérico de “IA lê o edital”. É ser a <strong>camada de decisão-suporte catalog-aware</strong> — matching entre SKUs/especificações do catálogo do distribuidor e itens de contratações públicas — entregue via <strong>API/webhooks embutíveis</strong> no ERP ou software comercial do parceiro, com status explícito <code>needs_review</code> (não elegibilidade jurídica).</p>
+<p><strong>Por que agora.</strong> A Lei 14.133 tornou a divulgação no PNCP obrigatória e centralizada; APIs oficiais de <strong>consulta pública</strong> (sem autenticação para leitura) e manuais de integração (versão 2.6, atualizada em 31/08/2026) permitem ingestão estruturada de contratações, itens, documentos, atas e contratos. O governo segue como fatia relevante (~20% dos investimentos em TIC no país, segundo Abradisti/IT Data), ainda que tenha sido fraco em 2025 — o que aumenta a pressão dos canais por <strong>qualificação melhor</strong> das oportunidades, não por mais volume bruto de alertas.</p>
+<p><strong>Hipótese de preço na landing (R$ 1.500/mês por software partner)</strong> é plausível como <strong>ponto de entrada SaaS B2B</strong> para um módulo embutido, mas deve ser validada contra: (a) valor percebido pelo vendor (ARPU de seus clientes distribuidores que vendem ao governo); (b) packaging por volume de matching/tenant; (c) preços opacos mas tipicamente altos de plataformas de inteligência de licitação (assinaturas semestrais/anuais B2B). Recomendação: manter o floor, testar faixas e <strong>revenue share / usage</strong> com early partners.</p>
+<p><strong>Go-to-market prioritário:</strong> vendas a <strong>fundadores/PMs/parcerias</strong> de ERPs e softwares comerciais para distribuição/atacado de TI (não Conta Azul / e-commerce genérico). ICP exemplificado neste dossiê inclui Onclick, Soften, Softcom, SIAC, ecossistema Winthor/TOTVS (Nextera, MáximaTech, PowerGO), Sankhya, CIGAM, ATS Resulth, Lexos, JD System, entre outros.</p>
+<p><strong>Riscos-chave:</strong> cobertura incompleta municipal/estadual apesar do PNCP; qualidade variável de descrições de itens; responsabilidade jurídica se o produto for interpretado como “aprovação legal”; LGPD sobre catálogos de parceiros; schema drift das APIs.</p>
+<p><strong>Próximo passo de 30–60 dias:</strong> 3–5 design partners com catálogo real (notebooks/monitores), pipeline PNCP→match→<code>needs_review</code>, e 10 conversas discovery com buyers do ICP.</p>
+<hr>
+<h2>2. Problema e oportunidade</h2>
+<h3>2.1 Dor do distribuidor de TI (usuário econômico final)</h3>
+<p>Distribuidores e atacadistas de informática que vendem ao setor público enfrentam:</p>
+<table>
+<thead><tr><th>Dor</th><th>Manifestação típica</th><th>Por que LicitaFit cabe</th></tr></thead><tbody>
+<tr><td>Ruído de oportunidades</td><td>Alertas por palavra-chave (“notebook”, “monitor”) geram milhares de editais irrelevantes (serviços de TI, impressão, manutenção, itens fora do mix)</td><td>Matching contra <strong>catálogo real</strong> (SKU, marca, CPU, RAM, tela, garantia)</td></tr>
+<tr><td>Retrabalho entre sistemas</td><td>Equipe gov em planilha; estoque/preço no ERP; AFV separado</td><td>API no fluxo do ERP/parceiro</td></tr>
+<tr><td>Specs vs. edital</td><td>Edital pede “notebook Intel i5 16GB 512GB SSD 15,6” FHD”; cadastro tem 40 SKUs próximos</td><td>Score + <code>needs_review</code> + evidências</td></tr>
+<tr><td>Tempo de resposta</td><td>Pregões eletrônicos com janelas curtas</td><td>Qualificação precoce (PCA + publicação)</td></tr>
+<tr><td>Risco operacional</td><td>Apostar em item sem estoque/margem/substituição tributária</td><td>Integração futura com disponibilidade/preço do ERP (fora do MVP, mas narrativa)</td></tr>
+</tbody></table>
+<p>Fontes de contexto setorial: Abradisti (hardware como pilar; governo ~20% dos investimentos TIC, desempenho fraco em 2025); Onclick e SIAC documentam dores de serial/RMA/ST típicas do segmento — o mesmo perfil de empresa que precisa de ops rígidas <strong>e</strong> de oportunidade B2G.</p>
+<h3>2.2 Dor do ERP / software comercial (comprador primário)</h3>
+<p>Vendors que servem distribuidores:</p>
+<ul>
+<li>Diferenciação de produto: “módulo licitações” genérico (gestão de proposta/empenho) <strong>sem</strong> discovery inteligente de oportunidades alinhadas ao catálogo.</li>
+<li>Churn/expansão: clientes que vendem ao governo pedem integração com alertas externos (ConLicitação etc.) — o ERP perde a experiência e a dados.</li>
+<li>Roadmap: construir crawler multi-portal + matching NLP é caro e fora do core; <strong>white-label/API</strong> é caminho mais barato.</li>
+</ul>
+<p>Exemplos de módulos nativos ou adjacentes (gestão pós-oportunidade, não matching catalog-first): Nextera Licitações (Winthor), JD System WSGE Licitações, Licitações by Portal de Compras Públicas (lado órgão/TOTVS Protheus).</p>
+<h3>2.3 Dor das equipes de vendas / gov sales</h3>
+<p>Força de vendas e times de licitação gastam tempo em triagem manual. Ferramentas de mercado resolvem <strong>descoberta ampla</strong> e, cada vez mais, “pergunte ao edital” (IA sobre PDF). Continuam fracas em: *“dado o meu catálogo desta semana, quais itens deste aviso eu realmente posso ofertar?”* — exatamente o gap do LicitaFit.</p>
+<h3>2.4 Framing da oportunidade</h3>
+<p>LicitaFit é <strong>decision-support</strong>:</p>
+<ul>
+<li><strong>Não</strong> substitui análise jurídica do edital.</li>
+<li><strong>Não</strong> declara elegibilidade ou compliance.</li>
+<li><strong>Sim</strong> ranqueia/filtra oportunidades e itens com evidência de match e força humano a revisar (<code>needs_review</code>).</li>
+</ul>
+<p>Isso reduz risco de produto e diferencia de chatbots “AI for editais”.</p>
+<hr>
+<h2>3. Mercado-alvo</h2>
+<h3>3.1 Compras públicas no Brasil</h3>
+<p><strong>Marco legal.</strong> A Lei nº 14.133, de 1º de abril de 2021, estabelece normas gerais de licitação e contratação para a administração pública. O <strong>PNCP</strong> é o sítio oficial de divulgação centralizada e obrigatória dos atos exigidos pela lei (<a href="https://www.gov.br/compras/pt-br/nllc">gov.br/compras — NLLC</a>; <a href="https://www.gov.br/rededeparcerias/pt-br/servicos/portal-nacional-de-contratacoes-publicas-pncp">gov.br — PNCP</a>).</p>
+<p><strong>Papel do PNCP.</strong> Centraliza PCA (Planos de Contratações Anuais), editais/avisos, atas de registro de preços, contratos e dados estatísticos; disponibiliza APIs e dados abertos para integração.</p>
+<p><strong>Volume.</strong> Não há, neste dossiê, um número oficial IBGE/MGI auditado pelo autor para “total de compras públicas 2025” obtido diretamente de painel governamental no momento da pesquisa. Claims de mercado (ex.: ATA360 citando PNCP/MGI: <strong>mais de R$ 1 trilhão</strong> e <strong>mais de 1 milhão de processos</strong> em 2025, ~12–16% do PIB) devem ser tratados como <strong>estimativas de terceiros</strong> até cruzamento com painéis oficiais do PNCP/MGI. <strong>Proxy qualitativo:</strong> o mercado é estruturalmente grande, multi-esfera (União, estados, 5.570 municípios) e digitalmente mais centralizado pós-14.133.</p>
+<p><strong>Tendências relevantes ao LicitaFit:</strong></p>
+<ol>
+<li>Obrigação de publicação no PNCP → <strong>fonte canônica preferencial</strong> para ingestão.</li>
+<li>Persistência de portais de disputa (Compras.gov.br, Licitar Digital, BLL, BNC, etc.) → PNCP não elimina a necessidade de link ao sistema de origem (<code>linkSistemaOrigem</code>).</li>
+<li>Categoria de processo <strong>Informática (TIC)</strong> e itens de PCA “Soluções de TIC” existem nas tabelas de domínio oficiais — úteis para filtragem.</li>
+<li>Margens de preferência e conteúdo nacional aparecem em campos de item (API de itens) — relevantes para notebooks/hardware com incentivo.</li>
+</ol>
+<h3>3.2 Distribuição de hardware de TI / canal B2G</h3>
+<table>
+<thead><tr><th>Indicador</th><th>Valor</th><th>Fonte</th><th>Acesso</th></tr></thead><tbody>
+<tr><td>Faturamento distribuição TIC Brasil 2025</td><td>R$ 30,7 bilhões</td><td>Abradisti / IT Data — Estudo Setorial 2026</td><td>25/09/2026</td></tr>
+<tr><td>Crescimento 2025</td><td>+7% a/a</td><td>Idem</td><td>Idem</td></tr>
+<tr><td>Representatividade Abradisti</td><td>51 distribuidores = 87% do setor</td><td>Idem</td><td>Idem</td></tr>
+<tr><td>Share hardware no faturamento associados</td><td>44,5%</td><td>Idem</td><td>Idem</td></tr>
+<tr><td>Governo nos investimentos TIC (contexto)</td><td>~20%; desempenho fraco em 2025</td><td>Idem</td><td>Idem</td></tr>
+<tr><td>Projeção crescimento distribuição 2026 (média)</td><td>~6%</td><td>Idem</td><td>Idem</td></tr>
+<tr><td>Censo revendas 2025</td><td>+9,4% (1.176 respostas)</td><td>Abradisti 15º Censo</td><td>Idem</td></tr>
+</tbody></table>
+<p><strong>Implicação:</strong> mesmo com governo fraco em 2025, o canal continua estruturado (distribuidores + milhares de revendas). Hardware permanece o maior bloco — alinhado ao start do LicitaFit (notebooks/monitores).</p>
+<p><strong>Proxy ABINEE (indústria, não distribuição):</strong> setor eletroeletrônico R$ 270,8 bi em 2025; área de Informática R$ 47,753 bi (+12% nominal / +9% real) — <a href="https://www.abinee.org.br/faturamento-do-setor-em-2025/">ABINEE</a>. Útil como contexto de oferta, não como TAM do LicitaFit.</p>
+<h3>3.3 Vendors de software (ERP / força de vendas / comercial)</h3>
+<p>Segmentos de software relevantes (não exaustivo):</p>
+<ol>
+<li><strong>ERP para distribuição/atacado</strong> com clientes de informática (Onclick, Soften, Softcom, SIAC, ATS Resulth, Lexos, Target, CIGAM, Sankhya, TOTVS Winthor/Protheus).</li>
+<li><strong>Força de vendas (AFV)</strong> integrada a esses ERPs (MáximaTech, PowerGO e similares).</li>
+<li><strong>Módulos de licitação já existentes</strong> (Nextera, JD System) — potenciais <strong>parceiros de complementaridade</strong> ou concorrentes parciais (pós-match / gestão de contrato, não discovery catalog-aware).</li>
+</ol>
+<p><strong>Fora do ICP (exemplos):</strong> Conta Azul (MEI/PME serviços genéricos); Bling (e-commerce); ERPs só varejo puro sem atacado B2B.</p>
+<h3>3.4 TAM / SAM / SOM (com premissas transparentes)</h3>
+<blockquote><p><strong>Aviso:</strong> abaixo é <strong>framing estimativo</strong>. Onde não há dado público, a célula é marcada como *estimativa/proxy*. Não usar como forecast financeiro auditado.</p></blockquote>
+<table>
+<thead><tr><th>Camada</th><th>Definição operacional</th><th>Ordem de grandeza</th><th>Premissas / status do dado</th></tr></thead><tbody>
+<tr><td><strong>TAM (mercado amplo)</strong></td><td>Valor econômico de software/serviços de inteligência e gestão de vendas ao governo no Brasil + spend em ferramentas de alerta/licitação por empresas fornecedoras</td><td><strong>Não quantificado com rigor neste dossiê</strong></td><td>Sem estatística oficial consolidada de “gasto das empresas com software de licitação”. Proxy: compras públicas totais (claims ~R$ 1 tri) são <strong>GSV público</strong>, não receita de software.</td></tr>
+<tr><td><strong>SAM (mercado servível)</strong></td><td>Vendors de ERP/AFV/comercial que atendem <strong>distribuidores/atacadistas de TIC</strong> no Brasil + seus clientes finais com operação B2G de hardware</td><td><strong>Estimativa qualitativa: dezenas de vendors relevantes; milhares de distribuidores/revendas no ecossistema Abradisti</strong></td><td>51 distribuidores grandes + 1.176+ revendas no censo; número de ERPs especializados = lista ICP (§8), não censo completo.</td></tr>
+<tr><td><strong>SOM (mercado obtível 3 anos)</strong></td><td>Assinaturas LicitaFit de <strong>software partners</strong> (hipótese landing R$ 1.500/mês) × N partners ativos</td><td><strong>Exemplo ilustrativo (não forecast):</strong> 20 partners × R$ 1.500 = R$ 30 mil MRR; 50 partners = R$ 75 mil MRR</td><td>Depende de win rate, packaging e se há fee por tenant/distribuidor.</td></tr>
+</tbody></table>
+<p><strong>Proxy útil para pricing do partner:</strong> se um ERP embute LicitaFit e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com custo LicitaFit de R$ 1.500/mês a partir de ~3–8 clientes ativos — tese de partner-led growth.</p>
+<p><strong>Volume de matching (produto):</strong> indisponível neste dossiê o volume oficial filtrado “apenas notebooks/monitores no PNCP 2025”. Deve ser medido no experimento de 30 dias via API de consulta + filtro de itens (§12).</p>
+<hr>
+<h2>4. Fontes de dados públicos — ONDE obter</h2>
+<h3>4.1 PNCP — Portal Nacional de Contratações Públicas</h3>
+<table>
+<thead><tr><th>Recurso</th><th>URL</th><th>Uso para LicitaFit</th><th>Auth</th></tr></thead><tbody>
+<tr><td>Portal</td><td>https://pncp.gov.br</td><td>UI, validação manual</td><td>Público</td></tr>
+<tr><td>Manual de Integração v2.6</td><td>https://pncp.gov.br/manual/pt-br/latest/</td><td>Schema de escrita/consulta detalhada; histórico 31/08/2026</td><td>Público</td></tr>
+<tr><td>API manutenção (órgãos/plataformas)</td><td><code>https://pncp.gov.br/api/pncp</code></td><td>Não é o caminho principal do LicitaFit (envio de compras)</td><td>JWT (login + Bearer; token ~1h)</td></tr>
+<tr><td>Swagger manutenção</td><td>https://pncp.gov.br/api/pncp/swagger-ui/index.html</td><td>Exploração</td><td>—</td></tr>
+<tr><td>Homologação</td><td>https://treina.pncp.gov.br / <code>.../api/pncp</code></td><td>Testes</td><td>Credenciais de treino</td></tr>
+<tr><td><strong>API de Consultas (leitura)</strong></td><td><code>https://pncp.gov.br/api/consulta</code></td><td><strong>Ingestão principal</strong></td><td>Consulta pública (sem login para leitura)</td></tr>
+<tr><td>Swagger consultas</td><td>https://pncp.gov.br/api/consulta/swagger-ui/index.html</td><td>Contratos OpenAPI</td><td>—</td></tr>
+<tr><td>Dados abertos (página)</td><td>https://www.gov.br/pncp/pt-br/acesso-a-informacao/dados-abertos</td><td>Catálogo de downloads/APIs</td><td>Público</td></tr>
+<tr><td>CSV anuais (repositório)</td><td>https://repositorio.dados.gov.br/seges/comprasgov/anual/</td><td>Backfill / analytics</td><td>Público</td></tr>
+</tbody></table>
+<p><strong>Endpoints de consulta (Manual API Consultas v1.0 — documentação pública espelhada / oficial):</strong></p>
+<table>
+<thead><tr><th>Endpoint</th><th>Função</th></tr></thead><tbody>
+<tr><td><code>GET /v1/contratacoes/publicacao</code></td><td>Contratações por data de publicação (<code>dataInicial</code>, <code>dataFinal</code> AAAAMMDD, <code>codigoModalidadeContratacao</code> obrigatório, paginação)</td></tr>
+<tr><td><code>GET /v1/contratacoes/proposta</code></td><td>Contratações com recebimento de propostas em aberto</td></tr>
+<tr><td><code>GET /v1/atas</code></td><td>Atas de RP por vigência</td></tr>
+<tr><td><code>GET /v1/contratos</code></td><td>Contratos/empenhos por publicação</td></tr>
+<tr><td><code>GET /v1/pca/</code> e <code>/v1/pca/usuario</code></td><td>Itens de PCA (planejamento — sinal precoce)</td></tr>
+</tbody></table>
+<p><strong>Detalhe de contratação/itens/documentos</strong> (Manual Integração — base <code>api/pncp</code>, GETs tipicamente públicos):</p>
+<table>
+<thead><tr><th>Endpoint</th><th>Função</th></tr></thead><tbody>
+<tr><td><code>GET /v1/orgaos/{cnpj}/compras/{ano}/{sequencial}</code></td><td>Cabeçalho da contratação</td></tr>
+<tr><td><code>GET /v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens</code></td><td><strong>Lista de itens</strong> (core do matching)</td></tr>
+<tr><td><code>GET .../itens/{numeroItem}</code></td><td>Item unitário</td></tr>
+<tr><td>Documentos da contratação</td><td>Consulta de anexos (edital, TR, etc. — ver manual seções de documentos)</td></tr>
+</tbody></table>
+<p><strong>Campos de item relevantes ao matching (amostra oficial):</strong> <code>numeroItem</code>, <code>descricao</code> (até 2048), <code>quantidade</code>, <code>unidadeMedida</code>, <code>valorUnitarioEstimado</code>, <code>valorTotal</code>, <code>materialOuServico</code>, <code>catalogoCodigoItem</code>, <code>catalogo</code> (objeto), <code>ncmNbsCodigo</code>, <code>ncmNbsDescricao</code>, <code>informacaoComplementar</code>, benefícios ME/EPP, margens de preferência, <code>orcamentoSigiloso</code>, situação do item.</p>
+<p><strong>Campos de contratação úteis:</strong> <code>objetoCompra</code>, <code>modalidadeNome</code>, <code>dataAberturaProposta</code> / <code>dataEncerramentoProposta</code>, <code>orgaoEntidade</code>, <code>unidadeOrgao</code> (UF/município), <code>linkSistemaOrigem</code>, <code>srp</code>, <code>valorTotalEstimado</code>, <code>numeroControlePNCP</code>.</p>
+<p><strong>Rate limits:</strong> o manual enfatiza paginação (<code>tamanhoPagina</code> até 500 em vários serviços; default menor em publicacao). <strong>Limite explícito de RPS não foi encontrado</strong> na documentação pública revisada em 25/09/2026 — tratar como risco operacional (backoff, cache, respeito a 429/5xx).</p>
+<p><strong>Cobertura vs. gaps:</strong> PNCP é obrigatório na 14.133, mas a qualidade/completude depende do sistema de origem e do órgão. Gaps típicos: atraso de publicação; itens pobres (“aquisição de equipamentos de informática”); anexos essenciais só em PDF; municípios pequenos com adesão irregular histórica (tendência de melhora, não garantia de 100%).</p>
+<h3>4.2 Compras.gov.br / ComprasNet (federal)</h3>
+<table>
+<thead><tr><th>Recurso</th><th>URL</th></tr></thead><tbody>
+<tr><td>Portal de Dados Abertos Compras</td><td>https://www.gov.br/compras/pt-br/cidadao/portal-de-dados-abertos</td></tr>
+<tr><td>API dados abertos (Swagger)</td><td>https://dadosabertos.compras.gov.br/swagger-ui/index.html</td></tr>
+<tr><td>Catálogo de materiais</td><td>https://catalogo.compras.gov.br/</td></tr>
+<tr><td>Nova Lei / PNCP (contexto)</td><td>https://www.gov.br/compras/pt-br/nllc</td></tr>
+</tbody></table>
+<p>Uso: complementar federal (SIASG/Compras.gov), CATMAT/códigos de catálogo, preços de referência — <strong>não substitui</strong> PNCP multi-esfera.</p>
+<h3>4.3 Outras fontes</h3>
+<table>
+<thead><tr><th>Fonte</th><th>URL / nota</th><th>Uso</th></tr></thead><tbody>
+<tr><td>dados.gov.br / repositório SEGES</td><td>https://repositorio.dados.gov.br/seges/comprasgov/anual/</td><td>Bulk CSV</td></tr>
+<tr><td>TCU / Painéis</td><td>Portais de transparência e fiscalização</td><td>Contexto, sanções (não core MVP)</td></tr>
+<tr><td>Diários Oficiais</td><td>Ainda usados por agregadores legados</td><td>Preferir PNCP; DO como fallback histórico</td></tr>
+<tr><td>Portais de disputa</td><td>ComprasNet, Licitar Digital, BLL, BNC, Licitações-e, etc.</td><td><code>linkSistemaOrigem</code>; não scrapear ToS à toa</td></tr>
+</tbody></table>
+<h3>4.4 Anexos (editais PDF/DOC)</h3>
+<ul>
+<li>Contratações no PNCP exigem documento anexo na publicação (manual de inserção).</li>
+<li>APIs de consulta de documentos retornam URIs/metadados; download do arquivo segue links oficiais.</li>
+<li>Extensões aceitas estão em tabelas de domínio do manual.</li>
+<li><strong>Para matching MVP:</strong> priorizar <strong>itens estruturados</strong> (<code>descricao</code>, NCM, código catálogo). PDF/TR como enriquecimento assíncrono (OCR/NLP) com custo e risco maiores — nunca como única fonte de “elegibilidade”.</li>
+</ul>
+<h3>4.5 Dados de catálogo do parceiro (entrada LicitaFit)</h3>
+<p>Formatos esperados (sugestão de contrato de API; a validar com design partners):</p>
+<table>
+<thead><tr><th>Campo</th><th>Obrigatório</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><code>sku</code> / código interno</td><td>Sim</td><td><code>NB-DELL-5490-16-512</code></td></tr>
+<tr><td><code>titulo</code> / descrição curta</td><td>Sim</td><td>Notebook Dell Latitude 5490</td></tr>
+<tr><td><code>marca</code>, <code>modelo</code></td><td>Fortemente recomendado</td><td>Dell / Latitude 5490</td></tr>
+<tr><td>Specs tipadas</td><td>Recomendado (MVP notebooks/monitores)</td><td>cpu, ram_gb, storage_gb, screen_inch, resolution, os, warranty_months</td></tr>
+<tr><td><code>ncm</code></td><td>Recomendado</td><td>8471.30.xx</td></tr>
+<tr><td><code>ean</code> / part number fabricante</td><td>Opcional</td><td></td></tr>
+<tr><td><code>preco_ref</code>, <code>estoque</code></td><td>Opcional (fase 2)</td><td></td></tr>
+<tr><td><code>ativo</code></td><td>Sim</td><td>boolean</td></tr>
+</tbody></table>
+<p>Envio: JSON bulk via API, CSV SFTP, ou webhook de sincronização periódica. Volume típico de distribuidor de TI: milhares a dezenas de milhares de SKUs — desenhar upsert incremental.</p>
+<hr>
+<h2>5. Meios de obtenção — COMO obter/processar</h2>
+<h3>5.1 Preferência legal e técnica</h3>
+<table>
+<thead><tr><th>Método</th><th>Recomendação</th><th>Comentário</th></tr></thead><tbody>
+<tr><td>API oficial PNCP consulta</td><td><strong>Preferencial</strong></td><td>Sem credencial para leitura; estável o suficiente para produto</td></tr>
+<tr><td>CSV dados abertos</td><td>Backfill / reconciliação</td><td>Latência diária/anual conforme publicação</td></tr>
+<tr><td>API Compras.gov dados abertos</td><td>Complemento federal</td><td></td></tr>
+<tr><td>Scraping de portais</td><td><strong>Evitar</strong> como default</td><td>ToS, instabilidade, risco jurídico; só se API oficial inexistente e com parecer jurídico</td></tr>
+<tr><td>Compra de feed de agregador</td><td>Opcional</td><td>Custo; dependência; pode conflitar com posicionamento</td></tr>
+</tbody></table>
+<h3>5.2 Padrões de ingestão</h3>
+<ol>
+<li><strong>Polling</strong> de <code>contratacoes/publicacao</code> por janelas curtas (ex.: D-1 → D0) para cada <code>codigoModalidadeContratacao</code> relevante (ao menos pregão eletrônico=6, concorrência, dispensa).</li>
+<li><strong>Polling</strong> de <code>contratacoes/proposta</code> para janela de disputa aberta.</li>
+<li><strong>PCA</strong> periódico (semanal) para sinal precoce de demanda de TIC.</li>
+<li>Para cada <code>numeroControlePNCP</code> / (cnpj, ano, sequencial): fetch de <strong>itens</strong> + metadados de <strong>documentos</strong>.</li>
+<li><strong>Change detection:</strong> armazenar hash de cabeçalho/itens/<code>dataAtualizacao</code>; reprocessar só deltas.</li>
+<li><strong>Webhooks LicitaFit → partner:</strong> emitir eventos <code>opportunity.matched</code>, <code>opportunity.updated</code>, <code>opportunity.closed</code> (PNCP não oferece webhook público documentado na pesquisa — o push é responsabilidade do LicitaFit).</li>
+</ol>
+<h3>5.3 Parsing e matching (alto nível)</h3>
+<pre><code>
+Ingestão PNCP → Normalização (texto, NCM, catálogo)
+
+     → Indexação (BM25 / embeddings + filtros estruturados)
+
+     → Match com catálogo do tenant
+
+     → Score + razões (evidências)
+
+     → Status needs_review | low_confidence | no_match
+
+     → API / Webhooks / UI embutida
+
+</code></pre>
+<p>Heurísticas iniciais (MVP notebooks/monitores):</p>
+<ul>
+<li>Filtro léxico + NCM + palavras de família de produto.</li>
+<li>Extração de atributos (regex/NER leve): polegadas, RAM, SSD, resolução, processador.</li>
+<li>Score composto; <strong>nunca</strong> auto-aprovar participação.</li>
+<li>Humanos no partner/distribuidor fecham a decisão.</li>
+</ul>
+<h3>5.4 Riscos operacionais</h3>
+<table>
+<thead><tr><th>Risco</th><th>Mitigação</th></tr></thead><tbody>
+<tr><td>Dados incompletos / descrição genérica</td><td>Flag <code>low_confidence</code>; incentivar revisão de TR/PDF</td></tr>
+<tr><td>Schema drift (manual 2.x frequente)</td><td>Contract tests contra OpenAPI; alertas de campo novo/removido</td></tr>
+<tr><td>Fragmentação multi-portal</td><td>PNCP como verdade de aviso; link origem para disputa</td></tr>
+<tr><td>Lag de publicação</td><td>SLA transparente; complementar com PCA</td></tr>
+<tr><td>Rate limit / indisponibilidade</td><td>Fila, retry, cache, multi-região; CSVs como fallback</td></tr>
+<tr><td>TLS/rede</td><td>Monitorar; no ambiente de pesquisa (25/09/2026) curl TLS ao host falhou pontualmente — validar em infra de produção</td></tr>
+</tbody></table>
+<h3>5.5 Arquitetura sugerida (LicitaFit)</h3>
+<table>
+<thead><tr><th>Camada</th><th>Componentes</th></tr></thead><tbody>
+<tr><td>Ingestion</td><td>Workers PNCP consulta + CSV reconciler + document fetcher</td></tr>
+<tr><td>Normalize</td><td>Canonical Opportunity / LineItem / Document</td></tr>
+<tr><td>Catalog</td><td>Tenant catalog store (versionado)</td></tr>
+<tr><td>Match</td><td>Feature extraction + scorer + explanation builder</td></tr>
+<tr><td>Serve</td><td>REST API, webhooks assinados, embed SDK, admin</td></tr>
+<tr><td>Ops</td><td>Observabilidade, DLQ, replay, data quality dashboards</td></tr>
+<tr><td>Compliance</td><td>Logs de decisão, disclaimer <code>needs_review</code>, retenção LGPD</td></tr>
+</tbody></table>
+<hr>
+<h2>6. Concorrência e adjacentes</h2>
+<h3>6.1 Ferramentas brasileiras de alerta / inteligência de licitação</h3>
+<table>
+<thead><tr><th>Empresa / produto</th><th>Site</th><th>Posicionamento observado</th><th>Relação com LicitaFit</th></tr></thead><tbody>
+<tr><td><strong>ConLicitação</strong></td><td>https://conlicitacao.com.br/</td><td>Monitoramento amplo (afirma 6.000+ fontes), boletins, gestão, chat, IA (“Pergunte ao Edital”), robô de lances; planos Super/Premium/Advanced/Black (preços não públicos na página; assinatura 6/12/24 meses, só PJ)</td><td>Concorrente de <strong>atenção do usuário final</strong>; não é embed catalog-aware para ERP</td></tr>
+<tr><td><strong>Licitei</strong></td><td>https://www.licitei.com.br/</td><td>PNCP + portais, “Pergunte ao Edital”, robô de lances, gestão docs</td><td>Idem</td></tr>
+<tr><td><strong>Licitar Digital</strong></td><td>https://licitar.digital/</td><td>Plataforma de pregão (órgãos ↔ fornecedores), forte MG/AMM</td><td>Infra de disputa; não matching de catálogo de distribuidor</td></tr>
+<tr><td><strong>Sollicita (Grupo Negócios Públicos)</strong></td><td>https://sollicita.com.br/</td><td>Conteúdo, banco de editais, planos Pro</td><td>Conteúdo + busca; não API embed para ERP de TI</td></tr>
+<tr><td><strong>Nextera Licitações</strong></td><td>https://nextera.com.br/solucoes/nextera-licitacoes-winthor/</td><td>Gestão de licitações <strong>integrada ao Winthor</strong> (importar editais, cotações, atas, empenhos)</td><td><strong>Adjacente/complementar</strong> no ERP; foco gestão, não discovery catalog-first</td></tr>
+<tr><td><strong>JD System — WSGE Licitações</strong></td><td>https://jdsystem.com.br/modulo-licitacoes/</td><td>Proposta→contrato→empenho→pedido no ERP</td><td>Gestão pós-oportunidade</td></tr>
+<tr><td><strong>LicitaCloud</strong></td><td>https://licitacloud.com.br/</td><td>Gestão de licitações SaaS</td><td>Verificar profundidade de matching em discovery</td></tr>
+<tr><td><strong>ATA360</strong></td><td>https://ata360.com.br/</td><td>IA/dados para <strong>entes públicos</strong> (fundamentação)</td><td>Outro lado do mercado (governo), não ERP de distribuidor</td></tr>
+<tr><td><strong>Licitações by Portal de Compras Públicas (TOTVS)</strong></td><td>https://produtos.totvs.com/...</td><td>Sistema para <strong>órgãos</strong> (white-label), integração Protheus</td><td>Lado comprador público</td></tr>
+</tbody></table>
+<p><strong>Nota sobre “Bidu”:</strong> na pesquisa de 25/09/2026 <strong>não foi confirmado</strong> um produto comercial de alertas de licitação amplamente conhecido sob o nome “Bidu”. Tratar menções históricas como não verificadas.</p>
+<h3>6.2 Startups “IA para editais”</h3>
+<p>Tendência: Q&amp;A sobre PDF, resumo de exigências, geração de declarações. Úteis, mas:</p>
+<ul>
+<li>Otimizam leitura do documento, não <strong>estoque/catálogo do vendedor</strong>.</li>
+<li>Aumentam risco se sugerirem “você está apto” sem disclaimer.</li>
+</ul>
+<p>LicitaFit deve <strong>evitar</strong> essa narrativa e, se usar LLM, limitar a extração de atributos / explicação de score.</p>
+<h3>6.3 O que ERPs já oferecem nativamente</h3>
+<ul>
+<li>Cadastro de proposta, contrato, empenho, pedido (Nextera, JD System, módulos Winthor).</li>
+<li>Raramente: motor de matching contínuo PNCP × catálogo serializado de TI.</li>
+<li>Integrações pontuais com portais de disputa.</li>
+</ul>
+<h3>6.4 Matriz de diferenciação</h3>
+<table>
+<thead><tr><th>Dimensão</th><th>Portais de alerta</th><th>IA-edital</th><th>Módulo ERP gestão</th><th><strong>LicitaFit</strong></th></tr></thead><tbody>
+<tr><td>Canal de venda</td><td>Direct ao fornecedor</td><td>Direct</td><td>Via ERP</td><td><strong>Via software partner (embed)</strong></td></tr>
+<tr><td>Input principal</td><td>Keywords / CNAE</td><td>PDF edital</td><td>Edital já escolhido</td><td><strong>Catálogo do distribuidor</strong></td></tr>
+<tr><td>Output</td><td>Lista de editais</td><td>Resumo/Q&amp;A</td><td>Workflow interno</td><td><strong>Itens ranqueados + needs_review</strong></td></tr>
+<tr><td>Decisão legal</td><td>Às vezes ambígua</td><td>Risco alto</td><td>N/A</td><td><strong>Explicitamente não legal</strong></td></tr>
+<tr><td>Dados</td><td>Multi-fonte / scrapers</td><td>Docs</td><td>Manual/import</td><td><strong>PNCP-first oficial</strong></td></tr>
+</tbody></table>
+<hr>
+<h2>7. ICP e personas</h2>
+<h3>7.1 Comprador primário (economic buyer no go-to-market)</h3>
+<table>
+<thead><tr><th>Atributo</th><th>Detalhe</th></tr></thead><tbody>
+<tr><td>Cargo</td><td>Founder, Head de Produto, Parcerias, CTO de ERP/AFV/software comercial</td></tr>
+<tr><td>Empresa</td><td>Serve <strong>distribuidores/atacadistas</strong> (idealmente TI/eletrônicos) no Brasil</td></tr>
+<tr><td>Motivação</td><td>Diferenciação de roadmap, retenção de clientes B2G, receita de add-on</td></tr>
+<tr><td>Budget</td><td>SaaS B2B R$ 1–5k/mês plausível por módulo parceiro (a validar)</td></tr>
+<tr><td>Sucesso</td><td>Time-to-embed &lt; 30–60 dias; demos com catálogo real; casos de uso notebooks/monitores</td></tr>
+</tbody></table>
+<h3>7.2 Usuário final (dentro do cliente do partner)</h3>
+<ul>
+<li>Coordenador de licitações / vendas governo do distribuidor.</li>
+<li>Analista comercial que monta proposta.</li>
+<li>(Secundário) vendedor AFV que só precisa de “oportunidades quentes”.</li>
+</ul>
+<h3>7.3 Critérios de qualificação (partner)</h3>
+<ul>
+<li>Tem base de clientes em distribuição/atacado <strong>com catálogo de produtos</strong>.</li>
+<li>Pelo menos um segmento de TI/eletrônicos <strong>ou</strong> roadmap claro para isso.</li>
+<li>API/extensibilidade (webhooks, app store, ou equipe capaz de integrar).</li>
+<li>Clientes que já participam ou desejam participar de licitações.</li>
+<li>Não exige que LicitaFit emita parecer jurídico.</li>
+</ul>
+<h3>7.4 Desqualificadores</h3>
+<ul>
+<li>ERP só serviços/financeiro sem catálogo de SKUs (ex.: Conta Azul clássico).</li>
+<li>Pure marketplace/e-commerce sem operação B2B de distribuição.</li>
+<li>Pedido de “garantir habilitação / ganhar pregão automaticamente”.</li>
+<li>Necessidade exclusiva de robô de lances (outro produto).</li>
+<li>Jurisdição fora do Brasil sem PNCP.</li>
+</ul>
+<hr>
+<h2>8. Potenciais clientes (targets nomeados)</h2>
+<blockquote><p>Lista verificável por site público em 25/09/2026. <strong>Não é endosso</strong> nem confirmação de interesse. Prioridade = fit percebido com distribuição TI + capacidade de embed. Onde o fit TI é parcial, prioridade cai.</p></blockquote>
+<table>
+<thead><tr><th>#</th><th>Empresa</th><th>Site</th><th>Por que fit</th><th>Ângulo de entrada</th><th>Prioridade</th></tr></thead><tbody>
+<tr><td>1</td><td><strong>Onclick</strong></td><td>https://onclick.com.br/</td><td>ERP explícito para <strong>distribuidora de informática/eletrônicos</strong> (série, IMEI, RMA, ST)</td><td>“Add-on B2G catalog-match no mesmo stack que já domina serial/ST”</td><td><strong>Alta</strong></td></tr>
+<tr><td>2</td><td><strong>Soften Sistemas</strong></td><td>https://www.softensistemas.com.br/</td><td>ERP com vertical distribuidora (afirma 1.800+ distribuidoras)</td><td>Parceria de módulo / API para clientes com vendas governo</td><td><strong>Alta</strong></td></tr>
+<tr><td>3</td><td><strong>Softcom Tecnologia</strong></td><td>https://softcomtecnologia.com.br/</td><td>Softcom Atacado; rede de parceiros PME</td><td>Embed via canal de parceiros Softcom</td><td><strong>Alta</strong></td></tr>
+<tr><td>4</td><td><strong>SIAC Sistemas</strong></td><td>https://www.siacsistemas.com.br/informatica</td><td>Vertical <strong>Informática</strong> (serial, RMA, garantia)</td><td>Pilot com clientes loja/distribuição de informática</td><td><strong>Alta</strong></td></tr>
+<tr><td>5</td><td><strong>Nextera</strong></td><td>https://nextera.com.br/</td><td>Já vende <strong>Licitações + Winthor</strong> — gap de discovery catalog-aware</td><td>Complementar (não substituir) motor de match PNCP</td><td><strong>Alta</strong></td></tr>
+<tr><td>6</td><td><strong>MáximaTech</strong></td><td>https://maximatech.com.br/</td><td>AFV/logística no atacado; integração Winthor</td><td>Oportunidades quentes no maxPedido / stack Winthor</td><td><strong>Alta</strong></td></tr>
+<tr><td>7</td><td><strong>PowerGO</strong></td><td>https://powergo.com.br/</td><td>AFV offline; integra TOTVS, Sankhya, etc.</td><td>Feature “oportunidades governo” no app de pedido</td><td><strong>Alta</strong></td></tr>
+<tr><td>8</td><td><strong>JD System (WSGE)</strong></td><td>https://jdsystem.com.br/</td><td>Módulo Licitações nativo (proposta→empenho)</td><td>Pré-qualificar itens antes da proposta</td><td><strong>Alta</strong></td></tr>
+<tr><td>9</td><td><strong>TOTVS Winthor (ecossistema)</strong></td><td>https://www.totvs.com/ (linha Winthor)</td><td>ERP dominante em atacado/distribuição</td><td>Via ISVs (Nextera/Máxima) antes de GTM direto TOTVS</td><td><strong>Alta</strong></td></tr>
+<tr><td>10</td><td><strong>Sankhya</strong></td><td>https://www.sankhya.com.br/</td><td>ERP forte em atacado</td><td>App/integração no marketplace Sankhya</td><td><strong>Média</strong></td></tr>
+<tr><td>11</td><td><strong>CIGAM</strong></td><td>https://www.cigam.com.br/distribuicao</td><td>ERP médio/grande para distribuição</td><td>Parceria módulo vertical TI</td><td><strong>Média</strong></td></tr>
+<tr><td>12</td><td><strong>ATS Informática (Resulth)</strong></td><td>https://www.atsinformatica.com.br/</td><td>ERP atacadista/distribuidor</td><td>Verticalizar para clientes de informática</td><td><strong>Média</strong></td></tr>
+<tr><td>13</td><td><strong>Lexos</strong></td><td>https://www.lexos.com.br/</td><td>Sistema para distribuidora; integrações Winthor no ecossistema</td><td>API de oportunidades no ERP Lexos</td><td><strong>Média</strong></td></tr>
+<tr><td>14</td><td><strong>Target Sistemas</strong></td><td>(buscar target sistemas distribuição)</td><td>Foco histórico em distribuição médio/grande</td><td>Validar vertical TI antes de outreach</td><td><strong>Média</strong></td></tr>
+<tr><td>15</td><td><strong>Adiasoft</strong></td><td>https://www.adiasoft.com/br/</td><td>ERP multi-país; base BR</td><td>Só se houver clientes BR de TI</td><td><strong>Baixa</strong></td></tr>
+<tr><td>16</td><td><strong>Softcom Informática (SAS ERP)</strong></td><td>http://softcominformatica.com.br/</td><td>ERP atacado/varejo (entidade distinta da Softcom Tecnologia — validar)</td><td>Clarificar empresa e carteira TI</td><td><strong>Média</strong></td></tr>
+<tr><td>17</td><td><strong>TS Sistemas (SOFTCOM ERP)</strong></td><td>https://tssistemas.com/</td><td>ERP distribuidora com menção a <strong>Licitações</strong> + AFV</td><td>Ângulo: alimentar módulo licitações com match</td><td><strong>Alta</strong></td></tr>
+<tr><td>18</td><td><strong>Micro ERP</strong></td><td>https://microerp.software/</td><td>ERP com página de revenda</td><td>Filtrar se há atacado TI</td><td><strong>Baixa</strong></td></tr>
+<tr><td>19</td><td><strong>Senior Sistemas</strong></td><td>https://www.senior.com.br/</td><td>ERP enterprise</td><td>Ciclo longo; só com sponsor</td><td><strong>Baixa</strong></td></tr>
+<tr><td>20</td><td><strong>Linx</strong></td><td>https://www.linx.com.br/</td><td>Mais varejo</td><td>Fraco para atacado TI</td><td><strong>Baixa</strong></td></tr>
+<tr><td>21</td><td><strong>Omie</strong></td><td>https://www.omie.com.br/</td><td>Cloud PME genérico</td><td>Poucos distribuidores TI típicos</td><td><strong>Baixa</strong></td></tr>
+<tr><td>22</td><td><strong>Portal de Compras Públicas / ISVs TOTVS</strong></td><td>via ficha TOTVS</td><td>Integrações lado público</td><td>Parceria indireta de dados/fluxo fornecedor</td><td><strong>Média</strong></td></tr>
+<tr><td>23</td><td><strong>LicitaCloud</strong></td><td>https://licitacloud.com.br/</td><td>SaaS gestão licitações</td><td>White-label match engine</td><td><strong>Média</strong></td></tr>
+<tr><td>24</td><td><strong>Elmar / E-Licitação</strong></td><td>https://elmartecnologia.com.br/</td><td>Software de licitação</td><td>Avaliar se atendem fornecedores TI</td><td><strong>Baixa</strong></td></tr>
+<tr><td>25</td><td><strong>Distribuidores âncora (design partners de catálogo)</strong></td><td>Ingram Micro BR, TD SYNNEX BR, locais Abradisti (ex. Agis citada em notícia Abradisti)</td><td>Catálogo real para calibração de match — <strong>não</strong> são buyers do SaaS partner, mas essenciais no piloto</td><td>NDA + sync de catálogo notebooks/monitores</td><td><strong>Alta</strong> (piloto dados)</td></tr>
+</tbody></table>
+<p><strong>Métodos para expandir a lista (se &lt;30 verificáveis de ERP puro):</strong></p>
+<ol>
+<li>Buscas: <code>&quot;ERP&quot; &quot;distribuidora de informática&quot;</code>, <code>&quot;módulo licitações&quot; Winthor</code>, <code>&quot;força de vendas&quot; atacado</code>.</li>
+<li>Membros e expositores Abradisti / Futurecom / feiras de canal.</li>
+<li>Marketplaces de apps TOTVS, Sankhya, Senior.</li>
+<li>LinkedIn Sales Nav: título “Parcerias” + keywords ERP distribuição.</li>
+<li>Perguntar a 5 distribuidores: “qual ERP/AFV vocês usam?” (pesquisa primária — §12).</li>
+</ol>
+<hr>
+<h2>9. Canais go-to-market</h2>
+<table>
+<thead><tr><th>Canal</th><th>Ação</th><th>Prioridade</th></tr></thead><tbody>
+<tr><td><strong>Partner sales outbound</strong></td><td>Lista §8; sequência LinkedIn + e-mail founder/PM</td><td>Alta</td></tr>
+<tr><td><strong>ISVs do ecossistema Winthor/TOTVS</strong></td><td>Co-selling com quem já tem módulo licitações</td><td>Alta</td></tr>
+<tr><td><strong>Abradisti</strong></td><td>Associação real e ativa (<a href="https://abradisti.org.br/">abradisti.org.br</a>); Encontro Anual; estudos setoriais; networking com distribuidores (para design partners de catálogo) e vendors</td><td>Alta</td></tr>
+<tr><td><strong>Futurecom</strong></td><td>Abradisti renovou apoio institucional Futurecom 2026 (outubro, SP) — canal de presença</td><td>Média-Alta</td></tr>
+<tr><td><strong>Conteúdo técnico</strong></td><td>“Como matchear catálogo com itens PNCP” (sem scrapers) — SEO para PMs de ERP</td><td>Média</td></tr>
+<tr><td><strong>Comunidades de canal</strong></td><td>Inforchannel, PartnerSales, TI Inside (mídia que repercute Abradisti)</td><td>Média</td></tr>
+<tr><td><strong>Marketplace de apps</strong></td><td>Após 2–3 cases</td><td>Média</td></tr>
+<tr><td><strong>Direct ao distribuidor</strong></td><td>Só se partner-led travar; cuidado para não competir com buyers</td><td>Baixa no início</td></tr>
+</tbody></table>
+<hr>
+<h2>10. Riscos regulatórios e de produto</h2>
+<table>
+<thead><tr><th>Risco</th><th>Detalhe</th><th>Mitigação</th></tr></thead><tbody>
+<tr><td>Interpretação como aconselhamento jurídico</td><td>Usuário pode achar que “match = pode habilitar”</td><td>Disclaimer fixo; status <code>needs_review</code>; ToS; UI sem linguagem de elegibilidade</td></tr>
+<tr><td>Lei 14.133 / responsabilidade em certame</td><td>Erro de triagem não deve ser atribuído ao LicitaFit como garantia</td><td>Contrato B2B com limitação de responsabilidade; logs</td></tr>
+<tr><td><strong>LGPD</strong></td><td>Catálogo pode conter dados comerciais sensíveis; usuários pessoas físicas em contas</td><td>Base legal contratual; DPA com partners; minimização; retenção; criptografia; subprocessadores documentados</td></tr>
+<tr><td>Propriedade do catálogo</td><td>Partner/distribuidor dono dos dados</td><td>Sem treinar modelos públicos sem opt-in; isolamento multi-tenant</td></tr>
+<tr><td>Uso de dados públicos PNCP</td><td>Dados oficiais reutilizáveis, mas atribuição e atualização importam</td><td>Citar PNCP; não republicar como “fonte oficial única” enganosa</td></tr>
+<tr><td>Preferências / conteúdo nacional</td><td>Campos existem; interpretação errada gera risco comercial</td><td>Expor campos brutos; não “decidir” margem de preferência</td></tr>
+<tr><td>Robôs de lance / automação de disputa</td><td>Fora do escopo; risco regulatório alto</td><td>Explicitamente fora do produto</td></tr>
+<tr><td>Scraping indevido</td><td>Violação de ToS / CFA</td><td>Política: só APIs/dados abertos oficiais</td></tr>
+</tbody></table>
+<hr>
+<h2>11. Implicações para produto e preço</h2>
+<h3>11.1 Hipótese R$ 1.500/mês por software partner</h3>
+<table>
+<thead><tr><th>Argumento a favor</th><th>Argumento contrário / nuance</th></tr></thead><tbody>
+<tr><td>Preço acessível para SaaS B2B de módulo</td><td>ConLicitação etc. cobram do <strong>fornecedor final</strong> valores provavelmente maiores (opacos; ciclos 6–24 meses) — referência diferente</td></tr>
+<tr><td>Facilita land em ERP early-stage</td><td>Pode subvalorizar se o partner redistribuir a dezenas de tenants</td></tr>
+<tr><td>Alinhado a “API embed”</td><td>Sem metering, um partner grande consome ingestão/match desproporcional</td></tr>
+</tbody></table>
+<p><strong>Recomendação de packaging (a testar):</strong></p>
+<ol>
+<li><strong>Partner Base</strong> — R$ 1.500/mês: até N tenants ou M matches/mês; sandbox; 1 vertical (notebooks/monitores).</li>
+<li><strong>Partner Growth</strong> — R$ 3.000–5.000/mês (estimativa de faixa a validar): mais tenants, webhooks, SSO, SLA.</li>
+<li><strong>Usage overage</strong> — por oportunidade matched ou por SKU ativo.</li>
+<li><strong>Revenue share opcional</strong> — % sobre add-on cobrado do distribuidor (alinha incentivos).</li>
+<li><strong>Pilot 60 dias</strong> — fee reduzido ou gratuito contra case study + dados de catálogo.</li>
+</ol>
+<p><strong>Não incluir no preço MVP:</strong> robô de lances, parecer jurídico, monitoramento de chat de pregão.</p>
+<h3>11.2 Implicações de roadmap</h3>
+<ol>
+<li>PNCP items-first matching + API.</li>
+<li>Embed UI mínima (lista + evidências + needs_review).</li>
+<li>PCA early signals.</li>
+<li>Enriquecimento TR/PDF opcional.</li>
+<li>Famílias de produto além de notebooks/monitores.</li>
+<li>Disponibilidade/preço do ERP (fase 2).</li>
+</ol>
+<hr>
+<h2>12. Plano de próximas pesquisas / experimentos (30–60 dias)</h2>
+<table>
+<thead><tr><th>Semana</th><th>Experimento</th><th>Sucesso</th></tr></thead><tbody>
+<tr><td>1</td><td>Pipeline: <code>contratacoes/publicacao</code> → itens → store; medir volume diário e % itens com descrição útil / NCM / catálogo</td><td>Dashboard interno com cobertura</td></tr>
+<tr><td>1–2</td><td>Amostrar 200 itens “informática”; rótulo manual match vs. catálogo piloto (1 distribuidor ou catálogo público fabricante)</td><td>Precision@K baseline</td></tr>
+<tr><td>2–3</td><td>10 calls discovery (PMs ERP §8 Alta) — script: dor B2G, módulo atual, willingness to pay, requisitos API</td><td>≥3 interessados em pilot</td></tr>
+<tr><td>3–4</td><td>Design partner tech: sync catálogo notebooks/monitores; embed em staging</td><td>Primeiro <code>needs_review</code> real no workflow do partner</td></tr>
+<tr><td>4–6</td><td>Pricing test: Base R$1.5k vs. usage hybrid</td><td>Sinal qualitativo + 1 LOI/pilot pago</td></tr>
+<tr><td>Contínuo</td><td>Monitorar OpenAPI PNCP / manual 2.x; medir falhas TLS/5xx</td><td>SLOs definidos</td></tr>
+<tr><td>Contínuo</td><td>Mapear 10 distribuidores Abradisti e ERPs que usam (pesquisa primária)</td><td>Expandir §8 com dados reais</td></tr>
+</tbody></table>
+<p><strong>Não fazer nestes 60 dias:</strong> scraping agressivo; claims de elegibilidade; GTM massivo a distribuidores contornando partners.</p>
+<hr>
+<h2>13. Fontes e bibliografia</h2>
+<p>Acesso de todas as URLs: <strong>25/09/2026</strong>, salvo indicação.</p>
+<h3>Legislação e governo</h3>
+<ol>
+<li>Lei nº 14.133/2021 — https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm  </li>
+<li>Portal de Compras — Nova Lei de Licitações — https://www.gov.br/compras/pt-br/nllc  </li>
+<li>PNCP (Rede de Parcerias) — https://www.gov.br/rededeparcerias/pt-br/servicos/portal-nacional-de-contratacoes-publicas-pncp  </li>
+<li>Manual de Integração PNCP v2.6 — https://pncp.gov.br/manual/pt-br/latest/  </li>
+<li>Acesso ao PNCP (auth, URLs) — https://pncp.gov.br/manual/pt-br/latest/acesso_ao_pncp/index.html  </li>
+<li>Consultar itens de contratação — https://pncp.gov.br/manual/pt-br/latest/contratacao/consultar_itens_de_uma_contratacao.html  </li>
+<li>Swagger API PNCP — https://pncp.gov.br/api/pncp/swagger-ui/index.html  </li>
+<li>Swagger API Consultas — https://pncp.gov.br/api/consulta/swagger-ui/index.html  </li>
+<li>Dados abertos PNCP — https://www.gov.br/pncp/pt-br/acesso-a-informacao/dados-abertos  </li>
+<li>Repositório CSV compras/PNCP — https://repositorio.dados.gov.br/seges/comprasgov/anual/  </li>
+<li>Portal Dados Abertos Compras.gov.br — https://www.gov.br/compras/pt-br/cidadao/portal-de-dados-abertos  </li>
+<li>Swagger dados abertos compras — https://dadosabertos.compras.gov.br/swagger-ui/index.html  </li>
+<li>Catálogo Compras.gov.br — https://catalogo.compras.gov.br/  </li>
+</ol>
+<h3>Mercado TIC / distribuição</h3>
+<ol>
+<li>Abradisti — Setor movimenta R$ 30,7 bi em 2025 — https://abradisti.org.br/noticias/setor-de-distribuicao-de-tic-movimenta-r-307-bilhoes-e-cresce-7-em-2025-aponta-abradisti/  </li>
+<li>Inforchannel (eco Abradisti) — https://inforchannel.com.br/2026/05/22/setor-de-distribuicao-de-tic-cresceu-7-em-2025-aponta-estudo-da-abradisti/  </li>
+<li>Abradisti home — https://abradisti.org.br/  </li>
+<li>ABINEE — Faturamento 2025 — https://www.abinee.org.br/faturamento-do-setor-em-2025/  </li>
+</ol>
+<h3>Concorrentes e adjacentes</h3>
+<ol>
+<li>ConLicitação — https://conlicitacao.com.br/ | Planos — https://conlicitacao.com.br/planos/  </li>
+<li>Licitei — https://www.licitei.com.br/ | Portais — https://www.licitei.com.br/portais  </li>
+<li>Licitar Digital — https://licitar.digital/  </li>
+<li>Sollicita — https://sollicita.com.br/  </li>
+<li>Negócios Públicos — https://www.negociospublicos.com.br/  </li>
+<li>Nextera Licitações — https://nextera.com.br/solucoes/nextera-licitacoes-winthor/  </li>
+<li>JD System Licitações — https://jdsystem.com.br/modulo-licitacoes/  </li>
+<li>LicitaCloud — https://licitacloud.com.br/  </li>
+<li>ATA360 (claims de mercado) — https://ata360.com.br/investidores | https://ata360.com.br/imprensa  </li>
+<li>TOTVS — Licitações by Portal de Compras Públicas — https://produtos.totvs.com/ficha-tecnica/licitacoes-by-portal-de-compras-publicas/  </li>
+</ol>
+<h3>ICP / software</h3>
+<ol>
+<li>Onclick — https://onclick.com.br/erp-distribuidora-informatica-eletronicos/  </li>
+<li>Soften — https://www.softensistemas.com.br/segmentos/distribuidora  </li>
+<li>Softcom Tecnologia — https://softcomtecnologia.com.br/  </li>
+<li>SIAC Informática — https://www.siacsistemas.com.br/informatica  </li>
+<li>MáximaTech — https://maximatech.com.br/  </li>
+<li>PowerGO — https://powergo.com.br/  </li>
+<li>Sankhya Atacado — https://www.sankhya.com.br/segmentos-de-atuacao/erp-para-empresas-de-atacado/  </li>
+<li>CIGAM Distribuição — https://www.cigam.com.br/distribuicao  </li>
+<li>ATS Informática — https://www.atsinformatica.com.br/  </li>
+<li>Lexos — https://www.lexos.com.br/  </li>
+<li>TS Sistemas — https://tssistemas.com/  </li>
+</ol>
+<h3>Documentação auxiliar de API (espelho comunitário do manual de consultas)</h3>
+<ol>
+<li>Gist Manual API Consultas PNCP (conteúdo alinhado ao manual oficial de consultas) — https://gist.github.com/Micael106/04a3e5515057ab11ea8797603682f0bd  </li>
+</ol>
+<h3>Lacunas explícitas registradas na pesquisa</h3>
+<ul>
+<li>Preços públicos de ConLicitação/Licitei/Sollicita: <strong>não divulgados</strong> nas páginas visitadas.  </li>
+<li>Volume oficial PNCP filtrado só para notebooks/monitores 2025: <strong>não extraído</strong> (API TLS instável no ambiente de coleta; pendente medição §12).  </li>
+<li>Produto “Bidu” de alertas: <strong>não verificado</strong>.  </li>
+<li>Total consolidado oficial “R$ X bi em compras públicas 2025” direto de painel MGI: <strong>não baixado</strong> neste ciclo; claims de terceiros sinalizados.</li>
+</ul>
+<hr>
+<p>*Documento elaborado para uso interno de estratégia LicitaFit / Launchbase Tecnologia Ltda. Não constitui aconselhamento jurídico.*</p>
+</body>
+</html>
