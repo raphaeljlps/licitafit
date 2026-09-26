@@ -44,7 +44,7 @@ Se a caixa estiver cheia ou você estiver offline, anote no calendário e avise 
 
 - Página [`/para-empresas/`](../para-empresas/) e [`/como-usar-dashboard-matching-licitacoes/`](../como-usar-dashboard-matching-licitacoes/).
 - Fluxo: upload/manutenção de catálogo → monitorar editais → fila de revisão com status.
-- Cobrança pública de referência: assinatura + por licitação monitorada/mês (sem cobrança por request no Dashboard; valores na LP).
+- Cobrança pública de referência: assinatura + por licitação monitorada/mês (R$ 399/mês + R$ 5 por licitação monitorada / mês).
 - O que **não** mostrar como “pronto”: garantia de ganhar pregão, cobertura 100% de todos os órgãos, parecer jurídico.
 - Próximo passo típico: trial / amostra de catálogo / definição de volume de licitações monitoradas.
 

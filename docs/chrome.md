@@ -15,7 +15,7 @@ Produto · **Para parceiros** · **Para empresas** · **Recursos** · Empresa ·
 Após o hero, dois caminhos claros:
 
 1. `/para-parceiros/` - API para parceiros (ICP, endpoints, preço por uso)
-2. `/para-empresas/` - Dashboard para equipes (assinatura R$ 399/mês + R$ 5 por licitação monitorada/mês; sem cobrança por request)
+2. `/para-empresas/` - Dashboard para equipes (assinatura R$ 399/mês + R$ 5 por licitação monitorada/mês)
 
 Home mantém value prop compartilhada + resumos finos de “para quem” e preço com link para as LPs. Detalhe profundo fica fora da home.
 

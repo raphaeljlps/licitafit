@@ -23,16 +23,16 @@
 </head>
 <body>
 <h1>Dossiê de Mercado , CruzaEdital</h1>
-<p><strong>Produto:</strong> CruzaEdital (Launchbase Tecnologia Ltda , CNPJ 35.078.004/0001-77) <strong>Escopo:</strong> Mercado B2B brasileiro , matching de catálogo de distribuidores de TI a licitações/PNCP, vendido como API embutível a vendors de ERP/software comercial. <strong>Data de elaboração:</strong> 25/09/2026 (America/Sao_Paulo) <strong>Idioma:</strong> Português brasileiro <strong>Classificação:</strong> Pesquisa estratégica , evidências e proxies; números inventados são proibidos.</p>
+<p><strong>Produto:</strong> CruzaEdital (Launchbase Tecnologia Ltda , CNPJ 35.078.004/0001-77) <strong>Escopo:</strong> Mercado brasileiro para empresas , matching de catálogo de distribuidores de TI a licitações/PNCP, vendido como API embutível a vendors de ERP/software comercial. <strong>Data de elaboração:</strong> 25/09/2026 (America/Sao_Paulo) <strong>Idioma:</strong> Português brasileiro <strong>Classificação:</strong> Pesquisa estratégica , evidências e proxies; números inventados são proibidos.</p>
 <hr>
 <h2>1. Resumo executivo</h2>
 <p>O CruzaEdital atua na interseção de três mercados: (i) <strong>compras públicas</strong> centralizadas no Portal Nacional de Contratações Públicas (PNCP) sob a Lei nº 14.133/2021; (ii) <strong>distribuição de TIC</strong> no Brasil, que movimentou <strong>R$ 30,7 bilhões em 2025</strong> (+7% a/a), com hardware respondendo por <strong>44,5%</strong> do faturamento dos associados Abradisti; e (iii) <strong>software de gestão e força de vendas</strong> usado por atacadistas/distribuidores (ERP, AFV, WMS comerciais).</p>
 <p>A oportunidade específica <strong>não</strong> é ser mais um portal de alerta de editais (espaço já ocupado por ConLicitação, Licitei, Sollicita e similares), nem um chatbot genérico de “IA lê o edital”. É ser a <strong>camada de decisão-suporte catalog-aware</strong> , matching entre SKUs/especificações do catálogo do distribuidor e itens de contratações públicas , entregue via <strong>API/webhooks embutíveis</strong> no ERP ou software comercial do parceiro, com status explícito <code>needs_review</code> (não elegibilidade jurídica).</p>
 <p><strong>Por que agora.</strong> A Lei 14.133 tornou a divulgação no PNCP obrigatória e centralizada; APIs oficiais de <strong>consulta pública</strong> (sem autenticação para leitura) e manuais de integração (versão 2.6, atualizada em 31/08/2026) permitem ingestão estruturada de contratações, itens, documentos, atas e contratos. O governo segue como fatia relevante (~20% dos investimentos em TIC no país, segundo Abradisti/IT Data), ainda que tenha sido fraco em 2025 , o que aumenta a pressão dos canais por <strong>qualificação melhor</strong> das oportunidades, não por mais volume bruto de alertas.</p>
-<p><strong>Preço público na landing (API parceiro):</strong> R$ 50 por 1.000 requests, <strong>mínimo R$ 490/mês</strong>, e monitoramento a <strong>R$ 1,90 por licitação monitorada / mês</strong>. Cobrança alinhada a uso (sem métricas inventadas de volume). O <strong>Dashboard B2B</strong> usa assinatura de <strong>R$ 399/mês</strong> + <strong>R$ 5 por licitação monitorada / mês</strong>, sem cobrança por request; o monitoramento é superior aos R$ 1,90 da API. Validar contra: (a) valor percebido pelo vendor; (b) mix requests + monitoramento por partner; (c) preços opacos de plataformas de inteligência de licitação. Recomendação: manter o floor de R$ 490, observar overage de requests/monitoramento e <strong>revenue share</strong> opcional com early partners.</p>
+<p><strong>Preços públicos:</strong> API: R$ 50 / 1.000 requests, mínimo R$ 490/mês, R$ 1,90 por licitação monitorada / mês. Dashboard: R$ 399/mês + R$ 5 por licitação monitorada / mês.</p>
 <p><strong>Go-to-market prioritário:</strong> vendas a <strong>fundadores/PMs/parcerias</strong> de ERPs e softwares comerciais para distribuição/atacado de TI (não Conta Azul / e-commerce genérico). ICP exemplificado neste dossiê inclui Onclick, Soften, Softcom, SIAC, ecossistema Winthor/TOTVS (Nextera, MáximaTech, PowerGO), Sankhya, CIGAM, ATS Resulth, Lexos, JD System, entre outros.</p>
 <p><strong>Riscos-chave:</strong> cobertura incompleta municipal/estadual apesar do PNCP; qualidade variável de descrições de itens; responsabilidade jurídica se o produto for interpretado como “aprovação legal”; LGPD sobre catálogos de parceiros; schema drift das APIs.</p>
-<p><strong>Próximo passo de 30–60 dias:</strong> 3–5 design partners com catálogo real (equipamentos de TI), pipeline PNCP→match→<code>needs_review</code>, e 10 conversas discovery com buyers do ICP.</p>
+<p><strong>Próximo passo de 30-60 dias:</strong> 3-5 design partners com catálogo real (equipamentos de TI), pipeline PNCP→match→<code>needs_review</code>, e 10 conversas discovery com buyers do ICP.</p>
 <hr>
 <h2>2. Problema e oportunidade</h2>
 <h3>2.1 Dor do distribuidor de TI (usuário econômico final)</h3>
@@ -69,7 +69,7 @@
 <h3>3.1 Compras públicas no Brasil</h3>
 <p><strong>Marco legal.</strong> A Lei nº 14.133, de 1º de abril de 2021, estabelece normas gerais de licitação e contratação para a administração pública. O <strong>PNCP</strong> é o sítio oficial de divulgação centralizada e obrigatória dos atos exigidos pela lei (<a href="https://www.gov.br/compras/pt-br/nllc">gov.br/compras , NLLC</a>; <a href="https://www.gov.br/rededeparcerias/pt-br/servicos/portal-nacional-de-contratacoes-publicas-pncp">gov.br , PNCP</a>).</p>
 <p><strong>Papel do PNCP.</strong> Centraliza PCA (Planos de Contratações Anuais), editais/avisos, atas de registro de preços, contratos e dados estatísticos; disponibiliza APIs e dados abertos para integração.</p>
-<p><strong>Volume.</strong> Não há, neste dossiê, um número oficial IBGE/MGI auditado pelo autor para “total de compras públicas 2025” obtido diretamente de painel governamental no momento da pesquisa. Claims de mercado (ex.: ATA360 citando PNCP/MGI: <strong>mais de R$ 1 trilhão</strong> e <strong>mais de 1 milhão de processos</strong> em 2025, ~12–16% do PIB) devem ser tratados como <strong>estimativas de terceiros</strong> até cruzamento com painéis oficiais do PNCP/MGI. <strong>Proxy qualitativo:</strong> o mercado é estruturalmente grande, multi-esfera (União, estados, 5.570 municípios) e digitalmente mais centralizado pós-14.133.</p>
+<p><strong>Volume.</strong> Não há, neste dossiê, um número oficial IBGE/MGI auditado pelo autor para “total de compras públicas 2025” obtido diretamente de painel governamental no momento da pesquisa. Claims de mercado (ex.: ATA360 citando PNCP/MGI: <strong>mais de R$ 1 trilhão</strong> e <strong>mais de 1 milhão de processos</strong> em 2025, ~12-16% do PIB) devem ser tratados como <strong>estimativas de terceiros</strong> até cruzamento com painéis oficiais do PNCP/MGI. <strong>Proxy qualitativo:</strong> o mercado é estruturalmente grande, multi-esfera (União, estados, 5.570 municípios) e digitalmente mais centralizado pós-14.133.</p>
 <p><strong>Tendências relevantes ao CruzaEdital:</strong></p>
 <ol>
 <li>Obrigação de publicação no PNCP → <strong>fonte canônica preferencial</strong> para ingestão.</li>
@@ -97,16 +97,15 @@
 <li><strong>Força de vendas (AFV)</strong> integrada a esses ERPs (MáximaTech, PowerGO e similares).</li>
 <li><strong>Módulos de licitação já existentes</strong> (Nextera, JD System) , potenciais <strong>parceiros de complementaridade</strong> ou concorrentes parciais (pós-match / gestão de contrato, não discovery catalog-aware).</li>
 </ol>
-<p><strong>Fora do ICP (exemplos):</strong> Conta Azul (MEI/PME serviços genéricos); Bling (e-commerce); ERPs só varejo puro sem atacado B2B.</p>
+<p><strong>Fora do ICP (exemplos):</strong> Conta Azul (MEI/PME serviços genéricos); Bling (e-commerce); ERPs só varejo puro sem atacado para empresas.</p>
 <h3>3.4 TAM / SAM / SOM (com premissas transparentes)</h3>
 <blockquote><p><strong>Aviso:</strong> abaixo é <strong>framing estimativo</strong>. Onde não há dado público, a célula é marcada como *estimativa/proxy*. Não usar como forecast financeiro auditado.</p></blockquote>
 <table>
 <thead><tr><th>Camada</th><th>Definição operacional</th><th>Ordem de grandeza</th><th>Premissas / status do dado</th></tr></thead><tbody>
 <tr><td><strong>TAM (mercado amplo)</strong></td><td>Valor econômico de software/serviços de inteligência e gestão de vendas ao governo no Brasil + spend em ferramentas de alerta/licitação por empresas fornecedoras</td><td><strong>Não quantificado com rigor neste dossiê</strong></td><td>Sem estatística oficial consolidada de “gasto das empresas com software de licitação”. Proxy: compras públicas totais (claims ~R$ 1 tri) são <strong>GSV público</strong>, não receita de software.</td></tr>
 <tr><td><strong>SAM (mercado servível)</strong></td><td>Vendors de ERP/AFV/comercial que atendem <strong>distribuidores/atacadistas de TIC</strong> no Brasil + seus clientes finais com operação B2G de hardware</td><td><strong>Estimativa qualitativa: dezenas de vendors relevantes; milhares de distribuidores/revendas no ecossistema Abradisti</strong></td><td>51 distribuidores grandes + 1.176+ revendas no censo; número de ERPs especializados = lista ICP (§8), não censo completo.</td></tr>
-<tr><td><strong>SOM (mercado obtível 3 anos)</strong></td><td>Receita CruzaEdital de <strong>software partners</strong> (floor R$ 490/mês + usage de requests e monitoramento) × N partners ativos</td><td><strong>Exemplo ilustrativo (não forecast):</strong> 20 partners no floor = R$ 9,8 mil MRR base; usage e monitoramento empurram ARPU acima do mínimo</td><td>Depende de win rate, mix de requests/monitoramento e se há fee por tenant/distribuidor.</td></tr>
+<tr><td><strong>SOM (mercado obtível 3 anos)</strong></td><td>Receita CruzaEdital de contratos com parceiros de software × número de parceiros ativos</td><td><strong>Exemplo ilustrativo (não forecast):</strong> 20 parceiros ativos</td><td>Depende da conversão e da quantidade de parceiros ativos.</td></tr>
 </tbody></table>
-<p><strong>Proxy útil para pricing do partner:</strong> se um ERP embute CruzaEdital e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com o floor CruzaEdital de R$ 490/mês a partir de ~1–3 clientes ativos (usage adicional de requests/monitoramento escala com o uso) , tese de partner-led growth.</p>
 <p><strong>Volume de matching (produto):</strong> indisponível neste dossiê o volume oficial filtrado “apenas equipamentos de TI no PNCP 2025”. Deve ser medido no experimento de 30 dias via API de consulta + filtro de itens (§12).</p>
 <hr>
 <h2>4. Fontes de dados públicos , ONDE obter</h2>
@@ -291,8 +290,8 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 <tr><td>Cargo</td><td>Founder, Head de Produto, Parcerias, CTO de ERP/AFV/software comercial</td></tr>
 <tr><td>Empresa</td><td>Serve <strong>distribuidores/atacadistas</strong> (idealmente TI/eletrônicos) no Brasil</td></tr>
 <tr><td>Motivação</td><td>Diferenciação de roadmap, retenção de clientes B2G, receita de add-on</td></tr>
-<tr><td>Budget</td><td>SaaS B2B R$ 1–5k/mês plausível por módulo parceiro (a validar)</td></tr>
-<tr><td>Sucesso</td><td>Time-to-embed &lt; 30–60 dias; demos com catálogo real; casos de uso equipamentos de TI</td></tr>
+<tr><td>Budget</td><td>SaaS para empresas R$ 1-5k/mês plausível por módulo parceiro (a validar)</td></tr>
+<tr><td>Sucesso</td><td>Time-to-embed &lt; 30-60 dias; demos com catálogo real; casos de uso equipamentos de TI</td></tr>
 </tbody></table>
 <h3>7.2 Usuário final (dentro do cliente do partner)</h3>
 <ul>
@@ -311,7 +310,7 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 <h3>7.4 Desqualificadores</h3>
 <ul>
 <li>ERP só serviços/financeiro sem catálogo de SKUs (ex.: Conta Azul clássico).</li>
-<li>Pure marketplace/e-commerce sem operação B2B de distribuição.</li>
+<li>Pure marketplace/e-commerce sem operação para empresas de distribuição.</li>
 <li>Pedido de “garantir habilitação / ganhar pregão automaticamente”.</li>
 <li>Necessidade exclusiva de robô de lances (outro produto).</li>
 <li>Jurisdição fora do Brasil sem PNCP.</li>
@@ -365,15 +364,15 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 <tr><td><strong>Futurecom</strong></td><td>Abradisti renovou apoio institucional Futurecom 2026 (outubro, SP) , canal de presença</td><td>Média-Alta</td></tr>
 <tr><td><strong>Conteúdo técnico</strong></td><td>“Como matchear catálogo com itens PNCP” (sem scrapers) , SEO para PMs de ERP</td><td>Média</td></tr>
 <tr><td><strong>Comunidades de canal</strong></td><td>Inforchannel, PartnerSales, TI Inside (mídia que repercute Abradisti)</td><td>Média</td></tr>
-<tr><td><strong>Marketplace de apps</strong></td><td>Após 2–3 cases</td><td>Média</td></tr>
-<tr><td><strong>Direct ao distribuidor</strong></td><td>Só se partner-led travar; cuidado para não competir com buyers</td><td>Baixa no início</td></tr>
+<tr><td><strong>Marketplace de apps</strong></td><td>Após 2-3 cases</td><td>Média</td></tr>
+<tr><td><strong>Direct ao distribuidor</strong></td><td>Só se a venda por parceiros não avançar; cuidado para não competir com compradores</td><td>Baixa no início</td></tr>
 </tbody></table>
 <hr>
 <h2>10. Riscos regulatórios e de produto</h2>
 <table>
 <thead><tr><th>Risco</th><th>Detalhe</th><th>Mitigação</th></tr></thead><tbody>
 <tr><td>Interpretação como aconselhamento jurídico</td><td>Usuário pode achar que “match = pode habilitar”</td><td>Disclaimer fixo; status <code>needs_review</code>; ToS; UI sem linguagem de elegibilidade</td></tr>
-<tr><td>Lei 14.133 / responsabilidade em certame</td><td>Erro de triagem não deve ser atribuído ao CruzaEdital como garantia</td><td>Contrato B2B com limitação de responsabilidade; logs</td></tr>
+<tr><td>Lei 14.133 / responsabilidade em certame</td><td>Erro de triagem não deve ser atribuído ao CruzaEdital como garantia</td><td>Contrato para empresas com limitação de responsabilidade; logs</td></tr>
 <tr><td><strong>LGPD</strong></td><td>Catálogo pode conter dados comerciais sensíveis; usuários pessoas físicas em contas</td><td>Base legal contratual; DPA com partners; minimização; retenção; criptografia; subprocessadores documentados</td></tr>
 <tr><td>Propriedade do catálogo</td><td>Partner/distribuidor dono dos dados</td><td>Sem treinar modelos públicos sem opt-in; isolamento multi-tenant</td></tr>
 <tr><td>Uso de dados públicos PNCP</td><td>Dados oficiais reutilizáveis, mas atribuição e atualização importam</td><td>Citar PNCP; não republicar como “fonte oficial única” enganosa</td></tr>
@@ -383,22 +382,11 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 </tbody></table>
 <hr>
 <h2>11. Implicações para produto e preço</h2>
-<h3>11.1 Preço público API: usage + floor + monitoramento</h3>
-<table>
-<thead><tr><th>Argumento a favor</th><th>Argumento contrário / nuance</th></tr></thead><tbody>
-<tr><td>Floor R$ 490/mês acessível para SaaS B2B de módulo</td><td>ConLicitação etc. cobram do <strong>fornecedor final</strong> valores provavelmente maiores (opacos; ciclos 6–24 meses) , referência diferente</td></tr>
-<tr><td>Facilita land em ERP early-stage</td><td>Partners com muitos tenants podem gerar overage alto de requests/monitoramento</td></tr>
-<tr><td>Alinhado a uso real (requests + licitações monitoradas)</td><td>Precisa de metering claro e previsibilidade de fatura para o buyer</td></tr>
-</tbody></table>
-<p><strong>Packaging publicado na landing (API parceiro):</strong></p>
-<ol>
-<li><strong>Requests</strong> , R$ 50 por 1.000 requests.</li>
-<li><strong>Floor</strong> , mínimo R$ 490/mês.</li>
-<li><strong>Monitoramento</strong> , R$ 1,90 por licitação monitorada / mês.</li>
-<li><strong>Dashboard B2B</strong> , assinatura de R$ 399/mês + R$ 5 por licitação monitorada / mês, sem cobrança por request (oferta distinta da API).</li>
-<li><strong>Revenue share opcional</strong> , % sobre add-on cobrado do distribuidor (alinha incentivos).</li>
-<li><strong>Pilot 60 dias</strong> , fee reduzido ou gratuito contra case study + dados de catálogo.</li>
-</ol>
+<h3>11.1 Preços públicos</h3>
+<ul>
+<li><strong>API:</strong> R$ 50 / 1.000 requests, mínimo R$ 490/mês, R$ 1,90 por licitação monitorada / mês.</li>
+<li><strong>Dashboard:</strong> R$ 399/mês + R$ 5 por licitação monitorada / mês.</li>
+</ul>
 <p><strong>Não incluir no preço MVP:</strong> robô de lances, parecer jurídico, monitoramento de chat de pregão.</p>
 <h3>11.2 Implicações de roadmap</h3>
 <ol>
@@ -410,14 +398,14 @@ Ingestão PNCP → Normalização (texto, NCM, catálogo)
 <li>Disponibilidade/preço do ERP (fase 2).</li>
 </ol>
 <hr>
-<h2>12. Plano de próximas pesquisas / experimentos (30–60 dias)</h2>
+<h2>12. Plano de próximas pesquisas / experimentos (30-60 dias)</h2>
 <table>
 <thead><tr><th>Semana</th><th>Experimento</th><th>Sucesso</th></tr></thead><tbody>
 <tr><td>1</td><td>Pipeline: <code>contratacoes/publicacao</code> → itens → store; medir volume diário e % itens com descrição útil / NCM / catálogo</td><td>Dashboard interno com cobertura</td></tr>
-<tr><td>1–2</td><td>Amostrar 200 itens de TI; rótulo manual match vs. catálogo piloto (1 distribuidor ou catálogo público fabricante)</td><td>Precision@K baseline</td></tr>
-<tr><td>2–3</td><td>10 calls discovery (PMs ERP §8 Alta) , script: dor B2G, módulo atual, willingness to pay, requisitos API</td><td>≥3 interessados em pilot</td></tr>
-<tr><td>3–4</td><td>Design partner tech: sync do catálogo; embed em staging</td><td>Primeiro <code>needs_review</code> real no workflow do partner</td></tr>
-<tr><td>4–6</td><td>Pricing test: floor R$490 + usage (requests/monitoramento) vs. flat legado</td><td>Sinal qualitativo + 1 LOI/pilot pago</td></tr>
+<tr><td>1-2</td><td>Amostrar 200 itens de TI; rótulo manual match vs. catálogo piloto (1 distribuidor ou catálogo público fabricante)</td><td>Precision@K baseline</td></tr>
+<tr><td>2-3</td><td>10 calls discovery (PMs ERP §8 Alta) , script: dor B2G, módulo atual, willingness to pay, requisitos API</td><td>≥3 interessados em pilot</td></tr>
+<tr><td>3-4</td><td>Design partner tech: sync do catálogo; embed em staging</td><td>Primeiro <code>needs_review</code> real no workflow do partner</td></tr>
+<tr><td>4-6</td><td>Validar interesse e disposição para um piloto pago</td><td>Sinal qualitativo + 1 piloto pago</td></tr>
 <tr><td>Contínuo</td><td>Monitorar OpenAPI PNCP / manual 2.x; medir falhas TLS/5xx</td><td>SLOs definidos</td></tr>
 <tr><td>Contínuo</td><td>Mapear 10 distribuidores Abradisti e ERPs que usam (pesquisa primária)</td><td>Expandir §8 com dados reais</td></tr>
 </tbody></table>
