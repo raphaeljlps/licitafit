@@ -18,19 +18,19 @@ PAGES = {
         "hub": "guias",
         "blurb": "Aviso por palavra-chave/CNAE/UF versus cruzamento com SKUs reais e status de requisitos.",
         "related": [
-            ("needs-review-matched-conflito-unknown", "Status matched, conflito, unknown e needs_review (carga de revisão, não liberação jurídica)."),
+            ("status-matching", "Como interpretar matched, conflito, unknown e needs_review."),
             ("matching-catalogo-edital", "Como o matching catálogo ↔ item evita falsa elegibilidade."),
             ("pncp-feed-vs-matching-catalogo", "Feed bruto do PNCP não é o mesmo que produto de matching."),
         ],
     },
-    "needs-review-matched-conflito-unknown": {
-        "title": "Matched, conflito, unknown e needs_review",
-        "short": "Status e needs_review",
+    "status-matching": {
+        "title": "Status do matching",
+        "short": "Status do matching",
         "hub": "guias",
-        "blurb": "Cada status descreve carga de revisão comercial (não parecer jurídico).",
+        "blurb": "Entenda cada status e priorize a revisão da oportunidade.",
         "related": [
             ("alerta-edital-vs-matching-catalogo", "Quando o alerta genérico não basta para priorizar."),
-            ("limites-matching-licitafit", "O que o matching não afirma (habilitação e parecer)."),
+            ("limites-matching-licitafit", "O que revisar antes de avançar."),
             ("matching-catalogo-edital", "Matching catálogo ↔ item com requisitos a conferir."),
         ],
     },
@@ -52,18 +52,18 @@ PAGES = {
         "blurb": "Cruzar produtos do catálogo com itens do edital sem falsa elegibilidade.",
         "related": [
             ("alerta-edital-vs-matching-catalogo", "Alerta genérico vs matching de catálogo."),
-            ("needs-review-matched-conflito-unknown", "Status e needs_review na prática."),
-            ("limites-matching-licitafit", "Limites: não é habilitação jurídica."),
+            ("status-matching", "Como interpretar status e priorizar revisão."),
+            ("limites-matching-licitafit", "Limites: habilitação depende do processo oficial."),
         ],
     },
     "limites-matching-licitafit": {
         "title": "Limites do matching CruzaEdital",
         "short": "Limites do matching",
         "hub": "guias",
-        "blurb": "Apoio à decisão comercial (não parecer jurídico nem garantia de habilitação).",
+        "blurb": "Triagem de oportunidades com revisão da equipe.",
         "related": [
             ("matching-catalogo-edital", "Como o matching funciona no fluxo comercial."),
-            ("needs-review-matched-conflito-unknown", "Status matched, conflito, unknown e needs_review."),
+            ("status-matching", "Como interpretar os status do resultado."),
             ("retificacao-edital-impacto-matching", "Quando o edital muda, o matching precisa reavaliar."),
         ],
     },
@@ -96,7 +96,7 @@ PAGES = {
         "blurb": "Decisão comercial de avançar ou não com base em SKUs e requisitos a conferir.",
         "related": [
             ("checklist-oportunidades-governo-no-erp", "Checklist para embutir oportunidades no ERP."),
-            ("needs-review-matched-conflito-unknown", "Status que orientam revisão humana."),
+            ("status-matching", "Status que orientam a revisão da equipe."),
             ("limites-matching-licitafit", "O que o matching não garante."),
         ],
     },
@@ -107,7 +107,7 @@ PAGES = {
         "blurb": "Requisitos técnicos dos itens do catálogo para apoiar a revisão.",
         "related": [
             ("matching-catalogo-edital", "Matching catálogo ↔ item."),
-            ("needs-review-matched-conflito-unknown", "Status de requisitos e needs_review."),
+            ("status-matching", "Status de requisitos e fila de revisão."),
             ("limites-matching-licitafit", "Limites do matching."),
         ],
     },
@@ -237,7 +237,7 @@ PAGES = {
         "title": "Como saber se o produto atende o edital",
         "short": "Produto atende o edital?",
         "hub": "guias",
-        "blurb": "Triagem no Dashboard: matching, status de requisitos e revisão humana (sem parecer jurídico).",
+        "blurb": "Triagem no Dashboard: matching, status de requisitos e revisão humana.",
         "related": [
             ("como-usar-dashboard-matching-licitacoes", "Rotina no Dashboard."),
             ("checklist-requisitos-notebooks-monitores", "Checklist de requisitos por item."),
@@ -261,7 +261,7 @@ PAGES = {
         "title": "Fontes oficiais e autenticidade (PNCP)",
         "short": "Fontes oficiais PNCP",
         "hub": "guias",
-        "blurb": "Dados públicos usados pelo CruzaEdital e links oficiais (não é parecer jurídico).",
+        "blurb": "Dados públicos usados pelo CruzaEdital e links oficiais.",
         "related": [
             ("uso-responsavel-matching", "O que o matching faz e não faz."),
             ("o-que-e-pncp", "Definição oficial do PNCP."),
@@ -309,7 +309,7 @@ PAGES = {
         "related": [
             ("limites-matching-licitafit", "Limites do matching."),
             ("fontes-oficiais-pncp", "Fontes oficiais PNCP."),
-            ("needs-review-matched-conflito-unknown", "Status e needs_review."),
+            ("status-matching", "Status e needs_review."),
         ],
     },
 
@@ -455,7 +455,7 @@ def footer_html(prefix: str, local_demo: bool = False) -> str:
       <div class="col-3">
         <p>
           <strong>CruzaEdital</strong><br />
-          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+          Revisão de oportunidades de licitação com base no catálogo.
         </p>
       </div>
       <div class="col-3">
@@ -483,7 +483,7 @@ def footer_html(prefix: str, local_demo: bool = False) -> str:
           <li class="p-list__item"><a href="{h('privacidade/')}">Privacidade e cookies</a></li>
         </ul>
         <p class="lf-legal">
-          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+          O CruzaEdital apoia a revisão comercial. Consulte o uso responsável.
         </p>
         <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
       </div>
@@ -510,7 +510,7 @@ def recursos_section() -> str:
           <p class="p-heading--4">Aprenda e compare (sem rankings inventados)</p>
           <p>
             Guias e comparativos para product leads de ERP e equipes comerciais de distribuidores de TI.
-            Conteúdo educacional; o CruzaEdital permanece apoio à decisão comercial.
+            Conteúdo educacional para equipes que trabalham com licitações.
           </p>
         </div>
       </div>

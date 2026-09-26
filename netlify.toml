@@ -7,3 +7,9 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
+
+[[redirects]]
+  from = "/needs-review-matched-conflito-unknown/"
+  to = "/status-matching/"
+  status = 301
+  force = true
