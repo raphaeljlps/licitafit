@@ -1,4 +1,4 @@
-# SITE_ORIGIN=https://www.licitafit.com.br (DNS may not be live yet — see README)
+# SITE_ORIGIN=https://www.licitafit.com.br (DNS may not be live yet , see README)
 User-agent: *
 Allow: /
 

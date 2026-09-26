@@ -4,18 +4,18 @@ Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licit
 
 ## Conteúdo
 
-- `index.html` — home chooser (dois caminhos + `#recursos`)
-- `para-parceiros/` — LP API B2B2B (parceiros de software)
-- `para-empresas/` — LP Dashboard B2B (equipes de licitação; R$ 399/mês + R$ 5 por licitação monitorada/mês)
-- `guias/` — índice de guias AEO
-- `comparativos/` — hub de comparativos (sem ranking)
+- `index.html` , home chooser (dois caminhos + `#recursos`)
+- `para-parceiros/` , LP API B2B2B (parceiros de software)
+- `para-empresas/` , LP Dashboard B2B (equipes de licitação; R$ 399/mês + R$ 5 por licitação monitorada/mês)
+- `guias/` , índice de guias AEO
+- `comparativos/` , hub de comparativos (sem ranking)
 - Artigos em pastas na raiz (`alerta-edital-vs-matching-catalogo/`, etc.)
-- `js/site-origin.js` — **SITE_ORIGIN** (um lugar para trocar o host canônico)
-- `scripts/sync-chrome.py` — sincroniza nav/footer/breadcrumbs/Continue lendo
-- `docs/chrome.md` — padrão de IA (nav/footer estilo Canonical)
-- `sitemap.xml` / `robots.txt` — descoberta
-- `css/vanilla.css` — estilos
-- `images/` — imagens da landing
+- `js/site-origin.js` , **SITE_ORIGIN** (um lugar para trocar o host canônico)
+- `scripts/sync-chrome.py` , sincroniza nav/footer/breadcrumbs/Continue lendo
+- `docs/chrome.md` , padrão de IA (nav/footer estilo Canonical)
+- `sitemap.xml` / `robots.txt` , descoberta
+- `css/vanilla.css` , estilos
+- `images/` , imagens da landing
 
 ## SITE_ORIGIN (canonical)
 
@@ -23,7 +23,7 @@ Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licit
 |-|-----|
 | **Intended canonical** | `https://www.licitafit.com.br` |
 | **Visibilidade interim (GitHub Pages)** | `https://raphaeljlps.github.io/licitafit/` |
-| **Preview antigo (STALE — não redeploya)** | `https://dapper-opera-mz8m.here.now` |
+| **Preview antigo (STALE , não redeploya)** | `https://dapper-opera-mz8m.here.now` |
 
 DNS/hosting do domínio canônico ainda **TBD**. Canonical tags, JSON-LD, `sitemap.xml` e `robots.txt` usam `https://www.licitafit.com.br` (**não** troque pelo URL do Pages).
 
