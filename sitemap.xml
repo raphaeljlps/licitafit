@@ -168,6 +168,26 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.licitafit.com.br/alternativas-a-conlicitacao/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/alternativas-a-licitei/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/radar-alerta-pncp-vs-matching-catalogo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/quando-alerta-edital-nao-basta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.licitafit.com.br/privacidade/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
