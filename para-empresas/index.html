@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CruzaEdital Dashboard para equipes de licitação | CruzaEdital</title>
-  <meta name="description" content="CruzaEdital Dashboard para distribuidores e equipes que respondem editais: upload de lista, catálogo, matches na tela e alertas. Assinatura de R$ 399/mês + R$ 5 por licitação monitorada/mês. Apoio comercial (não parecer jurídico)." />
+  <meta name="description" content="CruzaEdital Dashboard para distribuidores e equipes que respondem editais: upload de lista, catálogo, matches na tela e alertas. Assinatura de R$ 399/mês + R$ 5 por licitação monitorada/mês. Triagem comercial com revisão da equipe." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Interim: https://raphaeljlps.github.io/licitafit/ -->
   <script src="../js/site-config.js" defer></script>
   <script src="../js/site-origin.js" defer></script>
@@ -126,7 +126,7 @@
             "name": "O Dashboard libera habilitação jurídica?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O CruzaEdital é apoio à decisão comercial. Status e needs_review orientam revisão humana; não constituem parecer jurídico nem garantia de habilitação."
+              "text": "Não. O CruzaEdital é triagem comercial. Status e needs_review orientam revisão humana; organizam a conferência do edital e da documentação."
             }
           }
         ]
@@ -295,11 +295,11 @@
             <li class="p-list__item is-ticked"><strong>matched</strong>: requisito alinhado ao que o catálogo descreve</li>
             <li class="p-list__item is-ticked"><strong>conflito</strong>: divergência aparente (revisar antes de avançar)</li>
             <li class="p-list__item is-ticked"><strong>unknown</strong>: requisito ilegível ou sem evidência suficiente</li>
-            <li class="p-list__item is-ticked"><code>needs_review</code>: carga de revisão comercial (não liberação jurídica)</li>
+            <li class="p-list__item is-ticked"><code>needs_review</code>: carga de revisão comercial (com revisão da equipe)</li>
           </ul>
           <p>
             Vocabulário:
-            <a href="../needs-review-matched-conflito-unknown/">matched, conflito, unknown e needs_review</a>.
+            <a href="../status-matching/">matched, conflito, unknown e needs_review</a>.
             Como o cruzamento funciona:
             <a href="../matching-catalogo-edital/">matching catálogo ↔ item</a>.
           </p>
@@ -399,8 +399,8 @@
           </p>
           <h3>O Dashboard libera habilitação jurídica?</h3>
           <p>
-            Não. O CruzaEdital é apoio à decisão comercial. Status e <code>needs_review</code>
-            orientam revisão humana; não constituem parecer jurídico nem garantia de habilitação.
+            Não. O CruzaEdital é triagem comercial. Status e <code>needs_review</code>
+            orientam revisão humana; organizam a conferência do edital e da documentação.
           </p>
           <h3>Alerta genérico de edital já basta?</h3>
           <p>
@@ -453,7 +453,7 @@
         <div class="col-4">
           <div class="p-card">
             <h3 class="p-card__title"><a href="../limites-matching-licitafit/">Limites do matching</a></h3>
-            <p class="p-card__content">Apoio comercial (não parecer jurídico).</p>
+            <p class="p-card__content">Triagem comercial com revisão da equipe.</p>
           </div>
         </div>
       </div>
@@ -471,17 +471,15 @@
       <div class="row">
         <div class="col-8">
           <h2>Compliance e limites</h2>
-          <div class="lf-callout">
-            <p>
-              O CruzaEdital é <strong>apoio à decisão comercial</strong>. Resultados com status
+          <p class="lf-muted">
+              O CruzaEdital é <strong>triagem comercial</strong>. Resultados com status
               matched, conflito ou unknown e qualificações como <code>needs_review</code>
-              <strong>não constituem parecer jurídico nem garantia de habilitação</strong>.
+              <strong>organizam a conferência do edital e da documentação</strong>.
               Ver
               <a href="../uso-responsavel-matching/">uso responsável</a>
               e
               <a href="../fontes-oficiais-pncp/">fontes oficiais</a>.
             </p>
-          </div>
         </div>
       </div>
     </section>
@@ -493,7 +491,7 @@
           <h2>Fontes e confiança</h2>
           <p>
             O CruzaEdital usa <strong>dados públicos</strong> de contratações (PNCP e canais oficiais de dados abertos).
-            Não é portal do governo, não emite selos oficiais e não é parecer jurídico.
+            Não é portal do governo, não emite selos oficiais e consulte as fontes oficiais.
           </p>
           <ul>
             <li>
@@ -574,7 +572,7 @@
           </div>
           <p style="margin-top:1rem"><a class="p-button" href="../como-usar-dashboard-matching-licitacoes/" style="background:#fff;color:#111">Como usar o Dashboard</a></p>
           <p class="u-text--muted" style="opacity:0.85;margin-top:1.25rem">
-            Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+            Triagem comercial (organiza a revisão dos requisitos).
           </p>
         </div>
       </div>
@@ -586,7 +584,7 @@
       <div class="col-3">
         <p>
           <strong>CruzaEdital</strong><br />
-          Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
+          Revisão de oportunidades de licitação com base no catálogo.
         </p>
       </div>
       <div class="col-3">
@@ -614,7 +612,7 @@
           <li class="p-list__item"><a href="../privacidade/">Privacidade e cookies</a></li>
         </ul>
         <p class="lf-legal">
-          Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
+          O CruzaEdital apoia a revisão comercial. Consulte o uso responsável.
         </p>
         <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
       </div>

@@ -28,7 +28,7 @@ Se a caixa estiver cheia ou você estiver offline, anote no calendário e avise 
 2. Abrir a LP certa: [`/para-parceiros/`](../para-parceiros/) ou [`/para-empresas/`](../para-empresas/).
 3. Confirmar se FormSubmit já foi ativado neste domínio (ver [analytics-e-formulario.md](analytics-e-formulario.md)).
 4. Não afirmar membership em associações (ATCG etc.) nem selos inventados.
-5. Repetir o disclaimer: apoio à decisão comercial; não parecer jurídico; não garantia de habilitação.
+5. Usar linguagem de triagem comercial e apontar para a página de uso responsável, sem prometer aprovação.
 
 ## O que mostrar na call
 

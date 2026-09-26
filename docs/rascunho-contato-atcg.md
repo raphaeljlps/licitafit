@@ -23,7 +23,7 @@ Olá, equipe ATCG,
 
 Meu nome é Raphael Lopes, da Launchbase Tecnologia Ltda (CNPJ 35.078.004/0001-77).
 
-Desenvolvemos o **CruzaEdital**, um produto que ajuda distribuidores de TI e parceiros de software a cruzar o **catálogo de produtos** com oportunidades publicadas em fontes oficiais (em especial o PNCP). O foco é **qualificação comercial** (o que merece revisão humana), com status claros e necessidade de revisão quando o requisito não está fechado. Não é parecer jurídico e não garante habilitação.
+Desenvolvemos o **CruzaEdital**, um produto que ajuda distribuidores de TI e parceiros de software a cruzar o **catálogo de produtos** com oportunidades publicadas em fontes oficiais (em especial o PNCP). O foco é **qualificação comercial** (o que merece revisão humana), com status claros e necessidade de revisão quando o requisito não está fechado. A decisão final permanece com a equipe responsável pelo processo.
 
 Encontrei a ATCG como associação voltada a tecnologia para contratações governamentais e gostaria de:
 

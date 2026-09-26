@@ -1,7 +1,7 @@
 # Solicitações e confirmações junto ao governo / PNCP
 
 **Uso:** documentação interna de operações (Launchbase / CruzaEdital).  
-**Não é** material de marketing nem parecer jurídico.  
+**Não é** material de marketing nem análise do processo licitatório.  
 **Atualizado:** 2026-09-25 (America/Sao_Paulo); seção 7 associações adicionada no mesmo dia.
 
 Objetivo: checklist do que confirmar ou solicitar aos canais oficiais antes e durante o uso em produção de **dados públicos** do PNCP / dados abertos, e o que **não** misturar com o produto comercial de matching.
@@ -141,7 +141,7 @@ Referência de mercado: a **AB2L** (Associação Brasileira de Lawtechs e Legalt
 1. Contatar **ATCG** (associação mais alinhada a contratações).
 2. Avaliar filiação / participação na **ABGovtechs**.
 3. Se fizer sentido de marca e pipeline B2G, avaliar programa / Selo do **BrazilLAB**.
-4. **AB2L** apenas se o posicionamento for deliberadamente legaltech (hoje o produto é apoio comercial a decisão, não parecer jurídico).
+4. **AB2L** apenas se o posicionamento for deliberadamente legaltech (hoje o produto organiza revisão comercial, sem aprovar participação).
 
 ### Checklist interno
 
