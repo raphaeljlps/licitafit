@@ -5,7 +5,7 @@
   <rect x="40" y="36" width="880" height="288" rx="8" fill="#fff" stroke="#d9d9d9"/>
   <!-- top bar -->
   <rect x="40" y="36" width="880" height="44" fill="#111"/>
-  <text x="64" y="64" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" fill="#fff">LicitaFit Dashboard</text>
+  <text x="64" y="64" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" fill="#fff">CruzaEdital Dashboard</text>
   <rect x="780" y="48" width="110" height="22" rx="3" fill="#0e8420"/>
   <text x="800" y="63" font-family="Ubuntu, Segoe UI, sans-serif" font-size="11" fill="#fff">Catálogo</text>
   <!-- sidebar -->

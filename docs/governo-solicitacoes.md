@@ -1,6 +1,6 @@
 # Solicitações e confirmações junto ao governo / PNCP
 
-**Uso:** documentação interna de operações (Launchbase / LicitaFit).  
+**Uso:** documentação interna de operações (Launchbase / CruzaEdital).  
 **Não é** material de marketing nem parecer jurídico.  
 **Atualizado:** 2026-09-25 (America/Sao_Paulo); seção 7 associações adicionada no mesmo dia.
 
@@ -14,9 +14,9 @@ Objetivo: checklist do que confirmar ou solicitar aos canais oficiais antes e du
 |-------|------|-------------|
 | Órgão / plataforma que **alimenta** o PNCP | Entes e portais credenciados | Credenciamento MGI, APIs de manutenção, JWT, treina → produção |
 | Consumidor de **consulta / dados abertos** | Qualquer interessado (inclui produtos comerciais) | Usar endpoints/docs públicos; respeitar termos e limites |
-| Produto **LicitaFit** | Launchbase | Matching catálogo ↔ itens publicados; API/Dashboard comerciais |
+| Produto **CruzaEdital** | Launchbase | Matching catálogo ↔ itens publicados; API/Dashboard comerciais |
 
-LicitaFit **não** publica atos no PNCP e **não** substitui o Manual oficial de integração destinado a quem alimenta o portal.
+CruzaEdital **não** publica atos no PNCP e **não** substitui o Manual oficial de integração destinado a quem alimenta o portal.
 
 ---
 
@@ -68,7 +68,7 @@ Swagger / bases citados em notas internas (revalidar):
 
 ### 3.3 Credenciais (só se o caso de uso exigir)
 
-Aplica-se se Launchbase/LicitaFit um dia precisar de API de **manutenção** ou de ambiente autenticado. **Hoje o matching comercial tipicamente não precisa publicar no PNCP.**
+Aplica-se se Launchbase/CruzaEdital um dia precisar de API de **manutenção** ou de ambiente autenticado. **Hoje o matching comercial tipicamente não precisa publicar no PNCP.**
 
 - [ ] Cadastro no Portal de Serviços MGI.
 - [ ] Credenciamento no ambiente de **treinamento** (treina.pncp.gov.br), conforme FAQ/Manual.
@@ -97,7 +97,7 @@ Aplica-se se Launchbase/LicitaFit um dia precisar de API de **manutenção** ou 
 
 ## 4. O que **não** solicitar ao governo (evitar confusão)
 
-- Homologação ou “selo LicitaFit aprovado pelo PNCP” (não existe esse framing).
+- Homologação ou “selo CruzaEdital aprovado pelo PNCP” (não existe esse framing).
 - Que o PNCP “integre” matching de catálogo privado como feature oficial.
 - Interpretação jurídica vinculante via Central de Atendimento (canal técnico/operacional).
 
@@ -127,7 +127,7 @@ Aplica-se se Launchbase/LicitaFit um dia precisar de API de **manutenção** ou 
 
 ## 7. Associações e ecossistema (estilo AB2L / Lawtechs)
 
-Referência de mercado: a **AB2L** (Associação Brasileira de Lawtechs e Legaltechs, https://ab2l.org.br/) é o modelo de associação setorial no jurídico. Para o LicitaFit o encaixe natural **não** é lawtech; é **govtech** e, de forma mais específica, **tecnologia para contratações públicas**.
+Referência de mercado: a **AB2L** (Associação Brasileira de Lawtechs e Legaltechs, https://ab2l.org.br/) é o modelo de associação setorial no jurídico. Para o CruzaEdital o encaixe natural **não** é lawtech; é **govtech** e, de forma mais específica, **tecnologia para contratações públicas**.
 
 | Organização | Tipo | Por que considerar | URL / contato |
 |-------------|------|--------------------|---------------|

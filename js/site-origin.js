@@ -1,5 +1,5 @@
 /**
- * LicitaFit , canonical site origin (one place to swap).
+ * CruzaEdital , canonical site origin (one place to swap).
  *
  * Intended production host. DNS may not resolve yet.
  * Interim visibility: https://raphaeljlps.github.io/licitafit/ (GitHub Pages from main).
@@ -16,7 +16,7 @@
   'use strict';
   var SITE_ORIGIN = 'https://www.licitafit.com.br';
   global.LICITAFIT_SITE_ORIGIN = SITE_ORIGIN;
-  global.LicitaFitSite = {
+  global.CruzaEditalSite = global.LicitaFitSite = {
     origin: SITE_ORIGIN,
     pagesOrigin: 'https://raphaeljlps.github.io/licitafit',
     // Legacy only; does not auto-deploy from main.

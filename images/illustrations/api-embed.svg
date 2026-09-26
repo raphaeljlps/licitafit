@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
   <title id="title">API embutida no ERP</title>
-  <desc id="desc">Diagrama abstrato: ERP parceiro recebe eventos da API LicitaFit</desc>
+  <desc id="desc">Diagrama abstrato: ERP parceiro recebe eventos da API CruzaEdital</desc>
   <rect width="960" height="360" fill="#f7f7f7"/>
   <!-- ERP panel -->
   <rect x="48" y="48" width="380" height="264" rx="6" fill="#fff" stroke="#d9d9d9"/>
@@ -30,7 +30,7 @@
   <!-- API panel -->
   <rect x="532" y="72" width="380" height="216" rx="6" fill="#fff" stroke="#d9d9d9"/>
   <rect x="532" y="72" width="380" height="36" fill="#111"/>
-  <text x="552" y="95" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#fff">LicitaFit API</text>
+  <text x="552" y="95" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#fff">CruzaEdital API</text>
   <rect x="556" y="132" width="220" height="16" rx="2" fill="#e5e5e5"/>
   <text x="564" y="144" font-family="ui-monospace, monospace" font-size="11" fill="#111">POST /v1/catalogs</text>
   <rect x="556" y="160" width="280" height="16" rx="2" fill="#e5e5e5"/>

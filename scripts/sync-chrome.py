@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync shared nav/footer/breadcrumbs/Continue-lendo across LicitaFit static HTML.
+"""Sync shared nav/footer/breadcrumbs/Continue-lendo across CruzaEdital static HTML.
 
 Idempotent: re-run after editing PAGES / FEATURED below.
 See docs/chrome.md.
@@ -57,7 +57,7 @@ PAGES = {
         ],
     },
     "limites-matching-licitafit": {
-        "title": "Limites do matching LicitaFit",
+        "title": "Limites do matching CruzaEdital",
         "short": "Limites do matching",
         "hub": "guias",
         "blurb": "Apoio à decisão comercial (não parecer jurídico nem garantia de habilitação).",
@@ -145,7 +145,7 @@ PAGES = {
         ],
     },
     "integracao-api-licitafit": {
-        "title": "Integração API LicitaFit (visão de produto)",
+        "title": "Integração API CruzaEdital (visão de produto)",
         "short": "Integração API",
         "hub": "recursos",
         "blurb": "Endpoints e eventos já publicados na landing (sem inventar campos).",
@@ -204,7 +204,7 @@ PAGES = {
         "title": "Existe API de matching de catálogo com licitações?",
         "short": "Existe API de matching?",
         "hub": "guias",
-        "blurb": "Resposta direta: API LicitaFit cruza o catálogo do cliente com editais do PNCP.",
+        "blurb": "Resposta direta: API CruzaEdital cruza o catálogo do cliente com editais do PNCP.",
         "related": [
             ("como-embutir-matching-catalogo-no-erp", "Como embutir matching no ERP."),
             ("cobranca-api-requests-e-monitoramento", "Preço: requests e monitoramento."),
@@ -261,7 +261,7 @@ PAGES = {
         "title": "Fontes oficiais e autenticidade (PNCP)",
         "short": "Fontes oficiais PNCP",
         "hub": "guias",
-        "blurb": "Dados públicos usados pelo LicitaFit e links oficiais (não é parecer jurídico).",
+        "blurb": "Dados públicos usados pelo CruzaEdital e links oficiais (não é parecer jurídico).",
         "related": [
             ("uso-responsavel-matching", "O que o matching faz e não faz."),
             ("o-que-e-pncp", "Definição oficial do PNCP."),
@@ -297,7 +297,7 @@ PAGES = {
         "blurb": "API/dados públicos do PNCP versus matching no ERP ou Dashboard.",
         "related": [
             ("pncp-api-oficial-vs-matching-comercial", "Contraste PNCP oficial vs matching."),
-            ("integracao-api-licitafit", "API LicitaFit (visão de produto)."),
+            ("integracao-api-licitafit", "API CruzaEdital (visão de produto)."),
             ("fontes-oficiais-pncp", "Fontes oficiais."),
         ],
     },
@@ -423,7 +423,7 @@ def nav_html(prefix: str, selected: str | None = None) -> str:
       <div class="p-navigation__banner">
         <div class="p-navigation__tagged-logo">
           <a class="p-navigation__link" href="{logo}">
-            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+            <div class="p-navigation__logo-title lf-logo">CruzaEdital</div>
           </a>
         </div>
         <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
@@ -454,7 +454,7 @@ def footer_html(prefix: str, local_demo: bool = False) -> str:
     <div class="row">
       <div class="col-3">
         <p>
-          <strong>LicitaFit</strong><br />
+          <strong>CruzaEdital</strong><br />
           Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
         </p>
       </div>
@@ -510,7 +510,7 @@ def recursos_section() -> str:
           <p class="p-heading--4">Aprenda e compare (sem rankings inventados)</p>
           <p>
             Guias e comparativos para product leads de ERP e equipes comerciais de distribuidores de TI.
-            Conteúdo educacional; o LicitaFit permanece apoio à decisão comercial.
+            Conteúdo educacional; o CruzaEdital permanece apoio à decisão comercial.
           </p>
         </div>
       </div>

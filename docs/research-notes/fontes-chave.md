@@ -1,4 +1,4 @@
-# Notas de pesquisa , LicitaFit (2026-09-25)
+# Notas de pesquisa , CruzaEdital (2026-09-25)
 
 ## Mercado
 - Abradisti Estudo Setorial 2026 (IT Data): distribuição TIC R$ 30,7 bi em 2025 (+7%); hardware 44,5%; 51 associados = 87% do setor; governo ~20% investimentos TIC (fraco em 2025).
