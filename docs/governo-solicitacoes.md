@@ -2,7 +2,7 @@
 
 **Uso:** documentação interna de operações (Launchbase / LicitaFit).  
 **Não é** material de marketing nem parecer jurídico.  
-**Atualizado:** 2026-09-25 (America/Sao_Paulo).
+**Atualizado:** 2026-09-25 (America/Sao_Paulo); seção 7 associações adicionada no mesmo dia.
 
 Objetivo: checklist do que confirmar ou solicitar aos canais oficiais antes e durante o uso em produção de **dados públicos** do PNCP / dados abertos, e o que **não** misturar com o produto comercial de matching.
 
@@ -123,3 +123,31 @@ Aplica-se se Launchbase/LicitaFit um dia precisar de API de **manutenção** ou 
 | E-mail dedicado além do Portal | Não encontrado em fontes públicas usadas em 2026-09-25 |
 | Necessidade futura de credencial de manutenção | Não aplicável ao matching atual; reavaliar se o produto mudar |
 
+---
+
+## 7. Associações e ecossistema (estilo AB2L / Lawtechs)
+
+Referência de mercado: a **AB2L** (Associação Brasileira de Lawtechs e Legaltechs, https://ab2l.org.br/) é o modelo de associação setorial no jurídico. Para o LicitaFit o encaixe natural **não** é lawtech; é **govtech** e, de forma mais específica, **tecnologia para contratações públicas**.
+
+| Organização | Tipo | Por que considerar | URL / contato |
+|-------------|------|--------------------|---------------|
+| **ATCG** (Associação das Empresas de Tecnologia para Contratações Governamentais) | Associação setorial | Encaixe mais direto: tecnologia, governança e eficiência em compras públicas | https://atcg.org.br/ · contato@atcg.org.br |
+| **ABGovtechs** (Associação Brasileira de Govtechs) | Associação de ecossistema | Paralelo mais próximo da AB2L no lado governo / startups de inovação pública (sede BH; fundada ~2021) | LinkedIn company/abgovtechs · site referido como abgovtechs.com.br (revalidar) · abgovtechs@gmail.com (LinkedIn) |
+| **BrazilLAB** | Hub / aceleração (não associação de associados no mesmo sentido) | Networking B2G, programa de aceleração, Selo GovTech | https://www.brazillab.org.br/ · https://brazillab.org.br/para-startups |
+| **AB2L** | Associação lawtech / legaltech | Só se houver posicionamento no mapa jurídico; **fraco** para matching comercial catálogo ↔ PNCP | https://ab2l.org.br/ |
+
+### Prioridade sugerida (ops / GTM)
+
+1. Contatar **ATCG** (associação mais alinhada a contratações).
+2. Avaliar filiação / participação na **ABGovtechs**.
+3. Se fizer sentido de marca e pipeline B2G, avaliar programa / Selo do **BrazilLAB**.
+4. **AB2L** apenas se o posicionamento for deliberadamente legaltech (hoje o produto é apoio comercial a decisão, não parecer jurídico).
+
+### Checklist interno
+
+- [ ] Registrar data do primeiro contato ATCG e resposta.
+- [ ] Confirmar categorias de associado, taxas e critérios atuais (não inventar valores aqui; pedir no site/e-mail).
+- [ ] Decidir se filiação entra em prova social na landing (só após associação real; sem selos inventados).
+- [ ] Revalidar URLs e e-mails oficiais no dia do contato.
+
+**Nota:** associação setorial **não** substitui credenciamento PNCP/MGI nem implica homologação governamental do produto.
