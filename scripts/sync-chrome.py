@@ -18,9 +18,9 @@ PAGES = {
         "hub": "guias",
         "blurb": "Aviso por palavra-chave/CNAE/UF versus cruzamento com SKUs reais e status de requisitos.",
         "related": [
+            ("quando-alerta-edital-nao-basta", "Sinais de que o alerta sozinho não prioriza."),
+            ("radar-alerta-pncp-vs-matching-catalogo", "Radars de PNCP vs matching de catálogo."),
             ("status-matching", "Como interpretar matched, conflito, unknown e needs_review."),
-            ("matching-catalogo-edital", "Como o matching catálogo ↔ item evita falsa elegibilidade."),
-            ("pncp-feed-vs-matching-catalogo", "Feed bruto do PNCP não é o mesmo que produto de matching."),
         ],
     },
     "status-matching": {
@@ -312,7 +312,50 @@ PAGES = {
             ("status-matching", "Status e needs_review."),
         ],
     },
-
+    "alternativas-a-conlicitacao": {
+        "title": "Alternativas ao ConLicitação",
+        "short": "Alternativas ao ConLicitação",
+        "hub": "comparativos",
+        "blurb": "Quando o gap é matching de catálogo (SKU ↔ item), não só mais um alerta amplo.",
+        "related": [
+            ("alerta-edital-vs-matching-catalogo", "Contraste de jobs: alerta vs matching."),
+            ("quando-alerta-edital-nao-basta", "Sinais de que o alerta sozinho não prioriza."),
+            ("alternativas-a-licitei", "Mesmo tipo de contraste com outra suite."),
+        ],
+    },
+    "alternativas-a-licitei": {
+        "title": "Alternativas à Licitei",
+        "short": "Alternativas à Licitei",
+        "hub": "comparativos",
+        "blurb": "Suites de alerta e disputa versus camada de matching por catálogo.",
+        "related": [
+            ("alternativas-a-conlicitacao", "Contraste com monitoramento amplo."),
+            ("radar-alerta-pncp-vs-matching-catalogo", "Radars de PNCP vs matching."),
+            ("como-embutir-matching-catalogo-no-erp", "Encaixe da API no ERP."),
+        ],
+    },
+    "radar-alerta-pncp-vs-matching-catalogo": {
+        "title": "Radar/alerta PNCP vs matching de catálogo",
+        "short": "Radar PNCP vs matching",
+        "hub": "comparativos",
+        "blurb": "Alertas e score de perfil versus cruzamento com SKUs e status de requisitos.",
+        "related": [
+            ("alerta-edital-vs-matching-catalogo", "Contraste base alerta vs matching."),
+            ("pncp-feed-vs-matching-catalogo", "Feed bruto vs produto de matching."),
+            ("quando-alerta-edital-nao-basta", "Quando o alerta deixa de bastar."),
+        ],
+    },
+    "quando-alerta-edital-nao-basta": {
+        "title": "Quando o alerta de edital não basta",
+        "short": "Quando o alerta não basta",
+        "hub": "guias",
+        "blurb": "Sinais de volume sem conversão e como acrescentar matching de catálogo ao fluxo.",
+        "related": [
+            ("alerta-edital-vs-matching-catalogo", "Alerta genérico vs matching."),
+            ("radar-alerta-pncp-vs-matching-catalogo", "Radars PNCP vs matching."),
+            ("status-matching", "Como ler matched / conflito / unknown."),
+        ],
+    },
 
 }
 
