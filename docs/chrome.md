@@ -32,8 +32,8 @@ Home mantém value prop compartilhada + resumos finos de “para quem” e preç
 | (marca) | Tagline LicitaFit |
 | **Produto** | Visão geral, API para parceiros, Dashboard para empresas, Demonstração |
 | **Recursos** | Guias, Comparativos, FAQ, Integração API (**não** cada artigo) |
-| **Empresa** | Launchbase, disclaimer, CNPJ |
-| Faixa | © + atalhos Recursos/Guias/Comparativos |
+| **Empresa** | Launchbase, Privacidade e cookies, disclaimer, CNPJ |
+| Faixa | © + atalhos Recursos/Guias/Comparativos/Privacidade |
 
 ## Artigos (guia/comparativo)
 
@@ -82,3 +82,9 @@ Edite metadados/`FEATURED`/`RELATED` em `scripts/sync-chrome.py` e rode de novo.
 4. `js/demo-form.js` (só home + LPs com formulário)
 
 Ver [analytics-e-formulario.md](analytics-e-formulario.md).
+
+## Privacidade
+
+- Página pública: `/privacidade/` (privacidade + cookies + direitos LGPD + formulário FormSubmit)
+- Links no footer (coluna Empresa + faixa legal) via `scripts/sync-chrome.py`
+- Formulários de demo linkam para Privacidade junto do hint de e-mail

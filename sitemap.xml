@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   SITE_ORIGIN=https://www.licitafit.com.br - single swap string; see js/site-origin.js and README.
-  DNS/hosting TBD. Preview: https://dapper-opera-mz8m.here.now
+  DNS/hosting TBD. Interim: https://raphaeljlps.github.io/licitafit/
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -166,5 +166,10 @@
     <loc>https://www.licitafit.com.br/uso-responsavel-matching/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.licitafit.com.br/privacidade/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

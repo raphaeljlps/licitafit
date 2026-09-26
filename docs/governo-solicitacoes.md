@@ -145,7 +145,7 @@ Referência de mercado: a **AB2L** (Associação Brasileira de Lawtechs e Legalt
 
 ### Checklist interno
 
-- [ ] Registrar data do primeiro contato ATCG e resposta.
+- [ ] Revisar e (quando decidir) enviar rascunho em [rascunho-contato-atcg.md](rascunho-contato-atcg.md); registrar data do primeiro contato ATCG e resposta.
 - [ ] Confirmar categorias de associado, taxas e critérios atuais (não inventar valores aqui; pedir no site/e-mail).
 - [ ] Decidir se filiação entra em prova social na landing (só após associação real; sem selos inventados).
 - [ ] Revalidar URLs e e-mails oficiais no dia do contato.

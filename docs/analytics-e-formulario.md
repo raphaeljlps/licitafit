@@ -76,3 +76,7 @@ python3 scripts/sync-chrome.py
 ```
 
 Reaplica nav/footer e garante os scripts `site-config` + `site-origin` + `analytics` (+ `demo-form` na home e nas LPs).
+
+## Domínio e Search Console
+
+Quando o DNS de `www.licitafit.com.br` estiver no ar: ver [dominio-e-search-console.md](dominio-e-search-console.md) (DNS → host → verificar GSC → enviar sitemap). Não assume que o domínio já resolve.
