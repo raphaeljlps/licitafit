@@ -480,6 +480,7 @@ def footer_html(prefix: str, local_demo: bool = False) -> str:
         <p class="p-muted-heading">Empresa</p>
         <ul class="p-list">
           <li class="p-list__item"><a href="{h('#empresa')}">Launchbase Tecnologia</a></li>
+          <li class="p-list__item"><a href="{h('privacidade/')}">Privacidade e cookies</a></li>
         </ul>
         <p class="lf-legal">
           Apoio à decisão comercial (não é parecer jurídico nem garantia de habilitação).
@@ -493,7 +494,8 @@ def footer_html(prefix: str, local_demo: bool = False) -> str:
           © Launchbase Tecnologia Ltda ·
           <a href="{h('#recursos')}">Recursos</a> ·
           <a href="{h('guias/')}">Guias</a> ·
-          <a href="{h('comparativos/')}">Comparativos</a>
+          <a href="{h('comparativos/')}">Comparativos</a> ·
+          <a href="{h('privacidade/')}">Privacidade</a>
         </p>
       </div>
     </div>
@@ -732,6 +734,18 @@ def main() -> None:
         html = sync_scripts(html, "../", with_demo_form=True)
         path.write_text(html)
         print(f"Updated {lp}/index.html")
+
+    # Legal / privacy (nav Empresa selected; form scripts on)
+    privacy = ROOT / "privacidade" / "index.html"
+    if privacy.exists():
+        html = privacy.read_text()
+        html = HEADER_RE.sub(nav_html("../", selected="empresa"), html)
+        html = FOOTER_RE.sub(footer_html("../"), html)
+        html = sync_scripts(html, "../", with_demo_form=True)
+        privacy.write_text(html)
+        print("Updated privacidade/index.html")
+    else:
+        print("MISSING privacidade")
 
     print("DONE")
 

@@ -15,6 +15,7 @@ Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licit
 - `js/analytics.js` , carrega GA4/Plausible só se configurado
 - `js/demo-form.js` , FormSubmit (destino `raphael@launchbase.dev`)
 - `obrigado/` , página de sucesso do formulário
+- `privacidade/` , privacidade e cookies (LGPD, formulário de direitos)
 - `scripts/sync-chrome.py` , sincroniza nav/footer/breadcrumbs/Continue lendo
 - `docs/chrome.md` , padrão de IA (nav/footer estilo Canonical)
 - `sitemap.xml` / `robots.txt` , descoberta
@@ -27,13 +28,11 @@ Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licit
 |-|-----|
 | **Intended canonical** | `https://www.licitafit.com.br` |
 | **Visibilidade interim (GitHub Pages)** | `https://raphaeljlps.github.io/licitafit/` |
-| **Preview antigo (STALE , não redeploya)** | `https://dapper-opera-mz8m.here.now` |
+| **Legacy preview (STALE)** | `https://dapper-opera-mz8m.here.now` (não usar para demos) |
 
 DNS/hosting do domínio canônico ainda **TBD**. Canonical tags, JSON-LD, `sitemap.xml` e `robots.txt` usam `https://www.licitafit.com.br` (**não** troque pelo URL do Pages).
 
-### Importante: here.now está desatualizado
-
-O preview `https://dapper-opera-mz8m.here.now/` **não faz auto-deploy** a partir de `main`. Ele ainda mostra a landing antiga (sem Guias/FAQ/footer de recursos). Use **GitHub Pages** (abaixo) para ver a versão atual.
+Para ver a versão atual, use **GitHub Pages** (abaixo). O preview here.now **não** faz auto-deploy a partir de `main` e está desatualizado.
 
 ### Swap path (um lugar)
 
@@ -84,7 +83,7 @@ Ver [docs/chrome.md](docs/chrome.md). Resumo:
 
 ## Formulário e analytics
 
-- **Demo:** formulários na home e em `/para-parceiros/`, `/para-empresas/` enviam para **raphael@launchbase.dev** via FormSubmit (sem API key). Na primeira submissão ao site público, confirme o e-mail do FormSubmit.
+- **Demo:** formulários na home e em `/para-parceiros/`, `/para-empresas/` enviam para **raphael@launchbase.dev** via FormSubmit (sem API key). Na primeira submissão ao site público, confirme o e-mail do FormSubmit. Ver também [`/privacidade/`](privacidade/).
 - **Analytics:** desligado por padrão. Em `js/site-config.js`, defina `LF_ANALYTICS.provider` (`ga4` ou `plausible`) e `id`. Detalhes: [docs/analytics-e-formulario.md](docs/analytics-e-formulario.md).
 
 ## Documentação
@@ -92,3 +91,6 @@ Ver [docs/chrome.md](docs/chrome.md). Resumo:
 - [Dossiê de mercado](docs/dossie-mercado-licitafit.md) (também em [HTML](docs/dossie-mercado-licitafit.html))
 - [Chrome / IA](docs/chrome.md)
 - [Analytics e formulário](docs/analytics-e-formulario.md)
+- [Domínio e Search Console](docs/dominio-e-search-console.md)
+- [Fluxo pós-demo (interno)](docs/fluxo-pos-demo.md)
+- [Rascunho contato ATCG (não enviar)](docs/rascunho-contato-atcg.md)
