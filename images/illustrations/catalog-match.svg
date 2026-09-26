@@ -6,11 +6,11 @@
   <rect x="40" y="56" width="280" height="248" rx="6" fill="#f7f7f7" stroke="#d9d9d9"/>
   <text x="60" y="88" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#111">Catálogo</text>
   <rect x="60" y="108" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
-  <text x="76" y="135" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Notebook 16 GB</text>
+  <text x="76" y="135" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Item com atributos</text>
   <rect x="60" y="164" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
-  <text x="76" y="191" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Monitor 27"</text>
+  <text x="76" y="191" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Item técnico</text>
   <rect x="60" y="220" width="240" height="44" rx="4" fill="#fff" stroke="#d9d9d9"/>
-  <text x="76" y="247" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Notebook 8 GB</text>
+  <text x="76" y="247" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13" fill="#111">Outro item</text>
   <!-- Center match -->
   <circle cx="480" cy="180" r="48" fill="#0e8420" opacity="0.12"/>
   <circle cx="480" cy="180" r="32" fill="#0e8420"/>

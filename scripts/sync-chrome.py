@@ -101,10 +101,10 @@ PAGES = {
         ],
     },
     "checklist-requisitos-notebooks-monitores": {
-        "title": "Checklist de requisitos: notebooks e monitores",
-        "short": "Checklist notebooks e monitores",
+        "title": "Checklist de requisitos: itens do catálogo",
+        "short": "Checklist itens do catálogo",
         "hub": "guias",
-        "blurb": "Requisitos técnicos modeláveis nas categorias de foco atual.",
+        "blurb": "Requisitos técnicos dos itens do catálogo para apoiar a revisão.",
         "related": [
             ("matching-catalogo-edital", "Matching catálogo ↔ item."),
             ("needs-review-matched-conflito-unknown", "Status de requisitos e needs_review."),
@@ -196,7 +196,7 @@ PAGES = {
         "blurb": "Manter a lista de produtos e acompanhar mudanças no edital no Dashboard.",
         "related": [
             ("como-usar-dashboard-matching-licitacoes", "Rotina completa no Dashboard."),
-            ("checklist-requisitos-notebooks-monitores", "Checklist tipica notebooks/monitores."),
+            ("checklist-requisitos-notebooks-monitores", "Checklist de requisitos por item."),
             ("retificacao-edital-impacto-matching", "Quando o edital muda, reavalie o matching."),
         ],
     },
@@ -204,7 +204,7 @@ PAGES = {
         "title": "Existe API de matching de catálogo com licitações?",
         "short": "Existe API de matching?",
         "hub": "guias",
-        "blurb": "Resposta direta: API LicitaFit cruza catálogo do cliente com editais PNCP (foco notebooks/monitores).",
+        "blurb": "Resposta direta: API LicitaFit cruza o catálogo do cliente com editais do PNCP.",
         "related": [
             ("como-embutir-matching-catalogo-no-erp", "Como embutir matching no ERP."),
             ("cobranca-api-requests-e-monitoramento", "Preço: requests e monitoramento."),
@@ -240,7 +240,7 @@ PAGES = {
         "blurb": "Triagem no Dashboard: matching, status de requisitos e revisão humana (sem parecer jurídico).",
         "related": [
             ("como-usar-dashboard-matching-licitacoes", "Rotina no Dashboard."),
-            ("checklist-requisitos-notebooks-monitores", "Checklist notebooks/monitores."),
+            ("checklist-requisitos-notebooks-monitores", "Checklist de requisitos por item."),
             ("go-no-go-oportunidade-catalogo", "Go/no-go comercial."),
         ],
     },

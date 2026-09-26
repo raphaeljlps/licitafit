@@ -19,5 +19,5 @@
   <circle cx="560" cy="170" r="28" fill="#fff" stroke="#0e8420" stroke-width="2"/>
   <path d="M560 156 v28 M546 170 h28" stroke="#0e8420" stroke-width="2.5" stroke-linecap="round"/>
   <text x="560" y="226" text-anchor="middle" font-family="Ubuntu, Segoe UI, sans-serif" font-size="14" fill="#111">Enviar lista de produtos</text>
-  <text x="560" y="250" text-anchor="middle" font-family="Ubuntu, Segoe UI, sans-serif" font-size="12" fill="#666">Notebooks e monitores do mix atual</text>
+  <text x="560" y="250" text-anchor="middle" font-family="Ubuntu, Segoe UI, sans-serif" font-size="12" fill="#666">Itens do catálogo atual</text>
 </svg>
