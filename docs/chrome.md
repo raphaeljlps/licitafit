@@ -29,7 +29,7 @@ Home mantém value prop compartilhada + resumos finos de “para quem” e preç
 
 | Coluna | Links |
 |--------|-------|
-| (marca) | Tagline LicitaFit |
+| (marca) | Tagline CruzaEdital |
 | **Produto** | Visão geral, API para parceiros, Dashboard para empresas, Demonstração |
 | **Recursos** | Guias, Comparativos, FAQ, Integração API (**não** cada artigo) |
 | **Empresa** | Launchbase, Privacidade e cookies, disclaimer, CNPJ |

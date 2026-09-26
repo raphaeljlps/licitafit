@@ -1,6 +1,6 @@
-# LicitaFit
+# CruzaEdital
 
-Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licitações públicas com o catálogo do distribuidor de TI).
+Landing page do CruzaEdital (API da Launchbase Tecnologia Ltda que qualifica licitações públicas com o catálogo do distribuidor de TI).
 
 ## Conteúdo
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Integração com PNCP e sistemas de licitação | LicitaFit</title>
-  <meta name="description" content="Como o LicitaFit se relaciona com a API/dados públicos do PNCP versus embutir matching no ERP ou Dashboard. Sem confundir portal oficial com produto comercial." />
+  <title>Integração com PNCP e sistemas de licitação | CruzaEdital</title>
+  <meta name="description" content="Como o CruzaEdital se relaciona com a API/dados públicos do PNCP versus embutir matching no ERP ou Dashboard. Sem confundir portal oficial com produto comercial." />
   <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Interim: https://raphaeljlps.github.io/licitafit/ -->
   <script src="../js/site-config.js" defer></script>
   <script src="../js/site-origin.js" defer></script>
@@ -32,11 +32,11 @@
         "@id": "https://www.licitafit.com.br/integracao-pncp-sistemas-licitacao/#webpage",
         "url": "https://www.licitafit.com.br/integracao-pncp-sistemas-licitacao/",
         "name": "Integração com PNCP e sistemas de licitação",
-        "description": "Como o LicitaFit se relaciona com a API/dados públicos do PNCP versus embutir matching no ERP ou Dashboard. Sem confundir portal oficial com produto comercial.",
+        "description": "Como o CruzaEdital se relaciona com a API/dados públicos do PNCP versus embutir matching no ERP ou Dashboard. Sem confundir portal oficial com produto comercial.",
         "inLanguage": "pt-BR",
         "isPartOf": {
           "@type": "WebSite",
-          "name": "LicitaFit",
+          "name": "CruzaEdital",
           "url": "https://www.licitafit.com.br/"
         }
       },
@@ -46,18 +46,18 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Preciso credenciar no MGI para usar o LicitaFit?",
+            "name": "Preciso credenciar no MGI para usar o CruzaEdital?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Para consumir matching comercial, não: você integra a API ou o Dashboard LicitaFit. Credenciamento MGI/PNCP aplica-se a quem alimenta o portal como plataforma/órgão (ver Manual oficial)."
+              "text": "Para consumir matching comercial, não: você integra a API ou o Dashboard CruzaEdital. Credenciamento MGI/PNCP aplica-se a quem alimenta o portal como plataforma/órgão (ver Manual oficial)."
             }
           },
           {
             "@type": "Question",
-            "name": "O LicitaFit publica editais no PNCP?",
+            "name": "O CruzaEdital publica editais no PNCP?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Não. O LicitaFit lê divulgações públicas e cruza com catálogo. Publicação no PNCP é responsabilidade dos órgãos/plataformas credenciadas."
+              "text": "Não. O CruzaEdital lê divulgações públicas e cruza com catálogo. Publicação no PNCP é responsabilidade dos órgãos/plataformas credenciadas."
             }
           },
           {
@@ -80,7 +80,7 @@
       <div class="p-navigation__banner">
         <div class="p-navigation__tagged-logo">
           <a class="p-navigation__link" href="../index.html">
-            <div class="p-navigation__logo-title lf-logo">LicitaFit</div>
+            <div class="p-navigation__logo-title lf-logo">CruzaEdital</div>
           </a>
         </div>
         <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
@@ -118,7 +118,7 @@
           </p>
           <h1>Integração com o PNCP e sistemas de licitação</h1>
           <p class="p-heading--4">
-            Três camadas distintas: <strong>dados públicos do governo</strong>, <strong>matching comercial LicitaFit</strong>, e a <strong>UI do ERP / Dashboard</strong> onde a equipe decide.
+            Três camadas distintas: <strong>dados públicos do governo</strong>, <strong>matching comercial CruzaEdital</strong>, e a <strong>UI do ERP / Dashboard</strong> onde a equipe decide.
           </p>
         </div>
       </div>
@@ -129,7 +129,7 @@
         <div class="col-8">
           <div class="lf-callout">
             <p>
-              O LicitaFit <strong>não é</strong> o PNCP e <strong>não substitui</strong> o
+              O CruzaEdital <strong>não é</strong> o PNCP e <strong>não substitui</strong> o
               Manual de Integração oficial destinado a órgãos e plataformas que alimentam o portal.
               Documentação oficial:
               <a href="https://pncp.gov.br/manual/pt-br/latest/" rel="noopener noreferrer" target="_blank">Manual de Integração do PNCP</a>.
@@ -154,12 +154,12 @@
             </li>
           </ul>
 
-          <h2>2. Camada LicitaFit (matching comercial)</h2>
+          <h2>2. Camada CruzaEdital (matching comercial)</h2>
           <p>
-            O LicitaFit consome divulgações públicas e cruza com o catálogo do cliente.
+            O CruzaEdital consome divulgações públicas e cruza com o catálogo do cliente.
             Entrega oportunidades, status de requisitos e eventos (webhooks) para o parceiro.
             Detalhe de produto:
-            <a href="../integracao-api-licitafit/">integração API LicitaFit</a>
+            <a href="../integracao-api-licitafit/">integração API CruzaEdital</a>
             e
             <a href="../pncp-api-oficial-vs-matching-comercial/">API oficial PNCP vs matching comercial</a>.
           </p>
@@ -182,7 +182,7 @@
 
           <h2>O que não misturar</h2>
           <ul>
-            <li>Credencial de plataforma que <em>publica</em> no PNCP ≠ chave da API LicitaFit.</li>
+            <li>Credencial de plataforma que <em>publica</em> no PNCP ≠ chave da API CruzaEdital.</li>
             <li>Feed bruto de consultas públicas ≠ produto de matching com SKUs do cliente.</li>
             <li>Portal de disputa / pregão eletrônico ≠ PNCP (divulgação).</li>
           </ul>
@@ -194,10 +194,10 @@
       <div class="row">
         <div class="col-8">
           <h2>Perguntas frequentes</h2>
-          <h3>Preciso credenciar no MGI para usar o LicitaFit?</h3>
-          <p>Para consumir matching comercial, não: você integra a API ou o Dashboard LicitaFit. Credenciamento MGI/PNCP aplica-se a quem alimenta o portal como plataforma/órgão (ver Manual oficial).</p>
-          <h3>O LicitaFit publica editais no PNCP?</h3>
-          <p>Não. O LicitaFit lê divulgações públicas e cruza com catálogo. Publicação no PNCP é responsabilidade dos órgãos/plataformas credenciadas.</p>
+          <h3>Preciso credenciar no MGI para usar o CruzaEdital?</h3>
+          <p>Para consumir matching comercial, não: você integra a API ou o Dashboard CruzaEdital. Credenciamento MGI/PNCP aplica-se a quem alimenta o portal como plataforma/órgão (ver Manual oficial).</p>
+          <h3>O CruzaEdital publica editais no PNCP?</h3>
+          <p>Não. O CruzaEdital lê divulgações públicas e cruza com catálogo. Publicação no PNCP é responsabilidade dos órgãos/plataformas credenciadas.</p>
           <h3>Onde fica a documentação oficial de integração ao PNCP?</h3>
           <p>No Manual de Integração: https://pncp.gov.br/manual/pt-br/latest/</p>
         </div>
@@ -213,7 +213,7 @@
             <a class="p-button" href="../para-empresas/">Dashboard para empresas</a>
           </p>
           <p class="u-text--muted" style="opacity:0.85">
-            O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
+            O CruzaEdital é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
             Fontes oficiais de divulgação permanecem com o governo (PNCP e órgãos contratantes).
           </p>
         </div>
@@ -229,8 +229,8 @@
               (Contraste PNCP oficial vs matching.)
             </li>
             <li class="p-list__item">
-              <a href="../integracao-api-licitafit/">Integração API LicitaFit (visão de produto)</a>
-              (API LicitaFit (visão de produto).)
+              <a href="../integracao-api-licitafit/">Integração API CruzaEdital (visão de produto)</a>
+              (API CruzaEdital (visão de produto).)
             </li>
             <li class="p-list__item">
               <a href="../fontes-oficiais-pncp/">Fontes oficiais e autenticidade (PNCP)</a>
@@ -247,7 +247,7 @@
     <div class="row">
       <div class="col-3">
         <p>
-          <strong>LicitaFit</strong><br />
+          <strong>CruzaEdital</strong><br />
           Qualificação de licitações consciente de catálogo (API para parceiros e Dashboard para equipes de licitação).
         </p>
       </div>

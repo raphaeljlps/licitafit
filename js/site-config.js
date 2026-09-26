@@ -1,5 +1,5 @@
 /**
- * LicitaFit site config (one place for analytics + form destination).
+ * CruzaEdital site config (one place for analytics + form destination).
  *
  * Analytics: set provider + id, then scripts load only when configured.
  *   provider: 'none' | 'ga4' | 'plausible'

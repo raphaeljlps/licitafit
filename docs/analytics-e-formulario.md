@@ -17,7 +17,7 @@ Não precisa de API key nem backend. Campos ocultos: `_subject`, `_next` (págin
 1. Publique o site (GitHub Pages a partir de `main`).
 2. Envie **um** pedido de teste pelo formulário na URL pública (não use só `localhost`; o FormSubmit associa o domínio).
 3. Abra a caixa de **raphael@launchbase.dev** e clique no link **Activate Form** / confirmar do FormSubmit.
-4. A partir daí, novos envios chegam como e-mail normal (assunto `LicitaFit: pedido de demonstracao...`).
+4. A partir daí, novos envios chegam como e-mail normal (assunto `CruzaEdital: pedido de demonstracao...`).
 
 Se o envio falhar, o formulário mostra o fallback `mailto:raphael@launchbase.dev`.
 

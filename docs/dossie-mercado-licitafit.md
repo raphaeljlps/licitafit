@@ -1,6 +1,6 @@
-# Dossiê de Mercado , LicitaFit
+# Dossiê de Mercado , CruzaEdital
 
-**Produto:** LicitaFit (Launchbase Tecnologia Ltda , CNPJ 35.078.004/0001-77)
+**Produto:** CruzaEdital (Launchbase Tecnologia Ltda , CNPJ 35.078.004/0001-77)
 **Escopo:** Mercado B2B brasileiro , matching de catálogo de distribuidores de TI a licitações/PNCP, vendido como API embutível a vendors de ERP/software comercial.
 **Data de elaboração:** 25/09/2026 (America/Sao_Paulo)
 **Idioma:** Português brasileiro
@@ -10,7 +10,7 @@
 
 ## 1. Resumo executivo
 
-O LicitaFit atua na interseção de três mercados: (i) **compras públicas** centralizadas no Portal Nacional de Contratações Públicas (PNCP) sob a Lei nº 14.133/2021; (ii) **distribuição de TIC** no Brasil, que movimentou **R$ 30,7 bilhões em 2025** (+7% a/a), com hardware respondendo por **44,5%** do faturamento dos associados Abradisti; e (iii) **software de gestão e força de vendas** usado por atacadistas/distribuidores (ERP, AFV, WMS comerciais).
+O CruzaEdital atua na interseção de três mercados: (i) **compras públicas** centralizadas no Portal Nacional de Contratações Públicas (PNCP) sob a Lei nº 14.133/2021; (ii) **distribuição de TIC** no Brasil, que movimentou **R$ 30,7 bilhões em 2025** (+7% a/a), com hardware respondendo por **44,5%** do faturamento dos associados Abradisti; e (iii) **software de gestão e força de vendas** usado por atacadistas/distribuidores (ERP, AFV, WMS comerciais).
 
 A oportunidade específica **não** é ser mais um portal de alerta de editais (espaço já ocupado por ConLicitação, Licitei, Sollicita e similares), nem um chatbot genérico de “IA lê o edital”. É ser a **camada de decisão-suporte catalog-aware** , matching entre SKUs/especificações do catálogo do distribuidor e itens de contratações públicas , entregue via **API/webhooks embutíveis** no ERP ou software comercial do parceiro, com status explícito `needs_review` (não elegibilidade jurídica).
 
@@ -32,7 +32,7 @@ A oportunidade específica **não** é ser mais um portal de alerta de editais (
 
 Distribuidores e atacadistas de TI que vendem ao setor público enfrentam:
 
-| Dor | Manifestação típica | Por que LicitaFit cabe |
+| Dor | Manifestação típica | Por que CruzaEdital cabe |
 | --- | --- | --- |
 | Ruído de oportunidades | Alertas por palavra-chave (“item de TI”) geram milhares de editais irrelevantes (serviços de TI, impressão, manutenção, itens fora do mix) | Matching contra **catálogo real** (SKU, marca, CPU, RAM, tela, garantia) |
 | Retrabalho entre sistemas | Equipe gov em planilha; estoque/preço no ERP; AFV separado | API no fluxo do ERP/parceiro |
@@ -54,11 +54,11 @@ Exemplos de módulos nativos ou adjacentes (gestão pós-oportunidade, não matc
 
 ### 2.3 Dor das equipes de vendas / gov sales
 
-Força de vendas e times de licitação gastam tempo em triagem manual. Ferramentas de mercado resolvem **descoberta ampla** e, cada vez mais, “pergunte ao edital” (IA sobre PDF). Continuam fracas em: *“dado o meu catálogo desta semana, quais itens deste aviso eu realmente posso ofertar?”* , exatamente o gap do LicitaFit.
+Força de vendas e times de licitação gastam tempo em triagem manual. Ferramentas de mercado resolvem **descoberta ampla** e, cada vez mais, “pergunte ao edital” (IA sobre PDF). Continuam fracas em: *“dado o meu catálogo desta semana, quais itens deste aviso eu realmente posso ofertar?”* , exatamente o gap do CruzaEdital.
 
 ### 2.4 Framing da oportunidade
 
-LicitaFit é **decision-support**:
+CruzaEdital é **decision-support**:
 
 - **Não** substitui análise jurídica do edital.
 - **Não** declara elegibilidade ou compliance.
@@ -78,7 +78,7 @@ Isso reduz risco de produto e diferencia de chatbots “AI for editais”.
 
 **Volume.** Não há, neste dossiê, um número oficial IBGE/MGI auditado pelo autor para “total de compras públicas 2025” obtido diretamente de painel governamental no momento da pesquisa. Claims de mercado (ex.: ATA360 citando PNCP/MGI: **mais de R$ 1 trilhão** e **mais de 1 milhão de processos** em 2025, ~12–16% do PIB) devem ser tratados como **estimativas de terceiros** até cruzamento com painéis oficiais do PNCP/MGI. **Proxy qualitativo:** o mercado é estruturalmente grande, multi-esfera (União, estados, 5.570 municípios) e digitalmente mais centralizado pós-14.133.
 
-**Tendências relevantes ao LicitaFit:**
+**Tendências relevantes ao CruzaEdital:**
 
 1. Obrigação de publicação no PNCP → **fonte canônica preferencial** para ingestão.
 2. Persistência de portais de disputa (Compras.gov.br, Licitar Digital, BLL, BNC, etc.) → PNCP não elimina a necessidade de link ao sistema de origem (`linkSistemaOrigem`).
@@ -97,9 +97,9 @@ Isso reduz risco de produto e diferencia de chatbots “AI for editais”.
 | Projeção crescimento distribuição 2026 (média) | ~6% | Idem | Idem |
 | Censo revendas 2025 | +9,4% (1.176 respostas) | Abradisti 15º Censo | Idem |
 
-**Implicação:** mesmo com governo fraco em 2025, o canal continua estruturado (distribuidores + milhares de revendas). Hardware permanece o maior bloco , alinhado ao start do LicitaFit (equipamentos de TI).
+**Implicação:** mesmo com governo fraco em 2025, o canal continua estruturado (distribuidores + milhares de revendas). Hardware permanece o maior bloco , alinhado ao start do CruzaEdital (equipamentos de TI).
 
-**Proxy ABINEE (indústria, não distribuição):** setor eletroeletrônico R$ 270,8 bi em 2025; área de tecnologia R$ 47,753 bi (+12% nominal / +9% real) , [ABINEE](https://www.abinee.org.br/faturamento-do-setor-em-2025/). Útil como contexto de oferta, não como TAM do LicitaFit.
+**Proxy ABINEE (indústria, não distribuição):** setor eletroeletrônico R$ 270,8 bi em 2025; área de tecnologia R$ 47,753 bi (+12% nominal / +9% real) , [ABINEE](https://www.abinee.org.br/faturamento-do-setor-em-2025/). Útil como contexto de oferta, não como TAM do CruzaEdital.
 
 ### 3.3 Vendors de software (ERP / força de vendas / comercial)
 
@@ -119,9 +119,9 @@ Segmentos de software relevantes (não exaustivo):
 | --- | --- | --- | --- |
 | **TAM (mercado amplo)** | Valor econômico de software/serviços de inteligência e gestão de vendas ao governo no Brasil + spend em ferramentas de alerta/licitação por empresas fornecedoras | **Não quantificado com rigor neste dossiê** | Sem estatística oficial consolidada de “gasto das empresas com software de licitação”. Proxy: compras públicas totais (claims ~R$ 1 tri) são **GSV público**, não receita de software. |
 | **SAM (mercado servível)** | Vendors de ERP/AFV/comercial que atendem **distribuidores/atacadistas de TIC** no Brasil + seus clientes finais com operação B2G de hardware | **Estimativa qualitativa: dezenas de vendors relevantes; milhares de distribuidores/revendas no ecossistema Abradisti** | 51 distribuidores grandes + 1.176+ revendas no censo; número de ERPs especializados = lista ICP (§8), não censo completo. |
-| **SOM (mercado obtível 3 anos)** | Receita LicitaFit de **software partners** (floor R$ 490/mês + usage de requests e monitoramento) × N partners ativos | **Exemplo ilustrativo (não forecast):** 20 partners no floor = R$ 9,8 mil MRR base; usage e monitoramento empurram ARPU acima do mínimo | Depende de win rate, mix de requests/monitoramento e se há fee por tenant/distribuidor. |
+| **SOM (mercado obtível 3 anos)** | Receita CruzaEdital de **software partners** (floor R$ 490/mês + usage de requests e monitoramento) × N partners ativos | **Exemplo ilustrativo (não forecast):** 20 partners no floor = R$ 9,8 mil MRR base; usage e monitoramento empurram ARPU acima do mínimo | Depende de win rate, mix de requests/monitoramento e se há fee por tenant/distribuidor. |
 
-**Proxy útil para pricing do partner:** se um ERP embute LicitaFit e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com o floor LicitaFit de R$ 490/mês a partir de ~1–3 clientes ativos (usage adicional de requests/monitoramento escala com o uso) , tese de partner-led growth.
+**Proxy útil para pricing do partner:** se um ERP embute CruzaEdital e cobra do distribuidor um add-on de R$ 200–500/mês (estimativa a validar), o partner ainda tem margem com o floor CruzaEdital de R$ 490/mês a partir de ~1–3 clientes ativos (usage adicional de requests/monitoramento escala com o uso) , tese de partner-led growth.
 
 **Volume de matching (produto):** indisponível neste dossiê o volume oficial filtrado “apenas equipamentos de TI no PNCP 2025”. Deve ser medido no experimento de 30 dias via API de consulta + filtro de itens (§12).
 
@@ -131,11 +131,11 @@ Segmentos de software relevantes (não exaustivo):
 
 ### 4.1 PNCP , Portal Nacional de Contratações Públicas
 
-| Recurso | URL | Uso para LicitaFit | Auth |
+| Recurso | URL | Uso para CruzaEdital | Auth |
 | --- | --- | --- | --- |
 | Portal | https://pncp.gov.br | UI, validação manual | Público |
 | Manual de Integração v2.6 | https://pncp.gov.br/manual/pt-br/latest/ | Schema de escrita/consulta detalhada; histórico 31/08/2026 | Público |
-| API manutenção (órgãos/plataformas) | `https://pncp.gov.br/api/pncp` | Não é o caminho principal do LicitaFit (envio de compras) | JWT (login + Bearer; token ~1h) |
+| API manutenção (órgãos/plataformas) | `https://pncp.gov.br/api/pncp` | Não é o caminho principal do CruzaEdital (envio de compras) | JWT (login + Bearer; token ~1h) |
 | Swagger manutenção | https://pncp.gov.br/api/pncp/swagger-ui/index.html | Exploração | , |
 | Homologação | https://treina.pncp.gov.br / `.../api/pncp` | Testes | Credenciais de treino |
 | **API de Consultas (leitura)** | `https://pncp.gov.br/api/consulta` | **Ingestão principal** | Consulta pública (sem login para leitura) |
@@ -197,7 +197,7 @@ Uso: complementar federal (SIASG/Compras.gov), CATMAT/códigos de catálogo, pre
 - Extensões aceitas estão em tabelas de domínio do manual.
 - **Para matching MVP:** priorizar **itens estruturados** (`descricao`, NCM, código catálogo). PDF/TR como enriquecimento assíncrono (OCR/NLP) com custo e risco maiores , nunca como única fonte de “elegibilidade”.
 
-### 4.5 Dados de catálogo do parceiro (entrada LicitaFit)
+### 4.5 Dados de catálogo do parceiro (entrada CruzaEdital)
 
 Formatos esperados (sugestão de contrato de API; a validar com design partners):
 
@@ -235,7 +235,7 @@ Envio: JSON bulk via API, CSV SFTP, ou webhook de sincronização periódica. Vo
 3. **PCA** periódico (semanal) para sinal precoce de demanda de TIC.
 4. Para cada `numeroControlePNCP` / (cnpj, ano, sequencial): fetch de **itens** + metadados de **documentos**.
 5. **Change detection:** armazenar hash de cabeçalho/itens/`dataAtualizacao`; reprocessar só deltas.
-6. **Webhooks LicitaFit → partner:** emitir eventos `opportunity.matched`, `opportunity.updated`, `opportunity.closed` (PNCP não oferece webhook público documentado na pesquisa , o push é responsabilidade do LicitaFit).
+6. **Webhooks CruzaEdital → partner:** emitir eventos `opportunity.matched`, `opportunity.updated`, `opportunity.closed` (PNCP não oferece webhook público documentado na pesquisa , o push é responsabilidade do CruzaEdital).
 
 ### 5.3 Parsing e matching (alto nível)
 
@@ -266,7 +266,7 @@ Heurísticas iniciais (MVP equipamentos de TI):
 | Rate limit / indisponibilidade | Fila, retry, cache, multi-região; CSVs como fallback |
 | TLS/rede | Monitorar; no ambiente de pesquisa (25/09/2026) curl TLS ao host falhou pontualmente , validar em infra de produção |
 
-### 5.5 Arquitetura sugerida (LicitaFit)
+### 5.5 Arquitetura sugerida (CruzaEdital)
 
 | Camada | Componentes |
 | --- | --- |
@@ -284,7 +284,7 @@ Heurísticas iniciais (MVP equipamentos de TI):
 
 ### 6.1 Ferramentas brasileiras de alerta / inteligência de licitação
 
-| Empresa / produto | Site | Posicionamento observado | Relação com LicitaFit |
+| Empresa / produto | Site | Posicionamento observado | Relação com CruzaEdital |
 | --- | --- | --- | --- |
 | **ConLicitação** | https://conlicitacao.com.br/ | Monitoramento amplo (afirma 6.000+ fontes), boletins, gestão, chat, IA (“Pergunte ao Edital”), robô de lances; planos Super/Premium/Advanced/Black (preços não públicos na página; assinatura 6/12/24 meses, só PJ) | Concorrente de **atenção do usuário final**; não é embed catalog-aware para ERP |
 | **Licitei** | https://www.licitei.com.br/ | PNCP + portais, “Pergunte ao Edital”, robô de lances, gestão docs | Idem |
@@ -305,7 +305,7 @@ Tendência: Q&A sobre PDF, resumo de exigências, geração de declarações. Ú
 - Otimizam leitura do documento, não **estoque/catálogo do vendedor**.
 - Aumentam risco se sugerirem “você está apto” sem disclaimer.
 
-LicitaFit deve **evitar** essa narrativa e, se usar LLM, limitar a extração de atributos / explicação de score.
+CruzaEdital deve **evitar** essa narrativa e, se usar LLM, limitar a extração de atributos / explicação de score.
 
 ### 6.3 O que ERPs já oferecem nativamente
 
@@ -315,7 +315,7 @@ LicitaFit deve **evitar** essa narrativa e, se usar LLM, limitar a extração de
 
 ### 6.4 Matriz de diferenciação
 
-| Dimensão | Portais de alerta | IA-edital | Módulo ERP gestão | **LicitaFit** |
+| Dimensão | Portais de alerta | IA-edital | Módulo ERP gestão | **CruzaEdital** |
 | --- | --- | --- | --- | --- |
 | Canal de venda | Direct ao fornecedor | Direct | Via ERP | **Via software partner (embed)** |
 | Input principal | Keywords / CNAE | PDF edital | Edital já escolhido | **Catálogo do distribuidor** |
@@ -349,7 +349,7 @@ LicitaFit deve **evitar** essa narrativa e, se usar LLM, limitar a extração de
 - Pelo menos um segmento de TI/eletrônicos **ou** roadmap claro para isso.
 - API/extensibilidade (webhooks, app store, ou equipe capaz de integrar).
 - Clientes que já participam ou desejam participar de licitações.
-- Não exige que LicitaFit emita parecer jurídico.
+- Não exige que CruzaEdital emita parecer jurídico.
 
 ### 7.4 Desqualificadores
 
@@ -423,7 +423,7 @@ LicitaFit deve **evitar** essa narrativa e, se usar LLM, limitar a extração de
 | Risco | Detalhe | Mitigação |
 | --- | --- | --- |
 | Interpretação como aconselhamento jurídico | Usuário pode achar que “match = pode habilitar” | Disclaimer fixo; status `needs_review`; ToS; UI sem linguagem de elegibilidade |
-| Lei 14.133 / responsabilidade em certame | Erro de triagem não deve ser atribuído ao LicitaFit como garantia | Contrato B2B com limitação de responsabilidade; logs |
+| Lei 14.133 / responsabilidade em certame | Erro de triagem não deve ser atribuído ao CruzaEdital como garantia | Contrato B2B com limitação de responsabilidade; logs |
 | **LGPD** | Catálogo pode conter dados comerciais sensíveis; usuários pessoas físicas em contas | Base legal contratual; DPA com partners; minimização; retenção; criptografia; subprocessadores documentados |
 | Propriedade do catálogo | Partner/distribuidor dono dos dados | Sem treinar modelos públicos sem opt-in; isolamento multi-tenant |
 | Uso de dados públicos PNCP | Dados oficiais reutilizáveis, mas atribuição e atualização importam | Citar PNCP; não republicar como “fonte oficial única” enganosa |
@@ -548,4 +548,4 @@ Acesso de todas as URLs: **25/09/2026**, salvo indicação.
 
 ---
 
-*Documento elaborado para uso interno de estratégia LicitaFit / Launchbase Tecnologia Ltda. Não constitui aconselhamento jurídico.*
+*Documento elaborado para uso interno de estratégia CruzaEdital / Launchbase Tecnologia Ltda. Não constitui aconselhamento jurídico.*

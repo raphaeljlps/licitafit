@@ -1,6 +1,6 @@
 # Fluxo pós-demo (interno)
 
-Runbook operacional depois que alguém envia o formulário de demonstração do LicitaFit.
+Runbook operacional depois que alguém envia o formulário de demonstração do CruzaEdital.
 Não é conteúdo público da landing.
 
 ## Quem responde
@@ -10,7 +10,7 @@ Não é conteúdo público da landing.
 | Primeira resposta | Raphael (Launchbase) | Caixa **raphael@launchbase.dev** (FormSubmit) |
 | Backup | (definir) | Mesmo e-mail / encaminhar |
 
-Assunto típico do FormSubmit: `LicitaFit: pedido de demonstracao...` (home, API ou Dashboard).
+Assunto típico do FormSubmit: `CruzaEdital: pedido de demonstracao...` (home, API ou Dashboard).
 
 ## SLA sugerido (meta interna)
 
