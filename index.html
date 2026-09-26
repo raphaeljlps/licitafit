@@ -433,24 +433,60 @@
                 <input id="lf-empresa" type="text" name="empresa" required autocomplete="organization" maxlength="160" />
               </div>
               <div class="lf-field">
-                <label for="lf-telefone">Telefone <span class="lf-hint">(opcional)</span></label>
+                <label for="lf-cargo">Cargo</label>
+                <select id="lf-cargo" name="cargo" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="Analista de licitações">Analista de licitações</option>
+                  <option value="Coordenação comercial gov">Coordenação comercial gov</option>
+                  <option value="Diretoria">Diretoria</option>
+                  <option value="Product / ERP">Product / ERP</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="lf-field">
+                <label for="lf-volume">Volume aproximado de editais/mês</label>
+                <select id="lf-volume" name="volume_editais_mes" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="até 20">até 20</option>
+                  <option value="21–50">21–50</option>
+                  <option value="51–100">51–100</option>
+                  <option value="mais de 100">mais de 100</option>
+                  <option value="não sei">não sei</option>
+                  <option value="N/A (parceiro software)">N/A (parceiro software)</option>
+                </select>
+              </div>
+              <div class="lf-field">
+                <label for="lf-cruza">Vocês já cruzam catálogo com editais à mão?</label>
+                <select id="lf-cruza" name="cruza_catalogo_mao" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="Sim, planilha/manual">Sim, planilha/manual</option>
+                  <option value="Sim, com outra ferramenta">Sim, com outra ferramenta</option>
+                  <option value="Parcialmente">Parcialmente</option>
+                  <option value="Não">Não</option>
+                </select>
+              </div>
+              <div class="lf-field">
+                <label for="lf-telefone">WhatsApp / telefone <span class="lf-hint">(opcional)</span></label>
                 <input id="lf-telefone" type="tel" name="telefone" autocomplete="tel" maxlength="40" />
               </div>
-            <div class="lf-field">
-              <label for="lf-interesse">Interesse</label>
-              <select id="lf-interesse" name="interesse" required>
-                <option value="" disabled selected>Selecione</option>
-                <option value="API para parceiros">API para parceiros (ERP / AFV)</option>
-                <option value="Dashboard">CruzaEdital Dashboard</option>
-                <option value="Ainda não sei">Ainda não sei</option>
-              </select>
-            </div>
+              <div class="lf-field">
+                <label for="lf-interesse">Interesse</label>
+                <select id="lf-interesse" name="interesse" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="Dashboard">CruzaEdital Dashboard</option>
+                  <option value="API para parceiros">API para parceiros (ERP / AFV)</option>
+                  <option value="Ainda não sei">Ainda não sei</option>
+                </select>
+              </div>
               <div class="lf-field">
                 <label for="lf-mensagem">Como podemos ajudar? <span class="lf-hint">(opcional)</span></label>
                 <textarea id="lf-mensagem" name="mensagem" maxlength="2000" placeholder="Contexto, prazo ou dúvida"></textarea>
               </div>
-              <button class="p-button--positive" type="submit">Enviar pedido de demonstração</button>
+              <button class="p-button--positive" type="submit">Pedir demo</button>
               <p class="lf-hint" data-lf-form-status hidden></p>
+              <p class="lf-hint">
+                O CruzaEdital faz triagem comercial do catálogo com editais (matched / conflito / unknown). Não constitui aprovação de elegibilidade nem parecer jurídico.
+              </p>
               <p class="lf-hint">
                 Se o envio falhar, escreva para
                 <a href="mailto:raphael@launchbase.dev?subject=CruzaEdital%20demonstracao">raphael@launchbase.dev</a>.
