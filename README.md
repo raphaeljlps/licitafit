@@ -11,6 +11,10 @@ Landing page do LicitaFit (API da Launchbase Tecnologia Ltda que qualifica licit
 - `comparativos/` , hub de comparativos (sem ranking)
 - Artigos em pastas na raiz (`alerta-edital-vs-matching-catalogo/`, etc.)
 - `js/site-origin.js` , **SITE_ORIGIN** (um lugar para trocar o host canônico)
+- `js/site-config.js` , analytics + e-mail do formulário de demo
+- `js/analytics.js` , carrega GA4/Plausible só se configurado
+- `js/demo-form.js` , FormSubmit (destino `raphael@launchbase.dev`)
+- `obrigado/` , página de sucesso do formulário
 - `scripts/sync-chrome.py` , sincroniza nav/footer/breadcrumbs/Continue lendo
 - `docs/chrome.md` , padrão de IA (nav/footer estilo Canonical)
 - `sitemap.xml` / `robots.txt` , descoberta
@@ -78,7 +82,13 @@ Ver [docs/chrome.md](docs/chrome.md). Resumo:
 - Footer Produto aponta para ambas as LPs (não lista todos os artigos)
 - Artigos com breadcrumb e **Continue lendo**
 
+## Formulário e analytics
+
+- **Demo:** formulários na home e em `/para-parceiros/`, `/para-empresas/` enviam para **raphael@launchbase.dev** via FormSubmit (sem API key). Na primeira submissão ao site público, confirme o e-mail do FormSubmit.
+- **Analytics:** desligado por padrão. Em `js/site-config.js`, defina `LF_ANALYTICS.provider` (`ga4` ou `plausible`) e `id`. Detalhes: [docs/analytics-e-formulario.md](docs/analytics-e-formulario.md).
+
 ## Documentação
 
 - [Dossiê de mercado](docs/dossie-mercado-licitafit.md) (também em [HTML](docs/dossie-mercado-licitafit.html))
 - [Chrome / IA](docs/chrome.md)
+- [Analytics e formulário](docs/analytics-e-formulario.md)

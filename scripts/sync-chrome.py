@@ -325,6 +325,49 @@ FEATURED = [
     "como-usar-dashboard-matching-licitacoes",
 ]
 
+
+SCRIPT_TAGS_RE = re.compile(
+    r"(?:  <!-- SITE_ORIGIN[^\n]*-->\n)?"
+    r"(?:  <script src=\"[^\"]*js/(?:site-config|site-origin|analytics|demo-form)\.js\" defer></script>\n)+",
+    re.M,
+)
+
+
+def script_block(prefix: str, with_demo_form: bool = False) -> str:
+    """Shared head scripts: config + origin + analytics (+ demo-form on form pages)."""
+    p = f"{prefix}js/"
+    lines = [
+        f'  <script src="{p}site-config.js" defer></script>',
+        f'  <script src="{p}site-origin.js" defer></script>',
+        f'  <script src="{p}analytics.js" defer></script>',
+    ]
+    if with_demo_form:
+        lines.append(f'  <script src="{p}demo-form.js" defer></script>')
+    return "\n".join(lines) + "\n"
+
+
+def sync_scripts(html: str, prefix: str, with_demo_form: bool = False) -> str:
+    block = script_block(prefix, with_demo_form=with_demo_form)
+    # Preserve SITE_ORIGIN comment; replace existing script cluster or insert after comment/stylesheet
+    comment_m = re.search(r"  <!-- SITE_ORIGIN[^\n]*-->\n", html)
+    comment = comment_m.group(0) if comment_m else ""
+    # Strip existing managed scripts (and optional comment if we will re-add)
+    html2 = re.sub(
+        rf'  <script src="{re.escape(prefix)}js/(?:site-config|site-origin|analytics|demo-form)\.js" defer></script>\n',
+        "",
+        html,
+    )
+    if comment_m:
+        # comment still in html2
+        html2 = html2.replace(comment, comment + block, 1)
+        return html2
+    css = f'  <link rel="stylesheet" href="{prefix}css/vanilla.css" />\n'
+    if css in html2:
+        return html2.replace(css, css + block, 1)
+    return html2.replace("</head>", block + "</head>", 1)
+
+
+
 HEADER_RE = re.compile(r"  <header id=\"navigation\"[\s\S]*?</header>", re.M)
 FOOTER_RE = re.compile(
     r"  <footer class=\"p-strip(?: is-shallow)?\"[^>]*id=\"rodape\"[\s\S]*?</footer>",
@@ -370,7 +413,11 @@ def nav_html(prefix: str, selected: str | None = None) -> str:
             f'<a class="p-navigation__link" href="{url}">{label}</a></li>'
         )
     logo = "#topo" if not prefix else f"{prefix}index.html"
-    cta = "#demonstracao" if not prefix else f"{prefix}index.html#demonstracao"
+    # Product LPs have their own #demonstracao form; keep CTA on-page.
+    if selected in ("parceiros", "empresas"):
+        cta = "#demonstracao"
+    else:
+        cta = "#demonstracao" if not prefix else f"{prefix}index.html#demonstracao"
     return f"""  <header id="navigation" class="p-navigation is-dark">
     <div class="p-navigation__row--25-75">
       <div class="p-navigation__banner">
@@ -396,12 +443,13 @@ def nav_html(prefix: str, selected: str | None = None) -> str:
   </header>"""
 
 
-def footer_html(prefix: str) -> str:
+def footer_html(prefix: str, local_demo: bool = False) -> str:
     def h(path: str) -> str:
         if path.startswith("#"):
             return f"{prefix}index.html{path}" if prefix else path
         return f"{prefix}{path}"
 
+    demo_href = "#demonstracao" if local_demo else h("#demonstracao")
     return f"""  <footer class="p-strip is-shallow" id="rodape">
     <div class="row">
       <div class="col-3">
@@ -416,7 +464,7 @@ def footer_html(prefix: str) -> str:
           <li class="p-list__item"><a href="{h('#produto')}">Visão geral</a></li>
           <li class="p-list__item"><a href="{h('para-parceiros/')}">API para parceiros</a></li>
           <li class="p-list__item"><a href="{h('para-empresas/')}">Dashboard para empresas</a></li>
-          <li class="p-list__item"><a href="{h('#demonstracao')}">Demonstração</a></li>
+          <li class="p-list__item"><a href="{demo_href}">Demonstração</a></li>
         </ul>
       </div>
       <div class="col-3">
@@ -627,6 +675,7 @@ def main() -> None:
     index = index_path.read_text()
     index = HEADER_RE.sub(nav_html(""), index)
     index = FOOTER_RE.sub(footer_html(""), index)
+    index = sync_scripts(index, "", with_demo_form=True)
     if RECURSOS_RE.search(index):
         index = RECURSOS_RE.sub(recursos_section() + "\n", index, count=1)
     else:
@@ -643,6 +692,7 @@ def main() -> None:
         html = HEADER_RE.sub(nav_html("../", selected="recursos"), html)
         html = FOOTER_RE.sub(footer_html("../"), html)
         html = BREADCRUMB_RE.sub(breadcrumb_html(hub_page=hub), html, count=1)
+        html = sync_scripts(html, "../", with_demo_form=False)
         path.write_text(html)
         print(f"Updated {hub}/index.html")
 
@@ -655,6 +705,7 @@ def main() -> None:
         html = HEADER_RE.sub(nav_html("../", selected="recursos"), html)
         html = FOOTER_RE.sub(footer_html("../"), html)
         html = BREADCRUMB_RE.sub(breadcrumb_html(slug=slug), html, count=1)
+        html = sync_scripts(html, "../", with_demo_form=False)
         html = RELATED_RE.sub("", html)
         html = RELATED_H2_RE.sub("", html)
         block = related_block(slug)
@@ -673,11 +724,12 @@ def main() -> None:
             continue
         html = path.read_text()
         html = HEADER_RE.sub(nav_html("../", selected=selected), html)
-        html = FOOTER_RE.sub(footer_html("../"), html)
+        html = FOOTER_RE.sub(footer_html("../", local_demo=True), html)
         if BREADCRUMB_RE.search(html):
             html = BREADCRUMB_RE.sub(
                 breadcrumb_html(product_lp=lp), html, count=1
             )
+        html = sync_scripts(html, "../", with_demo_form=True)
         path.write_text(html)
         print(f"Updated {lp}/index.html")
 

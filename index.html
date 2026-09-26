@@ -6,9 +6,12 @@
   <title>LicitaFit (Qualifique licitações com o catálogo do seu cliente)</title>
   <meta name="description" content="LicitaFit, da Launchbase Tecnologia: escolha seu caminho (API para parceiros de software (ERP/AFV) ou LicitaFit Dashboard para equipes que operam licitação). Matching de catálogo a oportunidades públicas." />
   <!-- SITE_ORIGIN: see js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Preview: https://dapper-opera-mz8m.here.now -->
+  <script src="js/site-config.js" defer></script>
+  <script src="js/site-origin.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/demo-form.js" defer></script>
   <link rel="canonical" href="https://www.licitafit.com.br/" />
   <link rel="stylesheet" href="css/vanilla.css" />
-  <script src="js/site-origin.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -94,6 +97,36 @@
     .lf-legal { font-size: 0.875rem; color: #666; }
     .lf-footer-nav a { margin-right: 0.75rem; }
     .lf-path-card { height: 100%; }
+  
+    .lf-demo-card {
+      background: #fff;
+      color: #111;
+      border-radius: 2px;
+      padding: 1.5rem 1.5rem 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .lf-demo-card label { display: block; font-weight: 500; margin-bottom: 0.35rem; }
+    .lf-demo-card .lf-field { margin-bottom: 1rem; }
+    .lf-demo-card input[type="text"],
+    .lf-demo-card input[type="email"],
+    .lf-demo-card input[type="tel"],
+    .lf-demo-card select,
+    .lf-demo-card textarea {
+      width: 100%;
+      max-width: 32rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid #c7c7c7;
+      border-radius: 2px;
+      font: inherit;
+      background: #fff;
+      color: #111;
+    }
+    .lf-demo-card textarea { min-height: 5.5rem; resize: vertical; }
+    .lf-demo-card .lf-hint { font-size: 0.875rem; color: #666; margin: 0.25rem 0 0; }
+    .lf-demo-card .lf-hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .lf-demo-card [data-lf-form-status] { margin-top: 0.75rem; font-size: 0.875rem; }
+    .lf-demo-card .p-button--positive { margin-top: 0.25rem; }
+
   </style>
 </head>
 <body>
@@ -382,16 +415,55 @@
         <div class="col-8">
           <h2>Fale com a equipe comercial</h2>
           <p>
-            Agende uma conversa com a Launchbase (para integrar a
-            <a href="para-parceiros/" style="color:inherit;text-decoration:underline">API no software parceiro</a>)
-            ou acompanhar o
-            <a href="para-empresas/" style="color:inherit;text-decoration:underline">LicitaFit Dashboard</a>
-            Em ambos os casos, trabalhamos com o catálogo real.
+            Peça uma demonstração da <a href="para-parceiros/" style="color:inherit;text-decoration:underline">API no software parceiro</a> ou do <a href="para-empresas/" style="color:inherit;text-decoration:underline">LicitaFit Dashboard</a>. A Launchbase recebe em <strong>raphael@launchbase.dev</strong>.
           </p>
-          <p>
-            <a class="p-button--positive" href="#empresa">Agendar demonstração</a>
-          </p>
-          <p class="u-text--muted" style="opacity:0.85">
+          <div class="lf-demo-card">
+            <form data-lf-demo-form data-lf-obrigado="obrigado/" action="https://formsubmit.co/raphael@launchbase.dev" method="POST">
+              <input type="hidden" name="_subject" value="LicitaFit: pedido de demonstracao" />
+              <input type="hidden" name="_next" value="" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="origem_pagina" value="home" />
+              <input type="text" name="_honey" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <div class="lf-field">
+                <label for="lf-nome">Nome</label>
+                <input id="lf-nome" type="text" name="nome" required autocomplete="name" maxlength="120" />
+              </div>
+              <div class="lf-field">
+                <label for="lf-email">E-mail de trabalho</label>
+                <input id="lf-email" type="email" name="email" required autocomplete="email" maxlength="160" />
+              </div>
+              <div class="lf-field">
+                <label for="lf-empresa">Empresa</label>
+                <input id="lf-empresa" type="text" name="empresa" required autocomplete="organization" maxlength="160" />
+              </div>
+              <div class="lf-field">
+                <label for="lf-telefone">Telefone <span class="lf-hint">(opcional)</span></label>
+                <input id="lf-telefone" type="tel" name="telefone" autocomplete="tel" maxlength="40" />
+              </div>
+            <div class="lf-field">
+              <label for="lf-interesse">Interesse</label>
+              <select id="lf-interesse" name="interesse" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="API para parceiros">API para parceiros (ERP / AFV)</option>
+                <option value="Dashboard">LicitaFit Dashboard</option>
+                <option value="Ainda não sei">Ainda não sei</option>
+              </select>
+            </div>
+              <div class="lf-field">
+                <label for="lf-mensagem">Como podemos ajudar? <span class="lf-hint">(opcional)</span></label>
+                <textarea id="lf-mensagem" name="mensagem" maxlength="2000" placeholder="Contexto, prazo ou dúvida"></textarea>
+              </div>
+              <button class="p-button--positive" type="submit">Enviar pedido de demonstração</button>
+              <p class="lf-hint" data-lf-form-status hidden></p>
+              <p class="lf-hint">
+                Se o envio falhar, escreva para
+                <a href="mailto:raphael@launchbase.dev?subject=LicitaFit%20demonstracao">raphael@launchbase.dev</a>.
+              </p>
+            </form>
+          </div>
+
+          <p class="u-text--muted" style="opacity:0.85;margin-top:1.25rem">
             O LicitaFit é apoio à decisão comercial; não constitui parecer jurídico nem garantia de habilitação.
           </p>
         </div>
