@@ -70,3 +70,15 @@ Edite metadados/`FEATURED`/`RELATED` em `scripts/sync-chrome.py` e rode de novo.
 - Hub Guias: seção `#confianca`
 - LPs `/para-parceiros/` e `/para-empresas/`: faixa `#fontes-confianca` (links oficiais + fontes page)
 - Ops interno: `docs/governo-solicitacoes.md` (espelho em workspace `/workspace/licitafit/docs/GOVERNO-SOLICITACOES.md`)
+
+
+## Scripts compartilhados (head)
+
+`scripts/sync-chrome.py` injeta:
+
+1. `js/site-config.js` (analytics + formulário)
+2. `js/site-origin.js` (SITE_ORIGIN)
+3. `js/analytics.js` (no-op até configurar)
+4. `js/demo-form.js` (só home + LPs com formulário)
+
+Ver [analytics-e-formulario.md](analytics-e-formulario.md).
