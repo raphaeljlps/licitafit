@@ -356,10 +356,22 @@ PAGES = {
             ("status-matching", "Como ler matched / conflito / unknown."),
         ],
     },
+    "mcp-agente-cruzaedital": {
+        "title": "Conectar um agente ao CruzaEdital via MCP",
+        "short": "Agente via MCP",
+        "hub": "guias",
+        "blurb": "Como equipes e agentes de IA podem consultar o contexto de catálogo, matches e alertas do Dashboard.",
+        "related": [
+            ("como-usar-dashboard-matching-licitacoes", "Rotina da equipe no Dashboard."),
+            ("matching-catalogo-edital", "Como o catálogo é cruzado com o item."),
+            ("status-matching", "Como interpretar resultados e priorizar revisão."),
+        ],
+    },
 
 }
 
 FEATURED = [
+    "mcp-agente-cruzaedital",
     "existe-api-matching-catalogo-licitacoes",
     "como-saber-se-produto-atende-edital",
     "avisar-cliente-quando-edital-casa-estoque",

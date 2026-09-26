@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conecte um agente ao CruzaEdital via MCP | CruzaEdital</title>
+  <meta name="description" content="Entenda como equipes e agentes de IA se conectam ao CruzaEdital Dashboard via MCP para consultar contexto de catálogo, matches e alertas." />
+  <!-- SITE_ORIGIN: see ../js/site-origin.js (https://www.licitafit.com.br; DNS TBD). Interim: https://raphaeljlps.github.io/licitafit/ -->
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/site-origin.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+  <link rel="canonical" href="https://www.licitafit.com.br/mcp-agente-cruzaedital/" />
+  <link rel="stylesheet" href="../css/vanilla.css" />
+  <style>
+    .lf-logo { font-weight: 500; letter-spacing: -0.01em; }
+    .lf-muted { color: #666; }
+    .lf-legal { font-size: 0.875rem; color: #666; }
+    .lf-breadcrumb { margin-bottom: 1rem; }
+    .lf-footer-nav a { margin-right: 0.75rem; }
+    .lf-callout {
+      border-left: 3px solid #0e8420;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.licitafit.com.br/mcp-agente-cruzaedital/#webpage",
+        "url": "https://www.licitafit.com.br/mcp-agente-cruzaedital/",
+        "name": "Conectar um agente ao CruzaEdital via MCP",
+        "description": "Como equipes e agentes de IA se conectam ao CruzaEdital Dashboard via MCP para consultar contexto de catálogo, matches e alertas.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "CruzaEdital",
+          "url": "https://www.licitafit.com.br/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.licitafit.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guias",
+            "item": "https://www.licitafit.com.br/guias/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Conectar um agente ao CruzaEdital via MCP",
+            "item": "https://www.licitafit.com.br/mcp-agente-cruzaedital/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.licitafit.com.br/mcp-agente-cruzaedital/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que é MCP no CruzaEdital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MCP é um padrão para conectar um agente de IA a uma fonte de contexto. No CruzaEdital, o Dashboard expõe esse caminho para consultas sobre catálogo, matches e alertas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O MCP substitui a revisão da equipe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O agente ajuda a consultar e organizar o contexto; a equipe continua revisando os requisitos e a oportunidade no Dashboard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso ter um agente pronto para usar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. A demonstração serve para entender o encaixe entre a rotina da equipe, o Dashboard e o agente que você já usa ou pretende usar."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="p-navigation__row--25-75">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__tagged-logo">
+          <a class="p-navigation__link" href="../index.html">
+            <div class="p-navigation__logo-title lf-logo">CruzaEdital</div>
+          </a>
+        </div>
+        <a href="#navigation" class="p-navigation__toggle--open" title="Menu">Menu</a>
+        <a href="#topo" class="p-navigation__toggle--close" title="Fechar menu">Fechar menu</a>
+      </div>
+      <nav class="p-navigation__nav" aria-label="Principal">
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#produto">Produto</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-parceiros/">Para parceiros</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../para-empresas/">Para empresas</a></li>
+          <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="../index.html#recursos">Recursos</a></li>
+          <li class="p-navigation__item"><a class="p-navigation__link" href="../index.html#empresa">Empresa</a></li>
+        </ul>
+        <ul class="p-navigation__items">
+          <li class="p-navigation__item">
+            <a class="p-navigation__link" href="../index.html#demonstracao">Falar com vendas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="p-strip--suru-topped">
+      <div class="row">
+        <div class="col-8">
+          <p class="lf-breadcrumb">
+            <a href="../index.html">Início</a>
+            <span class="lf-muted"> / </span>
+            <a href="../index.html#recursos">Recursos</a>
+            <span class="lf-muted"> / </span>
+            <a href="../guias/">Guias</a>
+            <span class="lf-muted"> / </span>
+            <span>Agente via MCP</span>
+          </p>
+          <h1>Conecte o seu agente ao CruzaEdital</h1>
+          <p class="p-heading--4">
+            O CruzaEdital Dashboard expõe MCP para aproximar agentes de IA do contexto que a equipe já usa:
+            catálogo, matches e alertas de editais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="como-funciona">
+      <div class="row">
+        <div class="col-8">
+          <h2>Como isso se encaixa</h2>
+          <p>
+            O MCP, sigla de Model Context Protocol, é uma forma padronizada de conectar um agente de IA
+            a uma fonte de contexto. No CruzaEdital, o fluxo de alto nível é simples:
+          </p>
+          <ol class="p-stepped-list">
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Agente</h3>
+              <p class="p-stepped-list__content">
+                O agente recebe uma pergunta ou tarefa da equipe, como localizar oportunidades ligadas ao catálogo.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">MCP</h3>
+              <p class="p-stepped-list__content">
+                A conexão disponibiliza o contexto do CruzaEdital para a consulta, dentro do escopo combinado.
+              </p>
+            </li>
+            <li class="p-stepped-list__item">
+              <h3 class="p-stepped-list__title">Matching</h3>
+              <p class="p-stepped-list__content">
+                O agente consulta informações sobre catálogo, matches e alertas para apoiar a revisão no Dashboard.
+              </p>
+            </li>
+          </ol>
+          <div class="lf-callout">
+            <p>
+              O agente apoia a leitura e a organização da oportunidade. A revisão dos requisitos e a decisão comercial
+              continuam com a equipe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="para-quem">
+      <div class="row">
+        <div class="col-8">
+          <h2>Para equipes e agentes</h2>
+          <p>
+            Este caminho é para equipes de licitação que já trabalham com agentes de IA ou querem avaliar essa forma
+            de consulta junto ao Dashboard. Também é para quem cuida do agente e precisa de um contexto de matching
+            ligado ao catálogo real da empresa.
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked">Equipes que querem perguntar sobre oportunidades ligadas ao catálogo</li>
+            <li class="p-list__item is-ticked">Pessoas que mantêm ou usam um agente de IA no trabalho</li>
+            <li class="p-list__item is-ticked">Líderes que querem aproximar consulta automatizada e revisão humana</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip" id="o-que-faz">
+      <div class="row">
+        <div class="col-8">
+          <h2>O que o agente pode consultar</h2>
+          <p>
+            Em alto nível, o MCP dá ao agente acesso ao contexto que orienta a rotina no Dashboard:
+          </p>
+          <ul class="p-list">
+            <li class="p-list__item is-ticked"><strong>Catálogo:</strong> a lista de produtos usada pela equipe.</li>
+            <li class="p-list__item is-ticked"><strong>Matches:</strong> relações encontradas entre produtos e itens de editais.</li>
+            <li class="p-list__item is-ticked"><strong>Alertas:</strong> mudanças que merecem nova atenção da equipe.</li>
+          </ul>
+          <p>
+            O objetivo é levar perguntas ao contexto certo, não criar uma decisão automática de habilitação.
+            O Dashboard continua sendo o lugar para a equipe revisar os requisitos e priorizar a oportunidade.
+          </p>
+          <p class="lf-muted">
+            A conexão é apresentada por alto nesta página. Detalhes de acesso e escopo são definidos na conversa
+            sobre a demonstração, sem inventar endpoints ou chaves.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--light" id="faq">
+      <div class="row">
+        <div class="col-8">
+          <h2>Perguntas frequentes</h2>
+          <h3>O que é MCP no CruzaEdital?</h3>
+          <p>
+            MCP é um padrão para conectar um agente de IA a uma fonte de contexto. No CruzaEdital, o Dashboard
+            expõe esse caminho para consultas sobre catálogo, matches e alertas.
+          </p>
+          <h3>O MCP substitui a revisão da equipe?</h3>
+          <p>
+            Não. O agente ajuda a consultar e organizar o contexto; a equipe continua revisando os requisitos e a
+            oportunidade no Dashboard.
+          </p>
+          <h3>Preciso ter um agente pronto para usar?</h3>
+          <p>
+            Não. A demonstração serve para entender o encaixe entre a rotina da equipe, o Dashboard e o agente
+            que você já usa ou pretende usar.
+          </p>
+          <h3>O CruzaEdital fornece uma chave ou uma lista de endpoints nesta página?</h3>
+          <p>
+            Não. Este guia explica o encaixe do produto em alto nível. O acesso e o escopo são tratados na conversa
+            sobre a demonstração.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-strip--dark" id="cta">
+      <div class="row">
+        <div class="col-8">
+          <h2>Veja o MCP no contexto da sua equipe</h2>
+          <p>
+            <a class="p-button--positive" href="../para-empresas/#demonstracao">Solicitar demonstração</a>
+            <a class="p-button" href="../para-empresas/">Ver o Dashboard para empresas</a>
+          </p>
+          <p class="u-text--muted" style="opacity:0.85">
+            O CruzaEdital apoia a revisão comercial com base no catálogo.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="p-strip--light" id="continue-lendo">
+      <div class="row">
+        <div class="col-8">
+          <h2>Continue lendo</h2>
+          <ul class="p-list">
+            <li class="p-list__item">
+              <a href="../como-usar-dashboard-matching-licitacoes/">Como usar o Dashboard de matching de licitações</a>
+              (Rotina da equipe no Dashboard.)
+            </li>
+            <li class="p-list__item">
+              <a href="../matching-catalogo-edital/">Matching catálogo ↔ item de edital</a>
+              (Como o catálogo é cruzado com o item.)
+            </li>
+            <li class="p-list__item">
+              <a href="../status-matching/">Status do matching</a>
+              (Como interpretar resultados e priorizar revisão.)
+            </li>
+          </ul>
+          <p><a href="../guias/">Ver todos os guias →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-strip is-shallow" id="rodape">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <strong>CruzaEdital</strong><br />
+          Revisão de oportunidades de licitação com base no catálogo.
+        </p>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Produto</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#produto">Visão geral</a></li>
+          <li class="p-list__item"><a href="../para-parceiros/">API para parceiros</a></li>
+          <li class="p-list__item"><a href="../para-empresas/">Dashboard para empresas</a></li>
+          <li class="p-list__item"><a href="../index.html#demonstracao">Demonstração</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Recursos</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../guias/">Guias</a></li>
+          <li class="p-list__item"><a href="../comparativos/">Comparativos</a></li>
+          <li class="p-list__item"><a href="../index.html#faq">FAQ</a></li>
+          <li class="p-list__item"><a href="../integracao-api-licitafit/">Integração API</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="p-muted-heading">Empresa</p>
+        <ul class="p-list">
+          <li class="p-list__item"><a href="../index.html#empresa">Launchbase Tecnologia</a></li>
+          <li class="p-list__item"><a href="../privacidade/">Privacidade e cookies</a></li>
+        </ul>
+        <p class="lf-legal">
+          O CruzaEdital apoia a revisão comercial. Consulte o uso responsável.
+        </p>
+        <p class="lf-legal">Launchbase Tecnologia Ltda · CNPJ 35.078.004/0001-77</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:1.5rem;border-top:1px solid #d9d9d9;padding-top:1rem">
+      <div class="col-12">
+        <p class="lf-legal u-no-margin--bottom">
+          © Launchbase Tecnologia Ltda ·
+          <a href="../index.html#recursos">Recursos</a> ·
+          <a href="../guias/">Guias</a> ·
+          <a href="../comparativos/">Comparativos</a> ·
+          <a href="../privacidade/">Privacidade</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
